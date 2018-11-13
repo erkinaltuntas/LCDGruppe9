@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour{
 
 
-    public void playGame()
+    //geht in die nächste Szene über
+    public void loadTutorial()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //beendet das Spiel
     public void quitGame()
     {
-        Debug.Log("QUIT");
+        Debug.Log("Spiel beendet");
         Application.Quit();
     }
 }

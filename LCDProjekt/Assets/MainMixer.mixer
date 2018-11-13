@@ -16,7 +16,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: b861edd60ecb95b48bbafecee896474d
-    name: lautstaerke
+    name: volume
   m_AudioMixerGroupViews:
   - guids:
     - 474b64d4489d34046abcba6ecc6a88ed
