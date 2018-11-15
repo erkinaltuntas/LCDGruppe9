@@ -9,6 +9,10 @@ public class AdventureScript : MonoBehaviour {
     public Camera mainCamera;
     public Vector2 mousePosWorld2D;
     public Feld feld1;
+    public Feld feld2;
+    public Feld feld3;
+    public Feld feld4;
+    public int currentFeldId;
     RaycastHit2D hit;
 
     public GameObject selectionPanel;
@@ -47,14 +51,33 @@ public class AdventureScript : MonoBehaviour {
                 //Ausgabe des getroffenen Objects
                 print(hit.collider.gameObject.name);
 
-                if(hit.collider.gameObject.name == "Feld1")
+                if(hit.collider.gameObject.tag == "Feld" )
                 {
                     selectionPanel.SetActive(true);
-                } else
+                    currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
+                } else if (hit.collider.gameObject.tag == "Pflanze")
                 {
-                    feld1.plantName = hit.collider.gameObject.name.ToString();
+                    switch (currentFeldId)
+                    {
+                        case 1:
+                            feld1.plantName = hit.collider.gameObject.name.ToString();
+                            break;
+                        case 2:
+                            feld2.plantName = hit.collider.gameObject.name.ToString();
+                            break;
+                        case 3:
+                            feld3.plantName = hit.collider.gameObject.name.ToString();
+                            break;
+                        case 4:
+                            feld4.plantName = hit.collider.gameObject.name.ToString();
+                            break;
+                        default: print("Fehler");
+                            break;
+                    }
+
                     selectionPanel.SetActive(false);
                 }
+
             }
             else
             {

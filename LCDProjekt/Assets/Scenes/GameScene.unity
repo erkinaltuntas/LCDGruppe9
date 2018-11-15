@@ -190,7 +190,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1 &384356087
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,9 +200,10 @@ GameObject:
   - component: {fileID: 384356088}
   - component: {fileID: 384356089}
   - component: {fileID: 384356090}
+  - component: {fileID: 384356091}
   m_Layer: 0
   m_Name: Pflanze_Mais
-  m_TagString: Untagged
+  m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +292,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97, y: 0.93}
   m_EdgeRadius: 0
+--- !u!114 &384356091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384356087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a91dbf0daaa5254c9691e467c2c75b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  plantName: Mais
+  price: 10
+  profit: 15
+  droughtResistance: 5
+  frostResistance: 5
+  needForRain: 3
+  needForSun: 4
 --- !u!1 &515457625
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +356,245 @@ MonoBehaviour:
   mainCamera: {fileID: 117122622}
   mousePosWorld2D: {x: 0, y: 0}
   feld1: {fileID: 1397437767}
+  feld2: {fileID: 1062629000}
+  feld3: {fileID: 1674323794}
+  feld4: {fileID: 1103539195}
+  currentFeldId: 0
   selectionPanel: {fileID: 1503899759}
+--- !u!1 &1062628997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062628999}
+  - component: {fileID: 1062628998}
+  - component: {fileID: 1062629000}
+  - component: {fileID: 1062629001}
+  m_Layer: 0
+  m_Name: Feld 2
+  m_TagString: Feld
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1062628998
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062628997}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 47f3110f6ac9b3440846b6664e16cccb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.9, y: 1.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1062628999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062628997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3455305, y: 1.3585004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062629000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062628997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9848eab7f43887446bc77f5a0a153fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  plantName: 
+  successRate: 0
+  shock: 0
+--- !u!61 &1062629001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062628997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9, y: 1.77}
+    newSize: {x: 1.9, y: 1.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 1.77}
+  m_EdgeRadius: 0
+--- !u!1 &1103539192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103539194}
+  - component: {fileID: 1103539193}
+  - component: {fileID: 1103539195}
+  - component: {fileID: 1103539196}
+  m_Layer: 0
+  m_Name: Feld 4
+  m_TagString: Feld
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1103539193
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103539192}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: df09298266f1c1c44a8431da742b60a0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.9, y: 1.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1103539194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103539192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.308384, y: -1.9940724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1103539195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103539192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9848eab7f43887446bc77f5a0a153fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  plantName: 
+  successRate: 0
+  shock: 0
+--- !u!61 &1103539196
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103539192}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9, y: 1.77}
+    newSize: {x: 1.9, y: 1.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 1.77}
+  m_EdgeRadius: 0
 --- !u!1 &1140438131
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,9 +605,10 @@ GameObject:
   - component: {fileID: 1140438132}
   - component: {fileID: 1140438133}
   - component: {fileID: 1140438134}
+  - component: {fileID: 1140438135}
   m_Layer: 0
   m_Name: "Pflanze_Gr\xFCnkohl"
-  m_TagString: Untagged
+  m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,6 +697,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97, y: 0.93}
   m_EdgeRadius: 0
+--- !u!114 &1140438135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140438131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a91dbf0daaa5254c9691e467c2c75b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  plantName: "Gr\xFCnkohl"
+  price: 5
+  profit: 8
+  droughtResistance: 4
+  frostResistance: 4
+  needForRain: 5
+  needForSun: 2
 --- !u!1 &1141342329
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +886,7 @@ GameObject:
   - component: {fileID: 1196599892}
   m_Layer: 5
   m_Name: Pflanze_Tomate
-  m_TagString: Untagged
+  m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,14 +940,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a91dbf0daaa5254c9691e467c2c75b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  plantName: 
-  price: 0
-  profit: 0
-  droughtResistance: 0
-  frostResistance: 0
-  needForRain: 0
-  needForSun: 0
+  id: 1
+  plantName: Tomate
+  price: 10
+  profit: 20
+  droughtResistance: 3
+  frostResistance: 2
+  needForRain: 1
+  needForSun: 5
 --- !u!212 &1196599894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1040,7 +1317,7 @@ GameObject:
   - component: {fileID: 1397437767}
   m_Layer: 8
   m_Name: Feld1
-  m_TagString: Untagged
+  m_TagString: Feld
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1056,7 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9848eab7f43887446bc77f5a0a153fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
   plantName: 
   successRate: 0
   shock: 0
@@ -1218,6 +1495,123 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1503899759}
   m_CullTransparentMesh: 0
+--- !u!1 &1674323791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674323793}
+  - component: {fileID: 1674323792}
+  - component: {fileID: 1674323794}
+  - component: {fileID: 1674323795}
+  m_Layer: 0
+  m_Name: Feld 3
+  m_TagString: Feld
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1674323792
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674323791}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5ba4c3906fe1bcc48acc4e7064f60481, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.9, y: 1.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1674323793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674323791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.317119, y: -2.1077192, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674323794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674323791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9848eab7f43887446bc77f5a0a153fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  plantName: 
+  successRate: 0
+  shock: 0
+--- !u!61 &1674323795
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1674323791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9, y: 1.77}
+    newSize: {x: 1.9, y: 1.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9, y: 1.77}
+  m_EdgeRadius: 0
 --- !u!1 &1849613131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1623,6 @@ GameObject:
   - component: {fileID: 1849613135}
   - component: {fileID: 1849613134}
   - component: {fileID: 1849613133}
-  - component: {fileID: 1849613132}
   m_Layer: 5
   m_Name: CanvasSort
   m_TagString: Untagged
@@ -1237,23 +1630,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1849613132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1849613131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dd97604db37d749ad10c9d6649b3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousePos: {x: 0, y: 0, z: 0}
-  mousePosWorld: {x: 0, y: 0, z: 0}
-  mainCamera: {fileID: 0}
-  mousePosWorld2D: {x: 0, y: 0}
-  feld1: {fileID: 0}
-  selectionPanel: {fileID: 0}
 --- !u!114 &1849613133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,7 +1699,7 @@ RectTransform:
   m_Children:
   - {fileID: 1503899760}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1340,9 +1716,10 @@ GameObject:
   - component: {fileID: 1880418728}
   - component: {fileID: 1880418729}
   - component: {fileID: 1880418730}
+  - component: {fileID: 1880418731}
   m_Layer: 0
   m_Name: Pflanze_Blaubeere
-  m_TagString: Untagged
+  m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1431,6 +1808,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97, y: 0.93}
   m_EdgeRadius: 0
+--- !u!114 &1880418731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1880418727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a91dbf0daaa5254c9691e467c2c75b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  plantName: Blaubeere
+  price: 30
+  profit: 40
+  droughtResistance: 3
+  frostResistance: 2
+  needForRain: 5
+  needForSun: 6
 --- !u!1 &1906732324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1838,6 @@ GameObject:
   - component: {fileID: 1906732327}
   - component: {fileID: 1906732326}
   - component: {fileID: 1906732325}
-  - component: {fileID: 1906732329}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1527,21 +1922,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1906732329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1906732324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dd97604db37d749ad10c9d6649b3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousePos: {x: 0, y: 0, z: 0}
-  mousePosWorld: {x: 0, y: 0, z: 0}
-  mainCamera: {fileID: 117122622}
-  mousePosWorld2D: {x: 0, y: 0}
-  feld1: {fileID: 0}
-  selectionPanel: {fileID: 0}
-
