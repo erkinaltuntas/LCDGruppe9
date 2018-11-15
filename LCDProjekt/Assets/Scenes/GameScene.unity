@@ -190,6 +190,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &384356087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,3 +1544,4 @@ MonoBehaviour:
   mousePosWorld2D: {x: 0, y: 0}
   feld1: {fileID: 0}
   selectionPanel: {fileID: 0}
+
