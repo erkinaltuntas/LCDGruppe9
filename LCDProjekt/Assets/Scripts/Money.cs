@@ -5,6 +5,7 @@ using TMPro;
 
 public class Money : MonoBehaviour {
 
+    public Player player;
     public TextMeshProUGUI moneyText;
     public int money;
 
@@ -18,5 +19,6 @@ public class Money : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         moneyText.text = money.ToString();
+        player.money = this.money;
     }
 }
