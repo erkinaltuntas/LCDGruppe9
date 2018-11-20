@@ -9263,7 +9263,7 @@ GameObject:
   - component: {fileID: 780369091}
   - component: {fileID: 780369092}
   m_Layer: 0
-  m_Name: Lettuce
+  m_Name: Potato
   m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9294,7 +9294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
-  plantName: Lettuce
+  plantName: Potato
   price: 5
   profit: 8
   droughtResistance: 4
@@ -9317,7 +9317,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.35, y: 0.26}
+    oldSize: {x: 0.34, y: 0.18}
     newSize: {x: 0.97, y: 0.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9361,7 +9361,7 @@ SpriteRenderer:
   m_SortingLayerID: -1723853635
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300098, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
+  m_Sprite: {fileID: 21300076, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21292,6 +21292,10 @@ MonoBehaviour:
   price: 0
   player: {fileID: 259740252}
   money: {fileID: 1132827447}
+  tomato: {fileID: 21300000, guid: f497ba26481207245a6e4a61c13fba76, type: 3}
+  potato: {fileID: 21300000, guid: 075c9839f90f6d044a6c5b3e2b56eb27, type: 3}
+  corn: {fileID: 21300000, guid: 4158cb4ad0756614ea1c74208e57cca2, type: 3}
+  carrot: {fileID: 21300000, guid: a891c5a06838b974ebc2a697f1b4cdd3, type: 3}
   selectionPanel: {fileID: 1403680505}
 --- !u!4 &1936544130
 Transform:

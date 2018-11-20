@@ -16,6 +16,10 @@ public class AdventureScript : MonoBehaviour {
     public int price;
     public Player player;
     public Money money;
+    public Sprite tomato;
+    public Sprite potato;
+    public Sprite corn;
+    public Sprite carrot;
     RaycastHit2D hit;
 
     public GameObject selectionPanel;
@@ -66,18 +70,78 @@ public class AdventureScript : MonoBehaviour {
                         case 1:
                             feld1.plantName = hit.collider.gameObject.name.ToString();
                             money.money = money.money - price;
+                            switch (feld1.plantName)
+                            {
+                                case "Tomato":
+                                    feld1.GetComponent<SpriteRenderer>().sprite = tomato;
+                                    break;
+                                case "Carrot":
+                                    feld1.GetComponent<SpriteRenderer>().sprite = carrot;
+                                    break;
+                                case "Corn":
+                                    feld1.GetComponent<SpriteRenderer>().sprite = corn;
+                                    break;
+                                case "Potato":
+                                    feld1.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                            }
                             break;
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
                             money.money = money.money - price;
+                            switch (feld2.plantName)
+                            {
+                                case "Tomato":
+                                    feld2.GetComponent<SpriteRenderer>().sprite = tomato;
+                                    break;
+                                case "Carrot":
+                                    feld2.GetComponent<SpriteRenderer>().sprite = carrot;
+                                    break;
+                                case "Corn":
+                                    feld2.GetComponent<SpriteRenderer>().sprite = corn;
+                                    break;
+                                case "Potato":
+                                    feld2.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                            }
                             break;
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
                             money.money = money.money - price;
+                            switch (feld3.plantName)
+                            {
+                                case "Tomato":
+                                    feld3.GetComponent<SpriteRenderer>().sprite = tomato;
+                                    break;
+                                case "Carrot":
+                                    feld3.GetComponent<SpriteRenderer>().sprite = carrot;
+                                    break;
+                                case "Corn":
+                                    feld3.GetComponent<SpriteRenderer>().sprite = corn;
+                                    break;
+                                case "Potato":
+                                    feld3.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                            }
                             break;
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
                             money.money = money.money - price;
+                            switch (feld4.plantName)
+                            {
+                                case "Tomato":
+                                    feld4.GetComponent<SpriteRenderer>().sprite = tomato;
+                                    break;
+                                case "Carrot":
+                                    feld4.GetComponent<SpriteRenderer>().sprite = carrot;
+                                    break;
+                                case "Corn":
+                                    feld4.GetComponent<SpriteRenderer>().sprite = corn;
+                                    break;
+                                case "Potato":
+                                    feld4.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                            }
                             break;
                         default: print("Fehler");
                             break;
