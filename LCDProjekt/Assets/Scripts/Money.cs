@@ -10,6 +10,7 @@ public class Money : MonoBehaviour {
     public int money;
 
 	// Use this for initialization
+    // initialisiere Geldanzeige 
 	void Start () {
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
@@ -17,6 +18,7 @@ public class Money : MonoBehaviour {
     }
 	
 	// Update is called once per frame
+    //aktualisiere die Geldanzeige
 	void Update () {
         moneyText.text = money.ToString();
         player.money = this.money;
