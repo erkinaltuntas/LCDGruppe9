@@ -13,7 +13,9 @@ public class AdventureScript : MonoBehaviour {
     public Feld feld3;
     public Feld feld4;
     public int currentFeldId;
+    public int price;
     public Player player;
+    public Money money;
     RaycastHit2D hit;
 
     public GameObject selectionPanel;
@@ -58,19 +60,24 @@ public class AdventureScript : MonoBehaviour {
                     currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
                 } else if (hit.collider.gameObject.tag == "Pflanze")
                 {
+                    price = hit.collider.gameObject.GetComponent<Plant>().price;
                     switch (currentFeldId)
                     {
                         case 1:
                             feld1.plantName = hit.collider.gameObject.name.ToString();
+                            money.money = money.money - price;
                             break;
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
+                            money.money = money.money - price;
                             break;
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
+                            money.money = money.money - price;
                             break;
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
+                            money.money = money.money - price;
                             break;
                         default: print("Fehler");
                             break;
