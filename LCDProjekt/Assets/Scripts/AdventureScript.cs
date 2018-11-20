@@ -13,6 +13,7 @@ public class AdventureScript : MonoBehaviour {
     public Feld feld3;
     public Feld feld4;
     public int currentFeldId;
+    public Player player;
     RaycastHit2D hit;
 
     public GameObject selectionPanel;
