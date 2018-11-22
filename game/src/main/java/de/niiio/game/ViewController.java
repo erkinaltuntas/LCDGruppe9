@@ -14,21 +14,14 @@ public class ViewController {
 		return "index";
 	}
 	
-	@PostMapping("/hello")
-	public String sayHello(@RequestParam("name") String name, Model model){
-		
-		model.addAttribute("name", name);
-		return "hello";
-		
-	}
 	
 	@GetMapping("/game")
 	public String game() {
 		return "gamepage";
 	}
 	
-	@GetMapping("/abschluss")
+	@GetMapping("/evaluation")
 	public String end() {
-		return "abschluss";
+		return "evaluation";
 	}
 }
