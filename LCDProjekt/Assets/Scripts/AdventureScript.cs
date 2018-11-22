@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdventureScript : MonoBehaviour {
+public class AdventureScript : MonoBehaviour
+{
 
     public Vector3 mousePos;
     public Vector3 mousePosWorld;
@@ -26,9 +27,7 @@ public class AdventureScript : MonoBehaviour {
     Collider2D collider3;
     Collider2D collider4;
 
-
     public GameObject selectionPanel;
-  
 
     // Use this for initialization
     void Start()
@@ -49,7 +48,6 @@ public class AdventureScript : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            
             //print("Maus wurde gedrückt");
 
             //Mausposition
@@ -73,7 +71,7 @@ public class AdventureScript : MonoBehaviour {
                 print(hit.collider.gameObject.name);
 
                 //Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist
-                if(hit.collider.gameObject.tag == "Feld" )
+                if (hit.collider.gameObject.tag == "Feld")
                 {
                     //Zeigt das Auswahlfenster an, nachdem ein Feld ausgewählt wurde
                     selectionPanel.SetActive(true);
@@ -124,8 +122,8 @@ public class AdventureScript : MonoBehaviour {
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-                            
-                            
+
+
                             switch (feld2.plantName)
                             {
                                 case "Tomato":
@@ -146,8 +144,8 @@ public class AdventureScript : MonoBehaviour {
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-                            
-                            
+
+
                             switch (feld3.plantName)
                             {
                                 case "Tomato":
@@ -167,9 +165,9 @@ public class AdventureScript : MonoBehaviour {
                         //siehe case 1
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
-                            cash.money = cash.money - price;                      
-                            
-                            
+                            cash.money = cash.money - price;
+
+
                             switch (feld4.plantName)
                             {
                                 case "Tomato":
@@ -186,7 +184,8 @@ public class AdventureScript : MonoBehaviour {
                                     break;
                             }
                             break;
-                        default: print("Fehler");
+                        default:
+                            print("Fehler");
                             break;
                     }
 
@@ -205,11 +204,6 @@ public class AdventureScript : MonoBehaviour {
             {
                 print("kein Collider erkannt");
             }*/
-
-                        
-
         }
-
-
     }
 }

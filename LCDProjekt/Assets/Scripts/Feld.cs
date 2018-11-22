@@ -10,8 +10,7 @@ public class Feld : MonoBehaviour {
     public int successRate;
     public bool shock;
     Collider2D collider1;
-
-
+    
     // Use this for initialization
     void Start () {
         collider1 = this.GetComponent<Collider2D>();
