@@ -21,6 +21,10 @@ public class AdventureScript : MonoBehaviour {
     public Sprite corn;
     public Sprite carrot;
     RaycastHit2D hit;
+    Collider2D collider1;
+    Collider2D collider2;
+    Collider2D collider3;
+    Collider2D collider4;
 
     public GameObject selectionPanel;
   
@@ -30,7 +34,14 @@ public class AdventureScript : MonoBehaviour {
     {
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
+
+        //Collider holen
+        collider1 = feld1.GetComponent<Collider2D>();
+        collider2 = feld2.GetComponent<Collider2D>();
+        collider3 = feld3.GetComponent<Collider2D>();
+        collider4 = feld4.GetComponent<Collider2D>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -65,6 +76,8 @@ public class AdventureScript : MonoBehaviour {
                 } else if (hit.collider.gameObject.tag == "Pflanze")
                 {
                     price = hit.collider.gameObject.GetComponent<Plant>().price;
+
+                    //Bei der Auswahl der Pflanze wird das passende Sprite für das Feld ausgewaehlt
                     switch (currentFeldId)
                     {
                         case 1:
@@ -155,6 +168,26 @@ public class AdventureScript : MonoBehaviour {
             {
                 print("kein Collider erkannt");
             }
+
+            //Sprites verändern sich nicht mehr wenn man die erste Pflanze ausgewaehlt hat.
+            if (feld1.plantName != null)
+            {
+                collider1.enabled = false;
+            }
+            else if(feld2.plantName != null)
+            {
+                collider2.enabled = false;
+            }
+            else if (feld3.plantName != null)
+            {
+                collider3.enabled = false;
+            }
+            else if (feld4.plantName != null)
+            {
+                collider4.enabled = false;
+            }
+
+
         }
 
 
