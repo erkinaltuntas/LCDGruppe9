@@ -26,6 +26,7 @@ public class AdventureScript : MonoBehaviour {
     Collider2D collider3;
     Collider2D collider4;
 
+
     public GameObject selectionPanel;
   
 
@@ -79,7 +80,11 @@ public class AdventureScript : MonoBehaviour {
 
                     //setzt currentFeldID auf die ID des ausgewhählten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
-                    
+                    collider1.enabled = false;
+                    collider2.enabled = false;
+                    collider3.enabled = false;
+                    collider4.enabled = false;
+
                 }
                 //Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze ist
                 else if (hit.collider.gameObject.tag == "Pflanze")
@@ -98,9 +103,6 @@ public class AdventureScript : MonoBehaviour {
                             //Zieht den Preis von dem aktuellen Geld ab
                             cash.money = cash.money - price;
 
-                            //Deaktiviert das Feld nachdem eine Pflanze ausgewählt wurde                            
-                            collider1.enabled = false;
-                            
                             //Passendes Sprite wird gesetzt
                             switch (feld1.plantName)
                             {
@@ -122,7 +124,7 @@ public class AdventureScript : MonoBehaviour {
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-                            collider2.enabled = false;
+                            
                             
                             switch (feld2.plantName)
                             {
@@ -144,7 +146,7 @@ public class AdventureScript : MonoBehaviour {
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-                            collider3.enabled = false;
+                            
                             
                             switch (feld3.plantName)
                             {
@@ -166,7 +168,7 @@ public class AdventureScript : MonoBehaviour {
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;                      
-                            collider4.enabled = false;
+                            
                             
                             switch (feld4.plantName)
                             {
@@ -187,6 +189,12 @@ public class AdventureScript : MonoBehaviour {
                         default: print("Fehler");
                             break;
                     }
+
+                    //Collider wieder verfügbar machen
+                    collider1.enabled = true;
+                    collider2.enabled = true;
+                    collider3.enabled = true;
+                    collider4.enabled = true;
 
                     //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);

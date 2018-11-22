@@ -5,19 +5,23 @@ using UnityEngine;
 public class Feld : MonoBehaviour {
 
     public int id;
-    public string plantName;
+    public string plantName = "";
     //wie viel Prozent der Ernte erfolgreich war
     public int successRate;
     public bool shock;
-    
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
+    Collider2D collider1;
+
+
+    // Use this for initialization
+    void Start () {
+        collider1 = this.GetComponent<Collider2D>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(plantName != "")
+        {
+            collider1.enabled = false; 
+        }
 	}
 }
