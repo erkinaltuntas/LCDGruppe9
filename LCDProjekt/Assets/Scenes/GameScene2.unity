@@ -21292,7 +21292,7 @@ MonoBehaviour:
   currentFeldId: 0
   price: 0
   player: {fileID: 259740252}
-  money: {fileID: 1132827447}
+  cash: {fileID: 1132827447}
   tomato: {fileID: 21300000, guid: f497ba26481207245a6e4a61c13fba76, type: 3}
   potato: {fileID: 21300000, guid: 075c9839f90f6d044a6c5b3e2b56eb27, type: 3}
   corn: {fileID: 21300000, guid: 4158cb4ad0756614ea1c74208e57cca2, type: 3}
