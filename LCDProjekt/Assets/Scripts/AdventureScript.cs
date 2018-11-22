@@ -15,7 +15,7 @@ public class AdventureScript : MonoBehaviour {
     public int currentFeldId;
     public int price;
     public Player player;
-    public Money money;
+    public Money cash;
     public Sprite tomato;
     public Sprite potato;
     public Sprite corn;
@@ -48,7 +48,8 @@ public class AdventureScript : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            print("Maus wurde gedrückt");
+            
+            //print("Maus wurde gedrückt");
 
             //Mausposition
             mousePos = Input.mousePosition;
@@ -65,24 +66,42 @@ public class AdventureScript : MonoBehaviour {
             //prüfe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
-                print("Objekt mit Collider getroffen");
+                //print("Objekt mit Collider getroffen");
+
                 //Ausgabe des getroffenen Objects
                 print(hit.collider.gameObject.name);
 
+                //Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist
                 if(hit.collider.gameObject.tag == "Feld" )
                 {
+                    //Zeigt das Auswahlfenster an, nachdem ein Feld ausgewählt wurde
                     selectionPanel.SetActive(true);
+
+                    //setzt currentFeldID auf die ID des ausgewhählten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
-                } else if (hit.collider.gameObject.tag == "Pflanze")
+                    
+                }
+                //Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze ist
+                else if (hit.collider.gameObject.tag == "Pflanze")
                 {
+                    //Setzt den Preis (price) auf den Preis der gewaehlten Pflanze
                     price = hit.collider.gameObject.GetComponent<Plant>().price;
 
-                    //Bei der Auswahl der Pflanze wird das passende Sprite für das Feld ausgewaehlt
+                    //Schaut nach welches Feld ausgewaehlt wurde
                     switch (currentFeldId)
                     {
+                        //Feld1 wurde ausgewaehlt
                         case 1:
+                            //Pflanzennamen des Feldes auf den Namen der Pflanze setzen
                             feld1.plantName = hit.collider.gameObject.name.ToString();
-                            money.money = money.money - price;
+
+                            //Zieht den Preis von dem aktuellen Geld ab
+                            cash.money = cash.money - price;
+
+                            //Deaktiviert das Feld nachdem eine Pflanze ausgewählt wurde                            
+                            collider1.enabled = false;
+                            
+                            //Passendes Sprite wird gesetzt
                             switch (feld1.plantName)
                             {
                                 case "Tomato":
@@ -99,9 +118,12 @@ public class AdventureScript : MonoBehaviour {
                                     break;
                             }
                             break;
+                        //siehe case 1
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
-                            money.money = money.money - price;
+                            cash.money = cash.money - price;
+                            collider2.enabled = false;
+                            
                             switch (feld2.plantName)
                             {
                                 case "Tomato":
@@ -118,9 +140,12 @@ public class AdventureScript : MonoBehaviour {
                                     break;
                             }
                             break;
+                        //siehe case 1
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
-                            money.money = money.money - price;
+                            cash.money = cash.money - price;
+                            collider3.enabled = false;
+                            
                             switch (feld3.plantName)
                             {
                                 case "Tomato":
@@ -137,9 +162,12 @@ public class AdventureScript : MonoBehaviour {
                                     break;
                             }
                             break;
+                        //siehe case 1
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
-                            money.money = money.money - price;
+                            cash.money = cash.money - price;                      
+                            collider4.enabled = false;
+                            
                             switch (feld4.plantName)
                             {
                                 case "Tomato":
@@ -160,33 +188,17 @@ public class AdventureScript : MonoBehaviour {
                             break;
                     }
 
+                    //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);
                 }
 
             }
-            else
+            /*else
             {
                 print("kein Collider erkannt");
-            }
+            }*/
 
-            //Sprites verändern sich nicht mehr wenn man die erste Pflanze ausgewaehlt hat.
-            if (feld1.plantName != null)
-            {
-                collider1.enabled = false;
-            }
-            else if(feld2.plantName != null)
-            {
-                collider2.enabled = false;
-            }
-            else if (feld3.plantName != null)
-            {
-                collider3.enabled = false;
-            }
-            else if (feld4.plantName != null)
-            {
-                collider4.enabled = false;
-            }
-
+                        
 
         }
 
