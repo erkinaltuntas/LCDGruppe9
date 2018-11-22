@@ -1,0 +1,28 @@
+
+#eingabe {
+	height: 400px; /* Höhe der div-Box */
+	width: 700px; /* Breite der div-Box */
+	margin-top: -100px;
+	position: absolute; /* positionieren */
+	top: 50%; /* in die Mitte verschieben */
+	left: auto;
+	right: auto;
+}
+
+.hide{
+	display: none;
+}
+
+.message {
+	display: none;
+	line-height: 1.5;
+	color: #333 !important;
+	text-align: left;
+	margin-top: 1em;
+	max-wigth: 33vw;
+}
+
+#failure {
+	position: absolute;
+	bottom: 0;
+}

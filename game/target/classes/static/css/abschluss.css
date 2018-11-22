@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+#eingabe {
+	height: 400px; /* Höhe der div-Box */
+	width: 1200px; /* Breite der div-Box */
+	margin-top: -100px;
+	position: absolute; /* positionieren */
+	top: 50%; /* in die Mitte verschieben */
+	left: auto;
+	right: auto;
+}

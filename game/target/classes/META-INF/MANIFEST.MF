@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: game
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Anna
+Implementation-Vendor-Id: de.niiio.game
+Build-Jdk: 1.8.0_191
+Implementation-URL: http://projects.spring.io/spring-boot/game/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
