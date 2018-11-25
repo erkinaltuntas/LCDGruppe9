@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 580352087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168ffb516a4b10d4683df890d9622374, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dc50c3f2ea7326418e1ca0a51d6b752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &633823260
@@ -2487,7 +2487,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 580352089}
-        m_MethodName: loadTutorial
+        m_MethodName: loadNextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

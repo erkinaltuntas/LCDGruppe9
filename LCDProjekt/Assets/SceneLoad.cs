@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour{
-
+public class SceneLoad : MonoBehaviour {
 
     //geht in die nächste Szene über
-    public void loadTutorial()
+    public void loadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

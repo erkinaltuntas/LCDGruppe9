@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AdventureScript : MonoBehaviour
 {
@@ -9,10 +10,7 @@ public class AdventureScript : MonoBehaviour
     public Vector3 mousePosWorld;
     public Camera mainCamera;
     public Vector2 mousePosWorld2D;
-    public Feld feld1;
-    public Feld feld2;
-    public Feld feld3;
-    public Feld feld4;
+    public Feld feld1, feld2, feld3, feld4;
     public int currentFeldId;
     public int price;
     public Player player;
@@ -26,6 +24,8 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider2;
     Collider2D collider3;
     Collider2D collider4;
+    bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
+    public GameObject nextLevelButton, HelpButton, WeatherButton;
 
     public GameObject selectionPanel;
 
@@ -76,6 +76,12 @@ public class AdventureScript : MonoBehaviour
                     //Zeigt das Auswahlfenster an, nachdem ein Feld ausgewählt wurde
                     selectionPanel.SetActive(true);
 
+                    ////
+                    HelpButton.SetActive(false);
+                    WeatherButton.SetActive(false);
+
+
+
                     //setzt currentFeldID auf die ID des ausgewhählten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
                     collider1.enabled = false;
@@ -101,6 +107,9 @@ public class AdventureScript : MonoBehaviour
                             //Zieht den Preis von dem aktuellen Geld ab
                             cash.money = cash.money - price;
 
+                            //Feld wird als fertig markiert
+                            feld1Checked = true;
+
                             //Passendes Sprite wird gesetzt
                             switch (feld1.plantName)
                             {
@@ -122,7 +131,8 @@ public class AdventureScript : MonoBehaviour
                         case 2:
                             feld2.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-
+                            
+                            feld2Checked = true;
 
                             switch (feld2.plantName)
                             {
@@ -140,11 +150,12 @@ public class AdventureScript : MonoBehaviour
                                     break;
                             }
                             break;
+
                         //siehe case 1
                         case 3:
                             feld3.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-
+                            feld3Checked = true;
 
                             switch (feld3.plantName)
                             {
@@ -166,7 +177,7 @@ public class AdventureScript : MonoBehaviour
                         case 4:
                             feld4.plantName = hit.collider.gameObject.name.ToString();
                             cash.money = cash.money - price;
-
+                            feld4Checked = true;
 
                             switch (feld4.plantName)
                             {
@@ -197,6 +208,8 @@ public class AdventureScript : MonoBehaviour
 
                     //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);
+                    HelpButton.SetActive(true);
+                    WeatherButton.SetActive(true);
                 }
 
             }
@@ -205,5 +218,14 @@ public class AdventureScript : MonoBehaviour
                 print("kein Collider erkannt");
             }*/
         }
+
+        if(feld1Checked && feld2Checked && feld3Checked && feld4Checked)
+        {
+            nextLevelButton.SetActive(true);
+            HelpButton.SetActive(false);
+            WeatherButton.SetActive(false);
+        }
+        
+
     }
 }
