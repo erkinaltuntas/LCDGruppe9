@@ -19,6 +19,7 @@ public class AdventureScript : MonoBehaviour
     public Sprite potato;
     public Sprite corn;
     public Sprite carrot;
+    public Sprite empty;
     RaycastHit2D hit;
     Collider2D collider1;
     Collider2D collider2;
@@ -125,6 +126,9 @@ public class AdventureScript : MonoBehaviour
                                 case "Potato":
                                     feld1.GetComponent<SpriteRenderer>().sprite = potato;
                                     break;
+                                case "Empty":
+                                    feld1.GetComponent<SpriteRenderer>().sprite = empty;
+                                    break;
                             }
                             break;
                         //siehe case 1
@@ -147,6 +151,9 @@ public class AdventureScript : MonoBehaviour
                                     break;
                                 case "Potato":
                                     feld2.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                                case "Empty":
+                                    feld2.GetComponent<SpriteRenderer>().sprite = empty;
                                     break;
                             }
                             break;
@@ -171,6 +178,9 @@ public class AdventureScript : MonoBehaviour
                                 case "Potato":
                                     feld3.GetComponent<SpriteRenderer>().sprite = potato;
                                     break;
+                                case "Empty":
+                                    feld3.GetComponent<SpriteRenderer>().sprite = empty;
+                                    break;
                             }
                             break;
                         //siehe case 1
@@ -192,6 +202,9 @@ public class AdventureScript : MonoBehaviour
                                     break;
                                 case "Potato":
                                     feld4.GetComponent<SpriteRenderer>().sprite = potato;
+                                    break;
+                                case "Empty":
+                                    feld4.GetComponent<SpriteRenderer>().sprite = empty;
                                     break;
                             }
                             break;

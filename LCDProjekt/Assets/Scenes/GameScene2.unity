@@ -21433,6 +21433,7 @@ MonoBehaviour:
   potato: {fileID: 21300000, guid: 075c9839f90f6d044a6c5b3e2b56eb27, type: 3}
   corn: {fileID: 21300000, guid: 4158cb4ad0756614ea1c74208e57cca2, type: 3}
   carrot: {fileID: 21300000, guid: a891c5a06838b974ebc2a697f1b4cdd3, type: 3}
+  empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
   nextLevelButton: {fileID: 608275747}
   HelpButton: {fileID: 169976510}
   WeatherButton: {fileID: 748991015}
@@ -22484,7 +22485,7 @@ GameObject:
   - component: {fileID: 2036270025}
   - component: {fileID: 2036270024}
   m_Layer: 0
-  m_Name: Leeres Feld
+  m_Name: Empty
   m_TagString: Pflanze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
