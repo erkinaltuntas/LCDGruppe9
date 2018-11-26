@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AdventureScript : MonoBehaviour
 {
@@ -27,14 +28,16 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
     public GameObject nextLevelButton, HelpButton, WeatherButton;
-
     public GameObject selectionPanel;
+    public TextMeshProUGUI errorMessage;
 
     // Use this for initialization
     void Start()
     {
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
+        errorMessage.text = "";
+        
 
         //Collider holen
         collider1 = feld1.GetComponent<Collider2D>();
@@ -94,125 +97,130 @@ public class AdventureScript : MonoBehaviour
                 //Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze ist
                 else if (hit.collider.gameObject.tag == "Pflanze")
                 {
-                    //Setzt den Preis (price) auf den Preis der gewaehlten Pflanze
-                    price = hit.collider.gameObject.GetComponent<Plant>().price;
-
-                    //Schaut nach welches Feld ausgewaehlt wurde
-                    switch (currentFeldId)
+                    if (cash.money >= hit.collider.gameObject.GetComponent<Plant>().price)
                     {
-                        //Feld1 wurde ausgewaehlt
-                        case 1:
-                            //Pflanzennamen des Feldes auf den Namen der Pflanze setzen
-                            feld1.plantName = hit.collider.gameObject.name.ToString();
+                        errorMessage.text = "";
 
-                            //Zieht den Preis von dem aktuellen Geld ab
-                            cash.money = cash.money - price;
+                        //Setzt den Preis (price) auf den Preis der gewaehlten Pflanze
+                        price = hit.collider.gameObject.GetComponent<Plant>().price;
 
-                            //Feld wird als fertig markiert
-                            feld1Checked = true;
+                        //Schaut nach welches Feld ausgewaehlt wurde
+                        switch (currentFeldId)
+                        {
+                            //Feld1 wurde ausgewaehlt
+                            case 1:
+                                //Pflanzennamen des Feldes auf den Namen der Pflanze setzen
+                                feld1.plantName = hit.collider.gameObject.name.ToString();
 
-                            //Passendes Sprite wird gesetzt
-                            switch (feld1.plantName)
-                            {
-                                case "Tomato":
-                                    feld1.GetComponent<SpriteRenderer>().sprite = tomato;
-                                    break;
-                                case "Carrot":
-                                    feld1.GetComponent<SpriteRenderer>().sprite = carrot;
-                                    break;
-                                case "Corn":
-                                    feld1.GetComponent<SpriteRenderer>().sprite = corn;
-                                    break;
-                                case "Potato":
-                                    feld1.GetComponent<SpriteRenderer>().sprite = potato;
-                                    break;
-                                case "Empty":
-                                    feld1.GetComponent<SpriteRenderer>().sprite = empty;
-                                    break;
-                            }
-                            break;
-                        //siehe case 1
-                        case 2:
-                            feld2.plantName = hit.collider.gameObject.name.ToString();
-                            cash.money = cash.money - price;
-                            
-                            feld2Checked = true;
+                                //Zieht den Preis von dem aktuellen Geld ab
+                                cash.money = cash.money - price;
 
-                            switch (feld2.plantName)
-                            {
-                                case "Tomato":
-                                    feld2.GetComponent<SpriteRenderer>().sprite = tomato;
-                                    break;
-                                case "Carrot":
-                                    feld2.GetComponent<SpriteRenderer>().sprite = carrot;
-                                    break;
-                                case "Corn":
-                                    feld2.GetComponent<SpriteRenderer>().sprite = corn;
-                                    break;
-                                case "Potato":
-                                    feld2.GetComponent<SpriteRenderer>().sprite = potato;
-                                    break;
-                                case "Empty":
-                                    feld2.GetComponent<SpriteRenderer>().sprite = empty;
-                                    break;
-                            }
-                            break;
+                                //Feld wird als fertig markiert
+                                feld1Checked = true;
 
-                        //siehe case 1
-                        case 3:
-                            feld3.plantName = hit.collider.gameObject.name.ToString();
-                            cash.money = cash.money - price;
-                            feld3Checked = true;
+                                //Passendes Sprite wird gesetzt
+                                switch (feld1.plantName)
+                                {
+                                    case "Tomato":
+                                        feld1.GetComponent<SpriteRenderer>().sprite = tomato;
+                                        break;
+                                    case "Carrot":
+                                        feld1.GetComponent<SpriteRenderer>().sprite = carrot;
+                                        break;
+                                    case "Corn":
+                                        feld1.GetComponent<SpriteRenderer>().sprite = corn;
+                                        break;
+                                    case "Potato":
+                                        feld1.GetComponent<SpriteRenderer>().sprite = potato;
+                                        break;
+                                    case "Empty":
+                                        feld1.GetComponent<SpriteRenderer>().sprite = empty;
+                                        break;
+                                }
+                                break;
+                            //siehe case 1
+                            case 2:
+                                feld2.plantName = hit.collider.gameObject.name.ToString();
+                                cash.money = cash.money - price;
 
-                            switch (feld3.plantName)
-                            {
-                                case "Tomato":
-                                    feld3.GetComponent<SpriteRenderer>().sprite = tomato;
-                                    break;
-                                case "Carrot":
-                                    feld3.GetComponent<SpriteRenderer>().sprite = carrot;
-                                    break;
-                                case "Corn":
-                                    feld3.GetComponent<SpriteRenderer>().sprite = corn;
-                                    break;
-                                case "Potato":
-                                    feld3.GetComponent<SpriteRenderer>().sprite = potato;
-                                    break;
-                                case "Empty":
-                                    feld3.GetComponent<SpriteRenderer>().sprite = empty;
-                                    break;
-                            }
-                            break;
-                        //siehe case 1
-                        case 4:
-                            feld4.plantName = hit.collider.gameObject.name.ToString();
-                            cash.money = cash.money - price;
-                            feld4Checked = true;
+                                feld2Checked = true;
 
-                            switch (feld4.plantName)
-                            {
-                                case "Tomato":
-                                    feld4.GetComponent<SpriteRenderer>().sprite = tomato;
-                                    break;
-                                case "Carrot":
-                                    feld4.GetComponent<SpriteRenderer>().sprite = carrot;
-                                    break;
-                                case "Corn":
-                                    feld4.GetComponent<SpriteRenderer>().sprite = corn;
-                                    break;
-                                case "Potato":
-                                    feld4.GetComponent<SpriteRenderer>().sprite = potato;
-                                    break;
-                                case "Empty":
-                                    feld4.GetComponent<SpriteRenderer>().sprite = empty;
-                                    break;
-                            }
-                            break;
-                        default:
-                            print("Fehler");
-                            break;
-                    }
+                                switch (feld2.plantName)
+                                {
+                                    case "Tomato":
+                                        feld2.GetComponent<SpriteRenderer>().sprite = tomato;
+                                        break;
+                                    case "Carrot":
+                                        feld2.GetComponent<SpriteRenderer>().sprite = carrot;
+                                        break;
+                                    case "Corn":
+                                        feld2.GetComponent<SpriteRenderer>().sprite = corn;
+                                        break;
+                                    case "Potato":
+                                        feld2.GetComponent<SpriteRenderer>().sprite = potato;
+                                        break;
+                                    case "Empty":
+                                        feld2.GetComponent<SpriteRenderer>().sprite = empty;
+                                        break;
+                                }
+                                break;
 
+                            //siehe case 1
+                            case 3:
+                                feld3.plantName = hit.collider.gameObject.name.ToString();
+                                cash.money = cash.money - price;
+                                feld3Checked = true;
+
+                                switch (feld3.plantName)
+                                {
+                                    case "Tomato":
+                                        feld3.GetComponent<SpriteRenderer>().sprite = tomato;
+                                        break;
+                                    case "Carrot":
+                                        feld3.GetComponent<SpriteRenderer>().sprite = carrot;
+                                        break;
+                                    case "Corn":
+                                        feld3.GetComponent<SpriteRenderer>().sprite = corn;
+                                        break;
+                                    case "Potato":
+                                        feld3.GetComponent<SpriteRenderer>().sprite = potato;
+                                        break;
+                                    case "Empty":
+                                        feld3.GetComponent<SpriteRenderer>().sprite = empty;
+                                        break;
+                                }
+                                break;
+                            //siehe case 1
+                            case 4:
+                                feld4.plantName = hit.collider.gameObject.name.ToString();
+                                cash.money = cash.money - price;
+                                feld4Checked = true;
+
+                                switch (feld4.plantName)
+                                {
+                                    case "Tomato":
+                                        feld4.GetComponent<SpriteRenderer>().sprite = tomato;
+                                        break;
+                                    case "Carrot":
+                                        feld4.GetComponent<SpriteRenderer>().sprite = carrot;
+                                        break;
+                                    case "Corn":
+                                        feld4.GetComponent<SpriteRenderer>().sprite = corn;
+                                        break;
+                                    case "Potato":
+                                        feld4.GetComponent<SpriteRenderer>().sprite = potato;
+                                        break;
+                                    case "Empty":
+                                        feld4.GetComponent<SpriteRenderer>().sprite = empty;
+                                        break;
+                                }
+                                break;
+                            default:
+                                print("Fehler");
+                                break;
+                        }
+
+                    
                     //Collider wieder verfügbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
@@ -223,6 +231,11 @@ public class AdventureScript : MonoBehaviour
                     selectionPanel.SetActive(false);
                     HelpButton.SetActive(true);
                     WeatherButton.SetActive(true);
+                    }
+                    else
+                    {
+                        errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                    }
                 }
 
             }
