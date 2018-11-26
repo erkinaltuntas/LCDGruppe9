@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 637113d941da01d4194da02269416727
   - enabled: 1
+    path: "Assets/Scenes/Einf\xFChrung.unity"
+    guid: 889fdb30c0b1727468a9b247e1e198af
+  - enabled: 1
     path: Assets/Scenes/Tutorial1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
