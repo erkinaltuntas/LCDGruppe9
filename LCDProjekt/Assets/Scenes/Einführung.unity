@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 485004428}
   - component: {fileID: 485004430}
   - component: {fileID: 485004429}
+  - component: {fileID: 485004431}
   m_Layer: 0
   m_Name: Text1
   m_TagString: Untagged
@@ -331,8 +332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.21, y: 0.21}
-  m_SizeDelta: {x: 570.087, y: 212.819}
+  m_AnchoredPosition: {x: 0.17, y: 0.271}
+  m_SizeDelta: {x: 570.087, y: 182.388}
   m_Pivot: {x: 0.52320445, y: 0.5}
 --- !u!114 &485004429
 MonoBehaviour:
@@ -358,7 +359,7 @@ MonoBehaviour:
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -366,9 +367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hallo, mein Liebling. \n\nWir m\xF6chten dir schon etwas fr\xFCher als
-    du vielleicht erwartet h\xE4ttest etwas vererben.\n\nGro\xDFvater und ich werden
-    immer \xE4lter\u2026 und die Arbeit nicht leichter"
+  m_Text: 
 --- !u!222 &485004430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -376,6 +375,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485004427}
   m_CullTransparentMesh: 0
+--- !u!114 &485004431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485004427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.005
+  fullText: "Hallo, mein Liebling. Wir m\xF6chten dir schon etwas fr\xFCher als du
+    vielleicht erwartet h\xE4ttest etwas vererben. Gro\xDFvater und ich werden immer
+    \xE4lter\u2026 und die Arbeit nicht leichter."
 --- !u!1 &589031785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1272,7 @@ GameObject:
   - component: {fileID: 1235848541}
   - component: {fileID: 1235848543}
   - component: {fileID: 1235848542}
+  - component: {fileID: 1235848544}
   m_Layer: 0
   m_Name: Text4
   m_TagString: Untagged
@@ -1315,7 +1330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pass gut auf! Ich zeig dir jetzt erst mal wie das ganze funktioniert \u2026."
+  m_Text: 
 --- !u!222 &1235848543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1323,6 +1338,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1235848540}
   m_CullTransparentMesh: 0
+--- !u!114 &1235848544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235848540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.005
+  fullText: "Pass gut auf! Ich zeig dir jetzt erst mal wie das ganze funktioniert
+    \u2026."
 --- !u!1 &1258782604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1725,7 @@ GameObject:
   - component: {fileID: 1552667500}
   - component: {fileID: 1552667502}
   - component: {fileID: 1552667501}
+  - component: {fileID: 1552667503}
   m_Layer: 0
   m_Name: Text2
   m_TagString: Untagged
@@ -1753,9 +1783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Die Farm\u2026 \n\nSie ist unser kostbarster Besitz \u2026 und jetzt geh\xF6rt
-    sie dir!\n\nWir trennen uns wirklich nur schweren Herzens von unserem Hof, aber
-    wir wissen, dass du ihn w\xFCrdig und profitabel fortf\xFChren wirst."
+  m_Text: 
 --- !u!222 &1552667502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1763,6 +1791,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552667499}
   m_CullTransparentMesh: 0
+--- !u!114 &1552667503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552667499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.005
+  fullText: "Die Farm\u2026   Sie ist unser kostbarster Besitz \u2026 und jetzt geh\xF6rt
+    sie dir!  Wir trennen uns wirklich nur schweren Herzens von unserem Hof, aber
+    wir wissen, dass du ihn w\xFCrdig und profitabel fortf\xFChren wirst."
 --- !u!1 &1733174758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1816,7 @@ GameObject:
   - component: {fileID: 1733174759}
   - component: {fileID: 1733174761}
   - component: {fileID: 1733174760}
+  - component: {fileID: 1733174762}
   m_Layer: 0
   m_Name: Text3
   m_TagString: Untagged
@@ -1830,10 +1874,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gro\xDFvater und ich werden in eine betreute Wohngemeinschaft f\xFCr Senioren
-    ziehen.\n\nEs hat sehr lange gedauert, ihn zu \xFCberreden. Aber jetzt ist es
-    Zeit.\n\nWir werden dich jedoch in einem Jahr besuchen, um unsere alte Farm noch
-    einmal begutachten zu k\xF6nnen. "
+  m_Text: 
 --- !u!222 &1733174761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1841,6 +1882,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733174758}
   m_CullTransparentMesh: 0
+--- !u!114 &1733174762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733174758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.005
+  fullText: "Gro\xDFvater und ich werden in eine betreute Wohngemeinschaft f\xFCr
+    Senioren ziehen.  Es hat sehr lange gedauert, ihn zu \xFCberreden. Aber jetzt
+    ist es Zeit.  Wir werden dich jedoch in einem Jahr besuchen, um unsere alte Farm
+    noch einmal begutachten zu k\xF6nnen. "
 --- !u!1 &1777906608
 GameObject:
   m_ObjectHideFlags: 0
