@@ -27,7 +27,7 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider3;
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
-    public GameObject nextLevelButton, HelpButton, WeatherButton;
+    public GameObject ErnteButton, HelpButton, WeatherButton;
     public GameObject selectionPanel;
     public TextMeshProUGUI errorMessage;
     public Button ExitSelectionPanelButton;
@@ -266,7 +266,7 @@ public class AdventureScript : MonoBehaviour
 
         if(feld1Checked && feld2Checked && feld3Checked && feld4Checked)
         {
-            nextLevelButton.SetActive(true);
+            ErnteButton.SetActive(true);
             HelpButton.SetActive(false);
             WeatherButton.SetActive(false);
         }
