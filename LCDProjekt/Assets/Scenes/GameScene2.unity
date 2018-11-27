@@ -3552,6 +3552,7 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
 --- !u!60 &294171419
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4441,6 +4442,7 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
 --- !u!60 &339580794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7283,7 +7285,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07212609, y: -0.0000013709068}
+  m_Offset: {x: 0.035300255, y: 0.11048806}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7294,7 +7296,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6944846, y: 1.9829844}
+  m_Size: {x: 6.776964, y: 7.065445}
   m_EdgeRadius: 0
 --- !u!212 &572658697
 SpriteRenderer:
@@ -14402,6 +14404,7 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
 --- !u!60 &1173560663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20226,6 +20229,7 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
 --- !u!60 &1672647263
 PolygonCollider2D:
   m_ObjectHideFlags: 0
