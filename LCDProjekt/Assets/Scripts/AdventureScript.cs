@@ -27,10 +27,9 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider3;
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
-    public GameObject ErnteButton, HelpButton, WeatherButton;
-    public GameObject selectionPanel;
+    public GameObject helpButton, weatherButton, nextLevelButton;
+    public GameObject selectionPanel, erntePanel;
     public TextMeshProUGUI errorMessage;
-    public Button ExitSelectionPanelButton;
 
 
     // Use this for initialization
@@ -38,7 +37,6 @@ public class AdventureScript : MonoBehaviour
     {
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
-        ExitSelectionPanelButton = selectionPanel.GetComponent<Button>();
         errorMessage.text = "";
         
 
@@ -84,8 +82,8 @@ public class AdventureScript : MonoBehaviour
                     selectionPanel.SetActive(true);
 
                     ////
-                    HelpButton.SetActive(false);
-                    WeatherButton.SetActive(false);
+                    helpButton.SetActive(false);
+                    weatherButton.SetActive(false);
 
                     
 
@@ -239,8 +237,8 @@ public class AdventureScript : MonoBehaviour
 
                     //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);
-                    HelpButton.SetActive(true);
-                    WeatherButton.SetActive(true);
+                    helpButton.SetActive(true);
+                    weatherButton.SetActive(true);
                     }
                     else
                     {
@@ -258,8 +256,8 @@ public class AdventureScript : MonoBehaviour
 
                     //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);
-                    HelpButton.SetActive(true);
-                    WeatherButton.SetActive(true);
+                    helpButton.SetActive(true);
+                    weatherButton.SetActive(true);
                 }
             }
             
@@ -271,11 +269,17 @@ public class AdventureScript : MonoBehaviour
 
         if(feld1Checked && feld2Checked && feld3Checked && feld4Checked)
         {
-            ErnteButton.SetActive(true);
-            HelpButton.SetActive(false);
-            WeatherButton.SetActive(false);
+            erntePanel.SetActive(true);
+            helpButton.SetActive(false);
+            weatherButton.SetActive(false);
         }
-        
+
+        if (feld1.feldIsHarvested && feld2.feldIsHarvested && feld3.feldIsHarvested && feld4.feldIsHarvested)
+        {
+            erntePanel.SetActive(false);
+            nextLevelButton.SetActive(true);
+        }
+
 
     }
 }

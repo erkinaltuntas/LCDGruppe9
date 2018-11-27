@@ -9,10 +9,12 @@ public class Harvest : MonoBehaviour {
     public Button button;
     public int profit;
     public Sprite empty;
+    
 
     // Use this for initialization
     void Start () {
         button.onClick.AddListener(TaskOnClick);
+        
     }
 	
 	// Update is called once per frame
@@ -24,6 +26,8 @@ public class Harvest : MonoBehaviour {
     {
         profit = calculate();
         feld.GetComponent<SpriteRenderer>().sprite = empty;
+        feld.feldIsHarvested = true;
+        
     }
 
     int calculate()
