@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogController : MonoBehaviour {
+public class DialogController4 : MonoBehaviour {
     public float delay = 0.005f;
-    public string fullText;
+    private string fullText1 = "Pass gut auf!" + Environment.NewLine + Environment.NewLine + "Ich zeige dir mal wie das Ganze funktioniert....";
     private string currentText = "";
-
+    
     // Use this for initialization
     void Start() {
         StartCoroutine(ShowText());
@@ -15,9 +16,9 @@ public class DialogController : MonoBehaviour {
 
     private IEnumerator ShowText()
     {
-        for(int i=0; i<fullText.Length; i++)
+        for(int i=0; i<fullText1.Length; i++)
         {
-            currentText = fullText.Substring(0, i);
+            currentText = fullText1.Substring(0, i);
             this.GetComponent<Text>().text = currentText;
             yield return new WaitForSeconds(delay);
         }

@@ -387,9 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.005
-  fullText: "Hallo, mein Liebling. Wir m\xF6chten dir schon etwas fr\xFCher als du
-    vielleicht erwartet h\xE4ttest etwas vererben. Gro\xDFvater und ich werden immer
-    \xE4lter\u2026 und die Arbeit nicht leichter."
 --- !u!1 &589031785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,12 +1343,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1235848540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Script: {fileID: 11500000, guid: a4ba8654663ea2144aa453f99bdeb180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.005
-  fullText: "Pass gut auf! Ich zeig dir jetzt erst mal wie das ganze funktioniert
-    \u2026."
 --- !u!1 &1258782604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,13 +1794,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552667499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d4bd06f21e98cd40b5f8252ae32c830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.005
-  fullText: "Die Farm\u2026   Sie ist unser kostbarster Besitz \u2026 und jetzt geh\xF6rt
-    sie dir!  Wir trennen uns wirklich nur schweren Herzens von unserem Hof, aber
-    wir wissen, dass du ihn w\xFCrdig und profitabel fortf\xFChren wirst."
 --- !u!1 &1733174758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,14 +1882,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733174758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 444275f03b0543544a6a00eb1ea78396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.005
-  fullText: "Gro\xDFvater und ich werden in eine betreute Wohngemeinschaft f\xFCr
-    Senioren ziehen.  Es hat sehr lange gedauert, ihn zu \xFCberreden. Aber jetzt
-    ist es Zeit.  Wir werden dich jedoch in einem Jahr besuchen, um unsere alte Farm
-    noch einmal begutachten zu k\xF6nnen. "
 --- !u!1 &1777906608
 GameObject:
   m_ObjectHideFlags: 0
