@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Feld
   - Pflanze
+  - ErnteBtn
   layers:
   - Default
   - TransparentFX
