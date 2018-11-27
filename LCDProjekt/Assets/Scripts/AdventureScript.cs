@@ -30,12 +30,15 @@ public class AdventureScript : MonoBehaviour
     public GameObject nextLevelButton, HelpButton, WeatherButton;
     public GameObject selectionPanel;
     public TextMeshProUGUI errorMessage;
+    public Button ExitSelectionPanelButton;
+
 
     // Use this for initialization
     void Start()
     {
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
+        ExitSelectionPanelButton = selectionPanel.GetComponent<Button>();
         errorMessage.text = "";
         
 
@@ -83,6 +86,8 @@ public class AdventureScript : MonoBehaviour
                     ////
                     HelpButton.SetActive(false);
                     WeatherButton.SetActive(false);
+
+                    
 
 
 
@@ -237,8 +242,22 @@ public class AdventureScript : MonoBehaviour
                         errorMessage.text = "Sie haben nicht genügend Guthaben!";
                     }
                 }
+                else if(hit.collider.gameObject.name == "ExitSelectionPanel")
+                {
 
+                    //Collider wieder verfügbar machen
+                    collider1.enabled = true;
+                    collider2.enabled = true;
+                    collider3.enabled = true;
+                    collider4.enabled = true;
+
+                    //Auswahlfenster deaktivieren
+                    selectionPanel.SetActive(false);
+                    HelpButton.SetActive(true);
+                    WeatherButton.SetActive(true);
+                }
             }
+            
             /*else
             {
                 print("kein Collider erkannt");
