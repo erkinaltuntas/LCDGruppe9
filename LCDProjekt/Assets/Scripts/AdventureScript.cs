@@ -27,7 +27,7 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider3;
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
-    public GameObject nextLevelButton, HelpButton, WeatherButton;
+    public GameObject ErnteButton, HelpButton, WeatherButton;
     public GameObject selectionPanel;
     public TextMeshProUGUI errorMessage;
     public Button ExitSelectionPanelButton;
@@ -117,6 +117,8 @@ public class AdventureScript : MonoBehaviour
                                 //Pflanzennamen des Feldes auf den Namen der Pflanze setzen
                                 feld1.plantName = hit.collider.gameObject.name.ToString();
 
+                                feld1.plant = hit.collider.gameObject.GetComponent<Plant>();
+
                                 //Zieht den Preis von dem aktuellen Geld ab
                                 cash.money = cash.money - price;
 
@@ -146,6 +148,7 @@ public class AdventureScript : MonoBehaviour
                             //siehe case 1
                             case 2:
                                 feld2.plantName = hit.collider.gameObject.name.ToString();
+                                feld2.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
 
                                 feld2Checked = true;
@@ -173,6 +176,7 @@ public class AdventureScript : MonoBehaviour
                             //siehe case 1
                             case 3:
                                 feld3.plantName = hit.collider.gameObject.name.ToString();
+                                feld3.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
                                 feld3Checked = true;
 
@@ -198,6 +202,7 @@ public class AdventureScript : MonoBehaviour
                             //siehe case 1
                             case 4:
                                 feld4.plantName = hit.collider.gameObject.name.ToString();
+                                feld4.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
                                 feld4Checked = true;
 
@@ -266,7 +271,7 @@ public class AdventureScript : MonoBehaviour
 
         if(feld1Checked && feld2Checked && feld3Checked && feld4Checked)
         {
-            nextLevelButton.SetActive(true);
+            ErnteButton.SetActive(true);
             HelpButton.SetActive(false);
             WeatherButton.SetActive(false);
         }
