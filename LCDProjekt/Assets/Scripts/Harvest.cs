@@ -8,9 +8,10 @@ public class Harvest : MonoBehaviour {
     public Feld feld;
     public Button button;
     public int profit;
-    
+    public Sprite empty;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         button.onClick.AddListener(TaskOnClick);
     }
 	
@@ -22,6 +23,7 @@ public class Harvest : MonoBehaviour {
     void TaskOnClick()
     {
         profit = calculate();
+        feld.GetComponent<SpriteRenderer>().sprite = empty;
     }
 
     int calculate()
