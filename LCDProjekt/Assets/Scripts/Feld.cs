@@ -9,6 +9,7 @@ public class Feld : MonoBehaviour {
     //wie viel Prozent der Ernte erfolgreich war
     public int successRate;
     public bool shock;
+    public Plant plant;
     Collider2D collider1;
     
     // Use this for initialization
