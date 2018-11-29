@@ -10497,6 +10497,7 @@ MonoBehaviour:
   button: {fileID: 845177034}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
+  cash: {fileID: 1132827447}
 --- !u!1 &845596462
 GameObject:
   m_ObjectHideFlags: 0
@@ -14950,6 +14951,7 @@ MonoBehaviour:
   button: {fileID: 1206446452}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
+  cash: {fileID: 1132827447}
 --- !u!1 &1214652421
 GameObject:
   m_ObjectHideFlags: 0
@@ -20841,6 +20843,7 @@ MonoBehaviour:
   button: {fileID: 1694987038}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
+  cash: {fileID: 1132827447}
 --- !u!1 &1698695168
 GameObject:
   m_ObjectHideFlags: 0
@@ -21054,6 +21057,7 @@ MonoBehaviour:
   button: {fileID: 1707419457}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
+  cash: {fileID: 1132827447}
 --- !u!1 &1708453879
 GameObject:
   m_ObjectHideFlags: 0
