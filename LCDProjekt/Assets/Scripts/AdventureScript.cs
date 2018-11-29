@@ -50,6 +50,12 @@ public class AdventureScript : MonoBehaviour
         collider3 = feld3.GetComponent<Collider2D>();
         collider4 = feld4.GetComponent<Collider2D>();
 
+        //Collider beim Start deaktivieren
+        collider1.enabled = false;
+        collider2.enabled = false;
+        collider3.enabled = false;
+        collider4.enabled = false;
+
         //Button beim Start deaktivieren
         tutBut.interactable = false;
         weatherBut.interactable = false;
