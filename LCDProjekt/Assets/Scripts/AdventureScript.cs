@@ -30,6 +30,8 @@ public class AdventureScript : MonoBehaviour
     public GameObject helpButton, weatherButton, nextLevelButton;
     public GameObject selectionPanel, erntePanel;
     public TextMeshProUGUI errorMessage;
+    public Button tutBut;
+    public Button weatherBut;
 
 
     // Use this for initialization
@@ -45,6 +47,10 @@ public class AdventureScript : MonoBehaviour
         collider2 = feld2.GetComponent<Collider2D>();
         collider3 = feld3.GetComponent<Collider2D>();
         collider4 = feld4.GetComponent<Collider2D>();
+
+        //Button beim Start deaktivieren
+        tutBut.interactable = false;
+        weatherBut.interactable = false;
     }
 
 
