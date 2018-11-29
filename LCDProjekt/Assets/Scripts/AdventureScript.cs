@@ -28,7 +28,7 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
     public GameObject helpButton, weatherButton, nextLevelButton;
-    public GameObject selectionPanel, erntePanel;
+    public GameObject selectionPanel, erntePanel, balancePanel; 
     public TextMeshProUGUI errorMessage;
     public Button tutBut;
     public Button weatherBut;
@@ -40,7 +40,9 @@ public class AdventureScript : MonoBehaviour
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
         errorMessage.text = "";
-        
+
+        //make BalancePanel invisible
+        balancePanel.SetActive(false);
 
         //Collider holen
         collider1 = feld1.GetComponent<Collider2D>();
