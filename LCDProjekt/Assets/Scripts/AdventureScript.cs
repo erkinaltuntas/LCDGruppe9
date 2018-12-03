@@ -30,8 +30,6 @@ public class AdventureScript : MonoBehaviour
     public GameObject helpButton, weatherButton, nextLevelButton;
     public GameObject selectionPanel, erntePanel, balancePanel;
     public TextMeshProUGUI errorMessage;
-    public Button tutBut;
-    public Button weatherBut;
     public GameObject tomatoObj;
     public GameObject potatoObj;
     public GameObject cornObj;
@@ -62,8 +60,9 @@ public class AdventureScript : MonoBehaviour
         collider4.enabled = false;
 
         //Button beim Start deaktivieren
-        tutBut.interactable = false;
-        weatherBut.interactable = false;
+        weatherButton.SetActive(false);
+        helpButton.SetActive(false);
+
     }
 
 
