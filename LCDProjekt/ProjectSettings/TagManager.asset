@@ -7,6 +7,7 @@ TagManager:
   - Feld
   - Pflanze
   - ErnteBtn
+  - chicken
   layers:
   - Default
   - TransparentFX
