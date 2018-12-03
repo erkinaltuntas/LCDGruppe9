@@ -33,7 +33,7 @@ public class Harvest : MonoBehaviour {
         profit = calculate();
         cash.money = cash.money + profit;
         feld.GetComponent<SpriteRenderer>().sprite = empty;
-        feld.feldIsHarvested = true;
+        feld.fieldIsHarvested = true;
         //make BalancePanel visible
         balancePanel.SetActive(true);
         balanceMessage.text = "Verlust durch Frost:" + Environment.NewLine + missErnteQuote + "%";

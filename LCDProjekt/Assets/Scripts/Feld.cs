@@ -11,7 +11,7 @@ public class Feld : MonoBehaviour {
     public bool shock;
     public Plant plant;
     Collider2D collider1;
-    public bool feldIsHarvested;
+    public bool fieldIsHarvested;
     
     // Use this for initialization
     void Start () {

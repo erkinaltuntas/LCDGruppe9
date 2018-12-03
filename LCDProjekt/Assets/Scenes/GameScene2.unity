@@ -4274,7 +4274,7 @@ MonoBehaviour:
   successRate: 0
   shock: 0
   plant: {fileID: 0}
-  feldIsHarvested: 0
+  fieldIsHarvested: 0
 --- !u!60 &294171419
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5263,7 +5263,7 @@ MonoBehaviour:
   successRate: 0
   shock: 0
   plant: {fileID: 0}
-  feldIsHarvested: 0
+  fieldIsHarvested: 0
 --- !u!60 &339580794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6709,7 +6709,7 @@ GameObject:
   - component: {fileID: 430566659}
   - component: {fileID: 430566658}
   m_Layer: 5
-  m_Name: ErntePanel
+  m_Name: HarvestPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12772,7 +12772,7 @@ GameObject:
   - component: {fileID: 845177038}
   - component: {fileID: 845177040}
   m_Layer: 5
-  m_Name: ErnteFeld2Button
+  m_Name: HarvestField2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16481,7 +16481,7 @@ GameObject:
   - component: {fileID: 1118007629}
   - component: {fileID: 1118007628}
   m_Layer: 5
-  m_Name: LeistePanel
+  m_Name: BarPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17560,7 +17560,7 @@ MonoBehaviour:
   successRate: 0
   shock: 0
   plant: {fileID: 0}
-  feldIsHarvested: 0
+  fieldIsHarvested: 0
 --- !u!60 &1173560663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17980,7 +17980,7 @@ GameObject:
   - component: {fileID: 1206446457}
   - component: {fileID: 1206446456}
   m_Layer: 5
-  m_Name: ErnteFeld4Button
+  m_Name: HarvestField4Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21906,7 +21906,7 @@ GameObject:
   - component: {fileID: 1503602566}
   - component: {fileID: 1503602565}
   m_Layer: 5
-  m_Name: Geldanzeige
+  m_Name: MoneyDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24637,7 +24637,7 @@ MonoBehaviour:
   successRate: 0
   shock: 0
   plant: {fileID: 0}
-  feldIsHarvested: 0
+  fieldIsHarvested: 0
 --- !u!60 &1672647263
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24756,7 +24756,7 @@ GameObject:
   - component: {fileID: 1691262521}
   - component: {fileID: 1691262520}
   m_Layer: 5
-  m_Name: JetztErntenButton
+  m_Name: HarvestAllButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25233,7 +25233,7 @@ GameObject:
   - component: {fileID: 1694987042}
   - component: {fileID: 1694987044}
   m_Layer: 5
-  m_Name: ErnteFeld1Button
+  m_Name: HarvestField1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25608,7 +25608,7 @@ GameObject:
   - component: {fileID: 1707419461}
   - component: {fileID: 1707419463}
   m_Layer: 5
-  m_Name: ErnteFeld3Button
+  m_Name: HarvestField3Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28365,10 +28365,10 @@ MonoBehaviour:
   mousePosWorld: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 808608156}
   mousePosWorld2D: {x: 0, y: 0}
-  feld1: {fileID: 294171418}
-  feld2: {fileID: 1173560662}
-  feld3: {fileID: 1672647262}
-  feld4: {fileID: 339580793}
+  field1: {fileID: 294171418}
+  field2: {fileID: 1173560662}
+  field3: {fileID: 1672647262}
+  field4: {fileID: 339580793}
   currentFeldId: 0
   price: 0
   player: {fileID: 259740252}
@@ -28382,7 +28382,7 @@ MonoBehaviour:
   weatherButton: {fileID: 748991015}
   nextLevelButton: {fileID: 608275747}
   selectionPanel: {fileID: 1403680505}
-  erntePanel: {fileID: 430566656}
+  harvestPanel: {fileID: 430566656}
   errorMessage: {fileID: 855773262}
   tomatoObj: {fileID: 1240810218}
   potatoObj: {fileID: 780369089}
