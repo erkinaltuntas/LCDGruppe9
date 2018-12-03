@@ -5108,6 +5108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9570,6 +9571,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300024, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12860,7 +12862,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
-<<<<<<< HEAD
   balanceMessage: {fileID: 799290804}
 --- !u!114 &845177038
 MonoBehaviour:
@@ -13018,9 +13019,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  balanceMessage: {fileID: 432448687}
->>>>>>> 0ab94fec40dff945197d97b6ae43c39b8c0d93ac
 --- !u!1 &845596462
 GameObject:
   m_ObjectHideFlags: 0
@@ -18169,7 +18167,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
-<<<<<<< HEAD
   balanceMessage: {fileID: 799290804}
 --- !u!114 &1206446456
 MonoBehaviour:
@@ -18327,9 +18324,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  balanceMessage: {fileID: 1938233377}
->>>>>>> 0ab94fec40dff945197d97b6ae43c39b8c0d93ac
 --- !u!1 &1214652421
 GameObject:
   m_ObjectHideFlags: 0
@@ -25895,7 +25889,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
-<<<<<<< HEAD
   balanceMessage: {fileID: 799290804}
 --- !u!114 &1707419461
 MonoBehaviour:
@@ -26053,9 +26046,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  balanceMessage: {fileID: 656308610}
->>>>>>> 0ab94fec40dff945197d97b6ae43c39b8c0d93ac
 --- !u!1 &1708453879
 GameObject:
   m_ObjectHideFlags: 0
@@ -28471,6 +28461,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
