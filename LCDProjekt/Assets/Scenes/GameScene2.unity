@@ -12223,7 +12223,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
-  balanceMessage: {fileID: 799290804}
+  balanceMessage: {fileID: 432448687}
 --- !u!1 &845596462
 GameObject:
   m_ObjectHideFlags: 0
@@ -17369,7 +17369,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
-  balanceMessage: {fileID: 799290804}
+  balanceMessage: {fileID: 1938233377}
 --- !u!1 &1214652421
 GameObject:
   m_ObjectHideFlags: 0
@@ -24137,7 +24137,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
-  balanceMessage: {fileID: 799290804}
+  balanceMessage: {fileID: 656308610}
 --- !u!1 &1708453879
 GameObject:
   m_ObjectHideFlags: 0
