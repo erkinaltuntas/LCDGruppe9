@@ -14,13 +14,15 @@ public class Plant : MonoBehaviour {
     public int needForRain;
     public int needForSun;
 
+
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
 }
