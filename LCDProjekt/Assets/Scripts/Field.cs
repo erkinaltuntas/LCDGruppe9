@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Feld : MonoBehaviour {
+public class Field : MonoBehaviour {
 
     public int id;
     public string plantName = "";

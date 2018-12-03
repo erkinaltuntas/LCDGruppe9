@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Harvest : MonoBehaviour {
 
-    public Feld feld;
+    public Field feld;
     public Button button;
     public int profit;
     public Sprite empty;

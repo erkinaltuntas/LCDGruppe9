@@ -11,7 +11,7 @@ public class AdventureScript : MonoBehaviour
     public Vector3 mousePosWorld;
     public Camera mainCamera;
     public Vector2 mousePosWorld2D;
-    public Feld field1, field2, field3, field4;
+    public Field field1, field2, field3, field4;
     public int currentFeldId;
     public int price;
     public Player player;
@@ -105,7 +105,7 @@ public class AdventureScript : MonoBehaviour
 
 
                     //setzt currentFeldID auf die ID des ausgewhählten Feldes
-                    currentFeldId = hit.collider.gameObject.GetComponent<Feld>().id;
+                    currentFeldId = hit.collider.gameObject.GetComponent<Field>().id;
                     collider1.enabled = false;
                     collider2.enabled = false;
                     collider3.enabled = false;
