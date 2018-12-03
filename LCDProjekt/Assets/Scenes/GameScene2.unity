@@ -25083,7 +25083,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1723853635
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300246, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26402,6 +26402,11 @@ MonoBehaviour:
   errorMessage: {fileID: 855773262}
   tutBut: {fileID: 169976512}
   weatherBut: {fileID: 748991017}
+  tomatoObj: {fileID: 1240810218}
+  potatoObj: {fileID: 780369089}
+  cornObj: {fileID: 1819831055}
+  carrotObj: {fileID: 857362832}
+  emptyObj: {fileID: 2036270022}
 --- !u!4 &1936544130
 Transform:
   m_ObjectHideFlags: 0
@@ -27840,7 +27845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.13, y: 1.86}
+  m_AnchoredPosition: {x: -0.76, y: 2.06}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040288184

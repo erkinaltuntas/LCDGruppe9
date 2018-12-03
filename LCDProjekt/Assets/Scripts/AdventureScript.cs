@@ -28,10 +28,15 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider4;
     bool feld1Checked, feld2Checked, feld3Checked, feld4Checked;
     public GameObject helpButton, weatherButton, nextLevelButton;
-    public GameObject selectionPanel, erntePanel, balancePanel; 
+    public GameObject selectionPanel, erntePanel, balancePanel;
     public TextMeshProUGUI errorMessage;
     public Button tutBut;
     public Button weatherBut;
+    public GameObject tomatoObj;
+    public GameObject potatoObj;
+    public GameObject cornObj;
+    public GameObject carrotObj;
+    public GameObject emptyObj;
 
 
     // Use this for initialization
@@ -120,6 +125,13 @@ public class AdventureScript : MonoBehaviour
 
                         //Setzt den Preis (price) auf den Preis der gewaehlten Pflanze
                         price = hit.collider.gameObject.GetComponent<Plant>().price;
+
+                        //Anzeigefenster mit Details ausblenden beim Öffnen des SelectionPanels
+                        tomatoObj.GetComponent<DisplayDescription>().displayInfo = false;
+                        potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
+                        cornObj.GetComponent<DisplayDescription>().displayInfo = false;
+                        carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
+                        emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
 
                         //Schaut nach welches Feld ausgewaehlt wurde
                         switch (currentFeldId)
