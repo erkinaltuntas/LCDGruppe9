@@ -29,7 +29,7 @@ public class DisplayDescription : MonoBehaviour {
         descriptionString = "Name: " + plant.plantName + Environment.NewLine +
                             "Preis: " + plant.price + Environment.NewLine +
                             "Profit: " + plant.profit + Environment.NewLine +
-                            "Dürreresistenz: " + plant.droughtResistance + Environment.NewLine +
+                            "Duerreresistenz: " + plant.droughtResistance + Environment.NewLine +
                             "Frostresistenz: " + plant.frostResistance + Environment.NewLine +
                             "Bedarf an Wasser: " + plant.needForRain + Environment.NewLine +
                             "Bedarf an Sonne: " + plant.needForSun;
@@ -68,7 +68,7 @@ public class DisplayDescription : MonoBehaviour {
         {
             descriptionText.text = descriptionString;
             descriptionText.color = Color.Lerp(descriptionText.color, Color.white, fadeTime * Time.deltaTime);
-            descriptionImage.color = Color.Lerp(descriptionImage.color, Color.black, fadeTime * Time.deltaTime);
+            descriptionImage.color = Color.Lerp(descriptionImage.color, Color.white, fadeTime * Time.deltaTime);
 
         }
         else
