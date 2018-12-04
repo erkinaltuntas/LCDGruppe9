@@ -11,7 +11,6 @@ public class Harvest : MonoBehaviour {
     public Field field;
     public Plant plant;
     public Button button;
-    public double profit;
     public Sprite empty;
     public Money cash;
     double missHarvestQuota;
@@ -35,13 +34,36 @@ public class Harvest : MonoBehaviour {
 
     void TaskOnClick()
     {
-        profit = getRandomProfit();
-        cash.money = cash.money + profit;
+        double actualProfit = getRandomProfit();
+        double loss = actualProfit - plant.profit;
+        cash.money = cash.money + actualProfit;
+
+        //Feld Sprite entfernen
         field.GetComponent<SpriteRenderer>().sprite = empty;
         field.fieldIsHarvested = true;
+
         //make BalancePanel visible
         balancePanel.SetActive(true);
-        balanceMessage.text = "Verlust durch Frost:" + Environment.NewLine + missHarvestQuota + "%";
+
+        //Text einblenden
+        balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" +actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+
+        if (plant.name != "Empty")
+        {
+            if (plant.frosted)
+            {
+
+                balanceMessage.text += "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss*(-1) +
+                    " Farm$" + Environment.NewLine + Environment.NewLine+ "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota*100 + "%";
+
+            }
+            else if (plant.droughted)
+            {
+                balanceMessage.text += "Entgangener Gewinn" + Environment.NewLine+ "wegen Dürre: " + loss*(-1) +
+                    " Farm$" + Environment.NewLine + Environment.NewLine+"Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota*100 + "%";
+            }
+        }
+
     }
 
 

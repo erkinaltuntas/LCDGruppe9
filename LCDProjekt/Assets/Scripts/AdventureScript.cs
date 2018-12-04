@@ -28,7 +28,7 @@ public class AdventureScript : MonoBehaviour
     Collider2D collider4;
     bool field1Checked, field2Checked, field3Checked, field4Checked;
     public GameObject helpButton, weatherButton, nextLevelButton;
-    public GameObject selectionPanel, harvestPanel;
+    public GameObject selectionPanel, harvestPanel, weatherPanel;
     public TextMeshProUGUI errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
@@ -40,6 +40,7 @@ public class AdventureScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        weatherPanel.SetActive(true);
         //make SelectionPanel invisible
         selectionPanel.SetActive(false);
         errorMessage.text = "";
