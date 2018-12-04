@@ -7,13 +7,14 @@ public class Money : MonoBehaviour {
 
     public Player player;
     public TextMeshProUGUI moneyText;
-    public int money;
+    public double money;
 
 	// Use this for initialization
     // initialisiere Geldanzeige 
 	void Start () {
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
+        money = 1000;
 
     }
 	

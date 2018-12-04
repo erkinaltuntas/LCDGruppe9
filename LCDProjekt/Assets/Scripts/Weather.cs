@@ -7,28 +7,38 @@ public class Weather : MonoBehaviour {
     public double frostProb;
     public double droughtProb;
 
+    public int random1, random2;
+
     // Use this for initialization
     void Start () {
         seasonName = "Frühling";
         frostProb = 0.5;
         droughtProb = 0.2;
-	}
+
+        random1 = Random.Range(0, 11);
+        random2 = Random.Range(0, 11);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    void calculateWeather()
+    public bool isFrost()
     {
-        //Random rand = new Random();
-       //int n1 = rand.nextInt(11);
-       //int n2 = rand.nextInt(11);
+        if (random1 <= this.frostProb * 10)
+        {
+            return true;
+        }
+        return false;
+    }
 
-        //if (n1 <= frostP * 10 || n2 <= droughtP * 10)
-        //{
-         //   return plant.ertrag - plant.kosten - plant.ertrag * missErnteQuote;
-        //}
-        //return plant.ertrag - plant.kosten;
+    public bool isDrought()
+    {
+        if (random2 <= this.droughtProb * 10)
+        {
+            return true;
+        }
+        return false;
     }
 }

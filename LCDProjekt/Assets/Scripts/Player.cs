@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     public int id;
     public string playerName;
-    public int money;
+    public double money;
     public int riskScore;
     public int season;
 

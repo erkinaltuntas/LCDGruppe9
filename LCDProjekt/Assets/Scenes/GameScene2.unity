@@ -243,11 +243,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -3125,8 +3125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622558b31bbb858418b614d177c1d3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frostP: 0.5
-  droughtP: 0.2
+  seasonName: 
+  frostProb: 0
+  droughtProb: 0
+  random1: 0
+  random2: 0
 --- !u!4 &192245018
 Transform:
   m_ObjectHideFlags: 0
@@ -3761,7 +3764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   playerName: 
-  money: 1000
+  money: 0
   riskScore: 0
   season: 1
 --- !u!4 &259740253
@@ -4625,11 +4628,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -7656,11 +7659,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -12103,12 +12106,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   plantName: Potato
-  price: 999
-  profit: 8
-  droughtResistance: 4
-  frostResistance: 4
-  needForRain: 5
-  needForSun: 2
+  price: 100
+  profit: 190
+  droughtResistance: 0.7
+  frostResistance: 0.4
+  frosted: 0
+  droughted: 0
 --- !u!61 &780369092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12941,7 +12944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed90bf83321cff945b80141cfcd15515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feld: {fileID: 1173560662}
+  field: {fileID: 1173560662}
+  plant: {fileID: 0}
   button: {fileID: 845177034}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
@@ -13553,11 +13557,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -13642,12 +13646,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   plantName: Carrot
-  price: 30
-  profit: 40
-  droughtResistance: 3
-  frostResistance: 2
-  needForRain: 5
-  needForSun: 6
+  price: 65
+  profit: 110
+  droughtResistance: 0.7
+  frostResistance: 0.9
+  frosted: 0
+  droughted: 0
 --- !u!61 &857362835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15042,11 +15046,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -15535,11 +15539,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -17059,7 +17063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 259740252}
   moneyText: {fileID: 1132827445}
-  money: 1000
+  money: 0
 --- !u!1 &1151025938
 GameObject:
   m_ObjectHideFlags: 0
@@ -18149,7 +18153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed90bf83321cff945b80141cfcd15515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feld: {fileID: 339580793}
+  field: {fileID: 339580793}
+  plant: {fileID: 0}
   button: {fileID: 1206446452}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
@@ -18656,7 +18661,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0.12}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -18683,12 +18688,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   plantName: Tomato
-  price: 10
-  profit: 20
-  droughtResistance: 3
-  frostResistance: 2
-  needForRain: 1
-  needForSun: 5
+  price: 240
+  profit: 390
+  droughtResistance: 0.3
+  frostResistance: 0.2
+  frosted: 0
+  droughted: 0
 --- !u!212 &1240810222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25444,7 +25449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed90bf83321cff945b80141cfcd15515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feld: {fileID: 294171418}
+  field: {fileID: 294171418}
+  plant: {fileID: 0}
   button: {fileID: 1694987038}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
@@ -25819,7 +25825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed90bf83321cff945b80141cfcd15515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feld: {fileID: 1672647262}
+  field: {fileID: 1672647262}
+  plant: {fileID: 0}
   button: {fileID: 1707419457}
   profit: 0
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
@@ -27246,12 +27253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   plantName: Corn
-  price: 10
-  profit: 15
-  droughtResistance: 5
-  frostResistance: 5
-  needForRain: 3
-  needForSun: 4
+  price: 150
+  profit: 270
+  droughtResistance: 0.4
+  frostResistance: 0.3
+  frosted: 0
+  droughted: 0
 --- !u!61 &1819831058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29732,8 +29739,8 @@ MonoBehaviour:
   profit: 0
   droughtResistance: 0
   frostResistance: 0
-  needForRain: 0
-  needForSun: 0
+  frosted: 0
+  droughted: 0
 --- !u!212 &2036270026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29872,6 +29879,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2054306584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2054306586}
+  - component: {fileID: 2054306585}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2054306585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2054306584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1468b41b140492243b4a417850462964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2054306586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2054306584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24288157, y: -0.25708985, z: 0.0558649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067968475
 GameObject:
   m_ObjectHideFlags: 0
@@ -30074,11 +30121,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

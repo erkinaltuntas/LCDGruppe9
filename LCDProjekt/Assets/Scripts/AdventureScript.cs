@@ -13,7 +13,7 @@ public class AdventureScript : MonoBehaviour
     public Vector2 mousePosWorld2D;
     public Field field1, field2, field3, field4;
     public int currentFeldId;
-    public int price;
+    public double price;
     public Player player;
     public Money cash;
     public Sprite tomato;

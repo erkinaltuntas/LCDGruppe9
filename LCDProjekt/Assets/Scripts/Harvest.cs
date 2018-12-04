@@ -5,14 +5,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Harvest : MonoBehaviour {
 
-    public Field feld;
+    public Field field;
+    public Plant plant;
     public Button button;
-    public int profit;
+    public double profit;
     public Sprite empty;
     public Money cash;
-    double missErnteQuote =10;
+    double missHarvestQuota;
     public GameObject balancePanel;
     public TextMeshProUGUI balanceMessage;
 
@@ -20,6 +22,9 @@ public class Harvest : MonoBehaviour {
     // Use this for initialization
     void Start () {
         button.onClick.AddListener(TaskOnClick);
+        plant = field.GetComponent<Field>().plant;
+        missHarvestQuota = 1;
+
         
     }
 	
@@ -30,25 +35,56 @@ public class Harvest : MonoBehaviour {
 
     void TaskOnClick()
     {
-        profit = calculate();
+        profit = getRandomProfit();
         cash.money = cash.money + profit;
-        feld.GetComponent<SpriteRenderer>().sprite = empty;
-        feld.fieldIsHarvested = true;
+        field.GetComponent<SpriteRenderer>().sprite = empty;
+        field.fieldIsHarvested = true;
         //make BalancePanel visible
         balancePanel.SetActive(true);
-        balanceMessage.text = "Verlust durch Frost:" + Environment.NewLine + missErnteQuote + "%";
+        balanceMessage.text = "Verlust durch Frost:" + Environment.NewLine + missHarvestQuota + "%";
     }
 
-    int calculate()
+
+
+    double getRandomProfit()
     {
-        int ertrag = feld.plant.profit;
+        int random3 = UnityEngine.Random.Range(0, 3);
+        int random5 = UnityEngine.Random.Range(0, 2);
 
-        //Random rand = new Random();
-        //int n3 = rand.nextInt(3);
-        //if (n3 == 0) missErnteQuote = 0.25;
-        //if (n3 == 1) missErnteQuote = 0.5;
-        //if (n3 == 2) missErnteQuote = 0.75;
+        Debug.Log("random1:" + random3 + "random2:" + random5);
+        if (random3 == 0)
+        {
+            missHarvestQuota = 0.25;
+        }
+        else if(random3 == 1)
+        {
+            missHarvestQuota = 0.5;
+        }
+        else if(random3 == 2)
+        {
+            missHarvestQuota = 0.75;
+        }
+        //falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
+        if (plant.droughted && plant.frosted)
+        {
+            if(random5 == 0)
+            {
+                plant.droughted = false;
+            }
+            else if (random5 == 1)
+            {
+                plant.frosted = false;
+            }
+            Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
+            return plant.profit - plant.price - (plant.profit * missHarvestQuota);
+        }
+        else if(plant.droughted || plant.frosted)
+        {
+            Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
+            return plant.profit - plant.price - (plant.profit * missHarvestQuota);
+        }
 
-        return ertrag;
+        Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
+        return plant.profit - plant.price;
     }
 }
