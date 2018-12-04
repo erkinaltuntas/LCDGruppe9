@@ -50,8 +50,6 @@ public class Harvest : MonoBehaviour {
     {
         int random3 = UnityEngine.Random.Range(0, 3);
         int random5 = UnityEngine.Random.Range(0, 2);
-
-        Debug.Log("random1:" + random3 + "random2:" + random5);
         if (random3 == 0)
         {
             missHarvestQuota = 0.25;
@@ -76,15 +74,15 @@ public class Harvest : MonoBehaviour {
                 plant.frosted = false;
             }
             Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-            return plant.profit - plant.price - (plant.profit * missHarvestQuota);
+            return plant.profit - (plant.profit * missHarvestQuota);
         }
         else if(plant.droughted || plant.frosted)
         {
             Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-            return plant.profit - plant.price - (plant.profit * missHarvestQuota);
+            return plant.profit - (plant.profit * missHarvestQuota);
         }
 
         Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-        return plant.profit - plant.price;
+        return plant.profit;
     }
 }
