@@ -12,8 +12,8 @@ public class Weather : MonoBehaviour {
     // Use this for initialization
     void Start () {
         seasonName = "Frühling";
-        frostProb = 0.5;
-        droughtProb = 0.2;
+        //frostProb = 0.5;
+        //droughtProb = 0.2;
 
         random1 = Random.Range(0, 11);
         random2 = Random.Range(0, 11);

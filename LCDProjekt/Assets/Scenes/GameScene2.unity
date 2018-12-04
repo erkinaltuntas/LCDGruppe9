@@ -3126,8 +3126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seasonName: 
-  frostProb: 0
-  droughtProb: 0
+  frostProb: 0.5
+  droughtProb: 0.2
   random1: 0
   random2: 0
 --- !u!4 &192245018
