@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weather : MonoBehaviour {
 
-    public int frostP;
-    public int droughtP;
+    public double frostP;
+    public double droughtP;
 
 	// Use this for initialization
 	void Start () {
