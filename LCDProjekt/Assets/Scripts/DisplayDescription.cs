@@ -17,8 +17,8 @@ public class DisplayDescription : MonoBehaviour {
     public Image descriptionImage;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         //Identifiziere die Pflanze, um die es sich handelt mit ihren Beschreibungsobjekten
         plant = this.gameObject.GetComponent<Plant>();
         descriptionImage = plant.GetComponentInChildren<Image>();
@@ -30,9 +30,8 @@ public class DisplayDescription : MonoBehaviour {
                             "Preis: " + plant.price + Environment.NewLine +
                             "Profit: " + plant.profit + Environment.NewLine +
                             "Duerreresistenz: " + plant.droughtResistance + Environment.NewLine +
-                            "Frostresistenz: " + plant.frostResistance + Environment.NewLine +
-                            "Bedarf an Wasser: " + plant.needForRain + Environment.NewLine +
-                            "Bedarf an Sonne: " + plant.needForSun;
+                            "Frostresistenz: " + plant.frostResistance + Environment.NewLine;
+    
 
         //Objekte, in welches die Beschreibung überführt wird am Anfang nicht sichtbar
         descriptionImage.color = Color.clear;

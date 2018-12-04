@@ -11,8 +11,6 @@ public class Plant : MonoBehaviour {
     public int profit;
     public int droughtResistance;
     public int frostResistance;
-    public int needForRain;
-    public int needForSun;
 
 
 	// Use this for initialization

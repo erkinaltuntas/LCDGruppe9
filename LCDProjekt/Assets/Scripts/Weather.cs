@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weather : MonoBehaviour {
+    public string seasonName;
+    public double frostProb;
+    public double droughtProb;
 
-    public double frostP;
-    public double droughtP;
-
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+        seasonName = "Frühling";
+        frostProb = 0.5;
+        droughtProb = 0.2;
 	}
 	
 	// Update is called once per frame
