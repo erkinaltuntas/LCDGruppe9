@@ -186,8 +186,8 @@ MonoBehaviour:
   profit: 0
   droughtResistance: 0
   frostResistance: 0
-  needForRain: 0
-  needForSun: 0
+  frosted: 0
+  droughted: 0
 --- !u!212 &24249451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -307,8 +307,8 @@ MonoBehaviour:
   profit: 8
   droughtResistance: 4
   frostResistance: 4
-  needForRain: 5
-  needForSun: 2
+  frosted: 0
+  droughted: 0
 --- !u!212 &74382065
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -599,8 +599,8 @@ MonoBehaviour:
   profit: 20
   droughtResistance: 3
   frostResistance: 2
-  needForRain: 1
-  needForSun: 5
+  frosted: 0
+  droughted: 0
 --- !u!212 &169720787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -720,8 +720,8 @@ MonoBehaviour:
   profit: 40
   droughtResistance: 3
   frostResistance: 2
-  needForRain: 5
-  needForSun: 6
+  frosted: 0
+  droughted: 0
 --- !u!212 &459130371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -812,10 +812,10 @@ MonoBehaviour:
   mousePosWorld: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 117122622}
   mousePosWorld2D: {x: 0, y: 0}
-  feld1: {fileID: 1397437767}
-  feld2: {fileID: 1062629000}
-  feld3: {fileID: 1674323794}
-  feld4: {fileID: 1103539195}
+  field1: {fileID: 0}
+  field2: {fileID: 0}
+  field3: {fileID: 0}
+  field4: {fileID: 0}
   currentFeldId: 0
   price: 0
   player: {fileID: 0}
@@ -825,11 +825,18 @@ MonoBehaviour:
   corn: {fileID: 0}
   carrot: {fileID: 0}
   empty: {fileID: 0}
+  helpButton: {fileID: 0}
+  weatherButton: {fileID: 0}
   nextLevelButton: {fileID: 0}
-  HelpButton: {fileID: 0}
-  WeatherButton: {fileID: 0}
   selectionPanel: {fileID: 1293473640}
+  harvestPanel: {fileID: 0}
+  weatherPanel: {fileID: 0}
   errorMessage: {fileID: 1607809725}
+  tomatoObj: {fileID: 0}
+  potatoObj: {fileID: 0}
+  cornObj: {fileID: 0}
+  carrotObj: {fileID: 0}
+  emptyObj: {fileID: 0}
 --- !u!1 &1062628997
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +929,12 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
+  fieldIsHarvested: 0
+  tomatoGrown: {fileID: 0}
+  potatoGrown: {fileID: 0}
+  cornGrown: {fileID: 0}
+  carrotGrown: {fileID: 0}
 --- !u!61 &1062629001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1039,6 +1052,12 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
+  fieldIsHarvested: 0
+  tomatoGrown: {fileID: 0}
+  potatoGrown: {fileID: 0}
+  cornGrown: {fileID: 0}
+  carrotGrown: {fileID: 0}
 --- !u!61 &1103539196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1485,6 +1504,12 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
+  fieldIsHarvested: 0
+  tomatoGrown: {fileID: 0}
+  potatoGrown: {fileID: 0}
+  cornGrown: {fileID: 0}
+  carrotGrown: {fileID: 0}
 --- !u!61 &1397437768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1816,6 +1841,12 @@ MonoBehaviour:
   plantName: 
   successRate: 0
   shock: 0
+  plant: {fileID: 0}
+  fieldIsHarvested: 0
+  tomatoGrown: {fileID: 0}
+  potatoGrown: {fileID: 0}
+  cornGrown: {fileID: 0}
+  carrotGrown: {fileID: 0}
 --- !u!61 &1674323795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1914,8 +1945,8 @@ MonoBehaviour:
   profit: 15
   droughtResistance: 5
   frostResistance: 5
-  needForRain: 3
-  needForSun: 4
+  frosted: 0
+  droughted: 0
 --- !u!212 &1839933975
 SpriteRenderer:
   m_ObjectHideFlags: 0

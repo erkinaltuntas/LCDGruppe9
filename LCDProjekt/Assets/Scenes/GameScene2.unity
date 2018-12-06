@@ -4320,6 +4320,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!60 &294171419
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5309,6 +5313,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!60 &339580794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17284,6 +17292,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!60 &1173560663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23684,6 +23696,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!60 &1672647263
 PolygonCollider2D:
   m_ObjectHideFlags: 0

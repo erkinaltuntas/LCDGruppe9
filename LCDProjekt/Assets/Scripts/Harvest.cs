@@ -23,6 +23,7 @@ public class Harvest : MonoBehaviour {
         button.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
         missHarvestQuota = 1;
+        field.changeSprite();
 
         
     }

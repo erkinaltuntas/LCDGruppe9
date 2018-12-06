@@ -12082,6 +12082,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!212 &887724489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12139,7 +12143,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887813646
 GameObject:
@@ -13999,6 +14003,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!212 &1049463914
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14056,7 +14064,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062359531
 GameObject:
@@ -17483,6 +17491,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!212 &1330554986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17540,7 +17552,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340708555
 GameObject:
@@ -18060,6 +18072,10 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
+  potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
+  cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
+  carrotGrown: {fileID: 21300000, guid: f39e4429a3e5f9343bc783d3a767b42a, type: 3}
 --- !u!212 &1370066100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18112,12 +18128,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1370066097}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: -2.11, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.39, y: -2.1100001, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372698521
 GameObject:
@@ -22318,7 +22334,7 @@ MonoBehaviour:
   tomato: {fileID: 21300000, guid: f497ba26481207245a6e4a61c13fba76, type: 3}
   potato: {fileID: 21300000, guid: 075c9839f90f6d044a6c5b3e2b56eb27, type: 3}
   corn: {fileID: 21300000, guid: 4158cb4ad0756614ea1c74208e57cca2, type: 3}
-  carrot: {fileID: 21300226, guid: dd1cdd65b9fc740deb02b700ec23b66e, type: 3}
+  carrot: {fileID: 21300000, guid: a891c5a06838b974ebc2a697f1b4cdd3, type: 3}
   empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
   helpButton: {fileID: 378940619}
   weatherButton: {fileID: 294635440}
