@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public static Player player;
     public int id;
     public string playerName;
     public double money;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour {
 
     void Awake()
     {
+        player = this;
         DontDestroyOnLoad(transform.gameObject);
     }
 

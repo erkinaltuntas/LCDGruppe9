@@ -3764,7 +3764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   playerName: 
-  money: 0
+  money: 1000
   riskScore: 0
   season: 1
 --- !u!4 &259740253

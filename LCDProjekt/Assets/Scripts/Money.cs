@@ -12,9 +12,12 @@ public class Money : MonoBehaviour {
 	// Use this for initialization
     // initialisiere Geldanzeige 
 	void Start () {
+
+        player = Player.player;
+
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
-        money = 1000;
+        this.money = player.money;
 
     }
 	
