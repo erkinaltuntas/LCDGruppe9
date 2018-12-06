@@ -48,21 +48,26 @@ public class Chicken : MonoBehaviour {
                     {
                         chicken1.SetActive(false);
                         chicken2.SetActive(true);
+                        chicken1.GetComponent<Collider2D>().enabled = false;
                     }
                     else if (hit.collider.name == "chicken2")
                     {
                         chicken2.SetActive(false);
                         chicken3.SetActive(true);
+                        chicken2.GetComponent<Collider2D>().enabled = false;
+
                     }
                     else if (hit.collider.name == "chicken3")
                     {
                         chicken3.SetActive(false);
                         chicken4.SetActive(true);
+                        chicken3.GetComponent<Collider2D>().enabled = false;
                     }
                     else if (hit.collider.name == "chicken4")
                     {
                         chicken4.SetActive(false);
                         chicken5.SetActive(true);
+                        chicken4.GetComponent<Collider2D>().enabled = false;
                     }
                     else if (hit.collider.name == "chicken5")
                     {
@@ -70,6 +75,7 @@ public class Chicken : MonoBehaviour {
                         chicken2.SetActive(true);
                         chicken3.SetActive(true);
                         chicken4.SetActive(true);
+                        chicken5.GetComponent<Collider2D>().enabled = false;
                     }
 
                 }

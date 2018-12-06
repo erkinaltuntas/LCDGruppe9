@@ -577,6 +577,7 @@ MonoBehaviour:
   chicken3: {fileID: 171828531}
   chicken4: {fileID: 52656756}
   chicken5: {fileID: 1791295144}
+  thisChicken: {fileID: 0}
 --- !u!1 &39055802
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +856,7 @@ MonoBehaviour:
   chicken3: {fileID: 171828531}
   chicken4: {fileID: 52656756}
   chicken5: {fileID: 1791295144}
+  thisChicken: {fileID: 0}
 --- !u!212 &52656759
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2752,6 +2754,7 @@ MonoBehaviour:
   chicken3: {fileID: 171828531}
   chicken4: {fileID: 52656756}
   chicken5: {fileID: 1791295144}
+  thisChicken: {fileID: 0}
 --- !u!212 &171828535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12862,6 +12865,7 @@ MonoBehaviour:
   chicken3: {fileID: 171828531}
   chicken4: {fileID: 52656756}
   chicken5: {fileID: 1791295144}
+  thisChicken: {fileID: 0}
 --- !u!70 &845596466
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25750,6 +25754,7 @@ MonoBehaviour:
   chicken3: {fileID: 171828531}
   chicken4: {fileID: 52656756}
   chicken5: {fileID: 1791295144}
+  thisChicken: {fileID: 0}
 --- !u!212 &1791295148
 SpriteRenderer:
   m_ObjectHideFlags: 0
