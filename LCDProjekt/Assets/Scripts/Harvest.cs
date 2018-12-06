@@ -53,14 +53,14 @@ public class Harvest : MonoBehaviour {
             if (plant.frosted)
             {
 
-                balanceMessage.text += "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss*(-1) +
-                    " Farm$" + Environment.NewLine + Environment.NewLine+ "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota*100 + "%";
+                balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
+                    "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm$";
 
             }
             else if (plant.droughted)
             {
-                balanceMessage.text += "Entgangener Gewinn" + Environment.NewLine+ "wegen Dürre: " + loss*(-1) +
-                    " Farm$" + Environment.NewLine + Environment.NewLine+"Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota*100 + "%";
+                balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
+                    "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm$";
             }
         }
 
