@@ -6300,10 +6300,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &536291768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8486,7 +8486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1967911061}
   plant: {fileID: 0}
-  button: {fileID: 701849924}
+  harvestFieldButton: {fileID: 701849924}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1760745066}
@@ -8861,7 +8861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 2130681134}
   plant: {fileID: 0}
-  button: {fileID: 710990082}
+  harvestFieldButton: {fileID: 710990082}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1977533365}
@@ -9161,7 +9161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 845350775}
   plant: {fileID: 0}
-  button: {fileID: 714460344}
+  harvestFieldButton: {fileID: 714460344}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1569813338}
@@ -15443,7 +15443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 537977802}
   plant: {fileID: 0}
-  button: {fileID: 1318531870}
+  harvestFieldButton: {fileID: 1318531870}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1871872708}
@@ -16723,10 +16723,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!114 &1416138881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26512,10 +26512,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &1964799964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27760,10 +27760,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &2052048945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28350,10 +28350,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &2078017610
 BoxCollider2D:
   m_ObjectHideFlags: 0

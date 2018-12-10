@@ -1044,10 +1044,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &75158488
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8518,10 +8518,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &600144346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10857,7 +10857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1370066099}
   plant: {fileID: 0}
-  button: {fileID: 769167373}
+  harvestFieldButton: {fileID: 769167373}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1903083291}
@@ -12837,10 +12837,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!114 &924895986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23313,7 +23313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1330554985}
   plant: {fileID: 0}
-  button: {fileID: 1731127213}
+  harvestFieldButton: {fileID: 1731127213}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1475827329}
@@ -23961,7 +23961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 887724488}
   plant: {fileID: 0}
-  button: {fileID: 1784436061}
+  harvestFieldButton: {fileID: 1784436061}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1223266258}
@@ -24398,10 +24398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &1795235400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25962,7 +25962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1049463913}
   plant: {fileID: 0}
-  button: {fileID: 1875964158}
+  harvestFieldButton: {fileID: 1875964158}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1222707388}
@@ -28662,10 +28662,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!61 &2078372851
 BoxCollider2D:
   m_ObjectHideFlags: 0
