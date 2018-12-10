@@ -2,9 +2,9 @@
 * ClockButton
 * Anwendung: Abspielen der Animation der Uhr nach einer Jahreszeit
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
+* Zuletzt bearbeitet von: Victor Xu
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund für letzte Bearbeitung: Animation der Uhr hat eine bestimmte Geschwindigkeit
 **************************************************************************/
 
 using System.Collections;
@@ -30,6 +30,7 @@ public class ClockButton : MonoBehaviour {
         // Spiele die Animation der Uhr ab
         clock.SetActive(true);
         background.SetActive(true);
+        clockAnimation["Clock"].speed = 0.8f;
         clockAnimation.Play("Clock");
         
 
