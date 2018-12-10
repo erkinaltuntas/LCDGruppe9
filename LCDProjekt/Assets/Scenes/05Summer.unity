@@ -18644,7 +18644,7 @@ MonoBehaviour:
   harvestButton: {fileID: 1508677131}
   clock: {fileID: 2081838922}
   background: {fileID: 305027725}
-  clockAnimation: {fileID: 0}
+  clockAnimation: {fileID: 2081838928}
 --- !u!1 &1509476672
 GameObject:
   m_ObjectHideFlags: 0
@@ -28531,6 +28531,7 @@ GameObject:
   - component: {fileID: 2081838925}
   - component: {fileID: 2081838924}
   - component: {fileID: 2081838923}
+  - component: {fileID: 2081838928}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -28581,7 +28582,7 @@ MonoBehaviour:
   harvestButton: {fileID: 1508677131}
   clock: {fileID: 2081838922}
   background: {fileID: 305027725}
-  clockAnimation: {fileID: 0}
+  clockAnimation: {fileID: 2081838928}
 --- !u!212 &2081838926
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28641,6 +28642,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &2081838928
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081838922}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 9255c3e475538a14cbe639acb6a00e6e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 9255c3e475538a14cbe639acb6a00e6e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2084287713
 GameObject:
   m_ObjectHideFlags: 0
