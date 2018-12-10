@@ -6,26 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scenes/01StartMenu.unity
     guid: 637113d941da01d4194da02269416727
   - enabled: 1
-    path: "Assets/Scenes/Einf\xFChrung.unity"
+    path: Assets/Scenes/02Intro.unity
     guid: 889fdb30c0b1727468a9b247e1e198af
   - enabled: 1
-    path: Assets/Scenes/Tutorial1.unity
+    path: Assets/Scenes/03Tutorial1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameScene2.unity
+    path: Assets/Scenes/04Spring.unity
     guid: 5bc1bbf5ff9f45d40a588f6f63cefba9
   - enabled: 1
-    path: Assets/Scenes/GameScene3.unity
+    path: Assets/Scenes/05Summer.unity
     guid: acd90afcaf76d8040b1c50e64aedbc68
   - enabled: 1
-    path: Assets/Scenes/GameScene4.unity
+    path: Assets/Scenes/06Autumn.unity
     guid: 9c52b24913e5b1740987c8598a29c014
   - enabled: 1
-    path: Assets/Scenes/GameScene5.unity
+    path: Assets/Scenes/07Winter.unity
     guid: 432f0ba8c25424d44abfdc5b3803e2a0
+  - enabled: 1
+    path: Assets/Scenes/08Exit.unity
+    guid: 7246df1475db5a742ae97795a1a81d8f
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
