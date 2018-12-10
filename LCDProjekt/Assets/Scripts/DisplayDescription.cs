@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*************************************************************************** 
+* DisplayDescription
+* Anwendung: Zur Anzeige des PopUp Fensters mit den Details der Pflanzen
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,26 +14,28 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayDescription : MonoBehaviour {
+    // Text, in welches der Beschreibungstext eingefuegt wird (manuell zuweisen)
     public string descriptionString;
-   
+    // Textobjekte, in welches der Beschreibungstext eingefuegt wird (manuell zuweisen)
     public TextMeshProUGUI descriptionText;
+    // Das PopUp, in welches das Textobjekte eingefuegt wird (manuell zuweisen)
+    public Image descriptionImage;
 
     public float fadeTime;
     public bool displayInfo;
     public Plant plant;
 
-    public Image descriptionImage;
 
 
     // Use this for initialization
     void Start() {
-        //Identifiziere die Pflanze, um die es sich handelt mit ihren Beschreibungsobjekten
+        // Identifiziere die Pflanze, um die es sich handelt mit ihren Beschreibungseigenschaften
         plant = this.gameObject.GetComponent<Plant>();
         descriptionImage = plant.GetComponentInChildren<Image>();
         descriptionText = descriptionImage.GetComponentInChildren<TextMeshProUGUI>();
 
 
-        //Beschreibungstext
+        // Beschreibungstext im PopUp
         descriptionString = "Name: " + plant.plantName + Environment.NewLine +
                             "Preis: " + plant.price + Environment.NewLine +
                             "Profit: " + plant.profit + Environment.NewLine +
@@ -33,7 +43,7 @@ public class DisplayDescription : MonoBehaviour {
                             "Frostresistenz: " + plant.frostResistance + Environment.NewLine;
     
 
-        //Objekte, in welches die Beschreibung überführt wird am Anfang nicht sichtbar
+        //PopUp ist zu Beginn unsichtbar
         descriptionImage.color = Color.clear;
         descriptionText.color = Color.clear;
 	}
@@ -44,25 +54,24 @@ public class DisplayDescription : MonoBehaviour {
 	}
 
 
-    //wenn Maus über den Collider der Pflanze geht
+    // Die Methode wird aufgerufen, wenn die Maus ueber den Collider einer Pflanze geht
     void OnMouseOver()
     {
         displayInfo = true;
     }
 
 
-    //wenn Maus den Collider der Pflanze verlässt
+    // Die Methode wird aufgerufen, wenn die Maus den Collider einer Pflanze verlaesst
     void OnMouseExit()
     {
         displayInfo = false;
     }
 
-
-
+    // Steuert die Anzeige des PopUps
     void FadeText()
     {
 
-        //wenn Maus auf Collider, dann zeige den Text, indem Farbe sichtbar wird, sonst zeige Farbe nicht
+        // Wenn Maus auf Collider, dann zeige das PopUp, indem das Bild und der Text sichtbar wird
         if (displayInfo)
         {
             descriptionText.text = descriptionString;

@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*************************************************************************** 
+* Harvest
+* Anwendung: Zum Ernten der Felder sowie Bilanzierung
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,7 +18,7 @@ public class Harvest : MonoBehaviour {
 
     public Field field;
     public Plant plant;
-    public Button button;
+    public Button harvestFieldButton;
     public Sprite empty;
     public Money cash;
     double missHarvestQuota;
@@ -20,7 +28,8 @@ public class Harvest : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        button.onClick.AddListener(TaskOnClick);
+        // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
+        harvestFieldButton.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
         missHarvestQuota = 1;
         field.changeSprite();
@@ -28,13 +37,10 @@ public class Harvest : MonoBehaviour {
         
     }
 	
-	// Update is called once per frame
-	void Update () {
-       
-    }
 
     void TaskOnClick()
     {
+        // Berechne den Umsatz und aktualisere das Geld des Spielers
         double actualProfit = getRandomProfit();
         double loss = actualProfit - plant.profit;
         cash.money = cash.money + actualProfit;
@@ -43,10 +49,8 @@ public class Harvest : MonoBehaviour {
         field.GetComponent<SpriteRenderer>().sprite = empty;
         field.fieldIsHarvested = true;
 
-        //make BalancePanel visible
+        // Zeige die Bilanz fuer jedes Feld an
         balancePanel.SetActive(true);
-
-        //Text einblenden
         balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" +actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
 
         if (plant.name != "Empty")
@@ -68,7 +72,7 @@ public class Harvest : MonoBehaviour {
     }
 
 
-
+    // Berechnet den Profit eines Feldes
     double getRandomProfit()
     {
         int random3 = UnityEngine.Random.Range(0, 3);
@@ -85,7 +89,8 @@ public class Harvest : MonoBehaviour {
         {
             missHarvestQuota = 0.75;
         }
-        //falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
+
+        // Falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
         if (plant.droughted && plant.frosted)
         {
             if(random5 == 0)

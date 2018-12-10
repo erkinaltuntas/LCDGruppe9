@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Weather
+* Anwendung: Zur Defintion des Wetters sowie der Steuerung, ob sie von 
+* Duerre oder Frost betroffen sind
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,17 +21,10 @@ public class Weather : MonoBehaviour {
     // Use this for initialization
     void Start () {
         seasonName = "Frühling";
-        //frostProb = 0.5;
-        //droughtProb = 0.2;
 
         random1 = Random.Range(0, 11);
         random2 = Random.Range(0, 11);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public bool isFrost()
     {

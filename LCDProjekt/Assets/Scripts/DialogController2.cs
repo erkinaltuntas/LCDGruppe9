@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*************************************************************************** 
+* DialogController2
+* Anwendung: Zur Steuerung des Dialogs in der Einfuehrungsstory
+* (zweite Sprechblase)
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

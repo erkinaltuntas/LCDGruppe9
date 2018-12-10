@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Money
+* Anwendung: Zur Anzeige und Aktualisierung des Geldes
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -10,11 +18,9 @@ public class Money : MonoBehaviour {
     public double money;
 
 	// Use this for initialization
-    // initialisiere Geldanzeige 
 	void Start () {
 
         player = Player.player;
-
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
         this.money = player.money;
@@ -22,7 +28,6 @@ public class Money : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-    //aktualisiere die Geldanzeige
 	void Update () {
         moneyText.text = money.ToString();
         player.money = this.money;
