@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Adventure2Script
+* Anwendung: Zur Steuerung des Spielablaufs
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,76 +47,61 @@ public class Adventure2Script : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         player = Player.player;
 
+        // Zu Beginn des Spiels Wetteranzeige aktivieren, andere Objekte deaktivieren
         weatherPanel.SetActive(true);
-        //make SelectionPanel invisible
         selectionPanel.SetActive(false);
         errorMessage.text = "";
+        weatherButton.SetActive(false);
+        helpButton.SetActive(false);
 
-        //Collider holen
+        // Collider der Felder definieren
         collider1 = field1.GetComponent<Collider2D>();
         collider2 = field2.GetComponent<Collider2D>();
         collider3 = field3.GetComponent<Collider2D>();
         collider4 = field4.GetComponent<Collider2D>();
 
-        //Collider beim Start deaktivieren
+        // Collider beim Start deaktivieren, damit Felder nicht interaktiv sind
         collider1.enabled = false;
         collider2.enabled = false;
         collider3.enabled = false;
         collider4.enabled = false;
 
-        //Button beim Start deaktivieren
-        weatherButton.SetActive(false);
-        helpButton.SetActive(false);
-
     }
 
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Input.GetMouseButtonDown(0))
         {
-            //print("Maus wurde gedrückt");
-
-            //Mausposition
+            // Mausposition definieren
             mousePos = Input.mousePosition;
             print(mousePos);
 
-            //Mausposition World
+            // Mausposition World
             mousePosWorld = mainCamera.ScreenToWorldPoint(mousePos);
-            //In zweidim Vektor umwandeln
+            // In zweidim Vektor umwandeln
             mousePosWorld2D = new Vector2(mousePosWorld.x, mousePosWorld.y);
 
-            //Raycast2d
+            // Bestimmte Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            //prüfe ob hit einen collider beinhaltet
+            // Prüfe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
-                //print("Objekt mit Collider getroffen");
-
-                //Ausgabe des getroffenen Objects
                 print(hit.collider.gameObject.name);
 
-                //Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist
+                // Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist, zeige das Auswahlfenster an
                 if (hit.collider.gameObject.tag == "Feld")
                 {
-                    //Zeigt das Auswahlfenster an, nachdem ein Feld ausgewählt wurde
                     selectionPanel.SetActive(true);
-
-                    ////
                     helpButton.SetActive(false);
                     weatherButton.SetActive(false);
 
 
-
-
-
-                    //setzt currentFeldID auf die ID des ausgewhählten Feldes
+                    // Setzt currentFeldID auf die ID des ausgewhählten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Field>().id;
                     collider1.enabled = false;
                     collider2.enabled = false;
@@ -115,40 +109,40 @@ public class Adventure2Script : MonoBehaviour {
                     collider4.enabled = false;
 
                 }
-                //Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze ist
+                // Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze (im Auswahlfenster) ist
                 else if (hit.collider.gameObject.tag == "Pflanze")
                 {
                     if (cash.money >= hit.collider.gameObject.GetComponent<Plant>().price)
                     {
                         errorMessage.text = "";
 
-                        //Setzt den Preis (price) auf den Preis der gewaehlten Pflanze
+                        // Bestimmte Preis der Pflanze
                         price = hit.collider.gameObject.GetComponent<Plant>().price;
 
-                        //Anzeigefenster mit Details ausblenden beim Öffnen des SelectionPanels
+                        // Anzeigefenster mit Details ausblenden beim Öffnen des SelectionPanels
                         tomatoObj.GetComponent<DisplayDescription>().displayInfo = false;
                         potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
                         cornObj.GetComponent<DisplayDescription>().displayInfo = false;
                         carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
                         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
 
-                        //Schaut nach welches Feld ausgewaehlt wurde
+                        // Schaut nach welches Feld ausgewaehlt wurde
                         switch (currentFeldId)
                         {
-                            //Feld1 wurde ausgewaehlt
+                            // Feld1 wurde ausgewaehlt
                             case 1:
-                                //Pflanzennamen des Feldes auf den Namen der Pflanze setzen
+                                // Pflanzennamen des Feldes auf den Namen der Pflanze setzen
                                 field1.plantName = hit.collider.gameObject.name.ToString();
 
                                 field1.plant = hit.collider.gameObject.GetComponent<Plant>();
 
-                                //Zieht den Preis von dem aktuellen Geld ab
+                                // Zieht den Preis von dem aktuellen Geld ab
                                 cash.money = cash.money - price;
 
-                                //Feld wird als fertig markiert
+                                // Feld wird als fertig markiert
                                 field1Checked = true;
 
-                                //Passendes Sprite wird gesetzt
+                                // Passendes Sprite wird gesetzt
                                 switch (field1.plantName)
                                 {
                                     case "Tomato":
@@ -168,7 +162,8 @@ public class Adventure2Script : MonoBehaviour {
                                         break;
                                 }
                                 break;
-                            //siehe case 1
+
+                            // Siehe case 1
                             case 2:
                                 field2.plantName = hit.collider.gameObject.name.ToString();
                                 field2.plant = hit.collider.gameObject.GetComponent<Plant>();
@@ -196,7 +191,7 @@ public class Adventure2Script : MonoBehaviour {
                                 }
                                 break;
 
-                            //siehe case 1
+                            // Siehe case 1
                             case 3:
                                 field3.plantName = hit.collider.gameObject.name.ToString();
                                 field3.plant = hit.collider.gameObject.GetComponent<Plant>();
@@ -222,7 +217,8 @@ public class Adventure2Script : MonoBehaviour {
                                         break;
                                 }
                                 break;
-                            //siehe case 1
+
+                            // Siehe case 1
                             case 4:
                                 field4.plantName = hit.collider.gameObject.name.ToString();
                                 field4.plant = hit.collider.gameObject.GetComponent<Plant>();
@@ -254,26 +250,28 @@ public class Adventure2Script : MonoBehaviour {
                         }
 
 
-                        //Collider wieder verfügbar machen
+                        // Collider der Felder wieder verfügbar machen
                         collider1.enabled = true;
                         collider2.enabled = true;
                         collider3.enabled = true;
                         collider4.enabled = true;
 
-                        //Auswahlfenster deaktivieren
+                        // Auswahlfenster deaktivieren und Buttons aktivieren
                         selectionPanel.SetActive(false);
                         helpButton.SetActive(true);
                         weatherButton.SetActive(true);
                     }
+                    // Falls man nicht genuegend Geld hat
                     else
                     {
                         errorMessage.text = "Sie haben nicht genügend Guthaben!";
                     }
                 }
+                // Falls man Auswahlfenster verlassen will
                 else if (hit.collider.gameObject.name == "ExitSelectionPanel")
                 {
 
-                    //Collider wieder verfügbar machen
+                    // Collider wieder verfügbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
                     collider3.enabled = true;
@@ -292,6 +290,7 @@ public class Adventure2Script : MonoBehaviour {
             }*/
         }
 
+        // Gehe in den Erntebereich sobald alle Felder bepflanzt worden sind
         if (field1Checked && field2Checked && field3Checked && field4Checked)
         {
             harvestPanel.SetActive(true);
@@ -299,6 +298,7 @@ public class Adventure2Script : MonoBehaviour {
             weatherButton.SetActive(false);
         }
 
+        // Beende den Erntebereich sobald alle Felder geerntet worden sind
         if (field1.fieldIsHarvested && field2.fieldIsHarvested && field3.fieldIsHarvested && field4.fieldIsHarvested)
         {
             harvestPanel.SetActive(false);

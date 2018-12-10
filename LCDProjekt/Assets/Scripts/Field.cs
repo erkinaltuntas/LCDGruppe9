@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Field
+* Anwendung: Zur Definition und Steuerung der Felder
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +32,7 @@ public class Field : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // Solange auf dem Feld nichts angepflanzt ist, ist das Feld anklickbar
 		if(plantName != "")
         {
             collider1.enabled = false; 
@@ -32,6 +41,7 @@ public class Field : MonoBehaviour {
 
     public void changeSprite()
     {
+        // Weise je nach Auswahl dem Feld das Sprite der Pflanze zu
         switch (plantName)
         {
             case "Tomato": this.GetComponent<SpriteRenderer>().sprite = tomatoGrown; break;

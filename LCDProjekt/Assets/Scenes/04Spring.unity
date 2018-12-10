@@ -11843,10 +11843,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!1 &799290802
 GameObject:
   m_ObjectHideFlags: 0
@@ -12604,7 +12604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1173560662}
   plant: {fileID: 0}
-  button: {fileID: 845177034}
+  harvestFieldButton: {fileID: 845177034}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
@@ -13393,10 +13393,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!1 &863089618
 GameObject:
   m_ObjectHideFlags: 0
@@ -17935,7 +17935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 339580793}
   plant: {fileID: 0}
-  button: {fileID: 1206446452}
+  harvestFieldButton: {fileID: 1206446452}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
@@ -18532,10 +18532,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!1 &1252336567
 GameObject:
   m_ObjectHideFlags: 0
@@ -24542,7 +24542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 294171418}
   plant: {fileID: 0}
-  button: {fileID: 1694987038}
+  harvestFieldButton: {fileID: 1694987038}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1618958306}
@@ -24928,7 +24928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   field: {fileID: 1672647262}
   plant: {fileID: 0}
-  button: {fileID: 1707419457}
+  harvestFieldButton: {fileID: 1707419457}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
@@ -26007,10 +26007,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!1 &1831087732
 GameObject:
   m_ObjectHideFlags: 0
@@ -28993,10 +28993,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descriptionString: 
   descriptionText: {fileID: 0}
+  descriptionImage: {fileID: 0}
   fadeTime: 10
   displayInfo: 0
   plant: {fileID: 0}
-  descriptionImage: {fileID: 0}
 --- !u!1 &2036416091
 GameObject:
   m_ObjectHideFlags: 0

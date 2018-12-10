@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Chicken
+* Anwendung: 
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,9 +34,8 @@ public class Chicken : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //print("Maus wurde gedrückt");
 
-            //Mausposition
+            // Mausposition definieren
             mousePos = Input.mousePosition;
             print(mousePos);
 
@@ -36,12 +44,13 @@ public class Chicken : MonoBehaviour {
             //In zweidim Vektor umwandeln
             mousePosWorld2D = new Vector2(mousePosWorld.x, mousePosWorld.y);
 
-            //Raycast2d
+            // Bestimmte Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            //prüfe ob hit einen collider beinhaltet
+            // Prüfe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
+                // Wenn ein Huhn getroffen worden ist, aktiviere das naechste Huhn (insgesamt 4x)
                 if (hit.collider.gameObject.tag == "chicken")
                 {
                     if (hit.collider.name == "chicken1")

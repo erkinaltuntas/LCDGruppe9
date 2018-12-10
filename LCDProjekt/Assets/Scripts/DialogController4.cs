@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*************************************************************************** 
+* DialogController4
+* Anwendung: Zur Steuerung des Dialogs in der Einfuehrungsstory
+* (vierte Sprechblase)
+* ------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 10.12.2018
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+**************************************************************************/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
