@@ -20,6 +20,7 @@ public class Field : MonoBehaviour {
     public Plant plant;
     Collider2D collider1;
     public bool fieldIsHarvested;
+    public bool fieldIsChecked;
     public Sprite tomatoGrown;
     public Sprite potatoGrown;
     public Sprite cornGrown;

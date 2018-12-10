@@ -35,7 +35,6 @@ public class Adventure2Script : MonoBehaviour {
     Collider2D collider2;
     Collider2D collider3;
     Collider2D collider4;
-    bool field1Checked, field2Checked, field3Checked, field4Checked;
     public GameObject helpButton, weatherButton, nextLevelButton;
     public GameObject selectionPanel, harvestPanel, weatherPanel;
     public TextMeshProUGUI errorMessage;
@@ -140,7 +139,7 @@ public class Adventure2Script : MonoBehaviour {
                                 cash.money = cash.money - price;
 
                                 // Feld wird als fertig markiert
-                                field1Checked = true;
+                                field1.fieldIsChecked = true;
 
                                 // Passendes Sprite wird gesetzt
                                 switch (field1.plantName)
@@ -169,7 +168,7 @@ public class Adventure2Script : MonoBehaviour {
                                 field2.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
 
-                                field2Checked = true;
+                                field2.fieldIsChecked = true;
 
                                 switch (field2.plantName)
                                 {
@@ -196,7 +195,7 @@ public class Adventure2Script : MonoBehaviour {
                                 field3.plantName = hit.collider.gameObject.name.ToString();
                                 field3.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
-                                field3Checked = true;
+                                field2.fieldIsChecked = true;
 
                                 switch (field3.plantName)
                                 {
@@ -223,7 +222,7 @@ public class Adventure2Script : MonoBehaviour {
                                 field4.plantName = hit.collider.gameObject.name.ToString();
                                 field4.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
-                                field4Checked = true;
+                                field4.fieldIsChecked = true;
 
                                 switch (field4.plantName)
                                 {
@@ -291,7 +290,7 @@ public class Adventure2Script : MonoBehaviour {
         }
 
         // Gehe in den Erntebereich sobald alle Felder bepflanzt worden sind
-        if (field1Checked && field2Checked && field3Checked && field4Checked)
+        if (field1.fieldIsChecked && field2.fieldIsChecked && field3.fieldIsChecked && field4.fieldIsChecked)
         {
             harvestPanel.SetActive(true);
             helpButton.SetActive(false);
