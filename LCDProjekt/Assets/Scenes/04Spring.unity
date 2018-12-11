@@ -27109,7 +27109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1936544130}
-  - component: {fileID: 1936544129}
+  - component: {fileID: 1936544131}
   m_Layer: 0
   m_Name: Adventure
   m_TagString: Untagged
@@ -27117,7 +27117,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1936544129
+--- !u!4 &1936544130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936544128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936544131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27125,7 +27138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936544128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55dd97604db37d749ad10c9d6649b3e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c6108e976ade214e94f33c3057aaa08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
@@ -27138,7 +27151,7 @@ MonoBehaviour:
   field4: {fileID: 339580793}
   currentFeldId: 0
   price: 0
-  player: {fileID: 259740252}
+  player: {fileID: 0}
   cash: {fileID: 1132827447}
   tomato: {fileID: 21300000, guid: f497ba26481207245a6e4a61c13fba76, type: 3}
   potato: {fileID: 21300000, guid: 075c9839f90f6d044a6c5b3e2b56eb27, type: 3}
@@ -27157,19 +27170,6 @@ MonoBehaviour:
   cornObj: {fileID: 1819831055}
   carrotObj: {fileID: 857362832}
   emptyObj: {fileID: 2036270022}
---- !u!4 &1936544130
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1936544128}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938233375
 GameObject:
   m_ObjectHideFlags: 0
