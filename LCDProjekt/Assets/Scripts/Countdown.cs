@@ -24,6 +24,7 @@ public class Countdown : MonoBehaviour
     GameObject field2;
     GameObject field3;
     GameObject field4;
+    public Plant emptyPlant;
     int a = 0;
 
     void Start()
@@ -46,6 +47,7 @@ public class Countdown : MonoBehaviour
             {
                 field1.GetComponent<Field>().plantName = "Empty";
                 field1.GetComponent<SpriteRenderer>().sprite = empty;
+                field1.GetComponent<Field>().plant = emptyPlant;
                 print("feld1");
                 field1.GetComponent<Field>().fieldIsChecked = true;
             }
@@ -54,18 +56,21 @@ public class Countdown : MonoBehaviour
                 field2.GetComponent<Field>().plantName = "Empty";
                 field2.GetComponent<SpriteRenderer>().sprite = empty;
                 print("feld2");
+                field2.GetComponent<Field>().plant = emptyPlant;
                 field2.GetComponent<Field>().fieldIsChecked = true;
             }
             if (field3.GetComponent<Field>().plantName == "")
             {
                 field3.GetComponent<Field>().plantName = "Empty";
                 field3.GetComponent<SpriteRenderer>().sprite = empty;
+                field3.GetComponent<Field>().plant = emptyPlant;
                 field3.GetComponent<Field>().fieldIsChecked = true;
             }
             if (field4.GetComponent<Field>().plantName == "")
             {
                 field4.GetComponent<Field>().plantName = "Empty";
                 field4.GetComponent<SpriteRenderer>().sprite = empty;
+                field4.GetComponent<Field>().plant = emptyPlant;
                 field4.GetComponent<Field>().fieldIsChecked = true;
             }
         }

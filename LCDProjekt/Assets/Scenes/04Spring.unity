@@ -23716,6 +23716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: {fileID: 1668137080}
   empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
+  emptyPlant: {fileID: 2036270025}
 --- !u!1 &1672647259
 GameObject:
   m_ObjectHideFlags: 0
