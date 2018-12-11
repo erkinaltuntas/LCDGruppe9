@@ -188,7 +188,7 @@ public class AdventureScript : MonoBehaviour
                                 field3.plantName = hit.collider.gameObject.name.ToString();
                                 field3.plant = hit.collider.gameObject.GetComponent<Plant>();
                                 cash.money = cash.money - price;
-                                field2.fieldIsChecked = true;
+                                field3.fieldIsChecked = true;
 
                                 switch (field3.plantName)
                                 {

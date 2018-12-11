@@ -70,12 +70,10 @@ public class Countdown : MonoBehaviour
                 field4.GetComponent<SpriteRenderer>().sprite = empty;
                 field4.GetComponent<Field>().fieldIsChecked = true;
             }
-            harvestPanel.SetActive(true);
-            helpButton.SetActive(false);
-            weatherButton.SetActive(false);
         }
 
     }
+
     // Countdown bis dieser abgelaufen ist
     IEnumerator LoseTime()
     {

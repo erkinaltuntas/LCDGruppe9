@@ -29,6 +29,7 @@ public class Field : MonoBehaviour {
     // Use this for initialization
     void Start () {
         collider1 = this.GetComponent<Collider2D>();
+        fieldIsChecked = false;
     }
 	
 	// Update is called once per frame
