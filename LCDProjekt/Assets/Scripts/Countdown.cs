@@ -3,9 +3,9 @@
 * Anwendung: Zur Defintion des Wetters sowie der Steuerung, ob sie von 
 * Duerre oder Frost betroffen sind
 *------------------- 
-* Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Neu erstellt
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 11.12.2018
+* Grund für letzte Bearbeitung: SetActive von Panels rausgenommen,da diese schon im AdventureScript ausgeführt werden
 * **************************************************************************/
 
 using System.Collections;
@@ -24,7 +24,7 @@ public class Countdown : MonoBehaviour
     GameObject field2;
     GameObject field3;
     GameObject field4;
-    GameObject weatherButton, harvestPanel, helpButton;
+    int a = 0;
 
     void Start()
     {
@@ -34,16 +34,14 @@ public class Countdown : MonoBehaviour
         field2 = GameObject.Find("Field 2");
         field3 = GameObject.Find("Field 3");
         field4 = GameObject.Find("Field 4");
-        weatherButton = GameObject.Find("WeatherButton");
-        helpButton = GameObject.Find("HelpButton");
-        harvestPanel = GameObject.Find("HarvestPanel");
     }
     void Update()
     {
         countdown.text = ("" + timeLeft); // Zeit im Canvas anzeigen
-        if(timeLeft == 0)
+        if(timeLeft == 0 && a == 0)
         {
             timeLeft=0;
+            a = 1;
             if (field1.GetComponent<Field>().plantName == "")
             {
                 field1.GetComponent<Field>().plantName = "Empty";
