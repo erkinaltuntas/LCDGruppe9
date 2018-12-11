@@ -24,13 +24,18 @@ public class Harvest : MonoBehaviour {
     public Sprite empty;
     public Money cash;
     double missHarvestQuota;
-    public GameObject balancePanel;
+    public GameObject balancePanel, shockPanel;
     public TextMeshProUGUI balanceMessage;
 
 
     // Use this for initialization
     void Start () {
         player = Player.player;
+        //Shockevents
+        if (player.season == 2 || player.season == 3)
+        {
+            shockPanel.SetActive(true);
+        }
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
         harvestFieldButton.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
