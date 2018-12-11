@@ -3,8 +3,9 @@
 * Anwendung: Erstellen des Spielers mit seinen Eigenschaften
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Datum der letzten Bearbeitung: 11.12.2018
+* Grund für letzte Bearbeitung: Gewinne/Verluste mittels Arrays
+* dokumentieren
 **************************************************************************/
 
 using System.Collections;
@@ -20,6 +21,11 @@ public class Player : MonoBehaviour {
     public double money;
     public int riskScore;
     public int season;
+    public double[] droughtLost;
+    public double[] frostLost;
+    public int droughtIndex;
+    public int frostIndex;
+
 
     void Awake()
     {
@@ -30,7 +36,10 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        droughtLost = new double[16];
+        frostLost = new double[16];
+        droughtIndex = 0;
+        frostIndex = 0;
 	}
 	
 	// Update is called once per frame
