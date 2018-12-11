@@ -7887,6 +7887,10 @@ MonoBehaviour:
   countdown: {fileID: 526461273}
   empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
   emptyPlant: {fileID: 924895986}
+  SelectionPanel: {fileID: 1842294915}
+  WeatherPanel: {fileID: 1545715956}
+  TutorialPanel1: {fileID: 2035010542}
+  TutorialPanel2: {fileID: 53428699}
 --- !u!1 &549815688
 GameObject:
   m_ObjectHideFlags: 0

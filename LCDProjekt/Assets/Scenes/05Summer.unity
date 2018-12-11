@@ -27202,6 +27202,10 @@ MonoBehaviour:
   countdown: {fileID: 2000241720}
   empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
   emptyPlant: {fileID: 1416138881}
+  SelectionPanel: {fileID: 1373785476}
+  WeatherPanel: {fileID: 1557392467}
+  TutorialPanel1: {fileID: 350578528}
+  TutorialPanel2: {fileID: 1703897423}
 --- !u!1 &2000902501
 GameObject:
   m_ObjectHideFlags: 0

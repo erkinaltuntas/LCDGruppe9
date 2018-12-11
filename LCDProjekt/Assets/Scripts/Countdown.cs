@@ -25,6 +25,7 @@ public class Countdown : MonoBehaviour
     GameObject field3;
     GameObject field4;
     public Plant emptyPlant;
+    public GameObject SelectionPanel, WeatherPanel, TutorialPanel1, TutorialPanel2;
     int a = 0;
 
     void Start()
@@ -41,7 +42,12 @@ public class Countdown : MonoBehaviour
         countdown.text = ("" + timeLeft); // Zeit im Canvas anzeigen
         if(timeLeft == 0 && a == 0)
         {
-            timeLeft=0;
+            SelectionPanel.SetActive(false);
+            WeatherPanel.SetActive(false);
+            TutorialPanel1.SetActive(false);
+            TutorialPanel2.SetActive(false);
+
+            timeLeft =0;
             a = 1;
             if (field1.GetComponent<Field>().plantName == "")
             {
