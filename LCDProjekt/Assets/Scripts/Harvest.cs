@@ -3,8 +3,9 @@
 * Anwendung: Zum Ernten der Felder sowie Bilanzierung
 *------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Datum der letzten Bearbeitung: 11.12.2018
+* Grund für letzte Bearbeitung: Bei Frost/Dürre dem Player Array die Werte
+* zuweisen
 **************************************************************************/
 using System;
 using System.Collections;
@@ -16,6 +17,7 @@ using UnityEngine.UI;
 
 public class Harvest : MonoBehaviour {
 
+    Player player;
     public Field field;
     public Plant plant;
     public Button harvestFieldButton;
@@ -28,6 +30,7 @@ public class Harvest : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        player = Player.player;
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
         harvestFieldButton.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
@@ -60,12 +63,18 @@ public class Harvest : MonoBehaviour {
 
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
                     "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm$";
+                // Zuweisung der Verlustwerte in das PlayerArray
+                player.frostLost[player.frostIndex] = loss;
+                player.frostIndex++;
 
             }
             else if (plant.droughted)
             {
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
                     "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm$";
+                // Zuweisung der Verlustwerte in das PlayerArray
+                player.droughtLost[player.droughtIndex] = loss;
+                player.droughtIndex++;
             }
         }
 
