@@ -8717,6 +8717,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1760745066}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 286377537}
 --- !u!114 &701849924
 MonoBehaviour:
@@ -9092,6 +9093,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1977533365}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1793183978}
 --- !u!114 &710990082
 MonoBehaviour:
@@ -9392,6 +9394,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1569813338}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 379445489}
 --- !u!114 &714460344
 MonoBehaviour:
@@ -10164,6 +10167,7 @@ GameObject:
   - component: {fileID: 768702116}
   - component: {fileID: 768702118}
   - component: {fileID: 768702117}
+  - component: {fileID: 768702119}
   m_Layer: 5
   m_Name: ShockPanel
   m_TagString: Untagged
@@ -10226,6 +10230,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768702115}
   m_CullTransparentMesh: 0
+--- !u!114 &768702119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768702115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419df40dd5c684540a16a9bf322e00a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &769444039
 GameObject:
   m_ObjectHideFlags: 0
@@ -16004,6 +16019,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1871872708}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 2046182946}
 --- !u!114 &1318531870
 MonoBehaviour:

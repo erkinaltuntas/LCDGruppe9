@@ -302,6 +302,7 @@ public class Adventure2Script : MonoBehaviour {
         {
             harvestPanel.SetActive(false);
             nextLevelButton.SetActive(true);
+            player.season = player.season + 1;
         }
 
 
