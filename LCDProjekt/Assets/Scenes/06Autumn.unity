@@ -7884,8 +7884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b4c2eed52a7f004bb39f323239ab8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 60
   countdown: {fileID: 526461273}
+  empty: {fileID: 21300000, guid: 9b0349d745a023240ace57d95ab7d451, type: 3}
+  emptyPlant: {fileID: 924895986}
 --- !u!1 &549815688
 GameObject:
   m_ObjectHideFlags: 0
@@ -12187,6 +12188,7 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  fieldIsChecked: 0
   tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
   potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
   cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
@@ -14108,6 +14110,7 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  fieldIsChecked: 0
   tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
   potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
   cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
@@ -17734,6 +17737,7 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  fieldIsChecked: 0
   tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
   potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
   cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
@@ -18315,6 +18319,7 @@ MonoBehaviour:
   shock: 0
   plant: {fileID: 0}
   fieldIsHarvested: 0
+  fieldIsChecked: 0
   tomatoGrown: {fileID: 21300000, guid: 543526c76dcee2943a87235036bec7b8, type: 3}
   potatoGrown: {fileID: 21300000, guid: cc8fa53d7d866c34e97db1eb8b504b02, type: 3}
   cornGrown: {fileID: 21300000, guid: d76580cde5e32b942b9adf71f6ef6640, type: 3}
