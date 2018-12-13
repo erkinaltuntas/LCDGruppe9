@@ -24,18 +24,14 @@ public class Harvest : MonoBehaviour {
     public Sprite empty;
     public Money cash;
     double missHarvestQuota;
-    public GameObject balancePanel, shockPanel;
+    public GameObject balancePanel;
     public TextMeshProUGUI balanceMessage;
 
 
     // Use this for initialization
     void Start () {
         player = Player.player;
-        //Shockevents
-        if (player.season == 2 || player.season == 3)
-        {
-            shockPanel.SetActive(true);
-        }
+        
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
         harvestFieldButton.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
@@ -48,41 +44,42 @@ public class Harvest : MonoBehaviour {
 
     void TaskOnClick()
     {
-        // Berechne den Umsatz und aktualisere das Geld des Spielers
-        double actualProfit = getRandomProfit();
-        double loss = actualProfit - plant.profit;
-        cash.money = cash.money + actualProfit;
+        
+            // Berechne den Umsatz und aktualisere das Geld des Spielers
+            double actualProfit = getRandomProfit();
+            double loss = actualProfit - plant.profit;
+            cash.money = cash.money + actualProfit;
 
-        //Feld Sprite entfernen
-        field.GetComponent<SpriteRenderer>().sprite = empty;
-        field.fieldIsHarvested = true;
+            //Feld Sprite entfernen
+            field.GetComponent<SpriteRenderer>().sprite = empty;
+            field.fieldIsHarvested = true;
 
-        // Zeige die Bilanz fuer jedes Feld an
-        balancePanel.SetActive(true);
-        balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" +actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+            // Zeige die Bilanz fuer jedes Feld an
+            balancePanel.SetActive(true);
+            balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" +actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
 
-        if (plant.name != "Empty")
-        {
-            if (plant.frosted)
+            if (plant.name != "Empty")
             {
+                if (plant.frosted)
+                {
 
-                balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
-                    "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm$";
-                // Zuweisung der Verlustwerte in das PlayerArray
-                player.frostLost[player.frostIndex] = loss;
-                player.frostIndex++;
+                    balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
+                        "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm$";
+                    // Zuweisung der Verlustwerte in das PlayerArray
+                    player.frostLost[player.frostIndex] = loss;
+                    player.frostIndex++;
 
+                }
+                else if (plant.droughted)
+                {
+                    balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
+                       "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm$";
+                    // Zuweisung der Verlustwerte in das PlayerArray
+                    player.droughtLost[player.droughtIndex] = loss;
+                    player.droughtIndex++;
+                }
             }
-            else if (plant.droughted)
-            {
-                balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
-                    "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm$";
-                // Zuweisung der Verlustwerte in das PlayerArray
-                player.droughtLost[player.droughtIndex] = loss;
-                player.droughtIndex++;
-            }
-        }
-
+        
     }
 
 
