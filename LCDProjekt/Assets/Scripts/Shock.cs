@@ -34,6 +34,5 @@ public class Shock : MonoBehaviour {
     void TaskOnClick()
     {
         shockPanel.SetActive(false);
-        player.shockIsActive = false;
     }
 }
