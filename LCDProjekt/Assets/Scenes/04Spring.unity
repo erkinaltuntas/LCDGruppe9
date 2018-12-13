@@ -12614,6 +12614,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 432448687}
 --- !u!114 &845177038
 MonoBehaviour:
@@ -17946,6 +17947,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1938233377}
 --- !u!114 &1206446456
 MonoBehaviour:
@@ -21758,6 +21760,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1668137082}
+        m_MethodName: StartCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1538695912
@@ -24573,6 +24586,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1618958306}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 799290804}
 --- !u!114 &1694987042
 MonoBehaviour:
@@ -24959,6 +24973,7 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
+  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 656308610}
 --- !u!114 &1707419461
 MonoBehaviour:

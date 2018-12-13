@@ -27,11 +27,11 @@ public class Countdown : MonoBehaviour
     public Plant emptyPlant;
     public GameObject SelectionPanel, WeatherPanel, TutorialPanel1, TutorialPanel2;
     int a = 0;
+    int b = 0;
 
     void Start()
     {
-        StartCoroutine("LoseTime");
-        Time.timeScale = 1; // Um sicher zu gehen, dass die Zeitskalierung stimmt
+        
         field1 = GameObject.Find("Field 1");
         field2 = GameObject.Find("Field 2");
         field3 = GameObject.Find("Field 3");
@@ -81,6 +81,16 @@ public class Countdown : MonoBehaviour
             }
         }
 
+    }
+
+    public void StartCountdown()
+    {
+        if (b == 0)
+        {
+            StartCoroutine("LoseTime");
+            Time.timeScale = 1; // Um sicher zu gehen, dass die Zeitskalierung stimmt
+            b++;
+        }
     }
 
     // Countdown bis dieser abgelaufen ist
