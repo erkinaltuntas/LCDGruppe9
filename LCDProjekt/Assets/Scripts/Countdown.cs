@@ -45,7 +45,7 @@ public class Countdown : MonoBehaviour
         }
         else
         {
-            countdown.text = ("<color=red>" + timeLeft); // Zeit im Canvas anzeigen
+            countdown.text = ("<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
         }
         
         if(timeLeft == 0 && a == 0)
@@ -87,6 +87,12 @@ public class Countdown : MonoBehaviour
                 field4.GetComponent<Field>().plant = emptyPlant;
                 field4.GetComponent<Field>().fieldIsChecked = true;
             }
+        }
+        if (field1.GetComponent<Field>().plantName != "" && field2.GetComponent<Field>().plantName != "" && field3.GetComponent<Field>().plantName != ""
+            && field4.GetComponent<Field>().plantName != "")
+        {
+            timeLeft = 0;
+            countdown.text = ("" + timeLeft);
         }
 
     }
