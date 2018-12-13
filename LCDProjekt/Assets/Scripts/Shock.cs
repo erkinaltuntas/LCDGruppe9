@@ -24,8 +24,8 @@ public class Shock : MonoBehaviour {
         {
 
         }
-        opt1Button.onClick.AddListener(TaskOnClick);
-        opt2Button.onClick.AddListener(TaskOnClick);
+        opt1Button.onClick.AddListener(TaskOnClickOpt1);
+        opt2Button.onClick.AddListener(TaskOnClickOpt2);
     }
 	
 	// Update is called once per frame
@@ -33,8 +33,12 @@ public class Shock : MonoBehaviour {
 		
 	}
 
-    void TaskOnClick()
+    void TaskOnClickOpt1()
     {
-        shockPanel.SetActive(false);
+
+    }
+    void TaskOnClickOpt2()
+    {
+
     }
 }
