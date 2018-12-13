@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 112158324}
   - component: {fileID: 112158323}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Tutorial2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3062,7 +3062,7 @@ GameObject:
   - component: {fileID: 286377538}
   - component: {fileID: 286377537}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4014,7 +4014,7 @@ GameObject:
   - component: {fileID: 355440223}
   - component: {fileID: 355440222}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4782,7 +4782,7 @@ GameObject:
   - component: {fileID: 379445490}
   - component: {fileID: 379445489}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7609,7 +7609,7 @@ GameObject:
   - component: {fileID: 637113699}
   - component: {fileID: 637113698}
   m_Layer: 5
-  m_Name: PanelTitle
+  m_Name: ShockPanelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7913,7 +7913,7 @@ GameObject:
   - component: {fileID: 644767377}
   - component: {fileID: 644767376}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13544,7 +13544,7 @@ GameObject:
   - component: {fileID: 1043293072}
   - component: {fileID: 1043293071}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15004,7 +15004,7 @@ GameObject:
   - component: {fileID: 1206726650}
   - component: {fileID: 1206726649}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18338,7 +18338,7 @@ GameObject:
   - component: {fileID: 1448498871}
   - component: {fileID: 1448498873}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18808,7 +18808,7 @@ GameObject:
   - component: {fileID: 1474804961}
   - component: {fileID: 1474804960}
   m_Layer: 5
-  m_Name: PanelTitle
+  m_Name: SelectionPanelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20357,7 +20357,7 @@ GameObject:
   - component: {fileID: 1570255198}
   - component: {fileID: 1570255197}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HarvestAllText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24516,7 +24516,7 @@ GameObject:
   - component: {fileID: 1793183979}
   - component: {fileID: 1793183978}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28263,7 +28263,7 @@ GameObject:
   - component: {fileID: 2000241720}
   - component: {fileID: 2000241722}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28812,7 +28812,7 @@ GameObject:
   - component: {fileID: 2046182947}
   - component: {fileID: 2046182946}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30876,7 +30876,7 @@ GameObject:
   - component: {fileID: 2137592875}
   - component: {fileID: 2137592874}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
