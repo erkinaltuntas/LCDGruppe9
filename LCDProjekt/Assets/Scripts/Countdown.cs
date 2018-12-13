@@ -3,9 +3,9 @@
 * Anwendung: Zur Defintion des Wetters sowie der Steuerung, ob sie von 
 * Duerre oder Frost betroffen sind
 *------------------- 
-* Zuletzt bearbeitet von: Victor Xu
-* Datum der letzten Bearbeitung: 11.12.2018
-* Grund für letzte Bearbeitung: SetActive von Panels rausgenommen,da diese schon im AdventureScript ausgeführt werden
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 13.12.2018
+* Grund für letzte Bearbeitung: Rote Zahlen, wenn nur 10 Sec.
 * **************************************************************************/
 
 using System.Collections;
@@ -17,7 +17,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    int timeLeft = 6; //Seconds Overall
+    int timeLeft = 15; //Seconds Overall
     public TextMeshProUGUI countdown; //UI Text Object
     public Sprite empty;
     GameObject field1;
@@ -39,7 +39,15 @@ public class Countdown : MonoBehaviour
     }
     void Update()
     {
-        countdown.text = ("" + timeLeft); // Zeit im Canvas anzeigen
+        if (timeLeft > 10)
+        {
+            countdown.text = ("" + timeLeft); // Zeit im Canvas anzeigen
+        }
+        else
+        {
+            countdown.text = ("<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
+        }
+        
         if(timeLeft == 0 && a == 0)
         {
             SelectionPanel.SetActive(false);
@@ -79,6 +87,12 @@ public class Countdown : MonoBehaviour
                 field4.GetComponent<Field>().plant = emptyPlant;
                 field4.GetComponent<Field>().fieldIsChecked = true;
             }
+        }
+        if (field1.GetComponent<Field>().plantName != "" && field2.GetComponent<Field>().plantName != "" && field3.GetComponent<Field>().plantName != ""
+            && field4.GetComponent<Field>().plantName != "")
+        {
+            timeLeft = 0;
+            countdown.text = ("" + timeLeft);
         }
 
     }
