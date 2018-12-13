@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Shock : MonoBehaviour {
 
     Player player;
-    public Button okButton;
+    public Button opt1Button;
+    public Button opt2Button;
     public GameObject shockPanel;
     public Weather weather;
 
@@ -23,7 +24,8 @@ public class Shock : MonoBehaviour {
         {
 
         }
-        okButton.onClick.AddListener(TaskOnClick);
+        opt1Button.onClick.AddListener(TaskOnClick);
+        opt2Button.onClick.AddListener(TaskOnClick);
     }
 	
 	// Update is called once per frame
