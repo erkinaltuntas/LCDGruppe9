@@ -1,27 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shock : MonoBehaviour {
 
     Player player;
+    public Button okButton;
+    public GameObject shockPanel;
+    public Weather weather;
 
     // Use this for initialization
     void Start () {
         player = Player.player;
         //positiver Schock
-        if (player.season == 2){
-
+        if (weather.seasonName == "Sommer")
+        {
+           
         }
         //negativer Schock
-        if (player.season == 3)
+        if (weather.seasonName == "Herbst")
         {
 
         }
+        okButton.onClick.AddListener(TaskOnClick);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void TaskOnClick()
+    {
+        shockPanel.SetActive(false);
+    }
 }
