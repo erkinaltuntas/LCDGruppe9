@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 22678316}
   - component: {fileID: 22678315}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 55657518}
   - component: {fileID: 55657517}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 132523193}
   - component: {fileID: 132523192}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2798,7 +2798,7 @@ GameObject:
   - component: {fileID: 178105690}
   - component: {fileID: 178105689}
   m_Layer: 5
-  m_Name: PanelTitle
+  m_Name: SelectionPanelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3931,7 +3931,7 @@ GameObject:
   - component: {fileID: 236935296}
   - component: {fileID: 236935295}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7464,7 +7464,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 463560552}
   balancePanel: {fileID: 1148659657}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 236935295}
 --- !u!114 &446507977
 MonoBehaviour:
@@ -7564,7 +7563,7 @@ GameObject:
   - component: {fileID: 463560550}
   - component: {fileID: 463560552}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8532,7 +8531,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 463560552}
   balancePanel: {fileID: 488597515}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1765214690}
 --- !u!114 &551831225
 MonoBehaviour:
@@ -10534,7 +10532,7 @@ GameObject:
   - component: {fileID: 694266404}
   - component: {fileID: 694266409}
   m_Layer: 0
-  m_Name: Clock
+  m_Name: ClockAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11246,7 +11244,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 463560552}
   balancePanel: {fileID: 1615070523}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1021654815}
 --- !u!114 &755838762
 MonoBehaviour:
@@ -15735,7 +15732,7 @@ GameObject:
   - component: {fileID: 1013653642}
   - component: {fileID: 1013653641}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15885,7 +15882,7 @@ GameObject:
   - component: {fileID: 1021654816}
   - component: {fileID: 1021654815}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18519,7 +18516,7 @@ GameObject:
   - component: {fileID: 1259737268}
   - component: {fileID: 1259737270}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19662,7 +19659,7 @@ GameObject:
   - component: {fileID: 1375929390}
   - component: {fileID: 1375929389}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22546,7 +22543,7 @@ GameObject:
   - component: {fileID: 1598178605}
   - component: {fileID: 1598178604}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23904,7 +23901,7 @@ GameObject:
   - component: {fileID: 1683241351}
   - component: {fileID: 1683241350}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HarvestAllText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24941,7 +24938,7 @@ GameObject:
   - component: {fileID: 1765214691}
   - component: {fileID: 1765214690}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27943,7 +27940,7 @@ GameObject:
   - component: {fileID: 2046451782}
   - component: {fileID: 2046451781}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29019,7 +29016,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 463560552}
   balancePanel: {fileID: 1204522153}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1375929389}
 --- !u!114 &2091142002
 MonoBehaviour:
