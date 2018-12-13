@@ -2419,6 +2419,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1118007630}
+        m_MethodName: set_alpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &169976513
@@ -6406,7 +6417,7 @@ GameObject:
   - component: {fileID: 432448688}
   - component: {fileID: 432448687}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9648,7 +9659,7 @@ GameObject:
   - component: {fileID: 656308611}
   - component: {fileID: 656308610}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10028,7 +10039,7 @@ GameObject:
   - component: {fileID: 679393504}
   - component: {fileID: 679393503}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HarvestAllText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11274,17 +11285,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1503602563}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1118007630}
         m_MethodName: set_alpha
         m_Mode: 4
@@ -11864,7 +11864,7 @@ GameObject:
   - component: {fileID: 799290805}
   - component: {fileID: 799290804}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12540,17 +12540,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 845177032}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2081790974}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -14886,6 +14875,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1118007630}
+        m_MethodName: set_alpha
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1014375848
@@ -16125,7 +16125,7 @@ GameObject:
   - component: {fileID: 1103342022}
   - component: {fileID: 1103342021}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16844,7 +16844,7 @@ GameObject:
   - component: {fileID: 1132827445}
   - component: {fileID: 1132827447}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17895,17 +17895,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2081790974}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1206446453
@@ -18353,7 +18342,7 @@ GameObject:
   - component: {fileID: 1233835162}
   - component: {fileID: 1233835161}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23576,7 +23565,7 @@ GameObject:
   - component: {fileID: 1668137080}
   - component: {fileID: 1668137082}
   m_Layer: 5
-  m_Name: TextMeshPro Text
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24523,17 +24512,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2081790974}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1694987039
@@ -24900,17 +24878,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1707419455}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2081790974}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -26762,7 +26729,7 @@ GameObject:
   - component: {fileID: 1892509373}
   - component: {fileID: 1892509372}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TutorialText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27206,7 +27173,7 @@ GameObject:
   - component: {fileID: 1938233378}
   - component: {fileID: 1938233377}
   m_Layer: 9
-  m_Name: TextMeshPro Text
+  m_Name: BalanceText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27365,7 +27332,7 @@ GameObject:
   - component: {fileID: 1942841095}
   - component: {fileID: 1942841094}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28004,7 +27971,7 @@ GameObject:
   - component: {fileID: 1995922206}
   - component: {fileID: 1995922205}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29130,7 +29097,7 @@ GameObject:
   - component: {fileID: 2040534986}
   - component: {fileID: 2040534985}
   m_Layer: 9
-  m_Name: Button (1)
+  m_Name: BalanceButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29504,7 +29471,7 @@ GameObject:
   - component: {fileID: 2081790978}
   - component: {fileID: 2081790980}
   m_Layer: 0
-  m_Name: Clock
+  m_Name: ClockAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29639,7 +29606,7 @@ GameObject:
   - component: {fileID: 2082822756}
   - component: {fileID: 2082822755}
   m_Layer: 5
-  m_Name: PanelTitle
+  m_Name: SelectionPanelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
