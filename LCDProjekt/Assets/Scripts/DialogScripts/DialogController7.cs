@@ -4,8 +4,8 @@
 * (erste Sprechblase)
 * ------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Erstellung des Skripts
+* Datum der letzten Bearbeitung: 17.12.2018
+* Grund für letzte Bearbeitung: Risikowert hinzugefügt
 **************************************************************************/
 using System;
 using System.Collections;
@@ -19,16 +19,18 @@ public class DialogController7 : MonoBehaviour
     private string fullText1;
     private string currentText = "";
     public Player player;
+
     // Use this for initialization
     void Start()
     {
         player = Player.player;
         double money = player.money;
         double win = player.money - 1000;
+        double risk = player.calculateRisk();
 
 
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück!";
+            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikowert: " + risk;
 
         StartCoroutine(ShowText());
     }
