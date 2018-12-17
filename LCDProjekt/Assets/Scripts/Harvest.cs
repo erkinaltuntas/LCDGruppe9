@@ -26,12 +26,16 @@ public class Harvest : MonoBehaviour {
     double missHarvestQuota;
     public GameObject balancePanel;
     public TextMeshProUGUI balanceMessage;
+    public GameObject weather;
+    string seasonName;
 
 
     // Use this for initialization
     void Start () {
         player = Player.player;
-        
+        weather = GameObject.Find("Weather");
+        seasonName = weather.GetComponent<Weather>().seasonName;
+
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
         harvestFieldButton.onClick.AddListener(TaskOnClick);
         plant = field.GetComponent<Field>().plant;
@@ -44,19 +48,22 @@ public class Harvest : MonoBehaviour {
 
     void TaskOnClick()
     {
-        
+        //Feld Sprite entfernen
+        field.GetComponent<SpriteRenderer>().sprite = empty;
+        field.fieldIsHarvested = true;
+
+        if ((seasonName != "Sommer" || player.storm == false) && (seasonName != "Herbst"))
+        {
             // Berechne den Umsatz und aktualisere das Geld des Spielers
             double actualProfit = getRandomProfit();
             double loss = actualProfit - plant.profit;
             cash.money = cash.money + actualProfit;
 
-            //Feld Sprite entfernen
-            field.GetComponent<SpriteRenderer>().sprite = empty;
-            field.fieldIsHarvested = true;
+
 
             // Zeige die Bilanz fuer jedes Feld an
             balancePanel.SetActive(true);
-            balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" +actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+            balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
 
             if (plant.name != "Empty")
             {
@@ -79,7 +86,17 @@ public class Harvest : MonoBehaviour {
                     player.droughtIndex++;
                 }
             }
-        
+
+        } else if (seasonName == "Sommer" && player.storm)
+        {
+            balancePanel.SetActive(true);
+            balanceMessage.text = "Ein heftiger Sturm ist aufgezogen und hat die gesamte Ernte zerstört!";
+        } else if (seasonName == "Herbst")
+        {
+            balancePanel.SetActive(true);
+            balanceMessage.text = "Positiver Shock: ....";
+        }
+
     }
 
 

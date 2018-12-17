@@ -8794,6 +8794,7 @@ MonoBehaviour:
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1760745066}
   balanceMessage: {fileID: 286377537}
+  weather: {fileID: 0}
 --- !u!114 &701849924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9495,6 +9496,7 @@ MonoBehaviour:
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1977533365}
   balanceMessage: {fileID: 1793183978}
+  weather: {fileID: 0}
 --- !u!114 &710990082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9795,6 +9797,7 @@ MonoBehaviour:
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1569813338}
   balanceMessage: {fileID: 379445489}
+  weather: {fileID: 0}
 --- !u!114 &714460344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10641,10 +10644,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419df40dd5c684540a16a9bf322e00a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   opt1Button: {fileID: 710794496}
   opt2Button: {fileID: 1898344953}
   shockPanel: {fileID: 768702115}
   weather: {fileID: 1507209113}
+  choice: 0
+  cash: {fileID: 1448498873}
 --- !u!1 &769444039
 GameObject:
   m_ObjectHideFlags: 0
@@ -11227,11 +11233,11 @@ MonoBehaviour:
     lineCount: 5
     pageCount: 1
     materialCount: 2
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -16399,6 +16405,7 @@ MonoBehaviour:
   cash: {fileID: 1448498873}
   balancePanel: {fileID: 1871872708}
   balanceMessage: {fileID: 2046182946}
+  weather: {fileID: 0}
 --- !u!114 &1318531870
 MonoBehaviour:
   m_ObjectHideFlags: 0

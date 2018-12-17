@@ -77,7 +77,7 @@ public class Adventure2Script : MonoBehaviour {
         {
             // Mausposition definieren
             mousePos = Input.mousePosition;
-            print(mousePos);
+            //print(mousePos);
 
             // Mausposition World
             mousePosWorld = mainCamera.ScreenToWorldPoint(mousePos);
@@ -90,7 +90,7 @@ public class Adventure2Script : MonoBehaviour {
             // Prüfe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
-                print(hit.collider.gameObject.name);
+                //print(hit.collider.gameObject.name);
 
                 // Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist, zeige das Auswahlfenster an
                 if (hit.collider.gameObject.tag == "Feld")

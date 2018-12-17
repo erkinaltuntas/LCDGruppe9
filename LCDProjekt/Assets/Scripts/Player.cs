@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
     public double[] frostLost;
     public int droughtIndex;
     public int frostIndex;
+    public bool storm = false;
 
 
     void Awake()

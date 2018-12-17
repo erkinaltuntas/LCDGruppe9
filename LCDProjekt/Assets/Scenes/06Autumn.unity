@@ -11394,6 +11394,7 @@ MonoBehaviour:
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1903083291}
   balanceMessage: {fileID: 1350241570}
+  weather: {fileID: 0}
 --- !u!114 &769167373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16732,10 +16733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419df40dd5c684540a16a9bf322e00a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   opt1Button: {fileID: 129953378}
   opt2Button: {fileID: 1660179121}
   shockPanel: {fileID: 1222918372}
   weather: {fileID: 494074718}
+  choice: 0
+  cash: {fileID: 2138552227}
 --- !u!1 &1223266258
 GameObject:
   m_ObjectHideFlags: 0
@@ -24589,6 +24593,7 @@ MonoBehaviour:
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1475827329}
   balanceMessage: {fileID: 1279358538}
+  weather: {fileID: 0}
 --- !u!114 &1731127213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25237,6 +25242,7 @@ MonoBehaviour:
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1223266258}
   balanceMessage: {fileID: 1112227031}
+  weather: {fileID: 0}
 --- !u!114 &1784436061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27250,6 +27256,7 @@ MonoBehaviour:
   cash: {fileID: 2138552227}
   balancePanel: {fileID: 1222707388}
   balanceMessage: {fileID: 265669690}
+  weather: {fileID: 0}
 --- !u!114 &1875964158
 MonoBehaviour:
   m_ObjectHideFlags: 0

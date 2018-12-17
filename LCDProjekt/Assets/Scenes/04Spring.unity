@@ -3782,6 +3782,7 @@ MonoBehaviour:
   frostLost: []
   droughtIndex: 0
   frostIndex: 0
+  storm: 0
 --- !u!4 &259740253
 Transform:
   m_ObjectHideFlags: 0
@@ -12603,8 +12604,8 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 432448687}
+  weather: {fileID: 0}
 --- !u!114 &845177038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17948,8 +17949,8 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1938233377}
+  weather: {fileID: 0}
 --- !u!114 &1206446456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24565,8 +24566,8 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1618958306}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 799290804}
+  weather: {fileID: 0}
 --- !u!114 &1694987042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24941,8 +24942,8 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 656308610}
+  weather: {fileID: 0}
 --- !u!114 &1707419461
 MonoBehaviour:
   m_ObjectHideFlags: 0
