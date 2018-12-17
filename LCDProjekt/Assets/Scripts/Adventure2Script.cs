@@ -36,7 +36,7 @@ public class Adventure2Script : MonoBehaviour {
     Collider2D collider3;
     Collider2D collider4;
     public GameObject helpButton, weatherButton, nextLevelButton;
-    public GameObject selectionPanel, harvestPanel, weatherPanel;
+    public GameObject selectionPanel, harvestPanel, weatherPanel, creditPanel;
     public TextMeshProUGUI errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
@@ -274,6 +274,7 @@ public class Adventure2Script : MonoBehaviour {
                     else
                     {
                         errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                        creditPanel.SetActive(true);
                     }
                 }
                 // Falls man Auswahlfenster verlassen will
