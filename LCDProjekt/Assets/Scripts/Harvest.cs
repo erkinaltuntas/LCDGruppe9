@@ -53,18 +53,10 @@ public class Harvest : MonoBehaviour {
         field.GetComponent<SpriteRenderer>().sprite = empty;
         field.fieldIsHarvested = true;
 
-        if ((seasonName != "Sommer" || player.storm == false))
-        {
             // Berechne den Umsatz und aktualisere das Geld des Spielers
             double actualProfit = getRandomProfit();
             double loss = actualProfit - plant.profit;
             cash.money = cash.money + actualProfit;
-
-            if (seasonName == "Herbst")
-            {
-                balancePanel.SetActive(true);
-                balanceMessage.text = "Positiver Shock: ....";
-            }
 
             // Zeige die Bilanz fuer jedes Feld an
             balancePanel.SetActive(true);
@@ -92,11 +84,7 @@ public class Harvest : MonoBehaviour {
                 }
             }
 
-        } else if (seasonName == "Sommer" && player.storm)
-        {
-            balancePanel.SetActive(true);
-            balanceMessage.text = "Ein heftiger Sturm ist " + Environment.NewLine  + "aufgezogen und hat die " + Environment.NewLine  + "gesamte Ernte zerstört!";
-        } 
+        
 
     }
 
@@ -122,7 +110,7 @@ public class Harvest : MonoBehaviour {
         // Falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
         if (plant.droughted && plant.frosted)
         {
-            if(random5 == 0)
+            if (random5 == 0)
             {
                 plant.droughted = false;
             }
@@ -130,16 +118,43 @@ public class Harvest : MonoBehaviour {
             {
                 plant.frosted = false;
             }
-            Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-            return plant.profit - (plant.profit * missHarvestQuota);
-        }
-        else if(plant.droughted || plant.frosted)
-        {
-            Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-            return plant.profit - (plant.profit * missHarvestQuota);
         }
 
-        Debug.Log("von Dürre betroffen:" + plant.droughted + "von Frost betroffen:" + plant.frosted);
-        return plant.profit;
+        if (plant.droughted || plant.frosted)
+        {
+            if (seasonName == "Herbst" && player.choice == 1)
+            {
+                return (plant.profit * 1.25) - ((plant.profit * 1.25) * missHarvestQuota);
+            }
+            else if (seasonName == "Herbst" && player.choice == 2)
+            {
+                plant.droughted = false;
+                plant.frosted = false;
+                return plant.profit;
+            }
+            else
+            {
+                return plant.profit - (plant.profit * missHarvestQuota);
+            }
+        }
+        else
+        {
+            if (seasonName == "Herbst" && player.choice == 1)
+            {
+                return plant.profit * 1.25;
+            }
+            else if (seasonName == "Herbst" && player.choice == 2)
+            {
+                plant.droughted = false;
+                plant.frosted = false;
+                return plant.profit;
+            }
+            else
+            {
+                return plant.profit;
+            }
+        }
+
+        
     }
 }

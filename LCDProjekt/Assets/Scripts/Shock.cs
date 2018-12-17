@@ -17,7 +17,6 @@ public class Shock : MonoBehaviour {
     public GameObject shockPanel, resultPanel;
     GameObject weather;
     string seasonName;
-    public int choice;
     public Money cash;
 
     // Use this for initialization
@@ -47,24 +46,25 @@ public class Shock : MonoBehaviour {
     void TaskOnClickOpt1()
     {
         print("Task 1");
-        choice = 1;
-        //positiver Schock
+
+        //negativer Schock
         if (seasonName == "Sommer")
         {
             cash.money = cash.money - 250;
             print("option 1");
         }
-        //negativer Schock
+        //positiver Schock
         if (seasonName == "Herbst")
         {
+            player.choice = 1;
         }
     }
 
     void TaskOnClickOpt2()
     {
         print("Task 2");
-        choice = 2;
-        //positiver Schock
+        
+        //negativer Schock
         if (seasonName == "Sommer")
         {
             /*int random = UnityEngine.Random.Range(0, 2);
@@ -78,9 +78,10 @@ public class Shock : MonoBehaviour {
            
 
         }
-        //negativer Schock
+        //positiver Schock
         if (seasonName == "Herbst")
         {
+            player.choice = 2;
         }
     }
     void TaskOnClickExit()
