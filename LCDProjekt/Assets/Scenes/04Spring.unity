@@ -3120,7 +3120,7 @@ GameObject:
   - component: {fileID: 192245017}
   m_Layer: 0
   m_Name: Weather
-  m_TagString: Untagged
+  m_TagString: Weather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3136,7 +3136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622558b31bbb858418b614d177c1d3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seasonName: 
+  seasonName: "Fr\xFChling"
+  seasonNumber: 1
   frostProb: 0.5
   droughtProb: 0.2
   random1: 0
@@ -12603,7 +12604,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1659617975}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 432448687}
 --- !u!114 &845177038
 MonoBehaviour:
@@ -17948,7 +17948,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 2067968475}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 1938233377}
 --- !u!114 &1206446456
 MonoBehaviour:
@@ -24565,7 +24564,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 1618958306}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 799290804}
 --- !u!114 &1694987042
 MonoBehaviour:
@@ -24941,7 +24939,6 @@ MonoBehaviour:
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   cash: {fileID: 1132827447}
   balancePanel: {fileID: 934782684}
-  shockPanel: {fileID: 0}
   balanceMessage: {fileID: 656308610}
 --- !u!114 &1707419461
 MonoBehaviour:

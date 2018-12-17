@@ -32,15 +32,21 @@ public class Player : MonoBehaviour {
         player = this;
         // Der Spieler wird in die naechste Szene uebertragen
         DontDestroyOnLoad(transform.gameObject);
+
+        
+
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         droughtLost = new double[16];
         frostLost = new double[16];
         droughtIndex = 0;
         frostIndex = 0;
-	}
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

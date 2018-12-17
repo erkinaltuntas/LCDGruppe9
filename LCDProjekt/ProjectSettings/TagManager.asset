@@ -8,6 +8,7 @@ TagManager:
   - Pflanze
   - ErnteBtn
   - chicken
+  - Weather
   layers:
   - Default
   - TransparentFX
