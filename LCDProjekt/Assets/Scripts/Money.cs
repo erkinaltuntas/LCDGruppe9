@@ -16,7 +16,6 @@ public class Money : MonoBehaviour {
     public Player player;
     public TextMeshProUGUI moneyText;
     public double money;
-    public GameObject CreditPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -43,11 +42,4 @@ public class Money : MonoBehaviour {
         return true;
     }
 
-    public void openCredit()
-    {
-        if (!enoughMoney())
-        {
-            CreditPanel.SetActive(true);    
-        }
-    }
 }
