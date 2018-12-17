@@ -1,7 +1,6 @@
 ﻿/*************************************************************************** 
 * Weather
-* Anwendung: Zur Defintion des Wetters sowie der Steuerung, ob sie von 
-* Duerre oder Frost betroffen sind
+* Anwendung: Zur Anzeige des Timers
 *------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 13.12.2018
