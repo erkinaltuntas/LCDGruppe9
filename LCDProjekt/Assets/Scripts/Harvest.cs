@@ -52,14 +52,18 @@ public class Harvest : MonoBehaviour {
         field.GetComponent<SpriteRenderer>().sprite = empty;
         field.fieldIsHarvested = true;
 
-        if ((seasonName != "Sommer" || player.storm == false) && (seasonName != "Herbst"))
+        if ((seasonName != "Sommer" || player.storm == false))
         {
             // Berechne den Umsatz und aktualisere das Geld des Spielers
             double actualProfit = getRandomProfit();
             double loss = actualProfit - plant.profit;
             cash.money = cash.money + actualProfit;
 
-
+            if (seasonName == "Herbst")
+            {
+                balancePanel.SetActive(true);
+                balanceMessage.text = "Positiver Shock: ....";
+            }
 
             // Zeige die Bilanz fuer jedes Feld an
             balancePanel.SetActive(true);
@@ -91,11 +95,7 @@ public class Harvest : MonoBehaviour {
         {
             balancePanel.SetActive(true);
             balanceMessage.text = "Ein heftiger Sturm ist aufgezogen und hat die gesamte Ernte zerstört!";
-        } else if (seasonName == "Herbst")
-        {
-            balancePanel.SetActive(true);
-            balanceMessage.text = "Positiver Shock: ....";
-        }
+        } 
 
     }
 

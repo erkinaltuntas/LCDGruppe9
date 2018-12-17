@@ -54,13 +54,14 @@ public class Shock : MonoBehaviour {
         //positiver Schock
         if (seasonName == "Sommer")
         {
-            int random = UnityEngine.Random.Range(0, 2);
+            /*int random = UnityEngine.Random.Range(0, 2);
             if (random == 1)
             {
                 player.storm = true;
 
             }
-            print("option 2");
+            print("option 2");*/
+            player.storm = true;
         }
         //negativer Schock
         if (seasonName == "Herbst")
