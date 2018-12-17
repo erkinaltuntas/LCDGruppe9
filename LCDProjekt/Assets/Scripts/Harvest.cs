@@ -37,12 +37,13 @@ public class Harvest : MonoBehaviour {
         seasonName = weather.GetComponent<Weather>().seasonName;
 
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
-        harvestFieldButton.onClick.AddListener(TaskOnClick);
+        
         plant = field.GetComponent<Field>().plant;
+
         missHarvestQuota = 1;
         field.changeSprite();
-
         
+        harvestFieldButton.onClick.AddListener(TaskOnClick);
     }
 	
 
@@ -94,7 +95,7 @@ public class Harvest : MonoBehaviour {
         } else if (seasonName == "Sommer" && player.storm)
         {
             balancePanel.SetActive(true);
-            balanceMessage.text = "Ein heftiger Sturm ist aufgezogen und hat die gesamte Ernte zerstört!";
+            balanceMessage.text = "Ein heftiger Sturm ist " + Environment.NewLine  + "aufgezogen und hat die " + Environment.NewLine  + "gesamte Ernte zerstört!";
         } 
 
     }

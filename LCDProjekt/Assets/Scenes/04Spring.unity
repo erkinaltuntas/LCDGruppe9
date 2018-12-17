@@ -3777,12 +3777,14 @@ MonoBehaviour:
   id: 0
   playerName: 
   money: 1000
-  riskScore: 0
+  riskScores: []
+  risk: 0
   season: 1
   droughtLost: []
   frostLost: []
   droughtIndex: 0
   frostIndex: 0
+  riskIndex: 0
   storm: 0
 --- !u!4 &259740253
 Transform:
@@ -27164,6 +27166,7 @@ MonoBehaviour:
   cornObj: {fileID: 1819831055}
   carrotObj: {fileID: 857362832}
   emptyObj: {fileID: 2036270022}
+  weather: {fileID: 0}
 --- !u!1 &1938233375
 GameObject:
   m_ObjectHideFlags: 0
