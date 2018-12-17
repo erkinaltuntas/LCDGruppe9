@@ -10951,7 +10951,7 @@ MonoBehaviour:
   exitButton: {fileID: 851551062}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   shockPanel: {fileID: 768702115}
-  stormPanel: {fileID: 1172387175}
+  resultPanel: {fileID: 1172387175}
   choice: 0
   cash: {fileID: 1448498873}
 --- !u!1 &769444039

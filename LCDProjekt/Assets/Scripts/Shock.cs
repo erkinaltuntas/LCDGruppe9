@@ -14,7 +14,7 @@ public class Shock : MonoBehaviour {
     GameObject field3;
     GameObject field4;
     public Sprite empty;
-    public GameObject shockPanel, stormPanel;
+    public GameObject shockPanel, resultPanel;
     GameObject weather;
     string seasonName;
     public int choice;
@@ -94,6 +94,6 @@ public class Shock : MonoBehaviour {
         field4.GetComponent<SpriteRenderer>().sprite = empty;
         field4.GetComponent<Field>().fieldIsHarvested = true;
 
-        stormPanel.SetActive(false);
+        resultPanel.SetActive(false);
     }
 }
