@@ -13,6 +13,7 @@ using UnityEngine;
 
 public class Weather : MonoBehaviour {
     public string seasonName;
+    public int seasonNumber;
     public double frostProb;
     public double droughtProb;
 
@@ -20,7 +21,6 @@ public class Weather : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        seasonName = "Frühling";
 
         random1 = Random.Range(0, 11);
         random2 = Random.Range(0, 11);

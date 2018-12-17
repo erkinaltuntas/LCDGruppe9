@@ -3,8 +3,8 @@
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Datum der letzten Bearbeitung: 17.12.2018
+* Grund für letzte Bearbeitung: Risikoberechnung
 **************************************************************************/
 
 using System.Collections;
@@ -44,10 +44,15 @@ public class Adventure2Script : MonoBehaviour {
     public GameObject carrotObj;
     public GameObject emptyObj;
 
+    public GameObject weather;
+
 
     // Use this for initialization
     void Start() {
         player = Player.player;
+
+        weather = GameObject.Find("Weather");
+        
 
         // Zu Beginn des Spiels Wetteranzeige aktivieren, andere Objekte deaktivieren
         weatherPanel.SetActive(true);
@@ -124,6 +129,11 @@ public class Adventure2Script : MonoBehaviour {
                         cornObj.GetComponent<DisplayDescription>().displayInfo = false;
                         carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
                         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
+
+
+                        // Fügt die Entscheidung zum RisikoArray hinzu
+                        player.riskScores[player.riskIndex] = player.calculateRiskPlant(hit.collider.gameObject.GetComponent<Plant>(), weather.GetComponent<Weather>());
+                        player.riskIndex++;
 
                         // Schaut nach welches Feld ausgewaehlt wurde
                         switch (currentFeldId)
@@ -302,7 +312,7 @@ public class Adventure2Script : MonoBehaviour {
         {
             harvestPanel.SetActive(false);
             nextLevelButton.SetActive(true);
-            player.season = player.season + 1;
+           
         }
 
 

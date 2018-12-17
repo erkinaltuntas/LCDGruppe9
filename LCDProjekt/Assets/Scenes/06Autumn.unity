@@ -7550,7 +7550,7 @@ GameObject:
   - component: {fileID: 494074718}
   m_Layer: 0
   m_Name: Weather
-  m_TagString: Untagged
+  m_TagString: Weather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7567,6 +7567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seasonName: Herbst
+  seasonNumber: 3
   frostProb: 0.3
   droughtProb: 0.3
   random1: 0

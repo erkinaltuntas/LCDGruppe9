@@ -3120,7 +3120,7 @@ GameObject:
   - component: {fileID: 192245017}
   m_Layer: 0
   m_Name: Weather
-  m_TagString: Untagged
+  m_TagString: Weather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3136,7 +3136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622558b31bbb858418b614d177c1d3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seasonName: 
+  seasonName: "Fr\xFChling"
+  seasonNumber: 1
   frostProb: 0.5
   droughtProb: 0.2
   random1: 0
