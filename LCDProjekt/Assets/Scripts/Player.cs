@@ -27,7 +27,6 @@ public class Player : MonoBehaviour {
     public int droughtIndex, frostIndex, riskIndex;
     public bool storm = false;
 
-
     void Awake()
     {
         player = this;

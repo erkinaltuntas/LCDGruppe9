@@ -273,6 +273,7 @@ public class Adventure2Script : MonoBehaviour {
                     // Falls man nicht genuegend Geld hat
                     else
                     {
+                        if(creditPanel.GetComponent<Credit>.de)
                         errorMessage.text = "Sie haben nicht genügend Guthaben!";
                         creditPanel.SetActive(true);
                     }

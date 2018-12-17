@@ -9,6 +9,7 @@ public class Credit : MonoBehaviour {
     public GameObject creditPanel, selectionPanel, money;
     public Button acceptButton;
     public Button denyButton;
+    public bool accepted, denied;
 
 
 	// Use this for initialization
@@ -33,13 +34,20 @@ public class Credit : MonoBehaviour {
 
     public void TaskOnAccept()
     {
-        
-        money.GetComponent<Money>().money += 1000;
-        creditPanel.SetActive(false);
+        if (!denied)
+        {
+            accepted = true;
+            denied = false;
+            money.GetComponent<Money>().money += 1000;
+            creditPanel.SetActive(false);
+        }
+
     }
 
     public void TaskOnDeny()
     {
+        accepted = false;
+        denied = true;
         creditPanel.SetActive(false);
     }
 }
