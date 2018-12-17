@@ -4,8 +4,8 @@
 * (erste Sprechblase)
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Erstellung des Skripts
+* Datum der letzten Bearbeitung: 17.12.2018
+* Grund für letzte Bearbeitung: Anpassung des Textes je nach Gewinn
 **************************************************************************/
 using System;
 using System.Collections;
@@ -26,9 +26,21 @@ public class DialogController5 : MonoBehaviour
         double money = player.money;
         double win = player.money - 1000;
 
-
-        fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " +money+ " Farm Dollar."
-            + Environment.NewLine + Environment.NewLine + " Du hast also "+win+" Farm Dollar erwirtschaftet.";
+        if (win > 1000)
+        {
+            fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
+            + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet.";
+        }
+        else if (win < 1000)
+        {
+            fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
+            + Environment.NewLine + Environment.NewLine + " Du hast also " + win*(-1) + " Farm Dollar verloren.";
+        }
+        else
+        {
+            fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
+            + Environment.NewLine + Environment.NewLine + " Du hast also genauso viel Geld wie am Anfang.";
+        }
 
         StartCoroutine(ShowText());
     }
