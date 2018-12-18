@@ -39,10 +39,6 @@ public class Field : MonoBehaviour {
         {
             collider1.enabled = false; 
         }
-        else
-        {
-            collider1.enabled = true;
-        }
 	}
 
     public void changeSprite()
