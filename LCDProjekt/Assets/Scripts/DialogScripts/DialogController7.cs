@@ -27,10 +27,32 @@ public class DialogController7 : MonoBehaviour
         double money = player.money;
         double win = player.money - 1000;
         double risk = player.calculateRisk();
+        string risikoklasse = "";
+
+        if(risk < 0.7d)
+        {
+            risikoklasse = "Sicherheit";
+        }
+        else if (0.7d <= risk && risk < 0.9d)
+        {
+            risikoklasse = "Ertrag";
+        }
+        else if (0.9d <= risk && risk < 1.1d)
+        {
+            risikoklasse = "Wachstum";
+        }
+        else if (1.1d <= risk && risk < 1.3d)
+        {
+            risikoklasse = "Risiko";
+        }
+        else if (1.3d <= risk)
+        {
+            risikoklasse = "Spekulativ";
+        }
 
 
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikowert: " + risk;
+            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
 
         StartCoroutine(ShowText());
     }
