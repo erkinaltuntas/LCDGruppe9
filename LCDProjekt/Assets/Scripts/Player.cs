@@ -28,6 +28,8 @@ public class Player : MonoBehaviour {
     public bool storm = false;
     public int choice;
 
+    public bool creditShown;
+
     void Awake()
     {
         player = this;
