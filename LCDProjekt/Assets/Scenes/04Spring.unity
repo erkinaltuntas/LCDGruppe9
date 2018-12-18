@@ -19081,7 +19081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   plantName: Tomato
-  price: 800
+  price: 240
   profit: 390
   droughtResistance: 0.3
   frostResistance: 0.2
