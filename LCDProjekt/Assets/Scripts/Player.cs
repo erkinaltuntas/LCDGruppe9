@@ -53,6 +53,8 @@ public class Player : MonoBehaviour {
         droughtIndex = 0;
         frostIndex = 0;
 
+        creditShown = false;
+
 
     }
 	

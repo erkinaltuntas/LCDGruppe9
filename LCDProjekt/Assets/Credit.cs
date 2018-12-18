@@ -15,10 +15,8 @@ using UnityEngine.UI;
 public class Credit : MonoBehaviour {
     public bool accepted;
     public bool shown;
-    public Button acceptButton;
-    public Button refuseButton;
+    public Button acceptButton, rejectButton;
     public Player player;
-    
     public Field field1, field2, field3, field4;
     public GameObject creditPanel, gameButtonsPanel, selectionPanel;
     public Money money;
@@ -28,20 +26,23 @@ public class Credit : MonoBehaviour {
     void Start () {
         creditPanel = this.gameObject;
         player = Player.player;
-        player.creditShown = true;
+        shown = true;
+        // Steuert, dass der Kredit im gesamten Spiel max. 1x angezeigt werden kann
+        //player.creditShown = true;
+
         // Weise den Buttons die Methoden zu
         acceptButton.onClick.AddListener(TaskOnAccept);
-        refuseButton.onClick.AddListener(TaskOnRefuse);
-        // Weise die Felder zu
-        // Deaktivere die Collider der Felder
+        rejectButton.onClick.AddListener(TaskOnReject);
+        
+        // Deaktivere alle interaktiven Objekten
         field1.GetComponent<Collider2D>().enabled = false;
         field2.GetComponent<Collider2D>().enabled = false;
         field3.GetComponent<Collider2D>().enabled = false;
         field4.GetComponent<Collider2D>().enabled = false;
-
         gameButtonsPanel.SetActive(false);
         selectionPanel.SetActive(false);
 
+        player.creditShown = true;
        
 
         //
@@ -49,6 +50,7 @@ public class Credit : MonoBehaviour {
 
     void TaskOnAccept()
     {
+        // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = true;
         money.money += 1000;
         field1.GetComponent<Collider2D>().enabled = true;
@@ -58,8 +60,9 @@ public class Credit : MonoBehaviour {
         gameButtonsPanel.SetActive(true);
         creditPanel.SetActive(false);
     }
-    void TaskOnRefuse()
+    void TaskOnReject()
     {
+        // Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = false;
         field1.GetComponent<Collider2D>().enabled = true;
         field2.GetComponent<Collider2D>().enabled = true;
