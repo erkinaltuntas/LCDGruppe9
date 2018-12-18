@@ -32,6 +32,7 @@ public class Shock : MonoBehaviour {
     private double preventionCosts;
     public bool comingFromNegativeShock;
     public TextMeshProUGUI errorMessage;
+    public TextMeshProUGUI stormMessage;
 
 
     // Use this for initialization
@@ -59,6 +60,7 @@ public class Shock : MonoBehaviour {
 
     void TaskOnClickOpt1()
     {
+        player.choice = 1;
         preventionCosts = 250;
 
         //negativer Schock und Option 1
@@ -69,10 +71,10 @@ public class Shock : MonoBehaviour {
             {
                 cash.money = cash.money - preventionCosts;
                 shockPanel.SetActive(false);
-                harvestField1Button.SetActive(true);
-                harvestField2Button.SetActive(true);
-                harvestField3Button.SetActive(true);
-                harvestField4Button.SetActive(true);
+
+                resultPanel.SetActive(true);
+                stormMessage.text = "Dank deiner guten Vorbereitung hat der Sturm dir nichts angetan.";
+                
                 
                 player.riskScoreShock[0] = 0;
             }
@@ -95,13 +97,14 @@ public class Shock : MonoBehaviour {
         //positiver Schock und Option 1
         if (seasonName == "Herbst")
         {
-            player.choice = 1;
+            
             player.riskScoreShock[1] = 0.1;
         }
     }
 
     void TaskOnClickOpt2()
     {
+        player.choice = 2;
         print("Task 2");
         
         //negativer Schock und Option 2
@@ -114,35 +117,41 @@ public class Shock : MonoBehaviour {
                 resultPanel.SetActive(true);
                 shockPanel.SetActive(false);
             }
-
-            shockPanel.SetActive(false);
-            harvestField1Button.SetActive(true);
-            harvestField2Button.SetActive(true);
-            harvestField3Button.SetActive(true);
-            harvestField4Button.SetActive(true);
+            else {
+                shockPanel.SetActive(false);
+                resultPanel.SetActive(true);
+                stormMessage.text = "Glück gehabt. Der Sturm konnte deiner Ernte nichts anhaben.";
+            }
             player.riskScoreShock[0] = 0.1;
-
         }
         //positiver Schock und Option 2
         if (seasonName == "Herbst")
         {
-            player.choice = 2;
             player.riskScoreShock[1] = 0;
         }
     }
     void TaskOnClickExit()
     {
         // bei Exit aus SturmPanel werden die Felder automatisch geerntet ohne Erträge 
-
-        field1.GetComponent<SpriteRenderer>().sprite = empty;
-        field1.GetComponent<Field>().fieldIsHarvested = true;
-        field2.GetComponent<SpriteRenderer>().sprite = empty;
-        field2.GetComponent<Field>().fieldIsHarvested = true;
-        field3.GetComponent<SpriteRenderer>().sprite = empty;
-        field3.GetComponent<Field>().fieldIsHarvested = true;
-        field4.GetComponent<SpriteRenderer>().sprite = empty;
-        field4.GetComponent<Field>().fieldIsHarvested = true;
-
+        if (player.choice == 1 || player.storm == false)
+        {
+            resultPanel.SetActive(false);
+            harvestField1Button.SetActive(true);
+            harvestField2Button.SetActive(true);
+            harvestField3Button.SetActive(true);
+            harvestField4Button.SetActive(true);
+        }
+        else
+        {
+            field1.GetComponent<SpriteRenderer>().sprite = empty;
+            field1.GetComponent<Field>().fieldIsHarvested = true;
+            field2.GetComponent<SpriteRenderer>().sprite = empty;
+            field2.GetComponent<Field>().fieldIsHarvested = true;
+            field3.GetComponent<SpriteRenderer>().sprite = empty;
+            field3.GetComponent<Field>().fieldIsHarvested = true;
+            field4.GetComponent<SpriteRenderer>().sprite = empty;
+            field4.GetComponent<Field>().fieldIsHarvested = true;
+        }
         resultPanel.SetActive(false);
     }
 }
