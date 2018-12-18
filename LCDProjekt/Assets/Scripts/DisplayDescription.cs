@@ -75,7 +75,7 @@ public class DisplayDescription : MonoBehaviour {
         if (displayInfo)
         {
             descriptionText.text = descriptionString;
-            descriptionText.color = Color.Lerp(descriptionText.color, Color.white, fadeTime * Time.deltaTime);
+            descriptionText.color = Color.Lerp(descriptionText.color, Color.black, fadeTime * Time.deltaTime);
             descriptionImage.color = Color.Lerp(descriptionImage.color, Color.white, fadeTime * Time.deltaTime);
 
         }

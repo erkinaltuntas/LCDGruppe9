@@ -1,11 +1,11 @@
 ﻿/*************************************************************************** 
-* DialogController5
+* DialogController7
 * Anwendung: Zur Steuerung des Dialogs in der Abschlussstory
 * (erste Sprechblase)
 * ------------------- 
-* Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 17.12.2018
-* Grund für letzte Bearbeitung: Risikowert hinzugefügt
+* Zuletzt bearbeitet von: Anna Buchner
+* Datum der letzten Bearbeitung: 18.12.2018
+* Grund für letzte Bearbeitung: Risikoklasse ausgewertet und Einfluss der Schock-Events auf den Score
 **************************************************************************/
 using System;
 using System.Collections;
@@ -27,10 +27,34 @@ public class DialogController7 : MonoBehaviour
         double money = player.money;
         double win = player.money - 1000;
         double risk = player.calculateRisk();
+        double riskShock = player.riskScoreShock[0] + player.riskScoreShock[1];
+        risk += riskShock;
+        string risikoklasse = "";
+
+        if(risk < 0.7d)
+        {
+            risikoklasse = "Sicherheit";
+        }
+        else if (0.7d <= risk && risk < 0.9d)
+        {
+            risikoklasse = "Ertrag";
+        }
+        else if (0.9d <= risk && risk < 1.1d)
+        {
+            risikoklasse = "Wachstum";
+        }
+        else if (1.1d <= risk && risk < 1.3d)
+        {
+            risikoklasse = "Risiko";
+        }
+        else if (1.3d <= risk)
+        {
+            risikoklasse = "Spekulativ";
+        }
 
 
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikowert: " + risk;
+            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
 
         StartCoroutine(ShowText());
     }

@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Schock
+* Anwendung: Steuerung der Schock-Events
+* (erste Sprechblase)
+* ------------------- 
+* Zuletzt bearbeitet von: Anna Buchner
+* Datum der letzten Bearbeitung: 18.12.2018
+* Grund für letzte Bearbeitung: Sturm mit 50% Wahrscheinlichkeit
+**************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,17 +55,17 @@ public class Shock : MonoBehaviour {
     void TaskOnClickOpt1()
     {
 
-        //negativer Schock
+        //negativer Schock und Option 1
         if (seasonName == "Sommer")
         {
             cash.money = cash.money - 250;
             player.riskScoreShock[0] = 0;
         }
-        //positiver Schock
+        //positiver Schock und Option 1
         if (seasonName == "Herbst")
         {
             player.choice = 1;
-            player.riskScoreShock[1] = 1;
+            player.riskScoreShock[1] = 0.1;
         }
     }
 
@@ -63,7 +73,7 @@ public class Shock : MonoBehaviour {
     {
         print("Task 2");
         
-        //negativer Schock
+        //negativer Schock und Option 2
         if (seasonName == "Sommer")
         {
             int random = UnityEngine.Random.Range(0, 2);
@@ -74,10 +84,10 @@ public class Shock : MonoBehaviour {
                 shockPanel.SetActive(false);
             }
             shockPanel.SetActive(false);
-            player.riskScoreShock[0] = 1;
+            player.riskScoreShock[0] = 0.1;
 
         }
-        //positiver Schock
+        //positiver Schock und Option 2
         if (seasonName == "Herbst")
         {
             player.choice = 2;
@@ -86,6 +96,8 @@ public class Shock : MonoBehaviour {
     }
     void TaskOnClickExit()
     {
+        // bei Exit aus SturmPanel werden die Felder automatisch geerntet ohne Erträge 
+
         field1.GetComponent<SpriteRenderer>().sprite = empty;
         field1.GetComponent<Field>().fieldIsHarvested = true;
         field2.GetComponent<SpriteRenderer>().sprite = empty;
