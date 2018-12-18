@@ -17,9 +17,10 @@ public class Player : MonoBehaviour {
     public static Player player;
     public int id;
     public string playerName;
-    // Das Geld kann manuell im Inspektor angepasst werden
+    // Das Geld kann manuell im Inspektor angepasst werde
     public double money;
     public double[] riskScores;
+    public double[] riskScoreShock;
     public double risk;
     public int season;
     public double[] droughtLost;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour {
         droughtLost = new double[16];
         frostLost = new double[16];
         riskScores = new double[16];
+        riskScoreShock = new double[2];
+
         riskIndex = 0;
         droughtIndex = 0;
         frostIndex = 0;

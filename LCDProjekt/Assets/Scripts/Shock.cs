@@ -34,8 +34,7 @@ public class Shock : MonoBehaviour {
         field2 = GameObject.Find("Field 2");
         field3 = GameObject.Find("Field 3");
         field4 = GameObject.Find("Field 4");
-
-        print("Shock start");
+        
     }
 	
 	// Update is called once per frame
@@ -45,18 +44,18 @@ public class Shock : MonoBehaviour {
 
     void TaskOnClickOpt1()
     {
-        print("Task 1");
 
         //negativer Schock
         if (seasonName == "Sommer")
         {
             cash.money = cash.money - 250;
-            print("option 1");
+            player.riskScoreShock[0] = 0;
         }
         //positiver Schock
         if (seasonName == "Herbst")
         {
             player.choice = 1;
+            player.riskScoreShock[1] = 1;
         }
     }
 
@@ -75,13 +74,14 @@ public class Shock : MonoBehaviour {
             }
             print("option 2");*/
             player.storm = true;
-           
+            player.riskScoreShock[0] = 1;
 
         }
         //positiver Schock
         if (seasonName == "Herbst")
         {
             player.choice = 2;
+            player.riskScoreShock[1] = 0;
         }
     }
     void TaskOnClickExit()
