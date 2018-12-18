@@ -23,6 +23,8 @@ public class Chicken : MonoBehaviour {
     public GameObject chicken3;
     public GameObject chicken4;
     public GameObject chicken5;
+    public GameObject chickenAnim;
+    public Animation chickAnim;
 
     // Use this for initialization
     void Start () {
@@ -85,6 +87,9 @@ public class Chicken : MonoBehaviour {
                         chicken3.SetActive(true);
                         chicken4.SetActive(true);
                         chicken5.GetComponent<Collider2D>().enabled = false;
+                        chickenAnim.SetActive(true);
+                        chickAnim["Chicken"].speed = 0.35f;
+                        chickAnim.Play("Chicken");
                     }
 
                 }
