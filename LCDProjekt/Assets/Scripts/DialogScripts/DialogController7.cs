@@ -1,11 +1,11 @@
 ﻿/*************************************************************************** 
-* DialogController5
+* DialogController7
 * Anwendung: Zur Steuerung des Dialogs in der Abschlussstory
 * (erste Sprechblase)
 * ------------------- 
-* Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 17.12.2018
-* Grund für letzte Bearbeitung: Risikowert hinzugefügt
+* Zuletzt bearbeitet von: Anna Buchner
+* Datum der letzten Bearbeitung: 18.12.2018
+* Grund für letzte Bearbeitung: Risikoklasse ausgewertet und Einfluss der Schock-Events auf den Score
 **************************************************************************/
 using System;
 using System.Collections;
@@ -27,6 +27,8 @@ public class DialogController7 : MonoBehaviour
         double money = player.money;
         double win = player.money - 1000;
         double risk = player.calculateRisk();
+        double riskShock = player.riskScoreShock[0] + player.riskScoreShock[1];
+        risk += riskShock;
         string risikoklasse = "";
 
         if(risk < 0.7d)
