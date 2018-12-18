@@ -1,11 +1,10 @@
 ﻿/*************************************************************************** 
 * Schock
 * Anwendung: Steuerung der Schock-Events
-* (erste Sprechblase)
 * ------------------- 
-* Zuletzt bearbeitet von: Anna Buchner
+* Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 18.12.2018
-* Grund für letzte Bearbeitung: Sturm mit 50% Wahrscheinlichkeit
+* Grund für letzte Bearbeitung: CreditPanel bei nicht genug Geld
 **************************************************************************/
 
 using System.Collections;
@@ -19,15 +18,19 @@ public class Shock : MonoBehaviour {
     public Button opt1Button;
     public Button opt2Button;
     public Button exitButton;
+    public GameObject harvestField1Button, harvestField2Button, harvestField3Button, harvestField4Button;
     GameObject field1;
     GameObject field2;
     GameObject field3;
     GameObject field4;
     public Sprite empty;
-    public GameObject shockPanel, resultPanel;
+    public GameObject shockPanel, resultPanel, creditPanel;
     GameObject weather;
     string seasonName;
     public Money cash;
+    private double preventionCosts;
+    public bool comingFromNegativeShock;
+
 
     // Use this for initialization
     void Start () {
@@ -54,12 +57,37 @@ public class Shock : MonoBehaviour {
 
     void TaskOnClickOpt1()
     {
+        preventionCosts = 250;
 
         //negativer Schock und Option 1
         if (seasonName == "Sommer")
         {
-            cash.money = cash.money - 250;
-            player.riskScoreShock[0] = 0;
+            // Falls man genug Geld hat fuehre die Option aus
+            if(cash.money - preventionCosts > 0)
+            {
+                cash.money = cash.money - preventionCosts;
+                shockPanel.SetActive(false);
+                harvestField1Button.SetActive(true);
+                harvestField2Button.SetActive(true);
+                harvestField3Button.SetActive(true);
+                harvestField4Button.SetActive(true);
+                
+                player.riskScoreShock[0] = 0;
+            }
+            else
+            {
+                // Falls das Kredit in der Jahreszeit noch nicht angeboten wurde, biete es an, sonst nicht
+                if (!creditPanel.GetComponent<Credit>().shown)
+                {
+                    comingFromNegativeShock = true;
+                    shockPanel.SetActive(false);
+                    creditPanel.SetActive(true);
+                }
+                else
+                {
+                    print("Nicht genug Geld");
+                }
+            }
         }
         //positiver Schock und Option 1
         if (seasonName == "Herbst")

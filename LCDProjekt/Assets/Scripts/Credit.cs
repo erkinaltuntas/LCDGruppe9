@@ -17,8 +17,8 @@ public class Credit : MonoBehaviour {
     public bool shown;
     public Button acceptButton, rejectButton;
     public Player player;
-    public Field field1, field2, field3, field4;
-    public GameObject creditPanel, gameButtonsPanel, selectionPanel;
+    public Field field1, field2, field3, field4; 
+    public GameObject creditPanel, gameButtonsPanel, selectionPanel, shockPanel;
     public Money money;
 
 
@@ -59,6 +59,11 @@ public class Credit : MonoBehaviour {
         field4.GetComponent<Collider2D>().enabled = true;
         gameButtonsPanel.SetActive(true);
         creditPanel.SetActive(false);
+
+        if (shockPanel.GetComponent<Shock>().comingFromNegativeShock)
+        {
+            shockPanel.SetActive(true);
+        }
     }
     void TaskOnReject()
     {

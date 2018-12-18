@@ -7336,7 +7336,7 @@ GameObject:
   - component: {fileID: 453665543}
   - component: {fileID: 453665545}
   - component: {fileID: 453665544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10516,7 +10516,7 @@ GameObject:
   - component: {fileID: 696881113}
   - component: {fileID: 696881115}
   - component: {fileID: 696881114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11478,7 +11478,7 @@ GameObject:
   - component: {fileID: 756438706}
   - component: {fileID: 756438705}
   - component: {fileID: 756438704}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: CreditPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11528,6 +11528,7 @@ MonoBehaviour:
   creditPanel: {fileID: 756438702}
   gameButtonsPanel: {fileID: 1243374006}
   selectionPanel: {fileID: 1842294915}
+  shockPanel: {fileID: 1222918372}
   money: {fileID: 2138552227}
 --- !u!114 &756438705
 MonoBehaviour:
@@ -11541,7 +11542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12740,7 +12741,7 @@ GameObject:
   - component: {fileID: 832889517}
   - component: {fileID: 832889516}
   - component: {fileID: 832889515}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RejectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15380,7 +15381,7 @@ GameObject:
   - component: {fileID: 1007548952}
   - component: {fileID: 1007548951}
   - component: {fileID: 1007548950}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: AcceptButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16220,7 +16221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068405227}
   - component: {fileID: 1068405228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ImageBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16279,7 +16280,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 70d52858a9cb6a449bd76f0369cc2e1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17962,7 +17963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1216673578}
   - component: {fileID: 1216673579}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grandmother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18016,7 +18017,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: af748873364e47f4fb27937df7b38820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18263,10 +18264,16 @@ MonoBehaviour:
   opt1Button: {fileID: 129953378}
   opt2Button: {fileID: 1660179121}
   exitButton: {fileID: 498350796}
+  harvestField1Button: {fileID: 769167367}
+  harvestField2Button: {fileID: 1875964152}
+  harvestField3Button: {fileID: 1731127207}
+  harvestField4Button: {fileID: 1784436055}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   shockPanel: {fileID: 1222918372}
   resultPanel: {fileID: 893509282}
+  creditPanel: {fileID: 756438702}
   cash: {fileID: 2138552227}
+  comingFromNegativeShock: 0
 --- !u!1 &1223266258
 GameObject:
   m_ObjectHideFlags: 0
@@ -29264,7 +29271,7 @@ GameObject:
   - component: {fileID: 1896649647}
   - component: {fileID: 1896649649}
   - component: {fileID: 1896649648}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31082,7 +31089,7 @@ GameObject:
   - component: {fileID: 2024506749}
   - component: {fileID: 2024506751}
   - component: {fileID: 2024506750}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 114890465}
   - component: {fileID: 114890467}
   - component: {fileID: 114890466}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +1982,7 @@ GameObject:
   - component: {fileID: 142953779}
   - component: {fileID: 142953778}
   - component: {fileID: 142953777}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RejectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6971,7 +6971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 526707268}
   - component: {fileID: 526707269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ImageBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7030,7 +7030,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 70d52858a9cb6a449bd76f0369cc2e1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7620,7 +7620,7 @@ GameObject:
   - component: {fileID: 589193675}
   - component: {fileID: 589193674}
   - component: {fileID: 589193673}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: CreditPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7670,6 +7670,7 @@ MonoBehaviour:
   creditPanel: {fileID: 589193671}
   gameButtonsPanel: {fileID: 1530052756}
   selectionPanel: {fileID: 1373785476}
+  shockPanel: {fileID: 768702115}
   money: {fileID: 1448498873}
 --- !u!114 &589193674
 MonoBehaviour:
@@ -7683,7 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9841,62 +9842,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 710794497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 710990076}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 701849918}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 714460338}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1318531864}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 768702115}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &710794497
@@ -11474,10 +11420,16 @@ MonoBehaviour:
   opt1Button: {fileID: 710794496}
   opt2Button: {fileID: 1898344953}
   exitButton: {fileID: 851551062}
+  harvestField1Button: {fileID: 710990076}
+  harvestField2Button: {fileID: 701849918}
+  harvestField3Button: {fileID: 714460338}
+  harvestField4Button: {fileID: 1318531864}
   empty: {fileID: 21300000, guid: 0c323d4a7cf3c5e4382b8f79c9dec6c7, type: 3}
   shockPanel: {fileID: 768702115}
   resultPanel: {fileID: 1172387175}
+  creditPanel: {fileID: 589193671}
   cash: {fileID: 1448498873}
+  comingFromNegativeShock: 0
 --- !u!1 &769444039
 GameObject:
   m_ObjectHideFlags: 0
@@ -14715,7 +14667,7 @@ GameObject:
   - component: {fileID: 1034560749}
   - component: {fileID: 1034560751}
   - component: {fileID: 1034560750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18116,7 +18068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333764481}
   - component: {fileID: 1333764482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grandmother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18170,7 +18122,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: af748873364e47f4fb27937df7b38820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18418,7 +18370,7 @@ GameObject:
   - component: {fileID: 1363444058}
   - component: {fileID: 1363444060}
   - component: {fileID: 1363444059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22890,7 +22842,7 @@ GameObject:
   - component: {fileID: 1616289504}
   - component: {fileID: 1616289506}
   - component: {fileID: 1616289505}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26080,7 +26032,7 @@ GameObject:
   - component: {fileID: 1776217970}
   - component: {fileID: 1776217969}
   - component: {fileID: 1776217968}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: AcceptButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28478,62 +28430,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1898344954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 768702115}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 710990076}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 701849918}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 714460338}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1318531864}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1898344954
@@ -31041,7 +30938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   plantName: Tomato
-  price: 240
+  price: 500
   profit: 390
   droughtResistance: 0.3
   frostResistance: 0.2
