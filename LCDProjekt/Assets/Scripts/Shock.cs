@@ -9,6 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,7 @@ public class Shock : MonoBehaviour {
     public Money cash;
     private double preventionCosts;
     public bool comingFromNegativeShock;
+    public TextMeshProUGUI errorMessage;
 
 
     // Use this for initialization
@@ -85,6 +87,7 @@ public class Shock : MonoBehaviour {
                 }
                 else
                 {
+                    errorMessage.text = "Sie haben nicht genügend Guthaben!";
                     print("Nicht genug Geld");
                 }
             }
@@ -111,7 +114,12 @@ public class Shock : MonoBehaviour {
                 resultPanel.SetActive(true);
                 shockPanel.SetActive(false);
             }
+
             shockPanel.SetActive(false);
+            harvestField1Button.SetActive(true);
+            harvestField2Button.SetActive(true);
+            harvestField3Button.SetActive(true);
+            harvestField4Button.SetActive(true);
             player.riskScoreShock[0] = 0.1;
 
         }
