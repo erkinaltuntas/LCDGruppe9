@@ -47,9 +47,10 @@ public class Player : MonoBehaviour {
         droughtLost = new double[16];
         frostLost = new double[16];
         riskScores = new double[16];
+        
         riskScoreShock = new double[2];
 
-        riskIndex = 0;
+        //riskIndex = 0;
         droughtIndex = 0;
         frostIndex = 0;
 
@@ -75,11 +76,24 @@ public class Player : MonoBehaviour {
     public double calculateRisk()
     {
         double riskSum = 0;
+        int counter = 0;
         for(int i = 0; i < riskScores.Length; i++)
         {
-            riskSum += riskScores[i];
+            if (riskScores[i]>0)
+            {
+                riskSum += riskScores[i];
+                counter++;
+            }
+            
+            
+            
         }
-        double riskMedian = riskSum / (riskScores.Length + 1);
+        double riskMedian = 0;
+        if (counter > 0)
+        {
+            riskMedian = (riskSum / counter);
+        }
+        
         return riskMedian;
     }
 }

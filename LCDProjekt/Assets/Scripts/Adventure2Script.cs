@@ -131,9 +131,17 @@ public class Adventure2Script : MonoBehaviour {
                         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
 
 
-                        // Fügt die Entscheidung zum RisikoArray hinzu
-                        player.riskScores[player.riskIndex] = player.calculateRiskPlant(hit.collider.gameObject.GetComponent<Plant>(), weather.GetComponent<Weather>());
-                        player.riskIndex++;
+                        // Fügt die Entscheidung zur RisikoList hinzu, falls nicht leer gewählt worden ist
+                        if(price != 0)
+                        {
+                            player.riskScores[player.riskIndex] = player.calculateRiskPlant(hit.collider.gameObject.GetComponent<Plant>(), weather.GetComponent<Weather>());
+                            
+                        }
+                        else
+                        {
+                            player.riskScores[player.riskIndex] = 0;
+                        }
+                        player.riskIndex++; ;
 
                         // Schaut nach welches Feld ausgewaehlt wurde
                         switch (currentFeldId)
