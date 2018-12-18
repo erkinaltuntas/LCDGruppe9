@@ -26,12 +26,12 @@ public class DialogController5 : MonoBehaviour
         double money = player.money;
         double win = player.money - 1000;
 
-        if (win > 1000)
+        if (win > 0)
         {
             fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
             + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet.";
         }
-        else if (win < 1000)
+        else if (win < 0)
         {
             fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
             + Environment.NewLine + Environment.NewLine + " Du hast also " + win*(-1) + " Farm Dollar verloren.";

@@ -54,7 +54,7 @@ public class DialogController7 : MonoBehaviour
 
 
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück! Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
+            + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
 
         StartCoroutine(ShowText());
     }
