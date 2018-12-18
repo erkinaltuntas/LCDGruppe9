@@ -35,8 +35,8 @@ public class Adventure2Script : MonoBehaviour {
     Collider2D collider2;
     Collider2D collider3;
     Collider2D collider4;
-    public GameObject helpButton, weatherButton, nextLevelButton;
-    public GameObject selectionPanel, harvestPanel, weatherPanel;
+    public GameObject nextLevelButton;
+    public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel;
     public TextMeshProUGUI errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
@@ -58,8 +58,8 @@ public class Adventure2Script : MonoBehaviour {
         weatherPanel.SetActive(true);
         selectionPanel.SetActive(false);
         errorMessage.text = "";
-        weatherButton.SetActive(false);
-        helpButton.SetActive(false);
+        gameButtonsPanel.SetActive(false);
+        
 
         // Collider der Felder definieren
         collider1 = field1.GetComponent<Collider2D>();
@@ -101,8 +101,8 @@ public class Adventure2Script : MonoBehaviour {
                 if (hit.collider.gameObject.tag == "Feld")
                 {
                     selectionPanel.SetActive(true);
-                    helpButton.SetActive(false);
-                    weatherButton.SetActive(false);
+                    gameButtonsPanel.SetActive(false);
+                   
 
 
                     // Setzt currentFeldID auf die ID des ausgewhählten Feldes
@@ -267,13 +267,21 @@ public class Adventure2Script : MonoBehaviour {
 
                         // Auswahlfenster deaktivieren und Buttons aktivieren
                         selectionPanel.SetActive(false);
-                        helpButton.SetActive(true);
-                        weatherButton.SetActive(true);
+                        gameButtonsPanel.SetActive(true);
+                        
                     }
                     // Falls man nicht genuegend Geld hat
                     else
-                    {     
-                        errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                    {
+                        if (!creditPanel.GetComponent<Credit>().shown)
+                        {
+                            creditPanel.SetActive(true);
+                        }
+                        else
+                        {
+                            errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                        }
+                        
                         
                     }
                 }
@@ -289,8 +297,8 @@ public class Adventure2Script : MonoBehaviour {
 
                     //Auswahlfenster deaktivieren
                     selectionPanel.SetActive(false);
-                    helpButton.SetActive(true);
-                    weatherButton.SetActive(true);
+                    gameButtonsPanel.SetActive(true);
+                    
                 }
             }
 
@@ -304,8 +312,8 @@ public class Adventure2Script : MonoBehaviour {
         if (field1.fieldIsChecked && field2.fieldIsChecked && field3.fieldIsChecked && field4.fieldIsChecked)
         {
             harvestPanel.SetActive(true);
-            helpButton.SetActive(false);
-            weatherButton.SetActive(false);
+            gameButtonsPanel.SetActive(false);
+            
         }
 
         // Beende den Erntebereich sobald alle Felder geerntet worden sind

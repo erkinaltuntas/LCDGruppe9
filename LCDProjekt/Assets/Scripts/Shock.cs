@@ -66,14 +66,14 @@ public class Shock : MonoBehaviour {
         //negativer Schock
         if (seasonName == "Sommer")
         {
-            /*int random = UnityEngine.Random.Range(0, 2);
+            int random = UnityEngine.Random.Range(0, 2);
             if (random == 1)
             {
                 player.storm = true;
-
+                resultPanel.SetActive(true);
+                shockPanel.SetActive(false);
             }
-            print("option 2");*/
-            player.storm = true;
+            shockPanel.SetActive(false);
             player.riskScoreShock[0] = 1;
 
         }

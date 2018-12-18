@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
     public bool storm = false;
     public int choice;
 
+    public bool creditShown;
+
     void Awake()
     {
         player = this;
@@ -50,6 +52,8 @@ public class Player : MonoBehaviour {
         riskIndex = 0;
         droughtIndex = 0;
         frostIndex = 0;
+
+        creditShown = false;
 
 
     }
