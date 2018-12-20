@@ -3,9 +3,9 @@
 * Anwendung: Zur Defintion des Wetters sowie der Steuerung, ob sie von 
 * Duerre oder Frost betroffen sind
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Anpassung von Frost/Drought Berechnung (Frost/Dürre 10 % zu wahrscheinlich)
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ public class Weather : MonoBehaviour {
 
     public bool isFrost()
     {
-        if (random1 <= this.frostProb * 10)
+        if (random1 < this.frostProb * 10)
         {
             return true;
         }
@@ -37,7 +37,7 @@ public class Weather : MonoBehaviour {
 
     public bool isDrought()
     {
-        if (random2 <= this.droughtProb * 10)
+        if (random2 < this.droughtProb * 10)
         {
             return true;
         }
