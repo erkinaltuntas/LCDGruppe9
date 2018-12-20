@@ -11,15 +11,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Builders;
-using MongoDB.Driver.GridFS;
-using MongoDB.Driver.Linq;
 
 public class Player : MonoBehaviour {
-
-    string connectionString = "mongodb://localhost:27017";
+    
     public static Player player;
     public int id;
     public string playerName;
@@ -43,9 +37,7 @@ public class Player : MonoBehaviour {
         player = this;
         // Der Spieler wird in die naechste Szene uebertragen
         DontDestroyOnLoad(transform.gameObject);
-
         
-
     }
 
     // Use this for initialization
@@ -62,39 +54,6 @@ public class Player : MonoBehaviour {
         frostIndex = 0;
 
         creditShown = false;
-
-        /*
-         * Establish connection
-         */
-        /*var client = new MongoClient(connectionString);
-        var server = client.GetServer();
-        var database = server.GetDatabase("UserDB");
-        var resultCollection = database.GetCollection("Results");
-        Debug.Log("ESTABLISHED CONNECTION");
-
-        BsonDocument[] batch ={
-            new BsonDocument{
-                {"name", "Tom"},
-                {"result", "1100"}
-            },
-            new BsonDocument{
-                {"name", "Victor"},
-                {"result", "1200"}
-            },
-            new BsonDocument{
-                {"name", "Cedric"},
-                {"result", "1300"}
-            }
-        };
-        resultCollection.InsertBatch(batch);
-
-
-        foreach (var document in resultCollection.FindAll())
-        {
-            Debug.Log("My vrshop \n" + document);
-        }*/
-
-
     }
 
     // Update is called once per frame

@@ -12,6 +12,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
 
 public class DialogController7 : MonoBehaviour
 {
@@ -19,6 +24,7 @@ public class DialogController7 : MonoBehaviour
     private string fullText1;
     private string currentText = "";
     public Player player;
+    public MongoConnect mongo;
 
     // Use this for initialization
     void Start()
@@ -52,6 +58,14 @@ public class DialogController7 : MonoBehaviour
             risikoklasse = "Spekulativ";
         }
 
+        /*BsonDocument[] batch ={
+            new BsonDocument{
+                {"name", "Dummy"},
+                {"result", win}
+            }
+        };
+
+        mongo.insertResult(batch);*/
 
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
             + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
