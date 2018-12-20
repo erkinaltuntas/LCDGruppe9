@@ -2,10 +2,9 @@
 * Harvest
 * Anwendung: Zum Ernten der Felder sowie Bilanzierung
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 11.12.2018
-* Grund für letzte Bearbeitung: Bei Frost/Dürre dem Player Array die Werte
-* zuweisen
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Wetteranpassung
 **************************************************************************/
 using System;
 using System.Collections;
@@ -96,15 +95,15 @@ public class Harvest : MonoBehaviour {
         int random5 = UnityEngine.Random.Range(0, 2);
         if (random3 == 0)
         {
-            missHarvestQuota = 0.25;
+            missHarvestQuota = 0.2;
         }
         else if(random3 == 1)
         {
-            missHarvestQuota = 0.5;
+            missHarvestQuota = 0.4;
         }
         else if(random3 == 2)
         {
-            missHarvestQuota = 0.75;
+            missHarvestQuota = 0.6;
         }
 
         // Falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
