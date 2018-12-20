@@ -4,7 +4,7 @@
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
 * Datum der letzten Bearbeitung: 20.12.2018
-* Grund für letzte Bearbeitung: MissHarvest-Werte angepasst
+* Grund für letzte Bearbeitung: Wetteranpassung
 **************************************************************************/
 using System;
 using System.Collections;

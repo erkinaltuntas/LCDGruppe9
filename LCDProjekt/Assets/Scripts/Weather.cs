@@ -5,7 +5,7 @@
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
 * Datum der letzten Bearbeitung: 20.12.2018
-* Grund für letzte Bearbeitung: Anpassung von Frost/Drought Berechnung (Frost/Dürre 10 % zu wahrscheinlich)
+* Grund für letzte Bearbeitung: Wetteranpassung
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +16,8 @@ public class Weather : MonoBehaviour {
     public int seasonNumber;
     public double frostProb;
     public double droughtProb;
+    public static bool frost = false;
+    public static bool drought = false;
 
     public int random1, random2;
 
@@ -24,12 +26,16 @@ public class Weather : MonoBehaviour {
 
         random1 = Random.Range(0, 11);
         random2 = Random.Range(0, 11);
+        frost = isFrost();
+        drought = isDrought();
+
     }
 
     public bool isFrost()
     {
-        if (random1 < this.frostProb * 10)
+        if (random1 <= this.frostProb * 10)
         {
+            print("FROST! Gewürfelt wurde eine: " + random1);
             return true;
         }
         return false;
@@ -37,8 +43,9 @@ public class Weather : MonoBehaviour {
 
     public bool isDrought()
     {
-        if (random2 < this.droughtProb * 10)
+        if (random2 <= this.droughtProb * 10)
         {
+            print("DÜRRE! Gewürfelt wurde eine: " + random2);
             return true;
         }
         return false;

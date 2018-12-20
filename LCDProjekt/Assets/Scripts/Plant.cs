@@ -5,7 +5,7 @@
 *------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund für letzte Bearbeitung: Anpassung der Wirkungsweise Frost/Dürre auf die Pflanzen
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -37,10 +37,13 @@ public class Plant : MonoBehaviour {
     // Bestimmt mittels Wahrscheinlichkeit, ob eine Pflanze von Duerre betroffen ist
     public bool hasPlantDrought()
     {
-        int random = Random.Range(0, 11);
-        if(random > this.droughtResistance * 10)
+        if (Weather.frost == true)
         {
-            return true;
+            int random = Random.Range(0, 11);
+            if (random > this.droughtResistance * 10)
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -48,11 +51,15 @@ public class Plant : MonoBehaviour {
     // Bestimmt mittels Wahrscheinlichkeit, ob eine Pflanze von Frost betroffen ist
     public bool hasPlantFrost()
     {
-        int random = Random.Range(0, 11);
-        if (random > this.frostResistance * 10)
+        if (Weather.drought == true)
         {
-            return true;
+            int random = Random.Range(0, 11);
+            if (random > this.frostResistance * 10)
+            {
+                return true;
+            }
         }
+        
         return false;
     }
 
