@@ -95,15 +95,15 @@ public class Harvest : MonoBehaviour {
         int random5 = UnityEngine.Random.Range(0, 2);
         if (random3 == 0)
         {
-            missHarvestQuota = 0.2;
+            missHarvestQuota = 0.25;
         }
         else if(random3 == 1)
         {
-            missHarvestQuota = 0.4;
+            missHarvestQuota = 0.5;
         }
         else if(random3 == 2)
         {
-            missHarvestQuota = 0.6;
+            missHarvestQuota = 0.75;
         }
 
         // Falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
