@@ -2,9 +2,9 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 18.12.2018
-* Grund für letzte Bearbeitung: Erstellung
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Anzahl wird gezählt
 **************************************************************************/
 
 using System.Collections;
@@ -53,6 +53,7 @@ public class Credit : MonoBehaviour {
         // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = true;
         money.money += 1000;
+        Player.player.timeLoan++;
         field1.GetComponent<Collider2D>().enabled = true;
         field2.GetComponent<Collider2D>().enabled = true;
         field3.GetComponent<Collider2D>().enabled = true;
