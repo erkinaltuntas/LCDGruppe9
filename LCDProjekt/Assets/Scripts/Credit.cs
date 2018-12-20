@@ -20,6 +20,8 @@ public class Credit : MonoBehaviour {
     public Field field1, field2, field3, field4; 
     public GameObject creditPanel, gameButtonsPanel, selectionPanel, shockPanel;
     public Money money;
+    GameObject weather;
+    string seasonName;
 
 
     // Use this for initialization
@@ -43,9 +45,9 @@ public class Credit : MonoBehaviour {
         selectionPanel.SetActive(false);
 
         player.creditShown = true;
-       
 
-        //
+        weather = GameObject.Find("Weather");
+        seasonName = weather.GetComponent<Weather>().seasonName;
     }
 
     void TaskOnAccept()
@@ -61,10 +63,13 @@ public class Credit : MonoBehaviour {
         gameButtonsPanel.SetActive(true);
         creditPanel.SetActive(false);
 
-        if (shockPanel.GetComponent<Shock>().comingFromNegativeShock)
-        {
-            shockPanel.SetActive(true);
+        if(seasonName == "Sommer") {
+            if (shockPanel.GetComponent<Shock>().comingFromNegativeShock)
+            {
+                shockPanel.SetActive(true);
+            }
         }
+        
     }
     void TaskOnReject()
     {

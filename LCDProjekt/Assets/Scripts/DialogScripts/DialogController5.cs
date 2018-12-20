@@ -24,6 +24,7 @@ public class DialogController5 : MonoBehaviour
     {
         player = Player.player;
         double money = player.money - (player.timeLoan * 1000);
+        player.endTotal = money;
         double win = player.money - 1000 - (player.timeLoan * 1000);
         if (player.timeLoan==0)
         {

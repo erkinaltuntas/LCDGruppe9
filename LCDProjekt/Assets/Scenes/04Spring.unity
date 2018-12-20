@@ -3856,18 +3856,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   playerName: 
+  season: 1
   money: 1000
   riskScores: []
   riskScoreShock: []
-  risk: 0
-  season: 1
+  riskMedian: 0
+  riskClass: 
   droughtLost: []
   frostLost: []
   droughtIndex: 0
   frostIndex: 0
   riskIndex: 0
+  endTotal: 0
   storm: 0
   choice: 0
+  timeLoan: 0
   creditShown: 0
 --- !u!4 &259740253
 Transform:

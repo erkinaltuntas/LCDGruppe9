@@ -30,45 +30,21 @@ public class DialogController7 : MonoBehaviour
     void Start()
     {
         player = Player.player;
-        double money = player.money;
-        double win = player.money - 1000;
-        double risk = player.calculateRisk();
-        double riskShock = player.riskScoreShock[0] + player.riskScoreShock[1];
-        risk += riskShock;
-        string risikoklasse = "";
 
-        if(risk < 0.7d)
-        {
-            risikoklasse = "Sicherheit";
-        }
-        else if (0.7d <= risk && risk < 0.9d)
-        {
-            risikoklasse = "Ertrag";
-        }
-        else if (0.9d <= risk && risk < 1.1d)
-        {
-            risikoklasse = "Wachstum";
-        }
-        else if (1.1d <= risk && risk < 1.3d)
-        {
-            risikoklasse = "Risiko";
-        }
-        else if (1.3d <= risk)
-        {
-            risikoklasse = "Spekulativ";
-        }
+        // Risiko auswerten
+        player.calculateRisk();
+        player.getRiskClass();
 
-        /*BsonDocument[] batch ={
-            new BsonDocument{
-                {"name", "Dummy"},
-                {"result", win}
-            }
-        };
+        // Ergebnis an DB schicken, vorerst auskommentiert
+        /*player.sendResult();
 
-        mongo.insertResult(batch);*/
+        List<BsonDocument> batch = mongo.findResults();
+        */
 
+        // Abschlusstext Risikoklasse
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + risikoklasse + ". Risikoscore:" + risk + ".";
+            + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + player.riskClass + ". Risikoscore:" + player.riskMedian
+            + ".";
 
         StartCoroutine(ShowText());
     }
