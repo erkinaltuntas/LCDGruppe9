@@ -2,9 +2,9 @@
 * Player
 * Anwendung: Erstellen des Spielers mit seinen Eigenschaften
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 17.12.2018
-* Grund für letzte Bearbeitung: Risikoformel
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Anzahl der Kredite wird gezählt
 **************************************************************************/
 
 using System;
@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
     public int droughtIndex, frostIndex, riskIndex;
     public bool storm = false;
     public int choice;
+    public int timeLoan = 0;
 
     public bool creditShown;
 

@@ -3,9 +3,9 @@
 * Anwendung: Zur Steuerung des Dialogs in der Abschlussstory
 * (erste Sprechblase)
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 17.12.2018
-* Grund für letzte Bearbeitung: Anpassung des Textes je nach Gewinn
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Anpassung des Textes je nach Kredit
 **************************************************************************/
 using System;
 using System.Collections;
@@ -23,8 +23,8 @@ public class DialogController5 : MonoBehaviour
     void Start()
     {
         player = Player.player;
-        double money = player.money;
-        double win = player.money - 1000;
+        double money = player.money - (player.timeLoan * 1000);
+        double win = player.money - 1000 - (player.timeLoan * 1000);
 
         if (win > 0)
         {
