@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* MusicScript
+* Anwendung: Zur Anzeige des Timers
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 30.12.2018
+* Grund für letzte Bearbeitung: Erstellung
+* **************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

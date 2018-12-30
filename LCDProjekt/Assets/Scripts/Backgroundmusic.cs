@@ -1,13 +1,24 @@
-﻿using System.Collections;
+﻿/*************************************************************************** 
+* Backgroundmusic
+* Anwendung: Zur Anzeige des Timers
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 30.12.2018
+* Grund für letzte Bearbeitung: Erstellung
+* **************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Backgroundmusic : MonoBehaviour {
     static Backgroundmusic instance = null;
 
+
+
     private void Awake()
     {
-        // Steuert die Musik ueber die Level hinweg
+        // Speichert die Musik und die Einstellung ueber die Level hinweg
         if (instance != null)
         {
             Destroy(gameObject);
@@ -19,6 +30,8 @@ public class Backgroundmusic : MonoBehaviour {
         }
     }
 
+
+    // Wird Button zugewiesen, damit dieser onClick Musik an/ausschaltet
     public void ToggleSound()
     {
         if(PlayerPrefs.GetInt("Muted", 0) == 0)
@@ -32,13 +45,5 @@ public class Backgroundmusic : MonoBehaviour {
             
         }
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
