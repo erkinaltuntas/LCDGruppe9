@@ -16,7 +16,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    int timeLeft = 60; //Seconds Overall
+    int timeLeft = 15; //Seconds Overall
     public TextMeshProUGUI countdown; //UI Text Object
     public Sprite empty;
     GameObject field1;
@@ -43,11 +43,11 @@ public class Countdown : MonoBehaviour
     {
         if (timeLeft > 10)
         {
-            countdown.text = ("" + timeLeft); // Zeit im Canvas anzeigen
+            countdown.text = ("Zeit: " + timeLeft); // Zeit im Canvas anzeigen
         }
         else
         {
-            countdown.text = ("<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
+            countdown.text = ("Zeit: "+ "<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
         }
         
         if(timeLeft == 0 && a == 0 && !(weather.GetComponent<Weather>().seasonNumber == 0))

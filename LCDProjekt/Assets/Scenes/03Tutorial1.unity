@@ -18372,8 +18372,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27754,8 +27754,6 @@ MonoBehaviour:
   emptyPlant: {fileID: 1668019879}
   SelectionPanel: {fileID: 1364461624}
   WeatherPanel: {fileID: 994443933}
-  TutorialPanel1: {fileID: 0}
-  TutorialPanel2: {fileID: 0}
 --- !u!114 &1826582654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27803,8 +27801,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

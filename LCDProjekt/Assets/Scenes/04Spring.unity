@@ -16447,8 +16447,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23853,8 +23853,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23943,8 +23943,6 @@ MonoBehaviour:
   emptyPlant: {fileID: 2036270025}
   SelectionPanel: {fileID: 1403680505}
   WeatherPanel: {fileID: 1658765800}
-  TutorialPanel1: {fileID: 0}
-  TutorialPanel2: {fileID: 0}
 --- !u!1 &1672647259
 GameObject:
   m_ObjectHideFlags: 0
