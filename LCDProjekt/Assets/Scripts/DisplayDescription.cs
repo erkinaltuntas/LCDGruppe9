@@ -36,11 +36,35 @@ public class DisplayDescription : MonoBehaviour {
 
 
         // Beschreibungstext im PopUp
-        descriptionString = "Name: " + plant.plantName + Environment.NewLine +
-                            "Preis: " + plant.price + Environment.NewLine +
-                            "Profit: " + plant.profit + Environment.NewLine +
-                            "Duerreresistenz: " + plant.droughtResistance + Environment.NewLine +
-                            "Frostresistenz: " + plant.frostResistance + Environment.NewLine;
+        if(plant.plantName == "Empty")
+        {
+            descriptionString = "Name: leeres Feld " + Environment.NewLine +"Bringt keinen Ertrag";
+        }
+        else
+        {
+            if (plant.plantName == "Tomato")
+            {
+                descriptionString = "Name: Tomate";
+            }
+            else if (plant.plantName == "Carrot")
+            {
+                descriptionString = "Name: Karotte";
+            }
+            else if (plant.plantName == "Corn")
+            {
+                descriptionString = "Name: Mais";
+            }
+            else if (plant.plantName == "Potato")
+            {
+                descriptionString = "Name: Kartoffel";
+            }
+            descriptionString += Environment.NewLine +
+                    "Preis: " + plant.price + Environment.NewLine +
+                    "Profit: " + plant.profit + Environment.NewLine +
+                    "Duerreresistenz: " + plant.droughtResistance + Environment.NewLine +
+                    "Frostresistenz: " + plant.frostResistance + Environment.NewLine;
+        }
+
     
 
         //PopUp ist zu Beginn unsichtbar
