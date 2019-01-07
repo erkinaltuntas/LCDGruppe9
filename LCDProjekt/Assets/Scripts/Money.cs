@@ -43,7 +43,7 @@ public class Money : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        moneyText.text = "Geld: "+money.ToString();
+        moneyText.text = "Geld: "+money.ToString()+"Farm$";
         if (!tutorial)
         {          
             player.money = this.money;

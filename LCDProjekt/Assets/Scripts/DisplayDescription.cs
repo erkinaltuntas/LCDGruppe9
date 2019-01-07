@@ -3,8 +3,8 @@
 * Anwendung: Zur Anzeige des PopUp Fensters mit den Details der Pflanzen
 *------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Datum der letzten Bearbeitung: 7.1.2019
+* Grund für letzte Bearbeitung: Pflanzennamen auf deutsch anzeigen lassen
 **************************************************************************/
 using System;
 using System.Collections;
@@ -38,7 +38,7 @@ public class DisplayDescription : MonoBehaviour {
         // Beschreibungstext im PopUp
         if(plant.plantName == "Empty")
         {
-            descriptionString = "Name: leeres Feld " + Environment.NewLine +"Bringt keinen Ertrag";
+            descriptionString = "Name: leeres Feld " + Environment.NewLine+ Environment.NewLine +"Bringt keinen Ertrag";
         }
         else
         {
@@ -58,11 +58,11 @@ public class DisplayDescription : MonoBehaviour {
             {
                 descriptionString = "Name: Kartoffel";
             }
-            descriptionString += Environment.NewLine +
-                    "Preis: " + plant.price + Environment.NewLine +
-                    "Profit: " + plant.profit + Environment.NewLine +
-                    "Duerreresistenz: " + plant.droughtResistance + Environment.NewLine +
-                    "Frostresistenz: " + plant.frostResistance + Environment.NewLine;
+            descriptionString += Environment.NewLine + Environment.NewLine +
+                    "Preis: " + plant.price +" Farm$" + Environment.NewLine +
+                    "Maximal möglicher Profit: " + plant.profit+" Farm$" + Environment.NewLine +
+                    "Dürreresistenz: " + plant.droughtResistance * 100 + "%" + Environment.NewLine +
+                    "Frostresistenz: " + plant.frostResistance * 100 + "%" + Environment.NewLine;
         }
 
     
