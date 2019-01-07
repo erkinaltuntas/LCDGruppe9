@@ -2,9 +2,9 @@
 * Schock
 * Anwendung: Steuerung der Schock-Events
 * ------------------- 
-* Zuletzt bearbeitet von: Victor Xu
-* Datum der letzten Bearbeitung: 04.01.2019
-* Grund für letzte Bearbeitung: Tornado Animation
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 18.12.2018
+* Grund für letzte Bearbeitung: CreditPanel bei nicht genug Geld
 **************************************************************************/
 
 using System.Collections;
@@ -33,11 +33,6 @@ public class Shock : MonoBehaviour {
     public bool comingFromNegativeShock;
     public TextMeshProUGUI errorMessage;
     public TextMeshProUGUI stormMessage;
-    public Animation stormAnim;
-    public Animator storm;
-    public GameObject stormObj;
-    int a = 0;
-    int random2 = -1;
 
 
     // Use this for initialization
@@ -55,19 +50,15 @@ public class Shock : MonoBehaviour {
         field2 = GameObject.Find("Field 2");
         field3 = GameObject.Find("Field 3");
         field4 = GameObject.Find("Field 4");
-
-
-
         
-
-}
+    }
 	
 	// Update is called once per frame
 	void Update () {
        
     }
 
-    public void TaskOnClickOpt1()
+    void TaskOnClickOpt1()
     {
         player.choice = 1;
         preventionCosts = 250;
@@ -75,32 +66,31 @@ public class Shock : MonoBehaviour {
         //negativer Schock und Option 1
         if (seasonName == "Sommer")
         {
-            a = 1;
             // Falls man genug Geld hat fuehre die Option aus
-            if (cash.money - preventionCosts > 0)
+            if(cash.money - preventionCosts > 0)
             {
-                stormAnim.Play("Tornado");
-                stormObj.SetActive(true);
+                cash.money = cash.money - preventionCosts;
                 shockPanel.SetActive(false);
 
+                resultPanel.SetActive(true);
+                stormMessage.text = "Dank deiner guten Vorbereitung hat der Sturm dir nichts angetan.";
+                
+                
+                player.riskScoreShock[0] = 0;
             }
             else
             {
                 // Falls das Kredit in der Jahreszeit noch nicht angeboten wurde, biete es an, sonst nicht
                 if (!creditPanel.GetComponent<Credit>().shown)
                 {
-                    stormAnim.Play("Tornado");
-                    stormObj.SetActive(true);
+                    comingFromNegativeShock = true;
                     shockPanel.SetActive(false);
-
-                    /**comingFromNegativeShock = true;
-                    shockPanel.SetActive(false);
-                    creditPanel.SetActive(true);**/
+                    creditPanel.SetActive(true);
                 }
                 else
                 {
-                    /**errorMessage.text = "Sie haben nicht genügend Guthaben!";
-                    print("Nicht genug Geld");**/
+                    errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                    print("Nicht genug Geld");
                 }
             }
         }
@@ -112,59 +102,7 @@ public class Shock : MonoBehaviour {
         }
     }
 
-    // Beschreibt was am Ende der Tornado Animation passieren soll
-    public void TornadoEnd()
-    {
-        print("Tornado ist geendet");
-        print("random2 = " + random2);
-        print("a = " + a);
-        if (a==1 && cash.money - preventionCosts > 0)
-        {
-
-            print("Option 1");
-            cash.money = cash.money - preventionCosts;
-            shockPanel.SetActive(false);
-
-            resultPanel.SetActive(true);
-            stormMessage.text = "Dank deiner guten Vorbereitung hat der Sturm dir nichts angetan.";
-
-
-            player.riskScoreShock[0] = 0;
-        }
-        else if (a==1)
-        {
-            if (!creditPanel.GetComponent<Credit>().shown)
-            {
-                comingFromNegativeShock = true;
-                shockPanel.SetActive(false);
-                creditPanel.SetActive(true);
-            }
-            else
-            {
-                errorMessage.text = "Sie haben nicht genügend Guthaben!";
-                print("Nicht genug Geld");
-            }
-            player.riskScoreShock[0] = 0;
-        }
-        else if (random2 == 1 && a == 2)
-        {
-            print("Option 2");
-            player.storm = true;
-            resultPanel.SetActive(true);
-            shockPanel.SetActive(false);
-            player.riskScoreShock[0] = 0.1;
-        }
-        else if (random2 == 0 && a == 2)
-        {
-            print("Option 3");
-            shockPanel.SetActive(false);
-            resultPanel.SetActive(true);
-            stormMessage.text = "Glück gehabt. Der Sturm konnte deiner Ernte nichts anhaben.";
-            player.riskScoreShock[0] = 0.1;
-        }
-    }
-
-    public void TaskOnClickOpt2()
+    void TaskOnClickOpt2()
     {
         player.choice = 2;
         print("Task 2");
@@ -172,23 +110,19 @@ public class Shock : MonoBehaviour {
         //negativer Schock und Option 2
         if (seasonName == "Sommer")
         {
-            a = 2;
             int random = UnityEngine.Random.Range(0, 2);
-            random2 = random;
-            print("radom = " + random);
             if (random == 1)
             {
-                stormAnim.Play("Tornado");
-                stormObj.SetActive(true);
+                player.storm = true;
+                resultPanel.SetActive(true);
                 shockPanel.SetActive(false);
-
             }
             else {
-                stormAnim.Play("Tornado");
-                stormObj.SetActive(true);
                 shockPanel.SetActive(false);
-
+                resultPanel.SetActive(true);
+                stormMessage.text = "Glück gehabt. Der Sturm konnte deiner Ernte nichts anhaben.";
             }
+            player.riskScoreShock[0] = 0.1;
         }
         //positiver Schock und Option 2
         if (seasonName == "Herbst")
