@@ -24,7 +24,7 @@ public class Countdown : MonoBehaviour
     GameObject field3;
     GameObject field4;
     public Plant emptyPlant;
-    public GameObject SelectionPanel, WeatherPanel, TutorialPanel1, TutorialPanel2;
+    public GameObject SelectionPanel, WeatherPanel;
     GameObject weather;
     int a = 0;
     int b = 0;
@@ -54,8 +54,7 @@ public class Countdown : MonoBehaviour
         {
             SelectionPanel.SetActive(false);
             WeatherPanel.SetActive(false);
-            TutorialPanel1.SetActive(false);
-            TutorialPanel2.SetActive(false);
+
 
             timeLeft =0;
             a = 1;
