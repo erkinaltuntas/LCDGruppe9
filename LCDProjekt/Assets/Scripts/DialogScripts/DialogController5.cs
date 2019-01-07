@@ -48,8 +48,10 @@ public class DialogController5 : MonoBehaviour
         {
             if (win > 0)
             {
+                money = money + (player.timeLoan * 1000);
                 fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
-                + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet..";
+                + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet, da du " + player.timeLoan +
+                " Mal die" + Environment.NewLine + "Briefmarkensammlung deiner Großmutter verkauft hast..";
             }
             else if (win < 0)
             {
