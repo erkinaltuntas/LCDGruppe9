@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 
         creditShown = false;
 
-        playerName = "test";
+        playerName = "HighscoreTest";
     }
 
     // Update is called once per frame

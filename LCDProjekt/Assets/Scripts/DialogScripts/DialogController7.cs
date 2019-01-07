@@ -36,10 +36,10 @@ public class DialogController7 : MonoBehaviour
         player.getRiskClass();
 
         // Ergebnis an DB schicken, vorerst auskommentiert
-        /*player.sendResult();
+        player.sendResult();
 
         List<BsonDocument> batch = mongo.findResults();
-        */
+        
 
         // Abschlusstext Risikoklasse
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
