@@ -24,6 +24,7 @@ public class MongoConnect : MonoBehaviour {
 		
 	}
 
+    //fügt Dokumente in die DB ein
     public void insertResult(BsonDocument[] batch)
     {
         /*
@@ -34,11 +35,33 @@ public class MongoConnect : MonoBehaviour {
         var database = server.GetDatabase("UserDB");
         var resultCollection = database.GetCollection("Results");
         resultCollection.InsertBatch(batch);
-
-        foreach (var document in resultCollection.FindAll())
-        {
-            Debug.Log("My vrshop \n" + document);
-        }
     }
 
+
+    //Gibt eine nach result sortierte Liste der Spieler zurück
+    public List<BsonDocument> findResults()
+    {
+        /*
+         * Establish connection
+         */
+        var client = new MongoClient(connectionString);
+        var server = client.GetServer();
+        var database = server.GetDatabase("UserDB");
+        var resultCollection = database.GetCollection("Results");
+
+        List<BsonDocument> batchList = new List<BsonDocument>();
+
+        //speichert die Einträge der DB sortiert in batchList ab
+        foreach (var document in resultCollection.FindAll().SetSortOrder(SortBy.Descending("result")))
+        {
+            batchList.Add(document);
+        }
+
+        foreach(var document in batchList)
+        {
+            Debug.Log(" SELECT ALL DOCS: \n" + document);
+        }
+
+        return batchList;
+    }
 }

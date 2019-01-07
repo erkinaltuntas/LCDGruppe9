@@ -14,23 +14,44 @@ using TMPro;
 public class Money : MonoBehaviour {
 
     public Player player;
+    public TutorialPlayer tutorialPlayer;
     public TextMeshProUGUI moneyText;
     public double money;
+    GameObject weather;
+    bool tutorial;
 
 	// Use this for initialization
 	void Start () {
-
-        player = Player.player;
+        weather = GameObject.Find("Weather");
         moneyText = GetComponent<TextMeshProUGUI>();
         moneyText.text = money.ToString();
-        this.money = player.money;
+        if (weather.GetComponent<Weather>().seasonNumber != 0)
+        {
+            player = Player.player;
+            this.money = player.money;
+            tutorial = false;
+        }
+        else
+        {
+            tutorialPlayer = TutorialPlayer.tutorialPlayer;
+            this.money = tutorialPlayer.money;
+            tutorial = true;
+        }
+
 
     }
 	
 	// Update is called once per frame
 	void Update () {
         moneyText.text = money.ToString();
-        player.money = this.money;
+        if (!tutorial)
+        {          
+            player.money = this.money;
+        }
+        else
+        {           
+            tutorialPlayer.money = this.money;
+        }
     }
     
     public bool enoughMoney()

@@ -1,10 +1,10 @@
 ﻿/*************************************************************************** 
-* Weather
+* Countdown
 * Anwendung: Zur Anzeige des Timers
 *------------------- 
-* Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 13.12.2018
-* Grund für letzte Bearbeitung: Rote Zahlen, wenn nur 10 Sec.
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 30.12.2018
+* Grund für letzte Bearbeitung: Timer für Tutorial deaktiviert.
 * **************************************************************************/
 
 using System.Collections;
@@ -25,6 +25,7 @@ public class Countdown : MonoBehaviour
     GameObject field4;
     public Plant emptyPlant;
     public GameObject SelectionPanel, WeatherPanel, TutorialPanel1, TutorialPanel2;
+    GameObject weather;
     int a = 0;
     int b = 0;
 
@@ -35,6 +36,8 @@ public class Countdown : MonoBehaviour
         field2 = GameObject.Find("Field 2");
         field3 = GameObject.Find("Field 3");
         field4 = GameObject.Find("Field 4");
+
+        weather = GameObject.Find("Weather");
     }
     void Update()
     {
@@ -47,7 +50,7 @@ public class Countdown : MonoBehaviour
             countdown.text = ("<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
         }
         
-        if(timeLeft == 0 && a == 0)
+        if(timeLeft == 0 && a == 0 && !(weather.GetComponent<Weather>().seasonNumber == 0))
         {
             SelectionPanel.SetActive(false);
             WeatherPanel.SetActive(false);
