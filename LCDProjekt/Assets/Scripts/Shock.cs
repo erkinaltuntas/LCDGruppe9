@@ -31,8 +31,8 @@ public class Shock : MonoBehaviour {
     public Money cash;
     private double preventionCosts;
     public bool comingFromNegativeShock;
-    public TextMeshProUGUI errorMessage;
-    public TextMeshProUGUI stormMessage;
+    public Text errorMessage;
+    public Text stormMessage;
 
 
     // Use this for initialization
@@ -44,7 +44,11 @@ public class Shock : MonoBehaviour {
 
         opt1Button.onClick.AddListener(TaskOnClickOpt1);
         opt2Button.onClick.AddListener(TaskOnClickOpt2);
-        exitButton.onClick.AddListener(TaskOnClickExit);
+        if(seasonName == "Sommer")
+        {
+            exitButton.onClick.AddListener(TaskOnClickExit);
+        }
+       
 
         field1 = GameObject.Find("Field 1");
         field2 = GameObject.Find("Field 2");

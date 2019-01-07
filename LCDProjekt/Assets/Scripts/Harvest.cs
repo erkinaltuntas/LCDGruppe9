@@ -25,7 +25,7 @@ public class Harvest : MonoBehaviour {
     public Money cash;
     double missHarvestQuota;
     public GameObject balancePanel;
-    public TextMeshProUGUI balanceMessage;
+    public Text balanceMessage;
     public GameObject weather;
     string seasonName;
     bool tutorial;
@@ -72,7 +72,9 @@ public class Harvest : MonoBehaviour {
 
         // Zeige die Bilanz fuer jedes Feld an
         balancePanel.SetActive(true);
-        balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+        // für TextMeshPro
+        //balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+        balanceMessage.text = "Gewinn: " + actualProfit + " Farm$" + Environment.NewLine + Environment.NewLine;
 
         if (plant.name != "Empty")
         {

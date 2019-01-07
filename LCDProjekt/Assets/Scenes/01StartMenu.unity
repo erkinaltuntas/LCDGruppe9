@@ -405,7 +405,7 @@ RectTransform:
   m_GameObject: {fileID: 262205893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.725, y: 1, z: 1}
   m_Children:
   - {fileID: 48241630}
   m_Father: {fileID: 465388951}
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_text: "<size=6>Credits to:</size=6>\n\n\u2022Icons made by icon54.com from flaticon.com\r\n\u2022Icons
     made by www.freepik.com from flaticon.com\r\n\u2022Icons made by smashicons.com
     from flaticon.com\r\n\u2022Icons made by alciumtrice.tumblr.com from opengameart.org\r\n\u2022Sound
-    effects made by dustyroom.com\r\n"
+    effects made by dustyroom.com\n\u2022Backgroundmusic made by bensound.com\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -507,12 +507,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 262205895}
-    characterCount: 255
+    characterCount: 292
     spriteCount: 0
-    spaceCount: 32
-    wordCount: 42
+    spaceCount: 36
+    wordCount: 47
     linkCount: 0
-    lineCount: 8
+    lineCount: 9
     pageCount: 1
     materialCount: 2
   m_havePropertiesChanged: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
