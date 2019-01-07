@@ -38,7 +38,7 @@ public class TutorialAdventureScript : MonoBehaviour {
     Collider2D collider4;
     public GameObject nextLevelButton;
     public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel;
-    public TextMeshProUGUI errorMessage;
+    public Text errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
     public GameObject cornObj;
