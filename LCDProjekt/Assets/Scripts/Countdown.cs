@@ -16,7 +16,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    int timeLeft = 15; //Seconds Overall
+    int timeLeft = 60; //Seconds Overall
     public TextMeshProUGUI countdown; //UI Text Object
     public Sprite empty;
     GameObject field1;
