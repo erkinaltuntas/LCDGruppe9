@@ -14,11 +14,8 @@ public class TutorialPlayer : MonoBehaviour {
     public static TutorialPlayer tutorialPlayer;
     public string playerName;
     public int season;
-
     // Das Geld kann manuell im Inspektor angepasst werde
     public double money;
-
-
     //für Kredit
     public int timeLoan = 0;
     public bool creditShown;

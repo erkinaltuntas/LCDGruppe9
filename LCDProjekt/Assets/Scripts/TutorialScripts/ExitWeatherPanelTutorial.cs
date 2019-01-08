@@ -16,9 +16,10 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
     public Button exitWeatherPanel;
     public Button weatherButton;
     bool clicked, clicked2;
-    public GameObject step1, step11, step2;
+    public GameObject step1, step11, step2, step3, step4, step5, step6, step7, step8;
     public Field field1, field2, field3, field4;
     private Collider2D collider1, collider2, collider3, collider4;
+    public TutorialAdventureScript tutorial;
 
     // Use this for initialization
     void Start () {
@@ -32,49 +33,87 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         collider3 = field3.GetComponent<Collider2D>();
         collider4 = field4.GetComponent<Collider2D>();
 
-
+        
 
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (clicked)
-        {
-            step11.SetActive(false);
-        }
+
 	}
 
     void TaskOnClick()
     {
-        step1.SetActive(false);
-        if (!clicked)
+        if(tutorial.step1Open)
         {
+            step1.SetActive(false);
             step11.SetActive(true);
+            tutorial.step1Open = false;
+            tutorial.step11Open = true;
+
             collider1.enabled = false;
             collider2.enabled = false;
             collider3.enabled = false;
             collider4.enabled = false;
         }
-        else if(clicked && !clicked2)
+        else if(tutorial.step11Open)
         {
-            
+            step11.SetActive(false);
             step2.SetActive(true);
-            clicked2 = true;
+            tutorial.step11Open = false;
+            tutorial.step2Open = true;
             collider1.enabled = false;
             collider2.enabled = false;
             collider3.enabled = false;
             collider4.enabled = false;
+        }
+        else
+        {
+            if (tutorial.step2Open)
+            {
+                step2.SetActive(true);
+            }
+            if (tutorial.step3Open)
+            {
+                step3.SetActive(true);
+            }
+            else if (tutorial.step4Open)
+            {
+                step4.SetActive(true);
+            }
+            else if (tutorial.step5Open)
+            {
+                step5.SetActive(true);
+            }
+            else if (tutorial.step6Open)
+            {
+                step6.SetActive(true);
+            }
+            else if (tutorial.step7Open)
+            {
+                step7.SetActive(true);
+            }
+            else if (tutorial.step8Open)
+            {
+                step8.SetActive(true);
+            }
 
         }
-        
         
     }
 
 
     void TaskOnClick2()
     {
-        clicked = true;
+        step1.SetActive(false);
         step11.SetActive(false);
+        step2.SetActive(false);
+        step3.SetActive(false);
+        step4.SetActive(false);
+        step5.SetActive(false);
+        step6.SetActive(false);
+        step7.SetActive(false);
+        step8.SetActive(false);
     }
 }
