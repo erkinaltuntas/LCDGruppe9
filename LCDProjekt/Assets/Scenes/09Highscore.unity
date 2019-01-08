@@ -1249,6 +1249,8 @@ MonoBehaviour:
   playerPlace: {fileID: 642168605}
   underPlayerPlace: {fileID: 592680553}
   lastPlace: {fileID: 1707885878}
+  space: {fileID: 1084667911}
+  space2: {fileID: 1283009829}
 --- !u!4 &1654144164
 Transform:
   m_ObjectHideFlags: 0
