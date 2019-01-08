@@ -17,7 +17,7 @@ public class DisplayDescription : MonoBehaviour {
     // Text, in welches der Beschreibungstext eingefuegt wird (manuell zuweisen)
     public string descriptionString;
     // Textobjekte, in welches der Beschreibungstext eingefuegt wird (manuell zuweisen)
-    public TextMeshProUGUI descriptionText;
+    public Text descriptionText;
     // Das PopUp, in welches das Textobjekte eingefuegt wird (manuell zuweisen)
     public Image descriptionImage;
 
@@ -32,7 +32,7 @@ public class DisplayDescription : MonoBehaviour {
         // Identifiziere die Pflanze, um die es sich handelt mit ihren Beschreibungseigenschaften
         plant = this.gameObject.GetComponent<Plant>();
         descriptionImage = plant.GetComponentInChildren<Image>();
-        descriptionText = descriptionImage.GetComponentInChildren<TextMeshProUGUI>();
+        descriptionText = descriptionImage.GetComponentInChildren<Text>();
 
 
         // Beschreibungstext im PopUp
@@ -59,8 +59,8 @@ public class DisplayDescription : MonoBehaviour {
                 descriptionString = "Name: Kartoffel";
             }
             descriptionString += Environment.NewLine + Environment.NewLine +
-                    "Preis: " + plant.price +" Farm$" + Environment.NewLine +
-                    "Maximal möglicher Profit: " + plant.profit+" Farm$" + Environment.NewLine +
+                    "Preis: " + plant.price +" Farm $" + Environment.NewLine +
+                    "Maximal möglicher Profit: " + plant.profit+" Farm $" + Environment.NewLine +
                     "Dürreresistenz: " + plant.droughtResistance * 100 + "%" + Environment.NewLine +
                     "Frostresistenz: " + plant.frostResistance * 100 + "%" + Environment.NewLine;
         }
@@ -99,8 +99,8 @@ public class DisplayDescription : MonoBehaviour {
         if (displayInfo)
         {
             descriptionText.text = descriptionString;
-            descriptionText.color = Color.Lerp(descriptionText.color, Color.black, fadeTime * Time.deltaTime);
-            descriptionImage.color = Color.Lerp(descriptionImage.color, Color.white, fadeTime * Time.deltaTime);
+            descriptionText.color = Color.Lerp(descriptionText.color, Color.white, fadeTime * Time.deltaTime);
+            descriptionImage.color = Color.Lerp(descriptionImage.color, Color.clear, fadeTime * Time.deltaTime);
 
         }
         else

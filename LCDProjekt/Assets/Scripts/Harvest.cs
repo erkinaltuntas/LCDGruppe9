@@ -74,7 +74,7 @@ public class Harvest : MonoBehaviour {
         balancePanel.SetActive(true);
         // für TextMeshPro
         //balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
-        balanceMessage.text = "Gewinn: " + actualProfit + " Farm$" + Environment.NewLine + Environment.NewLine;
+        balanceMessage.text = "Gewinn: " + actualProfit + " Farm $" + Environment.NewLine + Environment.NewLine;
 
         if (plant.name != "Empty")
         {
@@ -82,7 +82,7 @@ public class Harvest : MonoBehaviour {
             {
 
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
-                    "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm$";
+                    "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm $";
                 // Zuweisung der Verlustwerte in das PlayerArray
                 if (!tutorial)
                 {
@@ -94,7 +94,7 @@ public class Harvest : MonoBehaviour {
             else if (plant.droughted)
             {
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
-                   "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm$";
+                   "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm $";
                 // Zuweisung der Verlustwerte in das PlayerArray
                 if (!tutorial)
                 {
