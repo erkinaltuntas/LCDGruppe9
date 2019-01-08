@@ -46,7 +46,9 @@ public class TutorialAdventureScript : MonoBehaviour {
     public GameObject emptyObj;
     public GameObject weather;
     public GameObject step1, step11, step2, step3, step4, step5, step6, step7, step8;
-    
+    public Button exitStep2Button;
+    public bool step1Open, step11Open, step2Open, step3Open, step4Open, step5Open, step6Open, step7Open, step8Open;
+
 
 
     // Use this for initialization
@@ -61,10 +63,14 @@ public class TutorialAdventureScript : MonoBehaviour {
         // Zu Beginn des Spiels Wetteranzeige aktivieren, andere Objekte deaktivieren
         weatherPanel.SetActive(true);
         step1.SetActive(true);
+        step1Open = true;
         selectionPanel.SetActive(false);
         errorMessage.text = "";
         gameButtonsPanel.SetActive(false);
 
+        // Definiert welcher Schritt gerade angezeigt wird
+        step11Open = step2Open = step3Open = step4Open = step5Open = step6Open = step7Open = step8Open = false;
+        exitStep2Button.onClick.AddListener(TaskOnClick);
 
         // Collider der Felder definieren
         collider1 = field1.GetComponent<Collider2D>();
@@ -110,7 +116,9 @@ public class TutorialAdventureScript : MonoBehaviour {
                     if (!field1.fieldIsChecked && !field2.fieldIsChecked && !field3.fieldIsChecked && !field4.fieldIsChecked)
                     {
                         step3.SetActive(false);
+                        step3Open = false;
                         step4.SetActive(true);
+                        step4Open = true;
                     }
 
 
@@ -136,7 +144,9 @@ public class TutorialAdventureScript : MonoBehaviour {
                         if (!field1.fieldIsChecked && !field2.fieldIsChecked && !field3.fieldIsChecked && !field4.fieldIsChecked)
                         {
                             step4.SetActive(false);
+                            step4Open = false;
                             step5.SetActive(true);
+                            step5Open = true;
                         }
 
 
@@ -330,7 +340,9 @@ public class TutorialAdventureScript : MonoBehaviour {
         if (field1.fieldIsChecked && field2.fieldIsChecked && field3.fieldIsChecked && field4.fieldIsChecked)
         {
             step5.SetActive(false);
+            step5Open = false;
             step6.SetActive(true);
+            step6Open = true;
             harvestPanel.SetActive(true);
             gameButtonsPanel.SetActive(false);
 
@@ -345,13 +357,30 @@ public class TutorialAdventureScript : MonoBehaviour {
         if (field1.fieldIsHarvested && field2.fieldIsHarvested && field3.fieldIsHarvested && field4.fieldIsHarvested)
         {
             step7.SetActive(false);
+            step7Open = false;
             step8.SetActive(true);
+            step8Open = true;
 
             harvestPanel.SetActive(false);
             nextLevelButton.SetActive(true);
 
         }
 
+
+    }
+
+    // Bei Verlassen des 2. Schrittes, öffne den 3. Schritt 
+    void TaskOnClick()
+    {
+        step3.SetActive(true);
+        step3Open = true;
+        step2.SetActive(false);
+        step2Open = false;
+
+        collider1.enabled = true;
+        collider2.enabled = true;
+        collider3.enabled = true;
+        collider4.enabled = true;
 
     }
 }

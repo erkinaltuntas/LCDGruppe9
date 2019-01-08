@@ -43,11 +43,11 @@ public class Countdown : MonoBehaviour
     {
         if (timeLeft > 10)
         {
-            countdown.text = ("Zeit: " + timeLeft); // Zeit im Canvas anzeigen
+            countdown.text = (timeLeft + " Sek."); // Zeit im Canvas anzeigen
         }
         else
         {
-            countdown.text = ("Zeit: "+ "<color=red>" + timeLeft); // Zeit im Canvas in rot anzeigen
+            countdown.text = ("<color=red>" + timeLeft +"<color=white>"+" Sek."); // Zeit im Canvas in rot anzeigen
         }
         
         if(timeLeft == 0 && a == 0 && !(weather.GetComponent<Weather>().seasonNumber == 0))
@@ -93,7 +93,7 @@ public class Countdown : MonoBehaviour
             && field4.GetComponent<Field>().plantName != "")
         {
             timeLeft = 0;
-            countdown.text = ("" + timeLeft);
+            countdown.text = (timeLeft + " Sek.");
         }
 
     }
