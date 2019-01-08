@@ -2,9 +2,9 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Victor Xu
-* Datum der letzten Bearbeitung: 20.12.2018
-* Grund für letzte Bearbeitung: Anzahl wird gezählt
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 8.1.2019
+* Grund für letzte Bearbeitung: Fix Beschreibungsanzeige der Pflanze
 **************************************************************************/
 
 using System.Collections;
@@ -20,8 +20,14 @@ public class Credit : MonoBehaviour {
     public Field field1, field2, field3, field4; 
     public GameObject creditPanel, gameButtonsPanel, selectionPanel, shockPanel;
     public Money money;
+    public GameObject tomatoObj;
+    public GameObject potatoObj;
+    public GameObject cornObj;
+    public GameObject carrotObj;
+    public GameObject emptyObj;
     GameObject weather;
     string seasonName;
+    
 
 
     // Use this for initialization
@@ -48,6 +54,13 @@ public class Credit : MonoBehaviour {
 
         weather = GameObject.Find("Weather");
         seasonName = weather.GetComponent<Weather>().seasonName;
+
+        // Fix, damit nach dem Kredit nicht die alte Beschreibung nochmal auftaucht
+        tomatoObj.GetComponent<DisplayDescription>().displayInfo = false;
+        cornObj.GetComponent<DisplayDescription>().displayInfo = false;
+        potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
+        carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
+        emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
     }
 
     void TaskOnAccept()
