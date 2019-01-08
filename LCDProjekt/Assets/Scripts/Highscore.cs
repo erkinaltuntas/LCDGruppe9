@@ -27,11 +27,13 @@ public class Highscore : MonoBehaviour {
     public Text playerPlace;
     public Text underPlayerPlace;
     public Text lastPlace;
-    string fLine;
-    string oPLine;
-    string pLine;
-    string uPLine;
-    string lLine;
+    public Text space;
+    public Text space2;
+    string fLine = "";
+    string oPLine = "";
+    string pLine = "";
+    string uPLine = "";
+    string lLine = "";
     bool firstFound;
     bool oPFound;
     bool pFound;
@@ -65,14 +67,7 @@ public class Highscore : MonoBehaviour {
         //Die Platzierung des Spielers nach seinem Endguthaben finden
         foreach (var document in batchList)
         {
-            if (!(firstFound && pFound && oPFound && uPFound)) { 
-                if (!firstFound)
-                {
-
-                    fLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
-
-                    firstFound = true;
-                }
+            if (!(firstFound && pFound && oPFound && uPFound)) {
 
                 if (pFound)
                 {
@@ -80,7 +75,20 @@ public class Highscore : MonoBehaviour {
                     uPFound = true;
                 }
 
-                if (document["result"] == player.endTotal)
+                if (!firstFound)
+                {
+                    if(document["result"] == player.endTotal)
+                    {
+                        oPFound = true;
+                        pFound = true;
+                    }
+
+                    fLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
+
+                    firstFound = true;
+                }
+
+                if (!pFound && document["result"] == player.endTotal)
                 {
                     oPFound = true;
                     pFound = true;
@@ -103,12 +111,38 @@ public class Highscore : MonoBehaviour {
         }
 
         //Platzierung ausgeben
-        firstPlace.text = fLine;
-        overPlayerPlace.text = oPLine;
-        playerPlace.text = pLine;
-        underPlayerPlace.text = uPLine;
-        lastPlace.text = lLine;
-
+        if (place.Equals("1"))
+        {
+            firstPlace.text = fLine;
+            firstPlace.color = Color.green;
+            space.text = uPLine;
+            overPlayerPlace.text = "...";            
+            playerPlace.text = lLine;
+            playerPlace.color = Color.white;
+            underPlayerPlace.text = "";
+            space2.text = "";
+            lastPlace.text = "";
+        }
+        else if (place.Equals("2"))
+        {
+            firstPlace.text = fLine;
+            space.text = pLine;
+            space.color = Color.green;
+            overPlayerPlace.text = uPLine;
+            playerPlace.text = "...";
+            playerPlace.color = Color.white;
+            underPlayerPlace.text = lLine;
+            space2.text = "";
+            lastPlace.text = "";
+        }
+        else {
+            firstPlace.text = fLine;
+            overPlayerPlace.text = oPLine;
+            playerPlace.text = pLine;
+            underPlayerPlace.text = uPLine;
+            lastPlace.text = lLine;
+        }
+        
         print("Du hast Platz " + place + " von " + mongo.numberOfPlayers + " Spielern erreicht.");
 
     }
