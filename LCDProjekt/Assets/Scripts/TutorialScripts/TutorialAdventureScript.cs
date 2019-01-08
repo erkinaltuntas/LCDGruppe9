@@ -37,7 +37,7 @@ public class TutorialAdventureScript : MonoBehaviour {
     Collider2D collider3;
     Collider2D collider4;
     public GameObject nextLevelButton;
-    public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel;
+    public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel, balancePanels;
     public Text errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
@@ -362,6 +362,7 @@ public class TutorialAdventureScript : MonoBehaviour {
             step8Open = true;
 
             harvestPanel.SetActive(false);
+            balancePanels.SetActive(false);
             nextLevelButton.SetActive(true);
 
         }
