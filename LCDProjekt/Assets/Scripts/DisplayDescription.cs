@@ -20,7 +20,7 @@ public class DisplayDescription : MonoBehaviour {
     public Text descriptionText;
     // Das PopUp, in welches das Textobjekte eingefuegt wird (manuell zuweisen)
     public Image descriptionImage;
-    public Text errorMessage;
+
     public float fadeTime;
     public bool displayInfo;
     public Plant plant;
@@ -89,7 +89,6 @@ public class DisplayDescription : MonoBehaviour {
     void OnMouseExit()
     {
         displayInfo = false;
-        errorMessage.text = "";
     }
 
     // Steuert die Anzeige des PopUps
@@ -99,7 +98,6 @@ public class DisplayDescription : MonoBehaviour {
         // Wenn Maus auf Collider, dann zeige das PopUp, indem das Bild und der Text sichtbar wird
         if (displayInfo)
         {
-            
             descriptionText.text = descriptionString;
             descriptionText.color = Color.Lerp(descriptionText.color, Color.white, fadeTime * Time.deltaTime);
             descriptionImage.color = Color.Lerp(descriptionImage.color, Color.clear, fadeTime * Time.deltaTime);
@@ -107,7 +105,6 @@ public class DisplayDescription : MonoBehaviour {
         }
         else
         {
-            
             descriptionImage.color = Color.Lerp(descriptionImage.color, Color.clear, fadeTime * Time.deltaTime);
             descriptionText.color = Color.Lerp(descriptionText.color, Color.clear, fadeTime * Time.deltaTime);
         }
