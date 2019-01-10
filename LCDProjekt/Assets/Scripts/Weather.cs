@@ -24,8 +24,8 @@ public class Weather : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        random1 = Random.Range(0, 11);
-        random2 = Random.Range(0, 11);
+        random1 = Random.Range(0, 10);
+        random2 = Random.Range(0, 10);
         frost = isFrost();
         drought = isDrought();
 
