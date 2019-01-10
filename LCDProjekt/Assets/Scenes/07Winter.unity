@@ -18446,7 +18446,7 @@ MonoBehaviour:
   field4: {fileID: 553113320}
   creditPanel: {fileID: 1358277967}
   gameButtonsPanel: {fileID: 1237653223}
-  selectionPanel: {fileID: 119750105}
+  selectionPanel: {fileID: 0}
   shockPanel: {fileID: 0}
   money: {fileID: 463560552}
 --- !u!114 &1358277970
