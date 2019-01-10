@@ -11487,7 +11487,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ups... du hast wohl nicht genug Geld f\xFCr diese Aktion.\nM\xF6chtest
-    du meine alte Briefmarkensammlung verkaufen, um\n1000 FarmDollar zu erhalten?"
+    du dir 1000 Farm$ bei mir leihen, die du mir dann am Ende des Jahres zur\xFCckzahlst?"
 --- !u!222 &793359265
 CanvasRenderer:
   m_ObjectHideFlags: 0

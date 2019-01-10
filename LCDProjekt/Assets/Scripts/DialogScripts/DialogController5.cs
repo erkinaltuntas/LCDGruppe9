@@ -50,15 +50,15 @@ public class DialogController5 : MonoBehaviour
             {
                 money = money + (player.timeLoan * 1000);
                 fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
-                + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet, da du " + player.timeLoan +
-                " Mal die" + Environment.NewLine + "Briefmarkensammlung deiner Großmutter verkauft hast..";
+                + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet, da du dir " + player.timeLoan +
+                " Mal " + Environment.NewLine + "Geld von deiner Großmutter geliehen hast..";
             }
             else if (win < 0)
             {
                 money = money + (player.timeLoan * 1000);
                 fullText1 = "Wir sind zurück mein Kind!" + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm Dollar."
-                + Environment.NewLine + Environment.NewLine + " Du hast also " + win * (-1) + " Farm Dollar verloren, da du " + player.timeLoan + 
-                " Mal die" + Environment.NewLine + "Briefmarkensammlung deiner Großmutter verkauft hast..";
+                + Environment.NewLine + Environment.NewLine + " Du hast also " + win * (-1) + " Farm Dollar verloren, da du dir " + player.timeLoan + 
+                " Mal " + Environment.NewLine + "Geld von deiner Großmutter geliehen hast..";
             }
             else
             {
