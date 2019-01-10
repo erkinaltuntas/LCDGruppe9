@@ -33,6 +33,7 @@ public class Shock : MonoBehaviour {
     public bool comingFromNegativeShock;
     public Text errorMessage;
     public Text stormMessage;
+    public Sprite destroyed;
 
 
     // Use this for initialization
@@ -147,13 +148,13 @@ public class Shock : MonoBehaviour {
         }
         else
         {
-            field1.GetComponent<SpriteRenderer>().sprite = empty;
+            field1.GetComponent<SpriteRenderer>().sprite = destroyed;
             field1.GetComponent<Field>().fieldIsHarvested = true;
-            field2.GetComponent<SpriteRenderer>().sprite = empty;
+            field2.GetComponent<SpriteRenderer>().sprite = destroyed;
             field2.GetComponent<Field>().fieldIsHarvested = true;
-            field3.GetComponent<SpriteRenderer>().sprite = empty;
+            field3.GetComponent<SpriteRenderer>().sprite = destroyed;
             field3.GetComponent<Field>().fieldIsHarvested = true;
-            field4.GetComponent<SpriteRenderer>().sprite = empty;
+            field4.GetComponent<SpriteRenderer>().sprite = destroyed;
             field4.GetComponent<Field>().fieldIsHarvested = true;
         }
         resultPanel.SetActive(false);
