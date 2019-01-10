@@ -2,9 +2,9 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Cedric Meyer-Piening
-* Datum der letzten Bearbeitung: 10.1.2019
-* Grund für letzte Bearbeitung: Fix Schockpanel
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 20.12.2018
+* Grund für letzte Bearbeitung: Anzahl wird gezählt
 **************************************************************************/
 
 using System.Collections;
@@ -20,14 +20,8 @@ public class Credit : MonoBehaviour {
     public Field field1, field2, field3, field4; 
     public GameObject creditPanel, gameButtonsPanel, selectionPanel, shockPanel;
     public Money money;
-    public GameObject tomatoObj;
-    public GameObject potatoObj;
-    public GameObject cornObj;
-    public GameObject carrotObj;
-    public GameObject emptyObj;
     GameObject weather;
     string seasonName;
-    
 
 
     // Use this for initialization
@@ -52,26 +46,12 @@ public class Credit : MonoBehaviour {
 
         player.creditShown = true;
 
-<<<<<<< HEAD
-        
-=======
         weather = GameObject.Find("Weather");
         seasonName = weather.GetComponent<Weather>().seasonName;
-
-        // Fix, damit nach dem Kredit nicht die alte Beschreibung nochmal auftaucht
-        tomatoObj.GetComponent<DisplayDescription>().displayInfo = false;
-        cornObj.GetComponent<DisplayDescription>().displayInfo = false;
-        potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
-        carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
-        emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
->>>>>>> 5668bc0cb201cc8450c2cd9ff0bcd0109dfbbc7d
     }
 
     void TaskOnAccept()
     {
-        weather = GameObject.Find("Weather");
-        seasonName = weather.GetComponent<Weather>().seasonName;
-
         // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = true;
         money.money += 1000;
@@ -93,9 +73,6 @@ public class Credit : MonoBehaviour {
     }
     void TaskOnReject()
     {
-        weather = GameObject.Find("Weather");
-        seasonName = weather.GetComponent<Weather>().seasonName;
-
         // Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = false;
         field1.GetComponent<Collider2D>().enabled = true;
@@ -104,13 +81,5 @@ public class Credit : MonoBehaviour {
         field4.GetComponent<Collider2D>().enabled = true;
         gameButtonsPanel.SetActive(true);
         creditPanel.SetActive(false);
-
-        if (seasonName == "Sommer")
-        {
-            if (shockPanel.GetComponent<Shock>().comingFromNegativeShock)
-            {
-                shockPanel.SetActive(true);
-            }
-        }
     }
 }
