@@ -3,8 +3,8 @@
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 17.12.2018
-* Grund für letzte Bearbeitung: Risikoberechnung
+* Datum der letzten Bearbeitung: 8.1.2019
+* Grund für letzte Bearbeitung: Bestätigungsdialog
 **************************************************************************/
 
 using System.Collections;
@@ -36,17 +36,17 @@ public class Adventure2Script : MonoBehaviour {
     Collider2D collider3;
     Collider2D collider4;
     public GameObject nextLevelButton;
-    public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel;
+    public GameObject gameButtonsPanel, selectionPanel, harvestPanel, weatherPanel, creditPanel, confirmPanel;
     public Text errorMessage;
     public GameObject tomatoObj;
     public GameObject potatoObj;
     public GameObject cornObj;
     public GameObject carrotObj;
     public GameObject emptyObj;
-
     public GameObject weather;
-
-
+    public Button confirmButton, rejectButton;
+    private Plant plant;
+        
     // Use this for initialization
     void Start() {
         player = Player.player;
@@ -73,6 +73,8 @@ public class Adventure2Script : MonoBehaviour {
         collider3.enabled = false;
         collider4.enabled = false;
 
+        confirmButton.onClick.AddListener(TaskOnConfirm);
+        rejectButton.onClick.AddListener(TaskOnReject);
     }
 
 
@@ -80,6 +82,7 @@ public class Adventure2Script : MonoBehaviour {
     void Update() {
         if (Input.GetMouseButtonDown(0))
         {
+            
             // Mausposition definieren
             mousePos = Input.mousePosition;
             //print(mousePos);
@@ -116,167 +119,41 @@ public class Adventure2Script : MonoBehaviour {
                 // Falls der Collider, welcher getroffen wurde, der Collider einer Pflanze (im Auswahlfenster) ist
                 else if (hit.collider.gameObject.tag == "Pflanze")
                 {
-                    if (cash.money >= hit.collider.gameObject.GetComponent<Plant>().price)
+                    errorMessage.text = "";
+                    plant = hit.collider.gameObject.GetComponent<Plant>();
+                    price = plant.price;
+                    if (cash.money >= price)
                     {
-                        errorMessage.text = "";
+                        // Bestätigungsdialog ausführen
+                        confirmPanel.SetActive(true);
+                        // Während Dialog kann man die anderen Pflanzen nicht anklicken
+                        tomatoObj.GetComponent<Collider2D>().enabled = false;
+                        carrotObj.GetComponent<Collider2D>().enabled = false;
+                        cornObj.GetComponent<Collider2D>().enabled = false;
+                        potatoObj.GetComponent<Collider2D>().enabled = false;
+                        emptyObj.GetComponent<Collider2D>().enabled = false;
 
-                        // Bestimmte Preis der Pflanze
-                        price = hit.collider.gameObject.GetComponent<Plant>().price;
-
-                        // Anzeigefenster mit Details ausblenden beim Öffnen des SelectionPanels
-                        tomatoObj.GetComponent<DisplayDescription>().displayInfo = false;
-                        potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
-                        cornObj.GetComponent<DisplayDescription>().displayInfo = false;
-                        carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
-                        emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
-
-
-                        // Fügt die Entscheidung zur RisikoList hinzu, falls nicht leer gewählt worden ist
-                        if(price != 0)
+                        // Dialogtext
+                        if (plant.plantName == "Tomato")
                         {
-                            player.riskScores[player.riskIndex] = player.calculateRiskPlant(hit.collider.gameObject.GetComponent<Plant>(), weather.GetComponent<Weather>());
-                            
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Tomaten anbauen?";
                         }
-                        else
+                        else if(plant.plantName == "Carrot")
                         {
-                            player.riskScores[player.riskIndex] = 0;
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Karotten anbauen?";
                         }
-                        player.riskIndex++; ;
-
-                        // Schaut nach welches Feld ausgewaehlt wurde
-                        switch (currentFeldId)
+                        else if (plant.plantName == "Corn")
                         {
-                            // Feld1 wurde ausgewaehlt
-                            case 1:
-                                // Pflanzennamen des Feldes auf den Namen der Pflanze setzen
-                                field1.plantName = hit.collider.gameObject.name.ToString();
-
-                                field1.plant = hit.collider.gameObject.GetComponent<Plant>();
-
-                                // Zieht den Preis von dem aktuellen Geld ab
-                                cash.money = cash.money - price;
-
-                                // Feld wird als fertig markiert
-                                field1.fieldIsChecked = true;
-
-                                // Passendes Sprite wird gesetzt
-                                switch (field1.plantName)
-                                {
-                                    case "Tomato":
-                                        field1.GetComponent<SpriteRenderer>().sprite = tomato;
-                                        break;
-                                    case "Carrot":
-                                        field1.GetComponent<SpriteRenderer>().sprite = carrot;
-                                        break;
-                                    case "Corn":
-                                        field1.GetComponent<SpriteRenderer>().sprite = corn;
-                                        break;
-                                    case "Potato":
-                                        field1.GetComponent<SpriteRenderer>().sprite = potato;
-                                        break;
-                                    case "Empty":
-                                        field1.GetComponent<SpriteRenderer>().sprite = empty;
-                                        break;
-                                }
-                                break;
-
-                            // Siehe case 1
-                            case 2:
-                                field2.plantName = hit.collider.gameObject.name.ToString();
-                                field2.plant = hit.collider.gameObject.GetComponent<Plant>();
-                                cash.money = cash.money - price;
-
-                                field2.fieldIsChecked = true;
-
-                                switch (field2.plantName)
-                                {
-                                    case "Tomato":
-                                        field2.GetComponent<SpriteRenderer>().sprite = tomato;
-                                        break;
-                                    case "Carrot":
-                                        field2.GetComponent<SpriteRenderer>().sprite = carrot;
-                                        break;
-                                    case "Corn":
-                                        field2.GetComponent<SpriteRenderer>().sprite = corn;
-                                        break;
-                                    case "Potato":
-                                        field2.GetComponent<SpriteRenderer>().sprite = potato;
-                                        break;
-                                    case "Empty":
-                                        field2.GetComponent<SpriteRenderer>().sprite = empty;
-                                        break;
-                                }
-                                break;
-
-                            // Siehe case 1
-                            case 3:
-                                field3.plantName = hit.collider.gameObject.name.ToString();
-                                field3.plant = hit.collider.gameObject.GetComponent<Plant>();
-                                cash.money = cash.money - price;
-                                field3.fieldIsChecked = true;
-
-                                switch (field3.plantName)
-                                {
-                                    case "Tomato":
-                                        field3.GetComponent<SpriteRenderer>().sprite = tomato;
-                                        break;
-                                    case "Carrot":
-                                        field3.GetComponent<SpriteRenderer>().sprite = carrot;
-                                        break;
-                                    case "Corn":
-                                        field3.GetComponent<SpriteRenderer>().sprite = corn;
-                                        break;
-                                    case "Potato":
-                                        field3.GetComponent<SpriteRenderer>().sprite = potato;
-                                        break;
-                                    case "Empty":
-                                        field3.GetComponent<SpriteRenderer>().sprite = empty;
-                                        break;
-                                }
-                                break;
-
-                            // Siehe case 1
-                            case 4:
-                                field4.plantName = hit.collider.gameObject.name.ToString();
-                                field4.plant = hit.collider.gameObject.GetComponent<Plant>();
-                                cash.money = cash.money - price;
-                                field4.fieldIsChecked = true;
-
-                                switch (field4.plantName)
-                                {
-                                    case "Tomato":
-                                        field4.GetComponent<SpriteRenderer>().sprite = tomato;
-                                        break;
-                                    case "Carrot":
-                                        field4.GetComponent<SpriteRenderer>().sprite = carrot;
-                                        break;
-                                    case "Corn":
-                                        field4.GetComponent<SpriteRenderer>().sprite = corn;
-                                        break;
-                                    case "Potato":
-                                        field4.GetComponent<SpriteRenderer>().sprite = potato;
-                                        break;
-                                    case "Empty":
-                                        field4.GetComponent<SpriteRenderer>().sprite = empty;
-                                        break;
-                                }
-                                break;
-                            default:
-                                print("Fehler");
-                                break;
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Mais anbauen?";
                         }
-
-
-                        // Collider der Felder wieder verfügbar machen
-                        collider1.enabled = true;
-                        collider2.enabled = true;
-                        collider3.enabled = true;
-                        collider4.enabled = true;
-
-                        // Auswahlfenster deaktivieren und Buttons aktivieren
-                        selectionPanel.SetActive(false);
-                        gameButtonsPanel.SetActive(true);
-                        
+                        else if (plant.plantName == "Potato")
+                        {
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Kartoffeln anbauen?";
+                        }
+                        else if (plant.plantName == "Empty")
+                        {
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich nichts anbauen?";
+                        }
                     }
                     // Falls man nicht genuegend Geld hat
                     else
@@ -287,7 +164,8 @@ public class Adventure2Script : MonoBehaviour {
                         }
                         else
                         {
-                            errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                            errorMessage.text = "Du hast nicht genügend Guthaben!";
+                            
                         }
                         
                         
@@ -296,14 +174,20 @@ public class Adventure2Script : MonoBehaviour {
                 // Falls man Auswahlfenster verlassen will
                 else if (hit.collider.gameObject.name == "ExitSelectionPanel")
                 {
-
+                    errorMessage.text = "";
                     // Collider wieder verfügbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
                     collider3.enabled = true;
                     collider4.enabled = true;
-
+                    // Collider der Pflanzen wieder aktivieren
+                    tomatoObj.GetComponent<Collider2D>().enabled = true;
+                    carrotObj.GetComponent<Collider2D>().enabled = true;
+                    cornObj.GetComponent<Collider2D>().enabled = true;
+                    potatoObj.GetComponent<Collider2D>().enabled = true;
+                    emptyObj.GetComponent<Collider2D>().enabled = true;
                     //Auswahlfenster deaktivieren
+                    confirmPanel.SetActive(false);
                     selectionPanel.SetActive(false);
                     gameButtonsPanel.SetActive(true);
                     
@@ -332,6 +216,180 @@ public class Adventure2Script : MonoBehaviour {
            
         }
 
+
+    }
+
+    void TaskOnConfirm()
+    {
+        // Collider der Pflanzen wieder aktivieren
+        tomatoObj.GetComponent<Collider2D>().enabled = true;
+        carrotObj.GetComponent<Collider2D>().enabled = true;
+        cornObj.GetComponent<Collider2D>().enabled = true;
+        potatoObj.GetComponent<Collider2D>().enabled = true;
+        emptyObj.GetComponent<Collider2D>().enabled = true;
+
+        errorMessage.text = "";
+        // Fügt die Entscheidung zur RisikoList hinzu, falls nicht leer gewählt worden ist
+        if (price != 0)
+        {
+            player.riskScores[player.riskIndex] = player.calculateRiskPlant(plant, weather.GetComponent<Weather>());
+
+        }
+        else
+        {
+            player.riskScores[player.riskIndex] = 0;
+        }
+        player.riskIndex++; ;
+
+        // Schaut nach welches Feld ausgewaehlt wurde
+        switch (currentFeldId)
+        {
+
+
+            // Feld1 wurde ausgewaehlt
+            case 1:
+                // Pflanzennamen des Feldes auf den Namen der Pflanze setzen
+                field1.plantName = plant.name.ToString();
+
+                field1.plant = plant.GetComponent<Plant>();
+
+                // Zieht den Preis von dem aktuellen Geld ab
+                cash.money = cash.money - price;
+
+                // Feld wird als fertig markiert
+                field1.fieldIsChecked = true;
+
+                // Passendes Sprite wird gesetzt
+                switch (field1.plantName)
+                {
+                    case "Tomato":
+                        field1.GetComponent<SpriteRenderer>().sprite = tomato;
+                        break;
+                    case "Carrot":
+                        field1.GetComponent<SpriteRenderer>().sprite = carrot;
+                        break;
+                    case "Corn":
+                        field1.GetComponent<SpriteRenderer>().sprite = corn;
+                        break;
+                    case "Potato":
+                        field1.GetComponent<SpriteRenderer>().sprite = potato;
+                        break;
+                    case "Empty":
+                        field1.GetComponent<SpriteRenderer>().sprite = empty;
+                        break;
+                }
+                break;
+
+            // Siehe case 1
+            case 2:
+                field2.plantName = plant.name.ToString();
+                field2.plant = plant.GetComponent<Plant>();
+                cash.money = cash.money - price;
+
+                field2.fieldIsChecked = true;
+
+                switch (field2.plantName)
+                {
+                    case "Tomato":
+                        field2.GetComponent<SpriteRenderer>().sprite = tomato;
+                        break;
+                    case "Carrot":
+                        field2.GetComponent<SpriteRenderer>().sprite = carrot;
+                        break;
+                    case "Corn":
+                        field2.GetComponent<SpriteRenderer>().sprite = corn;
+                        break;
+                    case "Potato":
+                        field2.GetComponent<SpriteRenderer>().sprite = potato;
+                        break;
+                    case "Empty":
+                        field2.GetComponent<SpriteRenderer>().sprite = empty;
+                        break;
+                }
+                break;
+
+            // Siehe case 1
+            case 3:
+                field3.plantName = plant.name.ToString();
+                field3.plant = plant.GetComponent<Plant>();
+                cash.money = cash.money - price;
+                field3.fieldIsChecked = true;
+
+                switch (field3.plantName)
+                {
+                    case "Tomato":
+                        field3.GetComponent<SpriteRenderer>().sprite = tomato;
+                        break;
+                    case "Carrot":
+                        field3.GetComponent<SpriteRenderer>().sprite = carrot;
+                        break;
+                    case "Corn":
+                        field3.GetComponent<SpriteRenderer>().sprite = corn;
+                        break;
+                    case "Potato":
+                        field3.GetComponent<SpriteRenderer>().sprite = potato;
+                        break;
+                    case "Empty":
+                        field3.GetComponent<SpriteRenderer>().sprite = empty;
+                        break;
+                }
+                break;
+
+            // Siehe case 1
+            case 4:
+                field4.plantName = plant.name.ToString();
+                field4.plant = plant.GetComponent<Plant>();
+                cash.money = cash.money - price;
+                field4.fieldIsChecked = true;
+
+                switch (field4.plantName)
+                {
+                    case "Tomato":
+                        field4.GetComponent<SpriteRenderer>().sprite = tomato;
+                        break;
+                    case "Carrot":
+                        field4.GetComponent<SpriteRenderer>().sprite = carrot;
+                        break;
+                    case "Corn":
+                        field4.GetComponent<SpriteRenderer>().sprite = corn;
+                        break;
+                    case "Potato":
+                        field4.GetComponent<SpriteRenderer>().sprite = potato;
+                        break;
+                    case "Empty":
+                        field4.GetComponent<SpriteRenderer>().sprite = empty;
+                        break;
+                }
+                break;
+            default:
+                print("Fehler");
+                break;
+        }
+
+
+        // Collider der Felder wieder verfügbar machen
+        collider1.enabled = true;
+        collider2.enabled = true;
+        collider3.enabled = true;
+        collider4.enabled = true;
+
+        // Auswahlfenster deaktivieren und Buttons aktivieren
+        confirmPanel.SetActive(false);
+        selectionPanel.SetActive(false);
+        gameButtonsPanel.SetActive(true);
+
+    }
+    void TaskOnReject()
+    {
+        errorMessage.text = "";
+        // Collider der Pflanzen wieder aktivieren
+        tomatoObj.GetComponent<Collider2D>().enabled = true;
+        carrotObj.GetComponent<Collider2D>().enabled = true;
+        cornObj.GetComponent<Collider2D>().enabled = true;
+        potatoObj.GetComponent<Collider2D>().enabled = true;
+        emptyObj.GetComponent<Collider2D>().enabled = true;
+
+        confirmPanel.SetActive(false);
 
     }
 }
