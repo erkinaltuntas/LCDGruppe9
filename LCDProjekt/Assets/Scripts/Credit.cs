@@ -94,5 +94,13 @@ public class Credit : MonoBehaviour {
         field4.GetComponent<Collider2D>().enabled = true;
         gameButtonsPanel.SetActive(true);
         creditPanel.SetActive(false);
+
+        if (seasonName == "Sommer")
+        {
+            if (shockPanel.GetComponent<Shock>().comingFromNegativeShock)
+            {
+                shockPanel.SetActive(true);
+            }
+        }
     }
 }
