@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Adventure2Script : MonoBehaviour {
 
@@ -136,23 +137,23 @@ public class Adventure2Script : MonoBehaviour {
                         // Dialogtext
                         if (plant.plantName == "Tomato")
                         {
-                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Tomaten anbauen?";
+                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Tomaten anbauen?" + Environment.NewLine + Environment.NewLine;
                         }
                         else if(plant.plantName == "Carrot")
                         {
-                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Karotten anbauen?";
+                            confirmPanel.GetComponentInChildren<Text>().text = Environment.NewLine + "Möchtest du wirklich Karotten anbauen?" + Environment.NewLine + Environment.NewLine;
                         }
                         else if (plant.plantName == "Corn")
                         {
-                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Mais anbauen?";
+                            confirmPanel.GetComponentInChildren<Text>().text = Environment.NewLine + "Möchtest du wirklich Mais anbauen?" + Environment.NewLine + Environment.NewLine;
                         }
                         else if (plant.plantName == "Potato")
                         {
-                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich Kartoffeln anbauen?";
+                            confirmPanel.GetComponentInChildren<Text>().text = Environment.NewLine + "Möchtest du wirklich Kartoffeln anbauen?" + Environment.NewLine + Environment.NewLine;
                         }
                         else if (plant.plantName == "Empty")
                         {
-                            confirmPanel.GetComponentInChildren<Text>().text = "Möchtest du wirklich nichts anbauen?";
+                            confirmPanel.GetComponentInChildren<Text>().text = Environment.NewLine + "Möchtest du wirklich nichts anbauen?" + Environment.NewLine + Environment.NewLine;
                         }
                     }
                     // Falls man nicht genuegend Geld hat
