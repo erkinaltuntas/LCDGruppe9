@@ -71,7 +71,7 @@ public class Shock : MonoBehaviour {
         if (seasonName == "Sommer")
         {
             // Falls man genug Geld hat fuehre die Option aus
-            if(cash.money - preventionCosts > 0)
+            if(cash.money - preventionCosts >= 0)
             {
                 cash.money = cash.money - preventionCosts;
                 shockPanel.SetActive(false);
