@@ -2,9 +2,15 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
+<<<<<<< HEAD
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 10.1.2019
 * Grund für letzte Bearbeitung: Fix Schockpanel
+=======
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 8.1.2019
+* Grund für letzte Bearbeitung: Fix Beschreibungsanzeige der Pflanze
+>>>>>>> 5668bc0cb201cc8450c2cd9ff0bcd0109dfbbc7d
 **************************************************************************/
 
 using System.Collections;
@@ -64,6 +70,9 @@ public class Credit : MonoBehaviour {
         potatoObj.GetComponent<DisplayDescription>().displayInfo = false;
         carrotObj.GetComponent<DisplayDescription>().displayInfo = false;
         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
+<<<<<<< HEAD
+>>>>>>> 5668bc0cb201cc8450c2cd9ff0bcd0109dfbbc7d
+=======
 >>>>>>> 5668bc0cb201cc8450c2cd9ff0bcd0109dfbbc7d
     }
 
