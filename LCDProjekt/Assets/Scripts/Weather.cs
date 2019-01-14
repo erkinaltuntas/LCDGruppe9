@@ -35,7 +35,6 @@ public class Weather : MonoBehaviour {
     {
         if (random1 <= this.frostProb * 10)
         {
-            print("FROST! Gewürfelt wurde eine: " + random1);
             return true;
         }
         return false;
@@ -45,7 +44,6 @@ public class Weather : MonoBehaviour {
     {
         if (random2 <= this.droughtProb * 10)
         {
-            print("DÜRRE! Gewürfelt wurde eine: " + random2);
             return true;
         }
         return false;
