@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 56024995}
   - component: {fileID: 56024994}
   m_Layer: 5
-  m_Name: Button hat
+  m_Name: HatButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 308013561}
   - component: {fileID: 308013560}
   m_Layer: 5
-  m_Name: background with hat
+  m_Name: BackgroundHat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 699877603}
   - component: {fileID: 699877602}
   m_Layer: 5
-  m_Name: Button no hat
+  m_Name: NoHatButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1622,7 +1622,7 @@ GameObject:
   - component: {fileID: 871637756}
   - component: {fileID: 871637755}
   m_Layer: 5
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

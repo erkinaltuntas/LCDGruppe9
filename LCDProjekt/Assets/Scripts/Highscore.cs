@@ -123,6 +123,7 @@ public class Highscore : MonoBehaviour {
             space.text = uPLine;
             overPlayerPlace.text = "...";
             playerPlace.text = lLine;
+            playerPlace.color = Color.white;
             underPlayerPlace.text = "";
             space2.text = "";
             lastPlace.text = "";
@@ -145,6 +146,7 @@ public class Highscore : MonoBehaviour {
             //letzter oder vorletzter Platz
             if (lLine.Equals(""))
             {
+                space.text = "...";
                 space2.text = "";
             }
             firstPlace.text = fLine;
