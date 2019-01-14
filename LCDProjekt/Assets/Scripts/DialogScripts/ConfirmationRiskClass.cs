@@ -31,22 +31,22 @@ public class ConfirmationRiskClass : MonoBehaviour {
         }
         else if (0.7d <= player.riskMedian && player.riskMedian < 0.9d)
         {
-            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Ertrag." + Environment.NewLine + Environment.NewLine + "Beschreibung::" + Environment.NewLine +
+            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Ertrag." + Environment.NewLine + Environment.NewLine + "Beschreibung:" + Environment.NewLine +
                 "Kapitalwachstum aus Zinserträgen und möglichen Kursgewinnen." + Environment.NewLine + "Moderate Risiken aus Kursschwankungen, geringe Bonitätsrisiken.";
         }
         else if (0.9d <= player.riskMedian && player.riskMedian < 1.1d)
         {
-            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Wachstum." + Environment.NewLine + Environment.NewLine + "Beschreibung::" + Environment.NewLine +
+            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Wachstum." + Environment.NewLine + Environment.NewLine + "Beschreibung:" + Environment.NewLine +
                 "Höheres Kapitalwachstum durch höhere Kurs- und Zinserträge." + Environment.NewLine + "Höhere Kursschwankungsrisiken, Kursverluste möglich.";
         }
         else if (1.1d <= player.riskMedian && player.riskMedian < 1.3d)
         {
-            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Risiko." + Environment.NewLine + Environment.NewLine + "Beschreibung::" + Environment.NewLine +
+            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Risiko." + Environment.NewLine + Environment.NewLine + "Beschreibung:" + Environment.NewLine +
                 "Hohe Ertragschancen durch hohe Zins-, Kurs-, Währungsgewinne." + Environment.NewLine + "Hohe Zins-, Bonitäts-und Währungsrisiken.Hohes Kursrisiko.";
         }
         else if (1.3d <= player.riskMedian)
         {
-            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Spekulativ." + Environment.NewLine + Environment.NewLine + "Beschreibung::" + Environment.NewLine +
+            fullText1 = Environment.NewLine + "Deine Risikoklasse ist Spekulativ." + Environment.NewLine + Environment.NewLine + "Beschreibung:" + Environment.NewLine +
                 "Sehr hohe Ertragschancen durch überdurchschnittliche Zins-, Kurs-, Währungsgewinne." + Environment.NewLine + "Überdurchschnittlich hohe Risiken aus Zins-, Kurs-,Währungsschwankungen, Totalverlust möglich.";
         }
 
