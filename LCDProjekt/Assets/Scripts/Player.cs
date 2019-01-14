@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
     //Risikobewertung
     public double[] riskScores;
     public double[] riskScoreShock;
-    public double riskMedian = 0;
+    public double riskMean = 0;
     public string riskClass;
 
     //für die Endstatistik
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour {
 
         if (counter > 0)
         {
-            riskMedian = (riskSum / counter);
+            riskMean = (riskSum / counter);
         }
     }
 
@@ -117,25 +117,25 @@ public class Player : MonoBehaviour {
     public void getRiskClass()
     {
         double riskShock = player.riskScoreShock[0] + player.riskScoreShock[1];
-        riskMedian += riskShock; 
+        riskMean += riskShock; 
 
-        if (riskMedian < 0.7d)
+        if (riskMean < 0.7d)
         {
             riskClass = "Sicherheit";
         }
-        else if (0.7d <= riskMedian && riskMedian < 0.9d)
+        else if (0.7d <= riskMean && riskMean < 0.9d)
         {
             riskClass = "Ertrag";
         }
-        else if (0.9d <= riskMedian && riskMedian < 1.1d)
+        else if (0.9d <= riskMean && riskMean < 1.1d)
         {
             riskClass = "Wachstum";
         }
-        else if (1.1d <= riskMedian && riskMedian < 1.3d)
+        else if (1.1d <= riskMean && riskMean < 1.3d)
         {
             riskClass = "Risiko";
         }
-        else if (1.3d <= riskMedian)
+        else if (1.3d <= riskMean)
         {
             riskClass = "Spekulativ";
         }
