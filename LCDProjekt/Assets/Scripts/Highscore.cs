@@ -146,6 +146,7 @@ public class Highscore : MonoBehaviour {
             //letzter oder vorletzter Platz
             if (lLine.Equals(""))
             {
+                space.text = "...";
                 space2.text = "";
             }
             firstPlace.text = fLine;
