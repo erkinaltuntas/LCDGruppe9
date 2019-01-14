@@ -15763,6 +15763,7 @@ MonoBehaviour:
   comingFromNegativeShock: 0
   errorMessage: {fileID: 0}
   stormMessage: {fileID: 0}
+  destroyed: {fileID: 0}
 --- !u!1 &1223266258
 GameObject:
   m_ObjectHideFlags: 0

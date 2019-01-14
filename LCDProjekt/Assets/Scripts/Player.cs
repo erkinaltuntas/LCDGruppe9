@@ -48,6 +48,9 @@ public class Player : MonoBehaviour {
     public int timeLoan = 0;
     public bool creditShown;
 
+    //für die Bestätigung der Risikoklasse am Ende
+    public bool riskConfirmed;
+
     void Awake()
     {
         player = this;

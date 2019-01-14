@@ -123,6 +123,7 @@ public class Highscore : MonoBehaviour {
             space.text = uPLine;
             overPlayerPlace.text = "...";
             playerPlace.text = lLine;
+            playerPlace.color = Color.white;
             underPlayerPlace.text = "";
             space2.text = "";
             lastPlace.text = "";
