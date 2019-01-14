@@ -117,7 +117,6 @@ public class Highscore : MonoBehaviour {
         //Platzierung ausgeben (fuer min. 5 Spieler)
         if (place.Equals("1"))
         {
-            print("Erster");
             firstPlace.text = fLine;
             firstPlace.color = Color.green;
             space.text = uPLine;
@@ -130,7 +129,6 @@ public class Highscore : MonoBehaviour {
         }
         else if (place.Equals("2"))
         {
-            print("Zweiter");
             firstPlace.text = fLine;
             space.text = pLine;
             space.color = Color.green;

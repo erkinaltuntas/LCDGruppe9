@@ -95,7 +95,6 @@ public class Shock : MonoBehaviour {
                 else
                 {
                     errorMessage.text = "Sie haben nicht genügend Guthaben!";
-                    print("Nicht genug Geld");
                 }
             }
         }
@@ -110,7 +109,6 @@ public class Shock : MonoBehaviour {
     void TaskOnClickOpt2()
     {
         player.choice = 2;
-        print("Task 2");
         
         //negativer Schock und Option 2
         if (seasonName == "Sommer")

@@ -22,7 +22,6 @@ public class SceneLoad : MonoBehaviour {
     // Beendet das Spiel
     public void quitGame()
     {
-        Debug.Log("Spiel beendet");
         Application.Quit();
     }
 }

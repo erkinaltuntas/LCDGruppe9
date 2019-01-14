@@ -63,14 +63,12 @@ public class Countdown : MonoBehaviour
                 field1.GetComponent<Field>().plantName = "Empty";
                 field1.GetComponent<SpriteRenderer>().sprite = empty;
                 field1.GetComponent<Field>().plant = emptyPlant;
-                print("feld1");
                 field1.GetComponent<Field>().fieldIsChecked = true;
             }
             if (field2.GetComponent<Field>().plantName == "")
             {
                 field2.GetComponent<Field>().plantName = "Empty";
                 field2.GetComponent<SpriteRenderer>().sprite = empty;
-                print("feld2");
                 field2.GetComponent<Field>().plant = emptyPlant;
                 field2.GetComponent<Field>().fieldIsChecked = true;
             }

@@ -39,7 +39,6 @@ public class Chicken : MonoBehaviour {
 
             // Mausposition definieren
             mousePos = Input.mousePosition;
-            //print(mousePos);
 
             //Mausposition World
             mousePosWorld = mainCamera.ScreenToWorldPoint(mousePos);

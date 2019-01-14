@@ -94,7 +94,6 @@ public class TutorialAdventureScript : MonoBehaviour {
         {
             // Mausposition definieren
             mousePos = Input.mousePosition;
-            //print(mousePos);
 
             // Mausposition World
             mousePosWorld = mainCamera.ScreenToWorldPoint(mousePos);
@@ -107,7 +106,6 @@ public class TutorialAdventureScript : MonoBehaviour {
             // Prüfe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
-                //print(hit.collider.gameObject.name);
 
                 // Falls der Collider, welcher getroffen wurde, der Collider eines Feldes ist, zeige das Auswahlfenster an
                 if (hit.collider.gameObject.tag == "Feld")
@@ -219,11 +217,6 @@ public class TutorialAdventureScript : MonoBehaviour {
                     gameButtonsPanel.SetActive(true);
                 }
             }
-
-            /*else
-            {
-                print("kein Collider erkannt");
-            }*/
         }
 
         // Gehe in den Erntebereich sobald alle Felder bepflanzt worden sind
@@ -440,7 +433,6 @@ public class TutorialAdventureScript : MonoBehaviour {
                 }
                 break;
             default:
-                print("Fehler");
                 break;
         }
 
