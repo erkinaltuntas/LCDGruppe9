@@ -2,9 +2,9 @@
 * Highscore
 * Anwendung: Anzeigen der Platzierung
 * ------------------- 
-* Zuletzt bearbeitet von: Anna Buchner
-* Datum der letzten Bearbeitung: 07.01.2019
-* Grund für letzte Bearbeitung: Platzierung auswerten
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 14.01.2019
+* Grund für letzte Bearbeitung: Platzierung auswerten fuer Fall von 5 Spielern
 **************************************************************************/
 
 using System.Collections;
@@ -40,6 +40,9 @@ public class Highscore : MonoBehaviour {
     bool uPFound;
 
 
+
+
+
     List<BsonDocument> batchList = new List<BsonDocument>();
     string place = "1";
 
@@ -52,6 +55,7 @@ public class Highscore : MonoBehaviour {
         oPFound = false;
         uPFound = false;
         pFound = false;
+
 
 
         getHighscore();
@@ -71,7 +75,7 @@ public class Highscore : MonoBehaviour {
 
                 if (pFound)
                 {
-                    uPLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
+                    uPLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm $";
                     uPFound = true;
                 }
 
@@ -82,7 +86,7 @@ public class Highscore : MonoBehaviour {
                         oPFound = true;
                         pFound = true;
                     }
-                    fLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
+                    fLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm $";
 
                     firstFound = true;
                 }
@@ -94,36 +98,38 @@ public class Highscore : MonoBehaviour {
                     place = document["place"].ToString();
                     print("found player");
 
-                    pLine = place + ". " + document["result"].ToString() + " Farm$";
+                    pLine = place + ". " + document["result"].ToString() + " Farm $";
                 }
 
                 if (!oPFound)
                 {
-                    oPLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
+                    oPLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm $";
                 }
                                
             }
             else
             {
-                lLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm$";
+
+                lLine = document["place"].ToString() + ". " + document["result"].ToString() + " Farm $";
             }
         }
 
-        //Platzierung ausgeben
+        //Platzierung ausgeben (fuer min. 5 Spieler)
         if (place.Equals("1"))
         {
+            print("Erster");
             firstPlace.text = fLine;
             firstPlace.color = Color.green;
             space.text = uPLine;
             overPlayerPlace.text = "...";
             playerPlace.text = lLine;
-            playerPlace.color = Color.white;
             underPlayerPlace.text = "";
             space2.text = "";
             lastPlace.text = "";
         }
         else if (place.Equals("2"))
         {
+            print("Zweiter");
             firstPlace.text = fLine;
             space.text = pLine;
             space.color = Color.green;
@@ -132,20 +138,22 @@ public class Highscore : MonoBehaviour {
             playerPlace.color = Color.white;
             underPlayerPlace.text = lLine;
             space2.text = "";
-            lastPlace.text = "";
+            lastPlace.text = "";  
         }
         else
         {
+            //letzter oder vorletzter Platz
+            if (lLine.Equals(""))
+            {
+                space2.text = "";
+            }
             firstPlace.text = fLine;
             overPlayerPlace.text = oPLine;
             playerPlace.text = pLine;
             underPlayerPlace.text = uPLine;
             lastPlace.text = lLine;
+
         }
-
-
-        print("Du hast Platz " + place + " von " + mongo.numberOfPlayers + " Spielern erreicht.");
-
     }
 
 
