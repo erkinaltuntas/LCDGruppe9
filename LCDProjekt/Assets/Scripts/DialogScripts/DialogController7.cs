@@ -43,7 +43,7 @@ public class DialogController7 : MonoBehaviour
 
         // Abschlusstext Risikoklasse
         fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich!" + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! " 
-            + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + player.riskClass + ". Risikoscore:" + player.riskMedian
+            + Environment.NewLine + Environment.NewLine + " Viel Glück!" + "Deine Risikoklasse: " + player.riskClass + ". Risikoscore:" + player.riskMean
             + ".";
 
         StartCoroutine(ShowText());
