@@ -40,7 +40,7 @@ public class Plant : MonoBehaviour {
         if (Weather.frost == true)
         {
             int random = Random.Range(0, 10);
-            if (random > this.droughtResistance * 10)
+            if (random >= this.droughtResistance * 10)
             {
                 return true;
             }
@@ -54,7 +54,7 @@ public class Plant : MonoBehaviour {
         if (Weather.drought == true)
         {
             int random = Random.Range(0, 10);
-            if (random > this.frostResistance * 10)
+            if (random >= this.frostResistance * 10)
             {
                 return true;
             }
