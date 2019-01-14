@@ -6755,7 +6755,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1723853635
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 31
   m_Sprite: {fileID: 21300000, guid: 14b2dc7e682b71141ab64e0866907a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10673,8 +10673,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1118007630}
-        m_MethodName: set_alpha
-        m_Mode: 4
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27669,7 +27669,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1723853635
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 62
   m_Sprite: {fileID: 21300000, guid: 733a449c4dae4e54ea0d76847f9c691d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
