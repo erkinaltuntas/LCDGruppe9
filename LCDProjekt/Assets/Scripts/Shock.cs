@@ -94,7 +94,7 @@ public class Shock : MonoBehaviour {
                 }
                 else
                 {
-                    errorMessage.text = "Sie haben nicht genügend Guthaben!";
+                    errorMessage.text = "Du hast nicht genügend Guthaben!";
                 }
             }
         }
