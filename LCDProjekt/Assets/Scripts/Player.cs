@@ -33,6 +33,7 @@ public class Player : MonoBehaviour {
     public double[] riskScoreShock;
     public double riskMean = 0;
     public string riskClass;
+    
 
     //für die Endstatistik
     public double[] droughtLost;
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour {
 
         creditShown = false;
 
-        playerName = "HighscoreTest";
+        playerName = PlayerPrefs.GetString("PlayerName");
     }
 
     // Update is called once per frame
@@ -140,16 +141,22 @@ public class Player : MonoBehaviour {
             riskClass = "Spekulativ";
         }
     }
-    
+   
+
+
     // Sendet das Ergebnis des Spielers an die Datenbank (über MongoConnect)
     public void sendResult()
     {
         GameObject mongo = GameObject.Find("DatabaseConnector");
 
+        // der Datensatz, der abgesendet wird
         BsonDocument[] batch ={
             new BsonDocument{
                 {"name", playerName},
-                {"result", endTotal}
+                {"result", endTotal},
+                {"riskMean", riskMean},
+                {"riskName", riskClass},
+                {"confirmation", riskConfirmed }
             }
         };
 

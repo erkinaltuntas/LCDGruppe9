@@ -1,11 +1,20 @@
-﻿using System;
+﻿/*************************************************************************** 
+* RiskConfirmationScript
+* Anwendung: Zur Abfrage der Zustimmung des Spielers über seine Risikoklasse
+*------------------- 
+* Zuletzt bearbeitet von: Erkin Altuntas
+* Datum der letzten Bearbeitung: 14.12.2018
+* Grund für letzte Bearbeitung: Buttons Aufgaben hinzugefügt
+**************************************************************************/
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ConfirmationRiskClass : MonoBehaviour {
-
+    public Button confirmButton, rejectButton;
     public float delay = 0.005f;
     private string fullText1;
     private string currentText = "";
@@ -21,6 +30,9 @@ public class ConfirmationRiskClass : MonoBehaviour {
         player.calculateRisk();
         player.getRiskClass();
 
+        // weise Buttons die Aufgaben onClick zu
+        confirmButton.GetComponentInChildren<Button>().onClick.AddListener(TaskOnConfirm);
+        rejectButton.GetComponentInChildren<Button>().onClick.AddListener(TaskOnReject);
 
         // Abschlusstext Risikoklasse
 
@@ -50,6 +62,8 @@ public class ConfirmationRiskClass : MonoBehaviour {
                 "Sehr hohe Ertragschancen durch überdurchschnittliche Zins-, Kurs-, Währungsgewinne." + Environment.NewLine + "Überdurchschnittlich hohe Risiken aus Zins-, Kurs-,Währungsschwankungen, Totalverlust möglich.";
         }
 
+        fullText1 += Environment.NewLine + Environment.NewLine + "Bist du damit einverstanden?";
+
 
         StartCoroutine(ShowText());
     }
@@ -63,5 +77,23 @@ public class ConfirmationRiskClass : MonoBehaviour {
             yield return new WaitForSeconds(delay);
         }
 
+    }
+
+    // Riskoklasse bestätigt
+    void TaskOnConfirm()
+    {
+        player.riskConfirmed = true;
+
+        // Ergebnis an DB schicken,
+        player.sendResult();
+    }
+
+    // Risikoklasse nicht bestätigt
+    void TaskOnReject()
+    {
+        player.riskConfirmed = false;
+
+        // Ergebnis an DB schicken
+        player.sendResult();
     }
 }

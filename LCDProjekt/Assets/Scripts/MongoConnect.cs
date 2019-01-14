@@ -80,11 +80,6 @@ public class MongoConnect : MonoBehaviour {
             place++;
         }
 
-        foreach(var document in batchList)
-        {
-            Debug.Log(" SELECT ALL DOCS: \n" + document);
-        }
-
         return batchList;
     }
 }
