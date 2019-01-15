@@ -42,26 +42,26 @@ public class DialogController6 : MonoBehaviour
 
         if(lostTroughDrought<0 && lostTroughFrost < 0)
         {
-            fullText1 = "Unsere Farm ist bei dir in sicheren Händen." + Environment.NewLine + Environment.NewLine +
-                "Dir sind wegen dem Frost insgesamt " + lostTroughFrost*(-1) + " FarmDollar entgangen." + Environment.NewLine + Environment.NewLine +
-                "Außerdem hat die Dürre dir insgesamt " + lostTroughDrought*(-1) + " FarmDollar versaut... Schade.";
+            fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
+                "Dir sind wegen dem Frost insgesamt " + lostTroughFrost*(-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+                "Außerdem hat die Dürre dir insgesamt " + lostTroughDrought*(-1) + " FarmDollar versaut... Schade. ";
         }
         else if(lostTroughDrought < 0 && lostTroughFrost >= 0)
         {
-            fullText1 = "Unsere Farm ist bei dir in sicheren Händen." + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen der Dürre insgesamt " + lostTroughDrought * (-1) + " FarmDollar entgangen." + Environment.NewLine + Environment.NewLine +
-             "Der Frost konnte dir jedoch nichts antun. Sehr schön!";
+            fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
+             "Dir sind wegen der Dürre insgesamt " + lostTroughDrought * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Der Frost konnte dir jedoch nichts antun. Sehr schön! ";
         }
         else if (lostTroughDrought >= 0 && lostTroughFrost < 0)
         {
-            fullText1 = "Unsere Farm ist bei dir in sicheren Händen." + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen dem Frost insgesamt " + lostTroughFrost * (-1) + " FarmDollar entgangen." + Environment.NewLine + Environment.NewLine +
-             "Die Dürre konnte dir jedoch nichts antun. Sehr schön!";
+            fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
+             "Dir sind wegen dem Frost insgesamt " + lostTroughFrost * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Die Dürre konnte dir jedoch nichts antun. Sehr schön! ";
         }
         else
         {
-            fullText1 = "Unsere Farm ist bei dir in sicheren Händen." + Environment.NewLine + Environment.NewLine +
-                "Du hast keine Verluste verzeichnet!";
+            fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
+                "Du hast keine Verluste verzeichnet! ";
         }
 
 

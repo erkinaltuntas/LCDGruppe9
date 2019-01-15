@@ -15,7 +15,7 @@ using UnityEngine.UI;
 
 public class DialogController4 : MonoBehaviour {
     public float delay = 0.005f;
-    private string fullText1 = "Pass gut auf!" + Environment.NewLine + Environment.NewLine + "Ich zeige dir mal wie das Ganze funktioniert....";
+    private string fullText1 = "Pass gut auf! " + Environment.NewLine + Environment.NewLine + "Ich zeige dir mal wie das Ganze funktioniert... ";
     private string currentText = "";
     
     // Use this for initialization

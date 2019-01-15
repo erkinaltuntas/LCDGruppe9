@@ -18,7 +18,7 @@ public class DialogController : MonoBehaviour
     // Schnelligkeit der Anzeige des Textes
     public float delay = 0.005f;
     // Text der ersten Sprechblase
-    private string fullText1 = "Hallo mein Kind." + Environment.NewLine + Environment.NewLine + "Wie war nochmal dein Name?";
+    private string fullText1 = "Hallo mein Kind." + Environment.NewLine + Environment.NewLine + "Wie war nochmal dein Name? ";
     private string currentText = "";
 
     public InputField inputName;
