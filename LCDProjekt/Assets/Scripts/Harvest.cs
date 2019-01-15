@@ -66,7 +66,7 @@ public class Harvest : MonoBehaviour {
         field.fieldIsHarvested = true;
 
         // Berechne den Umsatz und aktualisere das Geld des Spielers
-        double actualProfit = getRandomProfit();
+        double actualProfit = Math.Round(getRandomProfit(), 2);
         double loss = actualProfit - plant.profit;
         cash.money = cash.money + actualProfit;
 
@@ -145,34 +145,35 @@ public class Harvest : MonoBehaviour {
         {
             if (seasonName == "Herbst" && player.choice == 1)
             {
-                return (plant.profit * 1.25) - ((plant.profit * 1.25) * missHarvestQuota);
+                return Math.Round((plant.profit * 1.25) - ((plant.profit * 1.25) * missHarvestQuota), 2);
             }
             else if (seasonName == "Herbst" && player.choice == 2)
             {
                 plant.droughted = false;
                 plant.frosted = false;
-                return plant.profit;
+                return Math.Round(plant.profit,2);
             }
             else
             {
-                return plant.profit - (plant.profit * missHarvestQuota);
+                return Math.Round(plant.profit - (plant.profit * missHarvestQuota), 2);
             }
         }
         else
         {
             if (seasonName == "Herbst" && player.choice == 1)
             {
-                return plant.profit * 1.25;
+                return Math.Round(plant.profit * 1.25, 2);
+
             }
             else if (seasonName == "Herbst" && player.choice == 2)
             {
                 plant.droughted = false;
                 plant.frosted = false;
-                return plant.profit;
+                return Math.Round(plant.profit ,2);
             }
             else
             {
-                return plant.profit;
+                return Math.Round(plant.profit ,2);
             }
         }
 

@@ -61,11 +61,10 @@ public class DialogController : MonoBehaviour
             speechBubble2.SetActive(true);
             confirmButton.SetActive(false);
             nextButton2.SetActive(true);
-            print("Name ist: " + playerName);
         }
         else
         {
-            print("Bitte Namen eingeben");
+            // kein Wert wurde eingegeben
         }
     }
 }

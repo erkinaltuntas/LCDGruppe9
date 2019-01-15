@@ -176,17 +176,20 @@ public class Adventure2Script : MonoBehaviour {
                 else if (hit.collider.gameObject.name == "ExitSelectionPanel")
                 {
                     errorMessage.text = "";
+
                     // Collider wieder verfügbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
                     collider3.enabled = true;
                     collider4.enabled = true;
+
                     // Collider der Pflanzen wieder aktivieren
                     tomatoObj.GetComponent<Collider2D>().enabled = true;
                     carrotObj.GetComponent<Collider2D>().enabled = true;
                     cornObj.GetComponent<Collider2D>().enabled = true;
                     potatoObj.GetComponent<Collider2D>().enabled = true;
                     emptyObj.GetComponent<Collider2D>().enabled = true;
+
                     //Auswahlfenster deaktivieren
                     confirmPanel.SetActive(false);
                     selectionPanel.SetActive(false);
@@ -194,11 +197,6 @@ public class Adventure2Script : MonoBehaviour {
                     
                 }
             }
-
-            /*else
-            {
-                print("kein Collider erkannt");
-            }*/
         }
 
         // Gehe in den Erntebereich sobald alle Felder bepflanzt worden sind
