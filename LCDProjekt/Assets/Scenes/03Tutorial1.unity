@@ -31208,8 +31208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1946646, y: 0.264}
-  m_SizeDelta: {x: 775.3, y: 367.038}
+  m_AnchoredPosition: {x: 0.24, y: 0.28}
+  m_SizeDelta: {x: 783.454, y: 375.192}
   m_Pivot: {x: 0.52320445, y: 0.5}
 --- !u!114 &2121827093
 MonoBehaviour:
@@ -31245,7 +31245,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Sehr sch\xF6n. Du hast das Tutorial erfolgreich beendet.\n\nDein Guthaben
-    wird zur\xFCckgesetzt und der Timer liegt bei einer Minute, aber ich m\xF6chte
+    wird zur\xFCckgesetzt und der Timer liegt bei 90 Sekunden, aber ich m\xF6chte
     dir jetzt keinen Druck machen. Viel Erfolg mein Liebling."
 --- !u!222 &2121827094
 CanvasRenderer:
