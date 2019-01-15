@@ -30,11 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/08Exit.unity
     guid: 7246df1475db5a742ae97795a1a81d8f
   - enabled: 1
-    path: Assets/Scenes/09Highscore.unity
-    guid: 79aba9f8efa1a024180c6ae73f2dcea2
-  - enabled: 1
-    path: Assets/Scenes/10Confirmation.unity
+    path: Assets/Scenes/09Confirmation.unity
     guid: 10066cc8ebe38c243bed4a17b128788b
+  - enabled: 1
+    path: Assets/Scenes/10Highscore.unity
+    guid: 79aba9f8efa1a024180c6ae73f2dcea2
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

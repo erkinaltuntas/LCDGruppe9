@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ConfirmationRiskClass : MonoBehaviour {
-    public Button confirmButton, rejectButton;
+    public GameObject confirmButton, rejectButton;
     public float delay = 0.005f;
     private string fullText1;
     private string currentText = "";
@@ -76,6 +76,9 @@ public class ConfirmationRiskClass : MonoBehaviour {
             this.GetComponent<Text>().text = currentText;
             yield return new WaitForSeconds(delay);
         }
+        confirmButton.SetActive(true);
+        rejectButton.SetActive(true);
+
 
     }
 
