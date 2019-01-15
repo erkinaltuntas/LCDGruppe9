@@ -22,7 +22,7 @@ public class DialogController : MonoBehaviour
     private string currentText = "";
 
     public InputField inputName;
-    string playerName;
+    public string playerName;
 
     public GameObject speechBubble1, speechBubble2;
     public GameObject confirmButton, nextButton2;

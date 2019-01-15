@@ -14,18 +14,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogController1 : MonoBehaviour {
+
+    public GameObject speechbubble;
+    public string fullText1;
+
     // Schnelligkeit der Anzeige des Textes
     public float delay = 0.005f;
     // Text der ersten Sprechblase
-    private string fullText1 = "Ach hallo, mein Liebling. " + Environment.NewLine + Environment.NewLine +
-        "Wir möchten dir schon etwas früher als du vielleicht erwartet hättest etwas vererben. " + Environment.NewLine + Environment.NewLine +
-        "Großvater und ich werden immer älter… und die Arbeit nicht leichter... ";
+    
     private string currentText = "";
 
 
     // Use this for initialization
     void Start() {
+
+        DialogController dialogController = speechbubble.GetComponent<DialogController>();
+        fullText1 = "Ach hallo " + dialogController.playerName + "." + Environment.NewLine + Environment.NewLine +
+        "Wir möchten dir schon etwas früher als du vielleicht erwartet hättest etwas vererben. " + Environment.NewLine + Environment.NewLine +
+        "Großvater und ich werden immer älter… und die Arbeit nicht leichter... ";
         StartCoroutine(ShowText());
+
     }
 
     // Zeigt den Dialog Buchstabe fuer Buchstaben
