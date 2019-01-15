@@ -19,10 +19,16 @@ public class DialogController5 : MonoBehaviour
     private string fullText1;
     private string currentText = "";
     public Player player;
+    string name;
+
+
+
     // Use this for initialization
     void Start()
     {
+        
         player = Player.player;
+        name = player.playerName;
         double money = player.money - (player.timeLoan * 1000);
         player.endTotal = money;
         double win = player.money - 1000 - (player.timeLoan * 1000);
@@ -30,17 +36,17 @@ public class DialogController5 : MonoBehaviour
         {
             if (win > 0)
             {
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet. ";
             }
             else if (win < 0)
             {
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also " + win*(-1) + " Farm Dollar verloren. ";
             }
             else
             {
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also genauso viel Geld wie am Anfang. ";
             }
         }
@@ -49,20 +55,20 @@ public class DialogController5 : MonoBehaviour
             if (win > 0)
             {
                 money = money + (player.timeLoan * 1000);
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also " + win + " Farm Dollar erwirtschaftet, da du dir " + player.timeLoan +
                 " Mal " + Environment.NewLine + "Geld von deiner Großmutter geliehen hast. ";
             }
             else if (win < 0)
             {
                 money = money + (player.timeLoan * 1000);
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also " + win * (-1) + " Farm Dollar verloren, da du dir " + player.timeLoan + 
                 " Mal " + Environment.NewLine + "Geld von deiner Großmutter geliehen hast. ";
             }
             else
             {
-                fullText1 = "Wir sind zurück mein Kind! " + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
+                fullText1 = "Wir sind zurück, " + name + "." + Environment.NewLine + Environment.NewLine + "Du hast insgesamt jetzt " + money + " Farm $. "
                 + Environment.NewLine + Environment.NewLine + " Du hast also genauso viel Geld wie am Anfang. ";
             }
         }
