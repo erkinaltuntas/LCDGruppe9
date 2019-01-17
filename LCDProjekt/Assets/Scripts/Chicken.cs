@@ -11,6 +11,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Lässt das Hühnchen-Such-Spiel spielen.
+/// </summary>
 public class Chicken : MonoBehaviour {
 
     RaycastHit2D hit;
@@ -26,11 +29,9 @@ public class Chicken : MonoBehaviour {
     public GameObject chickenAnim;
     public Animation chickAnim;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-
+    /// <summary>
+    /// Lässt die Hühnchen durch Anklicken verschwinden und wieder auftauchen.
+    /// </summary>
     // Update is called once per frame
     void Update()
     {

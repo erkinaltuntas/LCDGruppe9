@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gewährt einmal pro Jahreszeit einen Kredit, wenn man zu wenig Geld für eine Aktion hat.
+/// </summary>
 public class Credit : MonoBehaviour {
     public bool accepted;
     public bool shown;
@@ -29,13 +32,15 @@ public class Credit : MonoBehaviour {
     string seasonName;
     
 
-
+    /// <summary>
+    /// Initialisiert die benötigten Objekte und öffnet das CreditPanel.
+    /// </summary>
     // Use this for initialization
     void Start () {
         creditPanel = this.gameObject;
         player = Player.player;
         shown = true;
-        // Steuert, dass der Kredit im gesamten Spiel max. 1x angezeigt werden kann
+        // Steuert, dass der Kredit in jeder Jahreszeit max. 1x angezeigt werden kann
         //player.creditShown = true;
 
         // Weise den Buttons die Methoden zu
@@ -63,6 +68,9 @@ public class Credit : MonoBehaviour {
         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
     }
 
+    /// <summary>
+    /// Erhöht den Kontostand, wenn man das Geld annimmt.
+    /// </summary>
     void TaskOnAccept()
     {
         // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
@@ -84,6 +92,10 @@ public class Credit : MonoBehaviour {
         }
         
     }
+
+    /// <summary>
+    /// Schließt das CreditPanel wieder.
+    /// </summary>
     void TaskOnReject()
     {
         // Aktivere wieder interaktive Objekte, schliesse das Fenster

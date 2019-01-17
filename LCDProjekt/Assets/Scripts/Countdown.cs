@@ -14,6 +14,9 @@ using UnityEngine.UI;
 using System.Threading;
 using TMPro;
 
+/// <summary>
+/// Zeigt den Timer an und bepflanzt die leeren Felder nach Ablauf.
+/// </summary>
 public class Countdown : MonoBehaviour
 {
     int timeLeft = 90; //Seconds Overall
@@ -28,7 +31,9 @@ public class Countdown : MonoBehaviour
     GameObject weather;
     int a = 0;
     int b = 0;
-
+    /// <summary>
+    /// Initialisierung der benötigten Objekte
+    /// </summary>
     void Start()
     {
         
@@ -39,6 +44,10 @@ public class Countdown : MonoBehaviour
 
         weather = GameObject.Find("Weather");
     }
+
+    /// <summary>
+    /// Zeigt den Timer an und bepflanzt nach Ablauf der Zeit die leeren Felder.
+    /// </summary>
     void Update()
     {
         if (timeLeft > 10)
@@ -96,6 +105,9 @@ public class Countdown : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Startet den Timer.
+    /// </summary>
     public void StartCountdown()
     {
         if (b == 0)
@@ -105,7 +117,10 @@ public class Countdown : MonoBehaviour
             b++;
         }
     }
-
+    /// <summary>
+    /// Zählt runter.
+    /// </summary>
+    /// <returns></returns>
     // Countdown bis dieser abgelaufen ist
     IEnumerator LoseTime()
     {

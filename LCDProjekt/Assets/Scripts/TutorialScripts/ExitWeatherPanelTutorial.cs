@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class ExitWeatherPanelTutorial : MonoBehaviour {
     public Button exitWeatherPanel;
     public Button weatherButton;
@@ -21,7 +24,9 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
     private Collider2D collider1, collider2, collider3, collider4;
     public TutorialAdventureScript tutorial;
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung
+    /// </summary>
     void Start () {
         exitWeatherPanel.onClick.AddListener(TaskOnClick);
         weatherButton.onClick.AddListener(TaskOnClick2);
@@ -32,17 +37,11 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         collider2 = field2.GetComponent<Collider2D>();
         collider3 = field3.GetComponent<Collider2D>();
         collider4 = field4.GetComponent<Collider2D>();
-
-        
-
-
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
-
+    /// <summary>
+    /// 
+    /// </summary>
     void TaskOnClick()
     {
         if(tutorial.step1Open)
@@ -61,6 +60,7 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         {
             step11.SetActive(false);
             step2.SetActive(true);
+            weatherButton.enabled = false;
             tutorial.step11Open = false;
             tutorial.step2Open = true;
             collider1.enabled = false;
