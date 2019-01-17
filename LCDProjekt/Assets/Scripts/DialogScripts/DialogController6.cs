@@ -14,48 +14,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// Verlorenes Geld durch Frost und Dürre wird ausgerechnet.
+/// Je nach Verlust wird ein anderer Text ausgegeben.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class DialogController6 : MonoBehaviour
 {
     public float delay = 0.005f;
     private string fullText1;
     private string currentText = "";
     public Player player;
-    double lostTroughFrost;
-    double lostTroughDrought;
+    double lostThroughFrost;
+    double lostThroughDrought;
+
+
     // Use this for initialization
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// Verlorenes Geld durch Frost und Dürre wird ausgerechnet.
+    /// Je nach Verlust wird ein anderer Text in fullText1 gespeichert.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start()
     {
         player = Player.player;
         double money = player.money;
         double win = player.money - 1000;
-        lostTroughFrost = lostTroughDrought = 0;
+        lostThroughFrost = lostThroughDrought = 0;
 
         for (int i=0; i<player.droughtIndex; i++)
         {
-            lostTroughDrought += player.droughtLost[i];
+            lostThroughDrought += player.droughtLost[i];
         }
 
         for (int i = 0; i < player.frostIndex; i++)
         {
-            lostTroughFrost += player.frostLost[i];
+            lostThroughFrost += player.frostLost[i];
         }
 
-        if(lostTroughDrought<0 && lostTroughFrost < 0)
+        if(lostThroughDrought<0 && lostThroughFrost < 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-                "Dir sind wegen dem Frost insgesamt " + lostTroughFrost*(-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
-                "Außerdem hat die Dürre dir insgesamt " + lostTroughDrought*(-1) + " FarmDollar versaut... Schade. ";
+                "Dir sind wegen dem Frost insgesamt " + lostThroughFrost*(-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+                "Außerdem hat die Dürre dir insgesamt " + lostThroughDrought*(-1) + " FarmDollar versaut... Schade. ";
         }
-        else if(lostTroughDrought < 0 && lostTroughFrost >= 0)
+        else if(lostThroughDrought < 0 && lostThroughFrost >= 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen der Dürre insgesamt " + lostTroughDrought * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Dir sind wegen der Dürre insgesamt " + lostThroughDrought * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
              "Der Frost konnte dir jedoch nichts antun. Sehr schön! ";
         }
-        else if (lostTroughDrought >= 0 && lostTroughFrost < 0)
+        else if (lostThroughDrought >= 0 && lostThroughFrost < 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen dem Frost insgesamt " + lostTroughFrost * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Dir sind wegen dem Frost insgesamt " + lostThroughFrost * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
              "Die Dürre konnte dir jedoch nichts antun. Sehr schön! ";
         }
         else
@@ -68,6 +82,11 @@ public class DialogController6 : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for (int i = 0; i < fullText1.Length; i++)

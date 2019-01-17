@@ -13,6 +13,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// Guthaben ohne Kredit und Gewinn wird ausgerechnet und gespeichert.
+/// Je nach Gewinn und Kreditanzahl(0 oder 1) wird ein anderer Text ausgegeben.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class DialogController5 : MonoBehaviour
 {
     public float delay = 0.005f;
@@ -24,6 +30,12 @@ public class DialogController5 : MonoBehaviour
 
 
     // Use this for initialization
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// Guthaben ohne Kredit und Gewinn wird ausgerechnet und gespeichert.
+    /// Je nach Gewinn und Kreditanzahl(0 oder 1) wird ein anderer Text ausgegeben.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start()
     {
         
@@ -76,6 +88,11 @@ public class DialogController5 : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for (int i = 0; i < fullText1.Length; i++)

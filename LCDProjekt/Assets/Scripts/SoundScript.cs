@@ -2,14 +2,17 @@
 * SoundScript
 * Anwendung: Zuweisung von Sound fuer alle Buttons
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 10.12.2018
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 17.01.2019
 * Grund für letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Zuweisung der Sounddateien für alle Buttons im Spiel.
+/// Genauere Beschreibungen innerhalb der Klasse.
+/// </summary>
 public class SoundScript : MonoBehaviour {
     
     public AudioSource audSource;
@@ -18,13 +21,17 @@ public class SoundScript : MonoBehaviour {
     public AudioClip hoverSound;
     public AudioClip clickSound;
 
-    // hoverSound wird abgespielt, wenn Maus ueber einen Button geht
+    /// <summary>
+    /// <c>hoverSound</c> wird abgespielt, wenn der Spieler die Maus ueber einen Button führt.
+    /// </summary>
     public void playHoverSound()
     {
         audSource.PlayOneShot(hoverSound);
     }
 
-    // clickSound wird abgespielt, wenn Maus auf einen Button drueckt
+    /// <summary>
+    /// <c>clickSound</c> wird abgespielt, wenn der Spieler mit der linken Maustaste auf einen Button drueckt
+    /// </summary>
     public void playClickSound()
     {
         audSource.PlayOneShot(clickSound);
