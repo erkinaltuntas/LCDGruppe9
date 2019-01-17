@@ -15,6 +15,8 @@ using UnityEngine;
 /// Zur Definition des Wetters. Bestimmt ob in einer Jahreszeit Frost oder Dürre (oder beides) auftritt,
 /// jedoch noch nicht ob eine bestimmte Pflanze davon betroffen ist.
 /// </summary>
+/// <remarks>Hierbei ist zu beachten, dass die eigentlichen Werte der Wahrscheinlichkeiten der verschiedenen Jahreszeiten
+/// und der Pflanzen direkt über Game-Objekte festgelegt werden und nicht über Scripte.</remarks>
 public class Weather : MonoBehaviour {
     public string seasonName;
     public int seasonNumber;
