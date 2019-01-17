@@ -4084,7 +4084,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Such dir jetzt eine Pflanze aus.\n\nWenn du \xFCber die Pflanzen streichst
     siehst du ihre Eigenschaften. Ber\xFCcksichtige das Wetter sowie die Eigenschaften
-    der PFlanzen bei deiner Auswahl."
+    der Pflanzen bei deiner Auswahl."
 --- !u!222 &264299375
 CanvasRenderer:
   m_ObjectHideFlags: 0
