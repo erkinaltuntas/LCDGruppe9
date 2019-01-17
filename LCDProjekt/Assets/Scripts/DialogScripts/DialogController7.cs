@@ -18,6 +18,11 @@ using MongoDB.Driver.Builders;
 using MongoDB.Driver.GridFS;
 using MongoDB.Driver.Linq;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// Risiko und Risikoklasse wird ausgerechnet.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class DialogController7 : MonoBehaviour
 {
     public float delay = 0.005f;
@@ -27,6 +32,12 @@ public class DialogController7 : MonoBehaviour
 
 
     // Use this for initialization
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// calculateRisk() aus der Klasse Player wird ausgeführt.
+    /// getRiskClass() aus der Klasse Player wird ausgeführt.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start()
     {
         player = Player.player;
@@ -43,6 +54,11 @@ public class DialogController7 : MonoBehaviour
         StartCoroutine(ShowText());
     }
 
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for (int i = 0; i < fullText1.Length; i++)
