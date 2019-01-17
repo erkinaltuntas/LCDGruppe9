@@ -4,8 +4,8 @@
 * Bestimmt ob in einer Jahreszeit Frost oder Dürre (oder beides) auftritt.
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
-* Datum der letzten Bearbeitung: 20.12.2018
-* Grund für letzte Bearbeitung: Wetteranpassung
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using UnityEngine;
 /// jedoch noch nicht ob eine bestimmte Pflanze davon betroffen ist.
 /// </summary>
 /// <remarks>Hierbei ist zu beachten, dass die eigentlichen Werte der Wahrscheinlichkeiten der verschiedenen Jahreszeiten
-/// und der Pflanzen direkt über Game-Objekte festgelegt werden und nicht über Scripte.</remarks>
+/// und der Pflanzen direkt über Game-Objekte manuell im Inspektor festgelegt werden und nicht über Scripte.</remarks>
 public class Weather : MonoBehaviour {
     public string seasonName;
     public int seasonNumber;
