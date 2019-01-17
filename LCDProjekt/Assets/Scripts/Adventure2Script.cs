@@ -361,7 +361,6 @@ public class Adventure2Script : MonoBehaviour {
                 }
                 break;
             default:
-                print("Fehler");
                 break;
         }
 

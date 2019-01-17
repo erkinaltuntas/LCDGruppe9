@@ -96,7 +96,6 @@ public class Highscore : MonoBehaviour {
                     oPFound = true;
                     pFound = true;
                     place = document["place"].ToString();
-                    print("found player");
 
                     pLine = place + ". " + document["result"].ToString() + " Farm $";
                 }
