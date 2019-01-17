@@ -2,9 +2,9 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 8.1.2019
-* Grund für letzte Bearbeitung: Fix Beschreibungsanzeige der Pflanze
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;

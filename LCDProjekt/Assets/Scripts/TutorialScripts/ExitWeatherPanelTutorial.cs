@@ -2,9 +2,9 @@
 * ExitWeatherPanelTutorial
 * Anwendung: Anzeige der ersten Schritte des Tutorials
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 30.12.2018
-* Grund für letzte Bearbeitung: Erstellung
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 * **************************************************************************/
 
 using System.Collections;
@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 
+/// (Re-)aktiviert die Tutorial-Szene beim Öffnen und Schließen des WeatherPanels.
 /// </summary>
 public class ExitWeatherPanelTutorial : MonoBehaviour {
     public Button exitWeatherPanel;
@@ -25,7 +25,7 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
     public TutorialAdventureScript tutorial;
 
     /// <summary>
-    /// Initialisierung
+    /// Initialisierung und ruft die TaskOnClick-Methoden auf.
     /// </summary>
     void Start () {
         exitWeatherPanel.onClick.AddListener(TaskOnClick);
@@ -40,7 +40,7 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
     }
 
     /// <summary>
-    /// 
+    /// Reaktiviert die Szene, wenn man das WeatherPanel schließt.
     /// </summary>
     void TaskOnClick()
     {
@@ -103,7 +103,9 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         
     }
 
-
+    /// <summary>
+    /// Schließt die Tutorial-Steps, wenn das Weather-Panel geöffnet wird.
+    /// </summary>
     void TaskOnClick2()
     {
         step1.SetActive(false);

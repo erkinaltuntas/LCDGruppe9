@@ -2,9 +2,9 @@
 * Countdown
 * Anwendung: Zur Anzeige des Timers
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 30.12.2018
-* Grund für letzte Bearbeitung: Timer für Tutorial deaktiviert.
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 15.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 * **************************************************************************/
 
 using System.Collections;
