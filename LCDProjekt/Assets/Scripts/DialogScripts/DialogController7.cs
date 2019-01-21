@@ -48,7 +48,7 @@ public class DialogController7 : MonoBehaviour
 
 
         // Abschlusstext Risikoklasse
-        fullText1 = Environment.NewLine + "Wir sind sehr stolz auf dich! " + Environment.NewLine + Environment.NewLine + "Mach weiter so und du wirst es noch weit bringen! "
+        fullText1 = Environment.NewLine + "Wir sind sehr stolz auf Dich! " + Environment.NewLine + Environment.NewLine + "Mach weiter so und Du wirst es noch weit bringen! "
             + Environment.NewLine + Environment.NewLine + " Viel Glück! ";
 
         StartCoroutine(ShowText());
