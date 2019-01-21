@@ -2,9 +2,9 @@
 * Adventure2Script
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 8.1.2019
-* Grund für letzte Bearbeitung: Bestätigungsdialog
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 21.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -14,6 +14,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+/// <summary>
+/// Steuert den ganzen Spielablauf.
+/// </summary>
 public class Adventure2Script : MonoBehaviour {
 
 
@@ -48,7 +51,9 @@ public class Adventure2Script : MonoBehaviour {
     public Button confirmButton, rejectButton;
     private Plant plant;
         
-    // Use this for initialization
+    /// <summary>
+    /// Stellt die Voreinstellungen zu Beginn einer Jahreszeit her.
+    /// </summary>
     void Start() {
         player = Player.player;
 
@@ -79,7 +84,9 @@ public class Adventure2Script : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
+    /// <summary>
+    /// Prüft, welcher Collider angeklickt wird. Öffnet oder schließt das entsprechende Panel.
+    /// </summary>
     void Update() {
         if (Input.GetMouseButtonDown(0))
         {
@@ -218,6 +225,9 @@ public class Adventure2Script : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Dem Feld wird die Pflanze übertragen und der Risikoscore wird angepasst.
+    /// </summary>
     void TaskOnConfirm()
     {
         // Collider der Pflanzen wieder aktivieren
@@ -238,13 +248,12 @@ public class Adventure2Script : MonoBehaviour {
         {
             player.riskScores[player.riskIndex] = 0;
         }
-        player.riskIndex++; ;
+        player.riskIndex++; 
 
         // Schaut nach welches Feld ausgewaehlt wurde
         switch (currentFeldId)
         {
-
-
+            
             // Feld1 wurde ausgewaehlt
             case 1:
                 // Pflanzennamen des Feldes auf den Namen der Pflanze setzen
@@ -377,6 +386,10 @@ public class Adventure2Script : MonoBehaviour {
         gameButtonsPanel.SetActive(true);
 
     }
+
+    /// <summary>
+    /// Man kehrt ins Auswahl-Panel zurück.
+    /// </summary>
     void TaskOnReject()
     {
         errorMessage.text = "";

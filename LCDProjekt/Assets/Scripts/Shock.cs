@@ -81,7 +81,7 @@ public class Shock : MonoBehaviour {
                 stormMessage.text = "Dank deiner guten Vorbereitung hat der Sturm dir nichts angetan.";
                 
                 
-                player.riskScoreShock[0] = 0;
+                player.riskScoreShock[0] = -0.075;
             }
             else
             {
@@ -102,7 +102,7 @@ public class Shock : MonoBehaviour {
         if (seasonName == "Herbst")
         {
             
-            player.riskScoreShock[1] = 0.1;
+            player.riskScoreShock[1] = 0.075;
         }
     }
 
@@ -125,12 +125,12 @@ public class Shock : MonoBehaviour {
                 resultPanel.SetActive(true);
                 stormMessage.text = "Glück gehabt. Der Sturm konnte deiner Ernte nichts anhaben.";
             }
-            player.riskScoreShock[0] = 0.1;
+            player.riskScoreShock[0] = 0.075;
         }
         //positiver Schock und Option 2
         if (seasonName == "Herbst")
         {
-            player.riskScoreShock[1] = 0;
+            player.riskScoreShock[1] = -0.075;
         }
     }
     void TaskOnClickExit()
