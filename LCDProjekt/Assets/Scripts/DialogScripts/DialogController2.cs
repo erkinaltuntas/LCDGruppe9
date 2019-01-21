@@ -20,8 +20,8 @@ using UnityEngine.UI;
 public class DialogController2 : MonoBehaviour {
     public float delay = 0.005f;
     private string fullText1 = "Die Farm… Sie ist unser kostbarster Besitz... " + Environment.NewLine + Environment.NewLine + 
-        "Und jetzt gehört sie dir! " + Environment.NewLine + Environment.NewLine + 
-        "Wir trennen uns wirklich nur schweren Herzens von unserem Hof, aber wir wissen, dass du ihn würdig und profitabel fortführen wirst. ";
+        "Und jetzt gehört sie Dir! " + Environment.NewLine + Environment.NewLine + 
+        "Wir trennen uns wirklich nur schweren Herzens von unserem Hof, aber wir wissen, dass Du ihn würdig und profitabel fortführen wirst. ";
     private string currentText = "";
 
     // Use this for initialization

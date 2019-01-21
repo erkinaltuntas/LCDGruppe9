@@ -40,7 +40,7 @@ public class DialogController1 : MonoBehaviour {
 
         DialogController dialogController = speechbubble.GetComponent<DialogController>();
         fullText1 = "Ach hallo " + dialogController.playerName + "." + Environment.NewLine + Environment.NewLine +
-        "Wir möchten dir schon etwas früher als du vielleicht erwartet hättest etwas vererben. " + Environment.NewLine + Environment.NewLine +
+        "Wir möchten Dir schon etwas früher als Du vielleicht erwartet hättest etwas vererben. " + Environment.NewLine + Environment.NewLine +
         "Großvater und ich werden immer älter… und die Arbeit nicht leichter... ";
         StartCoroutine(ShowText());
 
