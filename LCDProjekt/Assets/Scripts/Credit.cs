@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 8.1.2019
-* Grund für letzte Bearbeitung: Kommentare
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Gewährt einmal pro Jahreszeit einen Kredit, wenn man zu wenig Geld für eine Aktion hat.
+/// Gewaehrt einmal pro Jahreszeit einen Kredit, wenn man zu wenig Geld fuer eine Aktion hat.
 /// </summary>
 public class Credit : MonoBehaviour {
     public bool accepted;
@@ -33,7 +33,7 @@ public class Credit : MonoBehaviour {
     
 
     /// <summary>
-    /// Initialisiert die benötigten Objekte und öffnet das CreditPanel.
+    /// Initialisiert die benoetigten Objekte und oeffnet das CreditPanel.
     /// </summary>
     // Use this for initialization
     void Start () {
@@ -69,11 +69,11 @@ public class Credit : MonoBehaviour {
     }
 
     /// <summary>
-    /// Erhöht den Kontostand, wenn man das Geld annimmt.
+    /// Erhoeht den Kontostand, wenn man das Geld annimmt.
     /// </summary>
     void TaskOnAccept()
     {
-        // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
+        // Erhoehe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = true;
         money.money += 1000;
         Player.player.timeLoan++;

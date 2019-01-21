@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -49,7 +49,7 @@ public class Field : MonoBehaviour {
 	}
 
     /// <summary>
-    /// Ändert beim Pflanzen die Sprites der Felder.
+    /// Aendert beim Pflanzen die Sprites der Felder.
     /// </summary>
     public void changeSprite()
     {

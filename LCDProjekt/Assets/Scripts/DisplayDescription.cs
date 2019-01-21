@@ -2,9 +2,9 @@
 * DisplayDescription
 * Anwendung: Zur Anzeige des PopUp Fensters mit den Details der Pflanzen
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 7.1.2019
-* Grund für letzte Bearbeitung: Pflanzennamen auf deutsch anzeigen lassen
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 21.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 using System;
 using System.Collections;
@@ -13,6 +13,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Zeigt die Details zu den Pflanzen an, wenn man mit der Maus darueber geht.
+/// </summary>
 public class DisplayDescription : MonoBehaviour {
     // Text, in welches der Beschreibungstext eingefuegt wird (manuell zuweisen)
     public string descriptionString;
@@ -25,15 +28,14 @@ public class DisplayDescription : MonoBehaviour {
     public bool displayInfo;
     public Plant plant;
 
-
-
-    // Use this for initialization
+    /// <summary>
+    /// Bestimmt, welche Beschreibung angezeigt wird.
+    /// </summary>
     void Start() {
         // Identifiziere die Pflanze, um die es sich handelt mit ihren Beschreibungseigenschaften
         plant = this.gameObject.GetComponent<Plant>();
         descriptionImage = plant.GetComponentInChildren<Image>();
         descriptionText = descriptionImage.GetComponentInChildren<Text>();
-
 
         // Beschreibungstext im PopUp
         if(plant.plantName == "Empty")
@@ -72,30 +74,35 @@ public class DisplayDescription : MonoBehaviour {
         descriptionText.color = Color.clear;
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Prueft, ob die Beschreibung angezeigt wird oder nicht.
+    /// </summary>
 	void Update () {
         FadeText();
 	}
 
-
-    // Die Methode wird aufgerufen, wenn die Maus ueber den Collider einer Pflanze geht
+    /// <summary>
+    /// Die Methode wird aufgerufen, wenn die Maus ueber den Collider einer Pflanze geht
+    /// </summary>
     void OnMouseOver()
     {
         displayInfo = true;
     }
 
-
-    // Die Methode wird aufgerufen, wenn die Maus den Collider einer Pflanze verlaesst
+    /// <summary>
+    /// Die Methode wird aufgerufen, wenn die Maus den Collider einer Pflanze verlaesst.
+    /// </summary>
     void OnMouseExit()
     {
         displayInfo = false;
         errorMessage.text = "";
     }
 
-    // Steuert die Anzeige des PopUps
+    /// <summary>
+    ///  Steuert die Anzeige des PopUps.
+    /// </summary>
     void FadeText()
     {
-
         // Wenn Maus auf Collider, dann zeige das PopUp, indem das Bild und der Text sichtbar wird
         if (displayInfo)
         {

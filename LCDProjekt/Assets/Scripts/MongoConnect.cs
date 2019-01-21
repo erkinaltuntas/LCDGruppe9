@@ -5,7 +5,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Anna Buchner
 * Datum der letzten Bearbeitung: 07.01.2019
-* Grund für letzte Bearbeitung: Platzierung hinzugefügt
+* Grund fuer letzte Bearbeitung: Platzierung hinzugefuegt
 **************************************************************************/
 
 using System.Collections;
@@ -17,27 +17,29 @@ using MongoDB.Driver.Builders;
 using MongoDB.Driver.GridFS;
 using MongoDB.Driver.Linq;
 
+/// <summary>
+/// Verbindung zur Datenbank herstellen, Abrufen und Speichern der Highscores.
 
+/// </summary>
 public class MongoConnect : MonoBehaviour {
-
-   
+    
     public int numberOfPlayers;
 
     string connectionString = "mongodb://localhost:27017";
     //string connectionString = "mongodb://SDTeam:SDTeam18@sdfarms-shard-00-00-8g4lm.mongodb.net:27017,sdfarms-shard-00-01-8g4lm.mongodb.net:27017,sdfarms-shard-00-02-8g4lm.mongodb.net:27017/test?ssl=true&replicaSet=SDFarms-shard-0&authSource=admin&retryWrites=true";
 
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisiert die Anzahl der Spieler als 0.
+    /// </summary>
     void Start () {
         numberOfPlayers = 0;
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    //fügt Dokumente in die DB ein
+    /// <summary>
+    /// Fuegt Dokumente in die DB ein
+    /// </summary>
+    /// <param name="batch"> Dokument, das in die DB eingefuegt werden soll.</param>
     public void insertResult(BsonDocument[] batch)
     {
         /*
@@ -50,8 +52,10 @@ public class MongoConnect : MonoBehaviour {
         resultCollection.InsertBatch(batch);
     }
 
-
-    //Gibt eine nach result sortierte Liste der Spieler zurück
+    /// <summary>
+    /// Gibt eine nach result sortierte Liste der Spieler zurueck.
+    /// </summary>
+    /// <returns>Sortierte Spieler-Liste</returns>
     public List<BsonDocument> findResults()
     {
         /*
@@ -67,13 +71,13 @@ public class MongoConnect : MonoBehaviour {
         //Platzierungsvariable
         int place = 1;
 
-        //speichert die Einträge der DB sortiert in batchList ab
+        //speichert die Eintraege der DB sortiert in batchList ab
         foreach (var document in resultCollection.FindAll().SetSortOrder(SortBy.Descending("result")))
         {
             //Dem Dokument seine Platzierung zuweisen
             document["place"] = place;
 
-            //Dokument zur Liste hinzufügen
+            //Dokument zur Liste hinzufuegen
             batchList.Add(document);
 
             numberOfPlayers++;

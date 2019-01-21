@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 
 using System.Collections;
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Lässt das Hühnchen-Such-Spiel spielen.
+/// Laesst das Huehnchen-Such-Spiel spielen.
 /// </summary>
 public class Chicken : MonoBehaviour {
 
@@ -30,7 +30,7 @@ public class Chicken : MonoBehaviour {
     public Animation chickAnim;
 
     /// <summary>
-    /// Lässt die Hühnchen durch Anklicken verschwinden und wieder auftauchen.
+    /// Laesst die Huehnchen durch Anklicken verschwinden und wieder auftauchen.
     /// </summary>
     // Update is called once per frame
     void Update()
@@ -49,7 +49,7 @@ public class Chicken : MonoBehaviour {
             // Bestimmte Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            // Prüfe ob hit einen collider beinhaltet
+            // Pruefe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
                 // Wenn ein Huhn getroffen worden ist, aktiviere das naechste Huhn (insgesamt 4x)

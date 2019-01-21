@@ -2,9 +2,9 @@
 * Highscore
 * Anwendung: Anzeigen der Platzierung
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 14.01.2019
-* Grund für letzte Bearbeitung: Platzierung auswerten fuer Fall von 5 Spielern
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 21.01.2019
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -17,7 +17,9 @@ using MongoDB.Driver.Builders;
 using MongoDB.Driver.GridFS;
 using MongoDB.Driver.Linq;
 
-
+/// <summary>
+/// Berechnet die Platzierungen fuer den Highscore und gibt diesen aus.
+/// </summary>
 public class Highscore : MonoBehaviour {
 
     public Player player;
@@ -39,14 +41,12 @@ public class Highscore : MonoBehaviour {
     bool pFound;
     bool uPFound;
 
-
-
-
-
     List<BsonDocument> batchList = new List<BsonDocument>();
     string place = "1";
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung der Plaetze fuer den Highscore.
+    /// </summary>
     void Start () {
         player = Player.player;
         batchList = mongo.findResults();
@@ -55,17 +55,13 @@ public class Highscore : MonoBehaviour {
         oPFound = false;
         uPFound = false;
         pFound = false;
-
-
-
+        
         getHighscore();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+    /// <summary>
+    /// Bestimmt die Platzierungen vom Spieler, dem Vorgaenger, dem Nachfolger, dem Ersten und dem Letzten und zeigt diese an.
+    /// </summary>
     void getHighscore()
     {
         //Die Platzierung des Spielers nach seinem Endguthaben finden

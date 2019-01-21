@@ -4,7 +4,7 @@
 *------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 15.01.2019
-* Grund für letzte Bearbeitung: Kommentare
+* Grund fuer letzte Bearbeitung: Kommentare
 * **************************************************************************/
 
 using System.Collections;
@@ -32,7 +32,7 @@ public class Countdown : MonoBehaviour
     int a = 0;
     int b = 0;
     /// <summary>
-    /// Initialisierung der benötigten Objekte
+    /// Initialisierung der benoetigten Objekte
     /// </summary>
     void Start()
     {

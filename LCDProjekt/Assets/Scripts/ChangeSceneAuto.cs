@@ -1,10 +1,10 @@
 ﻿/*************************************************************************** 
 * ChangeSceneAuto
-* Anwendung: Wechselt nach einer bestimmten Zeit in die nächste Szene über.
+* Anwendung: Wechselt nach einer bestimmten Zeit in die naechste Szene ueber.
 *------------------- 
 * Zuletzt bearbeitet von: Victor Xu
 * Datum der letzten Bearbeitung: 21.01.2019
-* Grund für letzte Bearbeitung: Erstellung
+* Grund fuer letzte Bearbeitung: Erstellung
 **************************************************************************/
 
 
@@ -15,13 +15,12 @@ using UnityEngine.SceneManagement;
 
 
 /// <summary>
-/// Springt nach vier Sekunden in die nächste Szene über.
+/// Springt nach vier Sekunden in die naechste Szene ueber.
 /// </summary>
 public class ChangeSceneAuto : MonoBehaviour {
 
-    // Use this for initialization
     /// <summary>
-    /// Diese Methode wird bei der Initialisierung ausgeführt.
+    /// Diese Methode wird bei der Initialisierung ausgefuehrt.
     /// Starte die Coroutine WaitNextScene.
     /// </summary>
     void Start () {
@@ -29,7 +28,7 @@ public class ChangeSceneAuto : MonoBehaviour {
     }
 
     /// <summary>
-    /// Warte eine bestimmte Anzahl an Sekunden (in dem Fall vier Sekunden) und geht dann in die nächste Szene über.
+    /// Warte eine bestimmte Anzahl an Sekunden (in dem Fall vier Sekunden) und geht dann in die naechste Szene ueber.
     /// </summary>
     /// <param name="waitTime">Anzahl an Sekunden die gewartet werden soll.</param>
     /// <returns>WaitforScondes, Sekunden die gewartet werden, bis es im Code weiter geht.</returns>

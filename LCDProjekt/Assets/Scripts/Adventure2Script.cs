@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 21.01.2019
-* Grund für letzte Bearbeitung: Kommentare
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -18,7 +18,6 @@ using System;
 /// Steuert den ganzen Spielablauf.
 /// </summary>
 public class Adventure2Script : MonoBehaviour {
-
 
     public Vector3 mousePos;
     public Vector3 mousePosWorld;
@@ -85,7 +84,7 @@ public class Adventure2Script : MonoBehaviour {
 
 
     /// <summary>
-    /// Prüft, welcher Collider angeklickt wird. Öffnet oder schließt das entsprechende Panel.
+    /// Prueft, welcher Collider angeklickt wird. Oeffnet oder schließt das entsprechende Panel.
     /// </summary>
     void Update() {
         if (Input.GetMouseButtonDown(0))
@@ -103,7 +102,7 @@ public class Adventure2Script : MonoBehaviour {
             // Bestimmte Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            // Prüfe ob hit einen collider beinhaltet
+            // Pruefe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
                 //print(hit.collider.gameObject.name);
@@ -116,7 +115,7 @@ public class Adventure2Script : MonoBehaviour {
                    
 
 
-                    // Setzt currentFeldID auf die ID des ausgewhählten Feldes
+                    // Setzt currentFeldID auf die ID des ausgewhaehlten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Field>().id;
                     collider1.enabled = false;
                     collider2.enabled = false;
@@ -132,9 +131,9 @@ public class Adventure2Script : MonoBehaviour {
                     price = plant.price;
                     if (cash.money >= price)
                     {
-                        // Bestätigungsdialog ausführen
+                        // Bestaetigungsdialog ausfuehren
                         confirmPanel.SetActive(true);
-                        // Während Dialog kann man die anderen Pflanzen nicht anklicken
+                        // Waehrend Dialog kann man die anderen Pflanzen nicht anklicken
                         tomatoObj.GetComponent<Collider2D>().enabled = false;
                         carrotObj.GetComponent<Collider2D>().enabled = false;
                         cornObj.GetComponent<Collider2D>().enabled = false;
@@ -184,7 +183,7 @@ public class Adventure2Script : MonoBehaviour {
                 {
                     errorMessage.text = "";
 
-                    // Collider wieder verfügbar machen
+                    // Collider wieder verfuegbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
                     collider3.enabled = true;
@@ -226,7 +225,7 @@ public class Adventure2Script : MonoBehaviour {
     }
 
     /// <summary>
-    /// Dem Feld wird die Pflanze übertragen und der Risikoscore wird angepasst.
+    /// Dem Feld wird die Pflanze uebertragen und der Risikoscore wird angepasst.
     /// </summary>
     void TaskOnConfirm()
     {
@@ -238,7 +237,7 @@ public class Adventure2Script : MonoBehaviour {
         emptyObj.GetComponent<Collider2D>().enabled = true;
 
         errorMessage.text = "";
-        // Fügt die Entscheidung zur RisikoList hinzu, falls nicht leer gewählt worden ist
+        // Fuegt die Entscheidung zur RisikoList hinzu, falls nicht leer gewaehlt worden ist
         if (price != 0)
         {
             player.riskScores[player.riskIndex] = player.calculateRiskPlant(plant, weather.GetComponent<Weather>());
@@ -374,7 +373,7 @@ public class Adventure2Script : MonoBehaviour {
         }
 
 
-        // Collider der Felder wieder verfügbar machen
+        // Collider der Felder wieder verfuegbar machen
         collider1.enabled = true;
         collider2.enabled = true;
         collider3.enabled = true;
@@ -388,7 +387,7 @@ public class Adventure2Script : MonoBehaviour {
     }
 
     /// <summary>
-    /// Man kehrt ins Auswahl-Panel zurück.
+    /// Man kehrt ins Auswahl-Panel zurueck.
     /// </summary>
     void TaskOnReject()
     {
