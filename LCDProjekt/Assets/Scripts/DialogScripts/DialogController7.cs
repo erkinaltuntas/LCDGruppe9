@@ -1,7 +1,7 @@
 ﻿/*************************************************************************** 
 * DialogController7
 * Anwendung: Zur Steuerung des Dialogs in der Abschlussstory
-* (erste Sprechblase)
+* (letzte Sprechblase)
 * ------------------- 
 * Zuletzt bearbeitet von: Anna Buchner
 * Datum der letzten Bearbeitung: 18.12.2018
