@@ -3,10 +3,9 @@
 * Anwendung: Zur Steuerung des Dialogs in der Abschlussstory
 * (zweite Sprechblase)
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 11.12.2018
-* Grund für letzte Bearbeitung: Anzeige der Verluste/Gewinne durch Frost
-* und Dürre
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 21.01.2019
+* Grund für letzte Bearbeitung: Text leicht geändert.
 **************************************************************************/
 using System;
 using System.Collections;
@@ -57,25 +56,25 @@ public class DialogController6 : MonoBehaviour
         if(lostThroughDrought<0 && lostThroughFrost < 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-                "Dir sind wegen dem Frost insgesamt " + lostThroughFrost*(-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
-                "Außerdem hat die Dürre dir insgesamt " + lostThroughDrought*(-1) + " FarmDollar versaut... Schade. ";
+                "Dir sind durch Frost insgesamt " + lostThroughFrost*(-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+                "Außerdem hat Dürre dich insgesamt " + lostThroughDrought*(-1) + " FarmDollar gekostet... Schade. ";
         }
         else if(lostThroughDrought < 0 && lostThroughFrost >= 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen der Dürre insgesamt " + lostThroughDrought * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
-             "Der Frost konnte dir jedoch nichts antun. Sehr schön! ";
+             "Dir sind durch Dürre insgesamt " + lostThroughDrought * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Der Frost konnte Dir jedoch nichts anhaben. Sehr schön! ";
         }
         else if (lostThroughDrought >= 0 && lostThroughFrost < 0)
         {
             fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-             "Dir sind wegen dem Frost insgesamt " + lostThroughFrost * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
-             "Die Dürre konnte dir jedoch nichts antun. Sehr schön! ";
+             "Dir sind durch Frost insgesamt " + lostThroughFrost * (-1) + " FarmDollar entgangen. " + Environment.NewLine + Environment.NewLine +
+             "Die Dürre konnte Dir jedoch nichts anhaben. Sehr schön! ";
         }
         else
         {
-            fullText1 = "Unsere Farm ist bei dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
-                "Du hast keine Verluste verzeichnet! ";
+            fullText1 = "Unsere Farm ist bei Dir in sicheren Händen. " + Environment.NewLine + Environment.NewLine +
+                "Du hast keine Verluste verzeichnet! Super! ";
         }
 
 
