@@ -35,8 +35,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+<<<<<<< HEAD
 LCDProjekt/Assets/Scenes/GameScene.unity
 LCDProjekt/Assets/Scenes/StartMenu.unity
 LCDProjekt/Assets/Scenes/StartMenu.unity
 LCDProjekt/Assets/Scripts/New Folder.meta
 LCDProjekt/ProjectSettings/ProjectVersion.txt
+=======
+>>>>>>> parent of 4e57b48... Merge branch 'master' of https://github.com/erkinaltuntas/LCDGruppe9
