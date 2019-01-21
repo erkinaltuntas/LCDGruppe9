@@ -13,7 +13,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Ermöglicht das Abklingen des InGame-Sounds am Ende des Spiels
+/// Ermöglicht das Abklingen des InGame-Sounds am Ende des Spiels.
+/// Beendet das Spiel nach 45 Sekunden.
 /// </summary>
 public class SoundFade : MonoBehaviour {
     
@@ -39,7 +40,21 @@ public class SoundFade : MonoBehaviour {
     }
 
 
-    
+    /// <summary>
+    /// Schließt das Spiel nach waitTime Sekunden.
+    /// </summary>
+    /// <param name="waitTime">Sekunden die gewartet werden soll.</param>
+    /// <returns>Sekunden die gewartet wird</returns>
+    private IEnumerator EndGame(float waitTime)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Application.Quit();
+        }
+    }
+
+
 
     /// <summary>
     /// StartCoroutine und Update erlauben es zusammen hier FadeOut einmal pro 
@@ -47,13 +62,10 @@ public class SoundFade : MonoBehaviour {
     /// </summary>
     void Start () {
         StartCoroutine(FadeOut());
+        StartCoroutine(EndGame(45.0f));
 
     }
-
-    /// <summary>
-    /// StartCoroutine und Update erlauben es zusammen hier FadeOut einmal pro 
-    /// in-Game frame aufzurufen.
-    /// </summary>
+    
     void Update () {
     }
 }
