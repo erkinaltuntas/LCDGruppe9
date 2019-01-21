@@ -10,6 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 /// <summary>
 /// Ermöglicht das Abklingen des InGame-Sounds am Ende des Spiels
 /// </summary>
@@ -28,13 +30,15 @@ public class SoundFade : MonoBehaviour {
 
         while (AudioListener.volume > 0)
         {
-            AudioListener.volume -= 0.004f; 
+            AudioListener.volume -= 0.00105f; 
 
             yield return null;
         }
 
         AudioListener.volume = 0;
     }
+
+
     
 
     /// <summary>
