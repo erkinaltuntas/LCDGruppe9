@@ -4,13 +4,13 @@
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
 * Datum der letzten Bearbeitung: 17.01.2019
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// Zuweisung der Sounddateien für alle Buttons im Spiel.
+/// Zuweisung der Sounddateien fuer alle Buttons im Spiel.
 /// Genauere Beschreibungen innerhalb der Klasse.
 /// </summary>
 public class SoundScript : MonoBehaviour {
@@ -22,7 +22,7 @@ public class SoundScript : MonoBehaviour {
     public AudioClip clickSound;
 
     /// <summary>
-    /// <c>hoverSound</c> wird abgespielt, wenn der Spieler die Maus ueber einen Button führt.
+    /// <c>hoverSound</c> wird abgespielt, wenn der Spieler die Maus ueber einen Button fuehrt.
     /// </summary>
     public void playHoverSound()
     {

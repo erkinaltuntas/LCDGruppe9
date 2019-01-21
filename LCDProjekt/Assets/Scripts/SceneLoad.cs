@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -16,9 +16,9 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneLoad : MonoBehaviour {
 
-    // Geht in die nächste Szene über
+    // Geht in die naechste Szene ueber
     /// <summary>
-    /// Lädt die nächste Szene
+    /// Laedt die naechste Szene
     /// </summary>
     public void loadNextScene()
     {

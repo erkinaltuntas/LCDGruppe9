@@ -4,7 +4,7 @@
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
 * Datum der letzten Bearbeitung: 17.01.2019
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -13,15 +13,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Ermöglicht das Abklingen des InGame-Sounds am Ende des Spiels.
+/// Ermoeglicht das Abklingen des InGame-Sounds am Ende des Spiels.
 /// Beendet das Spiel nach 45 Sekunden.
 /// </summary>
 public class SoundFade : MonoBehaviour {
     
     /// <summary>
-    /// Solange die Lautstärke groesser als null ist, wird 
+    /// Solange die Lautstaerke groesser als null ist, wird 
     /// pro Durchlaufen der Schleife die <c>AudioListener.volume</c> um den 
-    /// festen Wert 0.004 verringert. Die Methode läuft solange bis
+    /// festen Wert 0.004 verringert. Die Methode laeuft solange bis
     /// <c>Audiolistener.volume</c> den Wert null erreicht hat.
     /// </summary>
     /// <returns></returns>
@@ -41,7 +41,7 @@ public class SoundFade : MonoBehaviour {
 
 
     /// <summary>
-    /// Schließt das Spiel nach waitTime Sekunden.
+    /// Schliesst das Spiel nach waitTime Sekunden.
     /// </summary>
     /// <param name="waitTime">Sekunden die gewartet werden soll.</param>
     /// <returns>Sekunden die gewartet wird</returns>
