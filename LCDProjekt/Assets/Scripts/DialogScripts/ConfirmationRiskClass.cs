@@ -75,7 +75,7 @@ public class ConfirmationRiskClass : MonoBehaviour {
                 "Sehr hohe Ertragschancen durch überdurchschnittliche Zins-, Kurs-, Währungsgewinne. " + Environment.NewLine + "Überdurchschnittlich hohe Risiken aus Zins-, Kurs-,Währungsschwankungen, Totalverlust möglich. ";
         }
 
-        fullText1 += Environment.NewLine + Environment.NewLine + "Bist du damit einverstanden? ";
+        fullText1 += Environment.NewLine + Environment.NewLine + "Bist Du damit einverstanden? ";
 
 
         StartCoroutine(ShowText());

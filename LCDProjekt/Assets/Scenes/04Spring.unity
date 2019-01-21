@@ -3358,7 +3358,7 @@ MonoBehaviour:
   money: 1000
   riskScores: []
   riskScoreShock: []
-  riskMedian: 0
+  riskMean: 0
   riskClass: 
   droughtLost: []
   frostLost: []
@@ -3370,6 +3370,7 @@ MonoBehaviour:
   choice: 0
   timeLoan: 0
   creditShown: 0
+  riskConfirmed: 0
 --- !u!4 &259740253
 Transform:
   m_ObjectHideFlags: 0
@@ -4489,6 +4490,11 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Alignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114379166100291366, guid: fafec30e887bb0b4db804caaf8879b9d,
+        type: 2}
+      propertyPath: price
+      value: 240
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fafec30e887bb0b4db804caaf8879b9d, type: 2}

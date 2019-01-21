@@ -2,9 +2,9 @@
 * Schock
 * Anwendung: Steuerung der Schock-Events
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 18.12.2018
-* Grund für letzte Bearbeitung: CreditPanel bei nicht genug Geld
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund für letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 
 using System.Collections;
