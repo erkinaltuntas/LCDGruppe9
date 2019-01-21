@@ -120,23 +120,23 @@ public class Player : MonoBehaviour {
         double riskShock = player.riskScoreShock[0] + player.riskScoreShock[1];
         riskMean += riskShock; 
 
-        if (riskMean < 0.7d)
+        if (riskMean < 0.555d)
         {
             riskClass = "Sicherheit";
         }
-        else if (0.7d <= riskMean && riskMean < 0.9d)
+        else if (0.555d <= riskMean && riskMean < 0.8142d)
         {
             riskClass = "Ertrag";
         }
-        else if (0.9d <= riskMean && riskMean < 1.1d)
+        else if (0.8142d <= riskMean && riskMean < 1.0728d)
         {
             riskClass = "Wachstum";
         }
-        else if (1.1d <= riskMean && riskMean < 1.3d)
+        else if (1.0728d <= riskMean && riskMean < 1.3314d)
         {
             riskClass = "Risiko";
         }
-        else if (1.3d <= riskMean)
+        else if (1.3314d <= riskMean)
         {
             riskClass = "Spekulativ";
         }
