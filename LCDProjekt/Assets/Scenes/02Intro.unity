@@ -1385,7 +1385,7 @@ Prefab:
     - target: {fileID: 224023752374693634, guid: aa33ff836fa54214094b5cebef27eefb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 224607417760601818, guid: aa33ff836fa54214094b5cebef27eefb,
         type: 2}
@@ -1395,7 +1395,7 @@ Prefab:
     - target: {fileID: 224254030697413360, guid: aa33ff836fa54214094b5cebef27eefb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224643548590199134, guid: aa33ff836fa54214094b5cebef27eefb,
         type: 2}
@@ -1407,6 +1407,14 @@ Prefab:
       propertyPath: speechbubble
       value: 
       objectReference: {fileID: 1527392432}
+    - target: {fileID: 4007259144482974, guid: aa33ff836fa54214094b5cebef27eefb, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007259144482974, guid: aa33ff836fa54214094b5cebef27eefb, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa33ff836fa54214094b5cebef27eefb, type: 2}
   m_IsPrefabAsset: 0
