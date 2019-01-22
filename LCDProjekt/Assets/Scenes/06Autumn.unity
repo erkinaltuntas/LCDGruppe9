@@ -14405,9 +14405,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ein H\xE4ndler gibt dir eine Kostprobe seiner neuen Produkte. \nDu darfst
-    entweder\n(1) Ein Mittel, das deine Ertr\xE4ge um 25% steigert\noder\n(2) Einen
-    D\xFCnger, der alle Pflanzen vor dem Wetter sch\xFCtzt \nw\xE4hlen\n"
+  m_Text: "Ein H\xE4ndler gibt Dir eine Kostprobe seiner neuen Wunderd\xFCnger! \nDu
+    kannst entweder\n(1) Deine Ertr\xE4ge um 25 % steigern\noder\n(2) Alle Pflanzen
+    vor D\xFCrre und Frost sch\xFCtzen\n"
 --- !u!222 &1089404951
 CanvasRenderer:
   m_ObjectHideFlags: 0
