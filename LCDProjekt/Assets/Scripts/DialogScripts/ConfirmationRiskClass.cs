@@ -25,7 +25,6 @@ public class ConfirmationRiskClass : MonoBehaviour {
     private string fullText1;
     private string currentText = "";
     public Player player;
-    public MongoConnect mongo;
     
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
@@ -106,9 +105,6 @@ public class ConfirmationRiskClass : MonoBehaviour {
     void TaskOnConfirm()
     {
         player.riskConfirmed = true;
-
-        // Ergebnis an DB schicken,
-        player.sendResult();
     }
 
     /// <summary>
@@ -119,8 +115,5 @@ public class ConfirmationRiskClass : MonoBehaviour {
     void TaskOnReject()
     {
         player.riskConfirmed = false;
-
-        // Ergebnis an DB schicken
-        player.sendResult();
     }
 }

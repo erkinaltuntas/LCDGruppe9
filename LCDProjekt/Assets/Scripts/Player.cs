@@ -11,11 +11,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Builders;
-using MongoDB.Driver.GridFS;
-using MongoDB.Driver.Linq;
 
 /// <summary>
 /// Ermoeglicht die Risikoklassifizierung des Spielers in 5 verschiedene Risikoklassen.
@@ -171,30 +166,5 @@ public class Player : MonoBehaviour {
         {
             riskClass = "Spekulativ";
         }
-    }
-
-
-
-    /// <summary>
-    /// Sendet das Ergebnis des Spielers an die Datenbank (ueber MongoConnect).
-    /// Uebergeben werden dabei Name, Endkontostand, Risikoscore, Risikoklasse
-    /// und ob der Spieler mit der Risikobewertung einverstanden war.
-    /// </summary>    
-    public void sendResult()
-    {
-        GameObject mongo = GameObject.Find("DatabaseConnector");
-
-        // der Datensatz, der abgesendet wird
-        BsonDocument[] batch ={
-            new BsonDocument{
-                {"name", playerName},
-                {"result", endTotal},
-                {"riskMean", riskMean},
-                {"riskName", riskClass},
-                {"confirmation", riskConfirmed }
-            }
-        };
-
-        mongo.GetComponent<MongoConnect>().insertResult(batch);
     }
 }
