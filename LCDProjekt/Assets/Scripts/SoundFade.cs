@@ -1,10 +1,11 @@
 ﻿/*************************************************************************** 
 * SoundFade
-* Anwendung: SoundFade am Ende des Spiels
+* Anwendung: SoundFade am Ende des Spiels und Einblendung des unsichtbaren
+* End-Buttons, zur Beendigung des Spiels
 *------------------- 
-* Zuletzt bearbeitet von: Thomas Wieschermann
-* Datum der letzten Bearbeitung: 17.01.2019
-* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
+* Zuletzt bearbeitet von: Victor Xu
+* Datum der letzten Bearbeitung: 22.01.2019
+* Grund fuer letzte Bearbeitung: Ergaenzende Funktionen hinzugefuegt
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
@@ -14,9 +15,12 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Ermoeglicht das Abklingen des InGame-Sounds am Ende des Spiels.
-/// Beendet das Spiel nach 45 Sekunden.
+/// Blendet den End-Button, welcher das Spiel beendet ein.
 /// </summary>
 public class SoundFade : MonoBehaviour {
+
+    public GameObject endButton;
+    public GameObject clickToEnd;
     
     /// <summary>
     /// Solange die Lautstaerke groesser als null ist, wird 
@@ -41,7 +45,8 @@ public class SoundFade : MonoBehaviour {
 
 
     /// <summary>
-    /// Schliesst das Spiel nach waitTime Sekunden.
+    /// Nach einer bestimmten Anzahl an Sekunden (waitTime), wird der End-Button aktiviert, 
+    /// welcher das Spiel beendet und der passende Text wird eingeblendet.
     /// </summary>
     /// <param name="waitTime">Sekunden die gewartet werden soll.</param>
     /// <returns>Sekunden die gewartet wird</returns>
@@ -50,19 +55,20 @@ public class SoundFade : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(waitTime);
-            Application.Quit();
+            endButton.SetActive(true);
+            clickToEnd.SetActive(true);
         }
     }
 
 
 
     /// <summary>
-    /// StartCoroutine und Update erlauben es zusammen hier FadeOut einmal pro 
-    /// in-Game frame aufzurufen.
+    /// Diese Methode wird bei der Initialisierung aufgerufen.
+    /// Startet die Coroutine Fadeout() und EndGame().
     /// </summary>
     void Start () {
         StartCoroutine(FadeOut());
-        StartCoroutine(EndGame(45.0f));
+        StartCoroutine(EndGame(14.0f));
 
     }
     
