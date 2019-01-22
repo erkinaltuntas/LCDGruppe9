@@ -26,8 +26,7 @@ public class ConfirmationRiskClass : MonoBehaviour {
     private string currentText = "";
     public Player player;
     public MongoConnect mongo;
-
-    // Use this for initialization
+    
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// calculateRisk() aus der Player Klasse wird ausgeführt (s. passende Klasse).
@@ -99,8 +98,7 @@ public class ConfirmationRiskClass : MonoBehaviour {
 
 
     }
-
-    // Riskoklasse bestätigt
+    
     /// <summary>
     /// Risikoklasse wird bestätigt.
     /// Ergebnisse werden an die Datenbank geschickt.

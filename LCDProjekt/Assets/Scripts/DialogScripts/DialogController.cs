@@ -31,8 +31,7 @@ public class DialogController : MonoBehaviour
 
     public GameObject speechBubble1, speechBubble2;
     public GameObject confirmButton, nextButton2;
-
-    // Use this for initialization
+    
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// TaskOnConfirm wird dem confirmButton zugeordnet.

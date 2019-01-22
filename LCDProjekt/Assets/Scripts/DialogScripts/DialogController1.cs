@@ -28,8 +28,6 @@ public class DialogController1 : MonoBehaviour {
     
     private string currentText = "";
 
-
-    // Use this for initialization
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// Der DialogController wird gleich die Variable dialogController gesetzt.
@@ -46,8 +44,6 @@ public class DialogController1 : MonoBehaviour {
 
     }
 
-
-    // Zeigt den Dialog Buchstabe fuer Buchstaben
     /// <summary>
     /// Gibt den Text Buchstabe für Buchstabe aus.
     /// </summary>
