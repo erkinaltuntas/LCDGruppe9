@@ -1508,6 +1508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b565b4c633a04fa7d60b9191924cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechbubble: {fileID: 0}
+  fullText1: 
   delay: 0.005
 --- !u!114 &114702512535889864
 MonoBehaviour:
@@ -2089,7 +2091,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: c5fb16c10d892574190ace6923dd6e49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14b2dc7e682b71141ab64e0866907a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
