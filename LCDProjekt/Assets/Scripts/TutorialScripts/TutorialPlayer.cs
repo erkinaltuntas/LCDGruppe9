@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 14.01.2019
-* Grund für letzte Bearbeitung: Erstellung 
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;

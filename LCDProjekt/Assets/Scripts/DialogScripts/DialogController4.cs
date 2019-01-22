@@ -22,7 +22,6 @@ public class DialogController4 : MonoBehaviour {
     private string fullText1 = "Pass gut auf! " + Environment.NewLine + Environment.NewLine + "Ich zeige Dir mal wie das Ganze funktioniert... ";
     private string currentText = "";
     
-    // Use this for initialization
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// Die Coroutine ShowText() wird gestartet.

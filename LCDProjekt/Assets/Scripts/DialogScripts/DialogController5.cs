@@ -26,10 +26,7 @@ public class DialogController5 : MonoBehaviour
     private string currentText = "";
     public Player player;
     string name;
-
-
-
-    // Use this for initialization
+    
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// Guthaben ohne Kredit und Gewinn wird ausgerechnet und gespeichert.

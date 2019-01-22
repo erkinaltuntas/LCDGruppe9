@@ -27,9 +27,7 @@ public class DialogController6 : MonoBehaviour
     public Player player;
     double lostThroughFrost;
     double lostThroughDrought;
-
-
-    // Use this for initialization
+    
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// Verlorenes Geld durch Frost und Dürre wird ausgerechnet.

@@ -29,9 +29,7 @@ public class DialogController7 : MonoBehaviour
     private string fullText1;
     private string currentText = "";
     public Player player;
-
-
-    // Use this for initialization
+    
     /// <summary>
     /// Die Start Methode wird bei der Initialisierung aufgerufen.
     /// calculateRisk() aus der Klasse Player wird ausgeführt.
