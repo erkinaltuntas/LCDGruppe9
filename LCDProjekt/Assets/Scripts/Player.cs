@@ -4,7 +4,7 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
 * Datum der letzten Bearbeitung: 21.01.2019
-* Grund für letzte Bearbeitung: Risikoklassen geändert und Kommentare eingefügt
+* Grund fuer letzte Bearbeitung: Risikoklassen geaendert und Kommentare eingefuegt
 **************************************************************************/
 
 using System;
@@ -18,8 +18,8 @@ using MongoDB.Driver.GridFS;
 using MongoDB.Driver.Linq;
 
 /// <summary>
-/// Ermöglicht die Risikoklassifizierung des Spielers in 5 verschiedene Risikoklassen.
-/// Außerdem werden Verluste durch Dürre und Frost gesammelt und 
+/// Ermoeglicht die Risikoklassifizierung des Spielers in 5 verschiedene Risikoklassen.
+/// Ausserdem werden Verluste durch Duerre und Frost gesammelt und 
 /// die Ergebnisse des Spielers an eine Datenbank geschickt. Eine
 /// genauere Kommentierung erfolgt innerhalb der Klasse selbst.
 /// </summary>
@@ -40,21 +40,21 @@ public class Player : MonoBehaviour {
     public string riskClass;
     
 
-    //Verluste durch Frost und Dürre für die Endstatistik
+    //Verluste durch Frost und Duerre fuer die Endstatistik
     public double[] droughtLost;
     public double[] frostLost;
     public int droughtIndex, frostIndex, riskIndex;
     public double endTotal;
 
-    //für Schocks
+    //fuer Schocks
     public bool storm = false;
     public int choice;
 
-    //für Kredit
+    //fuer Kredit
     public int timeLoan = 0;
     public bool creditShown;
 
-    //für die Bestätigung der Risikoklasse am Ende
+    //fuer die Bestaetigung der Risikoklasse am Ende
     public bool riskConfirmed;
 
     /// <summary>
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
     }
 
     /// <summary>
-    /// Anlage von Arrays sowohl für Verluste als auch die 
+    /// Anlage von Arrays sowohl fuer Verluste als auch die 
     /// Risikobewertung der Pflanzenwahl des Spielers.
     /// </summary>
     void Start()
@@ -94,18 +94,18 @@ public class Player : MonoBehaviour {
 
     /// <summary>
     /// Berechnet Risiko auf Basis der Pflanzenwahl und des aktuellen Wetters.
-    /// Je höher die Abweichung der Dürre- und Frostresistenzwerte der ausgewählten Pflanzen von den
-    /// Frost- und Dürrewerten des Wetters desto extremer der errechnete Risikowert.
-    /// Dabei werden Frost- und Dürrewahrscheinlichkeit gegeneinander gewichtet und mit in die
+    /// Je hoeher die Abweichung der Duerre- und Frostresistenzwerte der ausgewaehlten Pflanzen von den
+    /// Frost- und Duerrewerten des Wetters desto extremer der errechnete Risikowert.
+    /// Dabei werden Frost- und Duerrewahrscheinlichkeit gegeneinander gewichtet und mit in die
     /// Bewertung einbezogen, d.h. sollte zum Beispiel der Frostwert einer Jahreszeit 60 % und
-    /// der Dürrewert 20 % betragen, so ist die Reaktion auf den Frostwert drei mal so 
-    /// wichtig wie die Reaktion auf den Dürrewert. Der Potenzwert 1,905  
-    /// ermöglicht für die gegebene Pflanzenauswahl einen Risikodurchschnittswert von nahezu = 1 und
-    /// bewertet zusätzlich Entscheidungen, die zu einer hohen Diskrepanz zwischen 
-    /// Resistenz und Wetterwahrscheinlichkeit führen überdurchschnittlich.
+    /// der Duerrewert 20 % betragen, so ist die Reaktion auf den Frostwert drei mal so 
+    /// wichtig wie die Reaktion auf den Duerrewert. Der Potenzwert 1,905  
+    /// ermoeglicht fuer die gegebene Pflanzenauswahl einen Risikodurchschnittswert von nahezu = 1 und
+    /// bewertet zusaetzlich Entscheidungen, die zu einer hohen Diskrepanz zwischen 
+    /// Resistenz und Wetterwahrscheinlichkeit fuehren ueberdurchschnittlich.
     /// </summary>
-    /// <param name="plant">Übergebenes Pflanzenobjekt</param>
-    /// <param name="weather">Übergebenes Wetterobjekt</param>
+    /// <param name="plant">Uebergebenes Pflanzenobjekt</param>
+    /// <param name="weather">Uebergebenes Wetterobjekt</param>
     /// <returns></returns>
     public double calculateRiskPlant(Plant plant, Weather weather)
     {
@@ -117,7 +117,7 @@ public class Player : MonoBehaviour {
 
 
     /// <summary>
-    /// Berechnet den Durchschnitt aller Risikoentscheidungen des Spielers (ausschließlich Pflanzenwahl)
+    /// Berechnet den Durchschnitt aller Risikoentscheidungen des Spielers (ausschliesslich Pflanzenwahl)
     /// </summary>
     public void calculateRisk()
     {
@@ -140,11 +140,11 @@ public class Player : MonoBehaviour {
 
 
     /// <summary>
-    /// Teilt den Spieler in eine von fünf verschiedenen Risikoklassen ein,
-    /// nachdem die Entscheidungen bei den Schockereignissen berücksichtigt
-    /// werden. Einteilung erfolgt über die Normierung auf 5 gleiche Abschnitte 
-    /// zwischen dem minimal möglichen Wert 0,297 und dem maximal möglichen Wert 1,59.
-    /// Die Werte wurden aus Risiko_Konzept_GanzjahresPflanzenFINAL.xls übernommen.
+    /// Teilt den Spieler in eine von fuenf verschiedenen Risikoklassen ein,
+    /// nachdem die Entscheidungen bei den Schockereignissen beruecksichtigt
+    /// werden. Einteilung erfolgt ueber die Normierung auf 5 gleiche Abschnitte 
+    /// zwischen dem minimal moeglichen Wert 0,297 und dem maximal moeglichen Wert 1,59.
+    /// Die Werte wurden aus Risiko_Konzept_GanzjahresPflanzenFINAL.xls uebernommen.
     /// </summary>
     public void getRiskClass()
     {
@@ -176,8 +176,8 @@ public class Player : MonoBehaviour {
 
 
     /// <summary>
-    /// Sendet das Ergebnis des Spielers an die Datenbank (über MongoConnect).
-    /// Übergeben werden dabei Name, Endkontostand, Risikoscore, Risikoklasse
+    /// Sendet das Ergebnis des Spielers an die Datenbank (ueber MongoConnect).
+    /// Uebergeben werden dabei Name, Endkontostand, Risikoscore, Risikoklasse
     /// und ob der Spieler mit der Risikobewertung einverstanden war.
     /// </summary>    
     public void sendResult()
