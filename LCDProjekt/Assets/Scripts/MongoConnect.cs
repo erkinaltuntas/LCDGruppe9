@@ -26,8 +26,6 @@ public class MongoConnect : MonoBehaviour {
     public int numberOfPlayers;
 
     string connectionString = "mongodb://localhost:27017";
-    //string connectionString = "mongodb://SDTeam:SDTeam18@sdfarms-shard-00-00-8g4lm.mongodb.net:27017,sdfarms-shard-00-01-8g4lm.mongodb.net:27017,sdfarms-shard-00-02-8g4lm.mongodb.net:27017/test?ssl=true&replicaSet=SDFarms-shard-0&authSource=admin&retryWrites=true";
-
 
     /// <summary>
     /// Initialisiert die Anzahl der Spieler als 0.
