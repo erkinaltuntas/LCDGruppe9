@@ -2,9 +2,9 @@
 * Adventure2Script
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 8.1.2019
-* Grund für letzte Bearbeitung: Bestätigungsdialog
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 21.01.2019
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -14,8 +14,10 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+/// <summary>
+/// Steuert den ganzen Spielablauf.
+/// </summary>
 public class Adventure2Script : MonoBehaviour {
-
 
     public Vector3 mousePos;
     public Vector3 mousePosWorld;
@@ -48,7 +50,9 @@ public class Adventure2Script : MonoBehaviour {
     public Button confirmButton, rejectButton;
     private Plant plant;
         
-    // Use this for initialization
+    /// <summary>
+    /// Stellt die Voreinstellungen zu Beginn einer Jahreszeit her.
+    /// </summary>
     void Start() {
         player = Player.player;
 
@@ -79,7 +83,9 @@ public class Adventure2Script : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
+    /// <summary>
+    /// Prueft, welcher Collider angeklickt wird. Oeffnet oder schließt das entsprechende Panel.
+    /// </summary>
     void Update() {
         if (Input.GetMouseButtonDown(0))
         {
@@ -96,7 +102,7 @@ public class Adventure2Script : MonoBehaviour {
             // Bestimmte Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
-            // Prüfe ob hit einen collider beinhaltet
+            // Pruefe ob hit einen collider beinhaltet
             if (hit.collider != null)
             {
                 //print(hit.collider.gameObject.name);
@@ -109,7 +115,7 @@ public class Adventure2Script : MonoBehaviour {
                    
 
 
-                    // Setzt currentFeldID auf die ID des ausgewhählten Feldes
+                    // Setzt currentFeldID auf die ID des ausgewhaehlten Feldes
                     currentFeldId = hit.collider.gameObject.GetComponent<Field>().id;
                     collider1.enabled = false;
                     collider2.enabled = false;
@@ -125,9 +131,9 @@ public class Adventure2Script : MonoBehaviour {
                     price = plant.price;
                     if (cash.money >= price)
                     {
-                        // Bestätigungsdialog ausführen
+                        // Bestaetigungsdialog ausfuehren
                         confirmPanel.SetActive(true);
-                        // Während Dialog kann man die anderen Pflanzen nicht anklicken
+                        // Waehrend Dialog kann man die anderen Pflanzen nicht anklicken
                         tomatoObj.GetComponent<Collider2D>().enabled = false;
                         carrotObj.GetComponent<Collider2D>().enabled = false;
                         cornObj.GetComponent<Collider2D>().enabled = false;
@@ -177,7 +183,7 @@ public class Adventure2Script : MonoBehaviour {
                 {
                     errorMessage.text = "";
 
-                    // Collider wieder verfügbar machen
+                    // Collider wieder verfuegbar machen
                     collider1.enabled = true;
                     collider2.enabled = true;
                     collider3.enabled = true;
@@ -218,6 +224,9 @@ public class Adventure2Script : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Dem Feld wird die Pflanze uebertragen und der Risikoscore wird angepasst.
+    /// </summary>
     void TaskOnConfirm()
     {
         // Collider der Pflanzen wieder aktivieren
@@ -228,7 +237,7 @@ public class Adventure2Script : MonoBehaviour {
         emptyObj.GetComponent<Collider2D>().enabled = true;
 
         errorMessage.text = "";
-        // Fügt die Entscheidung zur RisikoList hinzu, falls nicht leer gewählt worden ist
+        // Fuegt die Entscheidung zur RisikoList hinzu, falls nicht leer gewaehlt worden ist
         if (price != 0)
         {
             player.riskScores[player.riskIndex] = player.calculateRiskPlant(plant, weather.GetComponent<Weather>());
@@ -238,13 +247,12 @@ public class Adventure2Script : MonoBehaviour {
         {
             player.riskScores[player.riskIndex] = 0;
         }
-        player.riskIndex++; ;
+        player.riskIndex++; 
 
         // Schaut nach welches Feld ausgewaehlt wurde
         switch (currentFeldId)
         {
-
-
+            
             // Feld1 wurde ausgewaehlt
             case 1:
                 // Pflanzennamen des Feldes auf den Namen der Pflanze setzen
@@ -361,12 +369,11 @@ public class Adventure2Script : MonoBehaviour {
                 }
                 break;
             default:
-                print("Fehler");
                 break;
         }
 
 
-        // Collider der Felder wieder verfügbar machen
+        // Collider der Felder wieder verfuegbar machen
         collider1.enabled = true;
         collider2.enabled = true;
         collider3.enabled = true;
@@ -378,6 +385,10 @@ public class Adventure2Script : MonoBehaviour {
         gameButtonsPanel.SetActive(true);
 
     }
+
+    /// <summary>
+    /// Man kehrt ins Auswahl-Panel zurueck.
+    /// </summary>
     void TaskOnReject()
     {
         errorMessage.text = "";

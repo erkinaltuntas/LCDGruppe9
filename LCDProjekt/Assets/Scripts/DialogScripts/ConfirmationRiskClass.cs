@@ -13,6 +13,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// Risiko und Risikoklasse wird ausgerechnet.
+/// Je nachdem welcher Risikoklasse der Spieler sich befindet bzw. zugeordnet wird ein anderer Text ausgegeben.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class ConfirmationRiskClass : MonoBehaviour {
     public GameObject confirmButton, rejectButton;
     public float delay = 0.005f;
@@ -20,8 +26,14 @@ public class ConfirmationRiskClass : MonoBehaviour {
     private string currentText = "";
     public Player player;
     public MongoConnect mongo;
-
-    // Use this for initialization
+    
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// calculateRisk() aus der Player Klasse wird ausgeführt (s. passende Klasse).
+    /// getRiskClass() aus der Player Klasse wird ausgeführt (s. passende Klasse).
+    /// Je nachdem welcher Risikoklasse der Spieler sich befindet bzw. zugeordnet wird ein anderer Text in fullText1 gespeichert.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start()
     {
         player = Player.player;
@@ -62,12 +74,17 @@ public class ConfirmationRiskClass : MonoBehaviour {
                 "Sehr hohe Ertragschancen durch überdurchschnittliche Zins-, Kurs-, Währungsgewinne. " + Environment.NewLine + "Überdurchschnittlich hohe Risiken aus Zins-, Kurs-,Währungsschwankungen, Totalverlust möglich. ";
         }
 
-        fullText1 += Environment.NewLine + Environment.NewLine + "Bist du damit einverstanden? ";
+        fullText1 += Environment.NewLine + Environment.NewLine + "Bist Du damit einverstanden? ";
 
 
         StartCoroutine(ShowText());
     }
-
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// Aktiviert die Bestätigungsbuttons.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for (int i = 0; i < fullText1.Length; i++)
@@ -81,8 +98,11 @@ public class ConfirmationRiskClass : MonoBehaviour {
 
 
     }
-
-    // Riskoklasse bestätigt
+    
+    /// <summary>
+    /// Risikoklasse wird bestätigt.
+    /// Ergebnisse werden an die Datenbank geschickt.
+    /// </summary>
     void TaskOnConfirm()
     {
         player.riskConfirmed = true;
@@ -91,6 +111,10 @@ public class ConfirmationRiskClass : MonoBehaviour {
         player.sendResult();
     }
 
+    /// <summary>
+    /// Risikoklasse wird abgelehnt.
+    /// Ergebnisse werden an die Datenbank geschickt.
+    /// </summary>
     // Risikoklasse nicht bestätigt
     void TaskOnReject()
     {

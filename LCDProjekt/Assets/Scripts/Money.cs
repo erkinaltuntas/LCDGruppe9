@@ -4,13 +4,16 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Steuert den Kontostand.
+/// </summary>
 public class Money : MonoBehaviour {
 
     public Player player;
@@ -20,7 +23,9 @@ public class Money : MonoBehaviour {
     GameObject weather;
     bool tutorial;
 
-	// Use this for initialization
+	/// <summary>
+    /// Initialisierung der Money-Objekte.
+    /// </summary>
 	void Start () {
         weather = GameObject.Find("Weather");
         moneyText = GetComponent<TextMeshProUGUI>();
@@ -41,7 +46,9 @@ public class Money : MonoBehaviour {
 
     }
 	
-	// Update is called once per frame
+	/// <summary>
+    /// Zeigt den aktuellen Kontostand an.
+    /// </summary>
 	void Update () {
         moneyText.text = "<color=green>" +money.ToString()+ "<color=white>" + " Farm $";
         if (!tutorial)
@@ -54,6 +61,10 @@ public class Money : MonoBehaviour {
         }
     }
     
+    /// <summary>
+    /// Prueft, ob der Spieler ueber 0 Farm $ hat.
+    /// </summary>
+    /// <returns>Gibt true zurueck, wenn der Spieler mehr als 0 Farm $ hat und false sonst.</returns>
     public bool enoughMoney()
     {
         if (this.money < 0)

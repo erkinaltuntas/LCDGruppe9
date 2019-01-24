@@ -3,8 +3,8 @@
 * Anwendung: Zum Ernten der Felder sowie Bilanzierung
 *------------------- 
 * Zuletzt bearbeitet von: Thomas Wieschermann
-* Datum der letzten Bearbeitung: 20.12.2018
-* Grund für letzte Bearbeitung: Wetteranpassung
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 using System;
 using System.Collections;
@@ -13,7 +13,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// Zum Ernten der einzelnen Felder sowie Bilanzierung.
+/// Es wird sowohl die Berechnung des Ertrags der einzelnen Felder ausgefuehrt als auch die visuelle Darstellung
+/// der Ernte der Felder.
+/// </summary>
 public class Harvest : MonoBehaviour {
 
     Player player;
@@ -31,7 +35,11 @@ public class Harvest : MonoBehaviour {
     bool tutorial;
 
 
-    // Use this for initialization
+    /// <summary>
+    /// Ueberprueft fuer <c>Harvest.cs</c> ob sich das Spiel im Moment im Tutorial oder im eigentlichen
+    /// Spielablauf befindet. Ausserdem wird die Methode <c>TaskOnClick</c> ausgefuehrt, wenn der <c>harvestFieldButton</c>
+    /// gedrueckt wird. 
+    /// </summary>
     void Start () {
         
         weather = GameObject.Find("Weather");
@@ -47,8 +55,6 @@ public class Harvest : MonoBehaviour {
         }
 
         seasonName = weather.GetComponent<Weather>().seasonName;
-
-        // Die Methode TaskOnClick wird ausgeführt, wenn der harvestFieldButton gedrückt wird
         
         plant = field.GetComponent<Field>().plant;
 
@@ -58,24 +64,31 @@ public class Harvest : MonoBehaviour {
         harvestFieldButton.onClick.AddListener(TaskOnClick);
     }
 	
-
+    /// <summary>
+    /// Fuehrt sowohl die visuelle Aenderung des Feldes als auch die eigentliche Ertragsberechnung fuer die einzelnen
+    /// Felder aus. Eine genauere Beschreibung der einzelnen Komponenten erfolgt innerhalb der Methode.
+    /// </summary>
     void TaskOnClick()
     {
-        //Feld Sprite entfernen
+        // Feld Sprite entfernen
         field.GetComponent<SpriteRenderer>().sprite = empty;
         field.fieldIsHarvested = true;
 
-        // Berechne den Umsatz und aktualisere das Geld des Spielers
+        // Berechnet den Umsatz und aktualisiert die Geldmenge des Spielers.
+        // Hierzu wird unter anderem die Methode getRandomProfit aufgerufen.
         double actualProfit = Math.Round(getRandomProfit(), 2);
         double loss = actualProfit - plant.profit;
         cash.money = cash.money + actualProfit;
 
-        // Zeige die Bilanz fuer jedes Feld an
+        // Zeigt die Bilanz fuer jedes einzelne Feld an. Sollte die Pflanze von Frost oder Duerre betroffen sein,
+        // wird balanceMessage.text weiter unten im Code durch eine andere Nachricht ersetzt
         balancePanel.SetActive(true);
-        // für TextMeshPro
-        //balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
+        // fuer TextMeshPro laesst sich auch folgendes einbinden
+        // balanceMessage.text = "<b><color=#00FF42>Gewinn: </color=#00FF42></b>" + actualProfit + " <b>Farm$</b>" + Environment.NewLine + Environment.NewLine;
         balanceMessage.text = "Gewinn: " + actualProfit + " Farm $" + Environment.NewLine + Environment.NewLine;
 
+        // Ueberpruefung ob keine Pflanze auf dem Feld angebaut wurde und sukzessive Ausgabe der Bilanz der einzelnen Felder
+        // mit Verlusten durch Frost bzw. Duerre
         if (plant.name != "Empty")
         {
             if (plant.frosted)
@@ -83,7 +96,8 @@ public class Harvest : MonoBehaviour {
 
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
                     "Entgangener Gewinn" + Environment.NewLine + "wegen Frost: " + loss * (-1) + " Farm $";
-                // Zuweisung der Verlustwerte in das PlayerArray
+                // Zuweisung der Verlustwerte in das PlayerArray. Diese werden am Ende des Spiels ausgelesen um dem Spieler mitzuteilen wieviel er 
+                // durch Frost verloren hat.
                 if (!tutorial)
                 {
                     player.frostLost[player.frostIndex] = loss;
@@ -95,7 +109,8 @@ public class Harvest : MonoBehaviour {
             {
                 balanceMessage.text += "Anteil verdorbene" + Environment.NewLine + "Ernte: " + missHarvestQuota * 100 + "%" + Environment.NewLine + Environment.NewLine +
                    "Entgangener Gewinn" + Environment.NewLine + "wegen Dürre: " + loss * (-1) + " Farm $";
-                // Zuweisung der Verlustwerte in das PlayerArray
+                // Zuweisung der Verlustwerte in das PlayerArray. Diese werden am Ende des Spiels ausgelesen um dem Spieler mitzuteilen wieviel er 
+                // durch Duerre verloren hat.
                 if (!tutorial)
                 {
                     player.droughtLost[player.droughtIndex] = loss;
@@ -110,7 +125,18 @@ public class Harvest : MonoBehaviour {
     }
 
 
-    // Berechnet den Profit eines Feldes
+    /// <summary>
+    /// Berechnet den Ertrag eines Feldes unter der Vorraussetzung, dass es von Frost oder Duerre betroffen ist.
+    /// Hierzu werden zunaechst zwei Zufallswerte berechnet. <c>random3</c> bestimmt in welcher Hoehe das Feld vom
+    /// Verlust betroffen ist, 25%, 50% oder 75%.
+    /// <c>random5</c> bestimmt ob, falls die Pflanze sowohl von Frost als auch von Duerre betroffen ist, von welchem der beiden sie
+    /// betroffen ist, da eine Pflanze im Spiel immer nur von Duerre oder von Frost befallen sein kann.
+    /// Zusaetzlich wird das Schockevent im Herbst beachtet, das, je nach der Wahl des Spielers, 
+    /// seine Pflanzen vor Wetterereignissen schuetzt oder die Ertraege alle seiner Pflanzen um 25 % steigert.
+    /// Math.round gibt dabei gerundete Ergebnisse zurueck um einen visuell ansprechenderen Kontostand dem Spieler
+    /// wiedergeben zu koennen.
+    /// </summary>
+    /// <returns>Gibt ein Double mit maximal 2 Nachkommastellen zurueck, das den Ertrag fuer einzelne Felder beschreibt. </returns>
     double getRandomProfit()
     {
         int random3 = UnityEngine.Random.Range(0, 3);
@@ -128,7 +154,7 @@ public class Harvest : MonoBehaviour {
             missHarvestQuota = 0.75;
         }
 
-        // Falls Pflanze sowohl von Frost als auch von Dürre betroffen, wähle ein zufälliges davon
+        // Falls Pflanze sowohl von Frost als auch von Duerre betroffen, waehle ein zufaelliges davon
         if (plant.droughted && plant.frosted)
         {
             if (random5 == 0)
@@ -143,6 +169,7 @@ public class Harvest : MonoBehaviour {
 
         if (plant.droughted || plant.frosted)
         {
+            //Positives Schockevent im Herbst
             if (seasonName == "Herbst" && player.choice == 1)
             {
                 return Math.Round((plant.profit * 1.25) - ((plant.profit * 1.25) * missHarvestQuota), 2);

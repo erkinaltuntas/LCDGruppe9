@@ -2,9 +2,9 @@
 * Credit
 * Anwendung: Zur Steuerung des Spielablaufs
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
 * Datum der letzten Bearbeitung: 8.1.2019
-* Grund für letzte Bearbeitung: Fix Beschreibungsanzeige der Pflanze
+* Grund fuer letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gewaehrt einmal pro Jahreszeit einen Kredit, wenn man zu wenig Geld fuer eine Aktion hat.
+/// </summary>
 public class Credit : MonoBehaviour {
     public bool accepted;
     public bool shown;
@@ -29,13 +32,15 @@ public class Credit : MonoBehaviour {
     string seasonName;
     
 
-
+    /// <summary>
+    /// Initialisiert die benoetigten Objekte und oeffnet das CreditPanel.
+    /// </summary>
     // Use this for initialization
     void Start () {
         creditPanel = this.gameObject;
         player = Player.player;
         shown = true;
-        // Steuert, dass der Kredit im gesamten Spiel max. 1x angezeigt werden kann
+        // Steuert, dass der Kredit in jeder Jahreszeit max. 1x angezeigt werden kann
         //player.creditShown = true;
 
         // Weise den Buttons die Methoden zu
@@ -63,9 +68,12 @@ public class Credit : MonoBehaviour {
         emptyObj.GetComponent<DisplayDescription>().displayInfo = false;
     }
 
+    /// <summary>
+    /// Erhoeht den Kontostand, wenn man das Geld annimmt.
+    /// </summary>
     void TaskOnAccept()
     {
-        // Erhöhe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
+        // Erhoehe das Geld um 1000, Aktivere wieder interaktive Objekte, schliesse das Fenster
         accepted = true;
         money.money += 1000;
         Player.player.timeLoan++;
@@ -84,6 +92,10 @@ public class Credit : MonoBehaviour {
         }
         
     }
+
+    /// <summary>
+    /// Schließt das CreditPanel wieder.
+    /// </summary>
     void TaskOnReject()
     {
         // Aktivere wieder interaktive Objekte, schliesse das Fenster

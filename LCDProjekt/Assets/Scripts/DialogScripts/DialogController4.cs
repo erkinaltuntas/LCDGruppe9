@@ -13,16 +13,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class DialogController4 : MonoBehaviour {
     public float delay = 0.005f;
-    private string fullText1 = "Pass gut auf! " + Environment.NewLine + Environment.NewLine + "Ich zeige dir mal wie das Ganze funktioniert... ";
+    private string fullText1 = "Pass gut auf! " + Environment.NewLine + Environment.NewLine + "Ich zeige Dir mal wie das Ganze funktioniert... ";
     private string currentText = "";
     
-    // Use this for initialization
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start() {
         StartCoroutine(ShowText());
     }
 
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for(int i=0; i<fullText1.Length; i++)
