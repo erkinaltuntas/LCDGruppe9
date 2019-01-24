@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Spielt die Uhr-Animation vor der Ernte ab.
+/// </summary>
 public class ClockButton : MonoBehaviour {
 
     public Button harvestButton;
@@ -19,12 +22,17 @@ public class ClockButton : MonoBehaviour {
     public GameObject background;
     public Animation clockAnimation;
 
-	// Use this for initialization
-	void Start () {
+    /// <summary>
+    /// Initialisierung.
+    /// </summary> 
+    void Start () {
         // Die Methode TaskOnClick wird ausgeführt, wenn der harvestButton gedrückt wird
         harvestButton.onClick.AddListener(TaskOnClick);
     }
 
+    /// <summary>
+    /// Spielt die Uhr-Animation auf Button-Klick ab.
+    /// </summary>
     void TaskOnClick()
     {
         // Spiele die Animation der Uhr ab
@@ -36,7 +44,9 @@ public class ClockButton : MonoBehaviour {
 
     }
 
-    // Zum Beenden der Animation
+    /// <summary>
+    /// Zum Beenden der Animation.
+    /// </summary>
     public void ClockAnimationEnd()
     {
             clock.SetActive(false);

@@ -2,9 +2,9 @@
 * Schock
 * Anwendung: Steuerung der Schock-Events
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 18.12.2018
-* Grund für letzte Bearbeitung: CreditPanel bei nicht genug Geld
+* Zuletzt bearbeitet von: Thomas Wieschermann
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 
 using System.Collections;
@@ -13,6 +13,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class Shock : MonoBehaviour {
 
     public Player player;
@@ -36,7 +39,9 @@ public class Shock : MonoBehaviour {
     public Sprite destroyed;
 
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung der Objekte.
+    /// </summary>
     void Start () {
         player = Player.player;
 
@@ -57,12 +62,11 @@ public class Shock : MonoBehaviour {
         field4 = GameObject.Find("Field 4");
         
     }
-	
-	// Update is called once per frame
-	void Update () {
-       
-    }
 
+    /// <summary>
+    /// Im Sommer wird die Ernte gegen den Sturm geschuetzt und die Kosten dafuer vom Konto abgezogen. 
+    /// Im Herbst wirde der risikoscore entsprechend angepasst.
+    /// </summary>
     void TaskOnClickOpt1()
     {
         player.choice = 1;
@@ -81,7 +85,7 @@ public class Shock : MonoBehaviour {
                 stormMessage.text = "Dank deiner guten Vorbereitung hat der Sturm dir nichts angetan.";
                 
                 
-                player.riskScoreShock[0] = 0;
+                player.riskScoreShock[0] = -0.075;
             }
             else
             {
@@ -101,11 +105,15 @@ public class Shock : MonoBehaviour {
         //positiver Schock und Option 1
         if (seasonName == "Herbst")
         {
-            
-            player.riskScoreShock[1] = 0.1;
+            player.riskScoreShock[1] = 0.075;
         }
     }
 
+    /// <summary>
+    /// Im Sommer wird die Ernte mit einer Wahrscheinlichkeit von 50% zerstoert oder nicht 
+    /// und der Risikoscore wird entsprechend angepasst.
+    /// Im Herbst wird der Risikoscore entsprechend angepasst.
+    /// </summary>
     void TaskOnClickOpt2()
     {
         player.choice = 2;
@@ -125,17 +133,21 @@ public class Shock : MonoBehaviour {
                 resultPanel.SetActive(true);
                 stormMessage.text = "Glück gehabt. Der Sturm konnte deiner Ernte nichts anhaben.";
             }
-            player.riskScoreShock[0] = 0.1;
+            player.riskScoreShock[0] = 0.075;
         }
         //positiver Schock und Option 2
         if (seasonName == "Herbst")
         {
-            player.riskScoreShock[1] = 0;
+            player.riskScoreShock[1] = -0.075;
         }
     }
+
+    /// <summary>
+    /// Ist der Sturm aufgetreten werden die Felder automatisch geernten.
+    /// </summary>
     void TaskOnClickExit()
     {
-        // bei Exit aus SturmPanel werden die Felder automatisch geerntet ohne Erträge 
+        // bei Exit aus SturmPanel werden die Felder automatisch geerntet ohne Ertraege 
         if (player.choice == 1 || player.storm == false)
         {
             resultPanel.SetActive(false);

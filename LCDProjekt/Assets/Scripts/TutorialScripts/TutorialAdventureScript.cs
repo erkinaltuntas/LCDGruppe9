@@ -2,9 +2,9 @@
 * TutorialAdventureScript
 * Anwendung: Tutorial 
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 27.12.2018
-* Grund für letzte Bearbeitung: Erstellung
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 
 using System.Collections;
@@ -14,6 +14,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+/// <summary>
+/// Steuerung des Ablaufs des Tutorials.
+/// </summary>
 public class TutorialAdventureScript : MonoBehaviour {
 
     public Vector3 mousePos;
@@ -50,7 +53,9 @@ public class TutorialAdventureScript : MonoBehaviour {
     public Button confirmButton, rejectButton, harvestAllButton;
     private Plant plant;
 
-
+    /// <summary>
+    /// Steuert den Start des Tutorials.
+    /// </summary>
     // Use this for initialization
     void Start()
     {
@@ -86,7 +91,9 @@ public class TutorialAdventureScript : MonoBehaviour {
         rejectButton.onClick.AddListener(TaskOnReject);
     }
 
-
+    /// <summary>
+    /// Steuert den Ablauf des Tutorials.
+    /// </summary>
     // Update is called once per frame
     void Update()
     {
@@ -100,7 +107,7 @@ public class TutorialAdventureScript : MonoBehaviour {
             // In zweidim Vektor umwandeln
             mousePosWorld2D = new Vector2(mousePosWorld.x, mousePosWorld.y);
 
-            // Bestimmte Punkt des Mausklicks
+            // Bestimme Punkt des Mausklicks
             hit = Physics2D.Raycast(mousePosWorld2D, Vector2.zero);
 
             // Prüfe ob hit einen collider beinhaltet
@@ -256,8 +263,9 @@ public class TutorialAdventureScript : MonoBehaviour {
 
 
     }
-
-    // Bei Verlassen des 2. Schrittes, öffne den 3. Schritt 
+    /// <summary>
+    /// Bei Verlassen des 2. Schrittes, öffne den 3. Schritt
+    /// </summary> 
     void TaskOnStep2()
     {
         step3.SetActive(true);
@@ -271,6 +279,10 @@ public class TutorialAdventureScript : MonoBehaviour {
         collider4.enabled = true;
 
     }
+
+    /// <summary>
+    /// Bei Verlassen des 6. Schrittes, öffne den 7. Schritt
+    /// </summary>
     void TaskOnStep6()
     {
         step6Open = false;
@@ -280,6 +292,10 @@ public class TutorialAdventureScript : MonoBehaviour {
         
 
     }
+
+    /// <summary>
+    /// Bei Verlassen des 7.1 Schrittes, öffne den 8. Schritt
+    /// </summary>
     void TaskOnStep71()
     {
         harvestPanel.SetActive(false);
@@ -291,6 +307,9 @@ public class TutorialAdventureScript : MonoBehaviour {
         nextLevelButton.SetActive(true);
     }
 
+    /// <summary>
+    /// Bepflanzt die Felder mit der ausgewählten Pflanze.
+    /// </summary>
     void TaskOnConfirm()
     {
 
@@ -450,6 +469,9 @@ public class TutorialAdventureScript : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Öffnet das SelectionPanel wieder.
+    /// </summary>
     void TaskOnReject()
     {
         errorMessage.text = "";

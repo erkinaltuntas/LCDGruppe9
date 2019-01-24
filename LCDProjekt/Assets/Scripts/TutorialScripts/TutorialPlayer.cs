@@ -2,14 +2,17 @@
 * TutorialPlayer
 * Anwendung: Erstellen des Tutorial Spielers
 * ------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 30.12.2018
-* Grund für letzte Bearbeitung: Erstellung 
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 14.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Erstellung des Players für das Tutorial.
+/// </summary>
 public class TutorialPlayer : MonoBehaviour {
     public static TutorialPlayer tutorialPlayer;
     public string playerName;
@@ -20,20 +23,15 @@ public class TutorialPlayer : MonoBehaviour {
     public int timeLoan = 0;
     public bool creditShown;
 
-
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung des TutorialPlayers
+    /// </summary>
     void Start()
     {
         tutorialPlayer = this;
         creditShown = false;
 
         playerName = "TutorialPlayer";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
 }

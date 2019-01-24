@@ -2,9 +2,9 @@
 * ExitWeatherPanelTutorial
 * Anwendung: Anzeige der ersten Schritte des Tutorials
 *------------------- 
-* Zuletzt bearbeitet von: Erkin Altuntas
-* Datum der letzten Bearbeitung: 30.12.2018
-* Grund für letzte Bearbeitung: Erstellung
+* Zuletzt bearbeitet von: Cedric Meyer-Piening
+* Datum der letzten Bearbeitung: 17.01.2019
+* Grund für letzte Bearbeitung: Kommentare
 * **************************************************************************/
 
 using System.Collections;
@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// (Re-)aktiviert die Tutorial-Szene beim Öffnen und Schließen des WeatherPanels.
+/// </summary>
 public class ExitWeatherPanelTutorial : MonoBehaviour {
     public Button exitWeatherPanel;
     public Button weatherButton;
@@ -21,7 +24,9 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
     private Collider2D collider1, collider2, collider3, collider4;
     public TutorialAdventureScript tutorial;
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung und ruft die TaskOnClick-Methoden auf.
+    /// </summary>
     void Start () {
         exitWeatherPanel.onClick.AddListener(TaskOnClick);
         weatherButton.onClick.AddListener(TaskOnClick2);
@@ -32,17 +37,11 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         collider2 = field2.GetComponent<Collider2D>();
         collider3 = field3.GetComponent<Collider2D>();
         collider4 = field4.GetComponent<Collider2D>();
-
-        
-
-
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
-
+    /// <summary>
+    /// Reaktiviert die Szene, wenn man das WeatherPanel schließt.
+    /// </summary>
     void TaskOnClick()
     {
         if(tutorial.step1Open)
@@ -61,6 +60,7 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         {
             step11.SetActive(false);
             step2.SetActive(true);
+            weatherButton.enabled = false;
             tutorial.step11Open = false;
             tutorial.step2Open = true;
             collider1.enabled = false;
@@ -103,7 +103,9 @@ public class ExitWeatherPanelTutorial : MonoBehaviour {
         
     }
 
-
+    /// <summary>
+    /// Schließt die Tutorial-Steps, wenn das Weather-Panel geöffnet wird.
+    /// </summary>
     void TaskOnClick2()
     {
         step1.SetActive(false);

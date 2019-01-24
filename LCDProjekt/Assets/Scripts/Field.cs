@@ -4,12 +4,15 @@
 * ------------------- 
 * Zuletzt bearbeitet von: Erkin Altuntas
 * Datum der letzten Bearbeitung: 10.12.2018
-* Grund für letzte Bearbeitung: Kommentare/Code Pflege
+* Grund fuer letzte Bearbeitung: Kommentare/Code Pflege
 **************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Steuert die Felder.
+/// </summary>
 public class Field : MonoBehaviour {
 
     public int id;
@@ -26,21 +29,28 @@ public class Field : MonoBehaviour {
     public Sprite cornGrown;
     public Sprite carrotGrown;
 
-    // Use this for initialization
+    /// <summary>
+    /// Initialisierung
+    /// </summary>
     void Start () {
         collider1 = this.GetComponent<Collider2D>();
         fieldIsChecked = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        // Solange auf dem Feld nichts angepflanzt ist, ist das Feld anklickbar
+
+    /// <summary>
+    /// Solange auf dem Feld nichts angepflanzt ist, ist das Feld anklickbar
+    /// </summary>
+    // Update is called once per frame
+    void Update () { 
 		if(plantName != "")
         {
             collider1.enabled = false; 
         }
 	}
 
+    /// <summary>
+    /// Aendert beim Pflanzen die Sprites der Felder.
+    /// </summary>
     public void changeSprite()
     {
         // Weise je nach Auswahl dem Feld das Sprite der Pflanze zu

@@ -1991,6 +1991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c321118920a6e464296e96af225e2a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfPlayers: 0
 --- !u!4 &1590765792
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,7 +2176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.005
   player: {fileID: 0}
-  mongo: {fileID: 1590765791}
 --- !u!1 &1718017026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2350,7 @@ Transform:
   m_GameObject: {fileID: 1979088800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: -0.768, z: -6912.0005}
-  m_LocalScale: {x: 145.23418, y: 144.8547, z: 76.8}
+  m_LocalScale: {x: 101, y: 100, z: 76.8}
   m_Children: []
   m_Father: {fileID: 1449605851}
   m_RootOrder: 0
@@ -2391,7 +2391,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: c5fb16c10d892574190ace6923dd6e49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14b2dc7e682b71141ab64e0866907a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

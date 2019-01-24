@@ -13,12 +13,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gibt den Text in einer Sprechblase Buchstabe für Buchstabe aus.
+/// Fragt nach dem Namen des Spielers und speichert den eingegebenen Namen.
+/// </summary>
+/// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
 public class DialogController : MonoBehaviour
 {
     // Schnelligkeit der Anzeige des Textes
     public float delay = 0.005f;
     // Text der ersten Sprechblase
-    private string fullText1 = "Hallo mein Kind." + Environment.NewLine + Environment.NewLine + "Wie war nochmal dein Name? ";
+    private string fullText1 = "Hallo mein Kind." + Environment.NewLine + Environment.NewLine + "Wie war nochmal Dein Name? ";
     private string currentText = "";
 
     public InputField inputName;
@@ -26,8 +31,12 @@ public class DialogController : MonoBehaviour
 
     public GameObject speechBubble1, speechBubble2;
     public GameObject confirmButton, nextButton2;
-
-    // Use this for initialization
+    
+    /// <summary>
+    /// Die Start Methode wird bei der Initialisierung aufgerufen.
+    /// TaskOnConfirm wird dem confirmButton zugeordnet.
+    /// Die Coroutine ShowText() wird gestartet.
+    /// </summary>
     void Start()
     {
         StartCoroutine(ShowText());
@@ -36,6 +45,11 @@ public class DialogController : MonoBehaviour
     }
 
     // Zeigt den Dialog Buchstabe fuer Buchstaben
+    /// <summary>
+    /// Gibt den Text Buchstabe für Buchstabe aus.
+    /// </summary>
+    /// <returns>Gibt eine zeitliche Verzögerung zurück.</returns>
+    /// <remarks>Es wirkt so als würde man gerade den Text tippen.</remarks>
     private IEnumerator ShowText()
     {
         for (int i = 0; i < fullText1.Length; i++)
@@ -47,12 +61,19 @@ public class DialogController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Setzt den eingegeben Namen gleich playerName.
+    /// </summary>
     public void saveName()
     {
         playerName = inputName.text;
         PlayerPrefs.SetString("PlayerName", playerName);
     }
 
+    /// <summary>
+    /// Falls der eingebene Name nicht leer ist, wird die nächste Sprechblase angezeigt.
+    /// Ansonsten passiert nichts.
+    /// </summary>
     void TaskOnConfirm()
     {
         if (!inputName.text.Equals(""))
